@@ -4,7 +4,6 @@ import { Preloader } from './components/Preloader';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ReferentialVideoShowcase } from './components/ReferentialVideoShowcase';
-import { SecurityComplianceModal } from './components/SecurityComplianceModal';
 import { TenOutOfTenShowreel } from './components/TenOutOfTenShowreel';
 import { DillingerContentSelector } from './components/DillingerContentSelector';
 import { CustomCursor } from './components/CustomCursor';
@@ -228,12 +227,6 @@ export default function App() {
         onCloseExternal={() => setIsChatbotOpen(false)}
       />
 
-      {/* Modal de Auditoría de Seguridad SSL, Pagos y Protocolos de Ecoturismo */}
-      <SecurityComplianceModal
-        isOpen={isSecurityModalOpen}
-        onClose={() => setIsSecurityModalOpen(false)}
-        defaultTab={securityModalTab}
-      />
     </div>
   );
 }
