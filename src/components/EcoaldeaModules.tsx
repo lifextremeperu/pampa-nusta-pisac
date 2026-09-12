@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Sparkles, Calendar, Users, MapPin, ArrowRight, Play, Compass, ShieldCheck, Leaf } from 'lucide-react';
 import { ECOALDEA_MODULES } from '../data/ecoaldeaModules';
 import { EcoaldeaModule } from '../types';
@@ -35,12 +36,24 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
                 Pisac · Valle Sagrado
               </span>
             </div>
-            <h2 className="font-cinzel text-3xl sm:text-5xl font-bold tracking-wide text-[#fcf7f1] uppercase leading-none">
+            <motion.h2 
+              initial={{ opacity: 0, filter: 'blur(16px)', y: 20 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="cinematic-title text-3xl sm:text-5xl text-[#fcf7f1] mb-1"
+            >
               Cinco Capítulos Vivos
-            </h2>
-            <p className="text-xs sm:text-sm text-[#b8a695] font-mono tracking-wide mt-2 max-w-xl">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, letterSpacing: '0em' }}
+              whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+              className="cinematic-subtitle text-[9px] sm:text-[10px] text-[#b8a695] mt-3 max-w-xl"
+            >
               / ARQUITECTURA BIOCLIMÁTICA, AGROECOLOGÍA Y MEDICINA ANCESTRAL EN EL VALLE SAGRADO.
-            </p>
+            </motion.p>
           </div>
 
           <button
@@ -97,7 +110,13 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
         </div>
 
         {/* Active Module Showcase - Natural Sanctuary Showcase Card with Live Interaction */}
-        <div className="bg-[#1a140e]/90 border border-[#443224] rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="glass-panel-dark border border-[#443224] rounded-3xl overflow-hidden shadow-2xl"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Left: Sanctuary Image with Letterbox feel (7 cols) */}
             <div className="lg:col-span-7 relative min-h-[380px] sm:min-h-[460px] overflow-hidden group">
@@ -190,7 +209,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

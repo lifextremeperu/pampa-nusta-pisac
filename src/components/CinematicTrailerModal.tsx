@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play, Pause, Volume2, VolumeX, Sparkles, Leaf, Compass, ChevronRight } from 'lucide-react';
 import { andeanAudio } from '../utils/audioSynthesizer';
 
@@ -90,14 +91,26 @@ export const CinematicTrailerModal: React.FC<CinematicTrailerModalProps> = ({
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   const currentScene = TRAILER_SCENES[activeSceneIndex];
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/95 backdrop-blur-xl p-2 sm:p-6 animate-fadeIn">
-      {/* Natural Sanctuary Frame Container */}
-      <div className="relative w-full max-w-6xl bg-[#14100c] border border-[#6b492d] rounded-2xl overflow-hidden shadow-2xl shadow-black/80 flex flex-col">
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/95 backdrop-blur-xl p-2 sm:p-6"
+        >
+          {/* Natural Sanctuary Frame Container */}
+          <motion.div 
+            initial={{ scale: 1.1, opacity: 0, filter: 'blur(10px)' }}
+            animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
+            exit={{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-6xl bg-[#14100c] border border-[#6b492d] rounded-2xl overflow-hidden shadow-2xl shadow-black/80 flex flex-col"
+          >
         {/* Sanctuary Header */}
         <div className="bg-[#100c09] px-5 py-3 border-b border-[#3b2c20] flex items-center justify-between z-20">
           <div className="flex items-center gap-3">
@@ -216,7 +229,9 @@ export const CinematicTrailerModal: React.FC<CinematicTrailerModalProps> = ({
             })}
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+      </motion.div>
+    )}
+    </AnimatePresence>
   );
 };

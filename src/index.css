@@ -196,3 +196,32 @@ button:active, a:active {
   box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
   filter: brightness(1.1);
 }
+
+/* Ambient Background Motion (Cinematic Technique 6) */
+@keyframes ambientDrift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.bg-ambient-motion {
+  background: radial-gradient(circle at center, rgba(30, 27, 24, 0.7) 0%, rgba(10, 8, 7, 0.95) 100%);
+  background-size: 150% 150%;
+  animation: ambientDrift 30s ease-in-out infinite alternate;
+}
+
+/* Cinematic Typography (Cinematic Technique 4 & 1) */
+.cinematic-title {
+  font-family: var(--font-cinzel);
+  letter-spacing: 0.15em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.cinematic-subtitle {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+

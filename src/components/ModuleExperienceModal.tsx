@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Calendar, Users, MapPin, Sparkles, Shield, ArrowRight, Compass, HeartHandshake, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { EcoaldeaModule } from '../types';
@@ -50,8 +51,22 @@ export const ModuleExperienceModal: React.FC<ModuleExperienceModalProps> = ({ mo
   };
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-6 overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-stone-950 border border-amber-500/40 rounded-3xl overflow-hidden shadow-2xl shadow-amber-950/60 my-auto">
+    <AnimatePresence>
+      {!!module && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-6 overflow-y-auto"
+        >
+          <motion.div 
+            initial={{ scale: 1.1, opacity: 0, filter: 'blur(10px)' }}
+            animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
+            exit={{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-2xl glass-panel border border-amber-500/40 rounded-3xl overflow-hidden shadow-2xl shadow-amber-950/60 my-auto"
+          >
         {/* Modal Top Banner with Image */}
         <div className="relative h-48 sm:h-56 w-full overflow-hidden">
           <img
@@ -308,7 +323,9 @@ export const ModuleExperienceModal: React.FC<ModuleExperienceModalProps> = ({ mo
             </div>
           )}
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
