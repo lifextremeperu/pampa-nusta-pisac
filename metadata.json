@@ -1,0 +1,6 @@
+{
+  "name": "Pampa Ñusta - Pisac",
+  "description": "Reserva natural y santuario ecológico en Pisac: Banco genético de Wachuma, conservación de semillas nativas, recreación infantil, ceremonias ancestrales y talleres inmersivos de la tierra.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
