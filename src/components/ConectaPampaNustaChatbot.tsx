@@ -366,71 +366,74 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   return (
     <>
       {/* ------------------------------------------------------------- */}
-      {/* FLOATING TRIGGER BUTTON (TERMINAL RADIO)                      */}
+      {/* FLOATING TRIGGER BUTTON (WHATSAPP REDIRECT)                   */}
       {/* ------------------------------------------------------------- */}
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-50 pointer-events-auto">
-           <button
-             onClick={() => {
-               setIsOpen(true);
-               setIsMinimized(false);
-             }}
-             className="group relative flex items-center gap-3 p-3 bg-black/90 border border-emerald-500/50 text-emerald-500 hover:border-emerald-400 hover:bg-emerald-950/30 font-mono transition-all uppercase tracking-widest text-xs shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+           <a
+             href="https://wa.me/51958050928?text=Hola%20Pampa%20%C3%91usta%2C%20deseo%20agendar%20una%20videollamada%20para%20conocer%20m%C3%A1s%20sobre%20el%20Santuario%20y%20las%20experiencias."
+             target="_blank"
+             rel="noopener noreferrer"
+             className="group relative flex items-center gap-3 px-5 py-3.5 bg-sadhana-dark/95 backdrop-blur-md border border-sadhana-primary/40 text-sadhana-sand hover:text-white hover:border-sadhana-primary hover:bg-sadhana-dark transition-all rounded-full shadow-2xl cursor-pointer"
            >
-             <span className="w-2 h-2 bg-red-500 animate-pulse" />
-             <Radio className="w-4 h-4 animate-pulse" />
-             <span>[ COMM_LINK ]</span>
-           </button>
+             <div className="relative">
+               <span className="absolute -inset-1 bg-sadhana-primary/30 rounded-full animate-ping" />
+               <MessageSquare className="w-5 h-5 relative z-10" />
+             </div>
+             <span className="font-cinzel text-xs font-bold uppercase tracking-widest hidden sm:inline-block">
+               Agendar Videollamada
+             </span>
+           </a>
         </div>
       )}
 
       {/* ------------------------------------------------------------- */}
-      {/* EXPANDED TERMINAL WINDOW                                      */}
+      {/* EXPANDED CHAT WINDOW                                          */}
       {/* ------------------------------------------------------------- */}
       {isOpen && (
         <div
-          className={`fixed z-50 transition-all duration-300 font-mono text-emerald-500 ${
+          className={`fixed z-50 transition-all duration-300 font-sans text-sadhana-dark ${
             isMinimized
-              ? 'bottom-4 right-4 w-72 sm:w-80 h-14'
-              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-full sm:w-[480px] h-[92vh] sm:h-[700px] max-h-[95vh]'
+              ? 'bottom-4 right-4 w-72 sm:w-80 h-14 rounded-t-2xl shadow-xl'
+              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-full sm:w-[480px] h-[92vh] sm:h-[700px] max-h-[95vh] rounded-2xl shadow-2xl'
           }`}
         >
-          <div className="w-full h-full flex flex-col bg-black/95 border border-emerald-500/40 relative overflow-hidden backdrop-blur-xl shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+          <div className="w-full h-full flex flex-col bg-white border border-sadhana-dark/10 relative overflow-hidden backdrop-blur-xl rounded-[inherit]">
             
-            {/* Scanline Effect */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none" />
-
             {/* Top Header */}
             <div
               onClick={() => {
                 if (isMinimized) setIsMinimized(false);
               }}
-              className={`px-4 py-3 bg-emerald-950/30 border-b border-emerald-500/40 flex items-center justify-between shrink-0 relative z-10 ${
-                isMinimized ? 'cursor-pointer hover:bg-emerald-900/30' : ''
+              className={`px-5 py-4 bg-sadhana-dark border-b border-sadhana-primary/30 flex items-center justify-between shrink-0 relative z-10 ${
+                isMinimized ? 'cursor-pointer hover:bg-sadhana-dark/90' : ''
               }`}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-sadhana-primary/20 flex items-center justify-center border border-sadhana-primary/30">
+                  <Compass className="w-4 h-4 text-sadhana-primary" />
+                </div>
                 <div>
-                  <h2 className="text-xs sm:text-sm font-bold text-emerald-400 tracking-[0.2em] uppercase">
-                    [ SYS_TERMINAL: CONECTA ]
+                  <h2 className="text-sm font-bold text-white tracking-widest uppercase font-cinzel">
+                    Conecta Pampa Ñusta
                   </h2>
-                  <p className="text-[10px] text-emerald-600/70">
-                    {isMinimized ? '> click para maximizar' : '> CONEXIÓN SATELITAL ESTABLECIDA'}
+                  <p className="text-[10px] text-sadhana-sand font-mono">
+                    {isMinimized ? 'Click para maximizar' : 'Asistencia y Reservas 24/7'}
                   </p>
                 </div>
               </div>
 
               {/* Action Icons */}
-              <div className="flex items-center gap-3 text-emerald-500/60" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center gap-3 text-sadhana-sand hover:text-white transition-colors" onClick={(e) => e.stopPropagation()}>
                 {!isMinimized && (
-                  <button onClick={handleResetChat} className="hover:text-emerald-300">
+                  <button onClick={handleResetChat} className="hover:text-sadhana-primary transition-colors cursor-pointer" title="Reiniciar Sesión">
                     <RotateCcw className="w-4 h-4" />
                   </button>
                 )}
-                <button onClick={() => setIsMinimized(!isMinimized)} className="hover:text-emerald-300">
+                <button onClick={() => setIsMinimized(!isMinimized)} className="hover:text-sadhana-primary transition-colors cursor-pointer">
                   {isMinimized ? <Maximize2 className="w-4 h-4" /> : <Minimize2 className="w-4 h-4" />}
                 </button>
-                <button onClick={handleClose} className="hover:text-emerald-300">
+                <button onClick={handleClose} className="hover:text-sadhana-primary transition-colors cursor-pointer" title="Cerrar">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -440,27 +443,27 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
             {!isMinimized && (
               <>
                 {/* Chat Messages Stream */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-6 text-xs sm:text-sm bg-transparent relative z-10 scrollbar-thin scrollbar-thumb-emerald-900 scrollbar-track-transparent">
+                <div className="flex-1 overflow-y-auto p-5 space-y-6 text-sm bg-[#faf8f5] relative z-10 scrollbar-thin scrollbar-thumb-sadhana-primary scrollbar-track-transparent">
                   
-                  {/* Terminal Banner */}
-                  <div className="p-3 border border-emerald-500/20 text-emerald-600/80 text-[10px] leading-relaxed mb-4 uppercase">
-                    <span className="text-emerald-400 font-bold block mb-1">&gt; PROTOCOLO DE RESERVA INICIADO</span>
-                    Canal seguro. Coordina sesión de 30 min con guardianes botánicos.
+                  {/* Banner */}
+                  <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[11px] leading-relaxed mb-4">
+                    <span className="font-bold block mb-1 font-cinzel text-xs">SISTEMA DE RESERVAS</span>
+                    Canal seguro para agendar una videollamada de 30 minutos con los guardianes del santuario.
                   </div>
 
                   {messages.map((msg) => (
                     <div
                       key={msg.id}
-                      className="flex flex-col mb-4"
+                      className={`flex flex-col mb-4 ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
                     >
-                      <span className="text-[9px] text-emerald-600/50 mb-1">
-                        [{msg.timestamp}] {msg.sender === 'user' ? 'USER_INPUT' : 'SYS_RESPONSE'}
+                      <span className="text-[9px] text-stone-400 font-mono mb-1 px-1">
+                        {msg.timestamp}
                       </span>
                       <div
-                        className={`pl-3 py-1 border-l-2 ${
+                        className={`px-4 py-2.5 rounded-2xl max-w-[85%] ${
                           msg.sender === 'user'
-                            ? 'border-amber-500/50 text-amber-400'
-                            : 'border-emerald-500/50 text-emerald-400'
+                            ? 'bg-sadhana-dark text-white rounded-tr-sm'
+                            : 'bg-white border border-stone-200 text-stone-800 rounded-tl-sm shadow-sm'
                         }`}
                       >
                         {msg.text}
@@ -795,20 +798,19 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                 {/* Free Text Input Form */}
                 <form
                   onSubmit={handleSendFreeText}
-                  className="p-3 bg-black border-t border-emerald-500/40 flex items-center gap-2 shrink-0 relative z-10"
+                  className="p-4 bg-white border-t border-stone-200 flex items-center gap-3 shrink-0 relative z-10 rounded-b-2xl"
                 >
-                  <span className="text-emerald-500 font-bold">&gt;</span>
                   <input
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder="INGRESAR COMANDO / TEXTO..."
-                    className="flex-1 bg-transparent border-none text-emerald-400 text-xs focus:outline-none placeholder:text-emerald-700/50 font-mono uppercase"
+                    placeholder="Escribe tu consulta o dudas aquí..."
+                    className="flex-1 bg-stone-100 text-stone-800 placeholder:text-stone-400 text-sm px-4 py-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-sadhana-primary/50"
                   />
                   <button
                     type="submit"
-                    disabled={!inputText.trim()}
-                    className="p-2 text-emerald-500/50 hover:text-emerald-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    disabled={!inputText.trim() || isTyping}
+                    className="w-10 h-10 rounded-full bg-sadhana-primary flex items-center justify-center text-white hover:bg-sadhana-dark transition-colors disabled:opacity-50 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                   </button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import {
   Compass,
   Maximize2,
@@ -40,6 +41,7 @@ import { InteractiveSanctuaryMap } from './InteractiveSanctuaryMap';
 export const VirtualTour360: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
 
   // Active Viewing Mode: 'video' (Video Referencial & 360) or 'panorama360' (Explorador Esférico Canvas)
   const [activeMode, setActiveMode] = useState<'video' | 'panorama360' | 'map'>('video');
@@ -76,6 +78,16 @@ export const VirtualTour360: React.FC = () => {
     return match && match[2].length === 11 ? match[2] : null;
   };
 
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = window.innerWidth > 768 ? 450 + 32 : window.innerWidth * 0.85 + 24;
+      carouselRef.current.scrollBy({
+        left: direction === 'right' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // Change selected reference video
   const handleSelectReferenceVideo = (video: SanctuaryReferenceVideo) => {
     setActiveVideo(video);
@@ -96,7 +108,7 @@ export const VirtualTour360: React.FC = () => {
         subtitle: 'Video referencial provisto por el usuario',
         type: 'youtube',
         url: customVideoInput.trim(),
-        embedUrl: `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`,
+        embedUrl: `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=0&rel=0&modestbranding=1`,
         thumbnailUrl: `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`,
         duration: 'En vivo',
         tag: 'Video Personalizado',
@@ -134,7 +146,7 @@ export const VirtualTour360: React.FC = () => {
     if (activeVideo.type === 'youtube' || activeVideo.type === 'youtube360') {
       const ytId = extractYouTubeId(activeVideo.url) || 'CheJWYQvP98';
       setActiveEmbedUrl(
-        `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&start=${facility.videoTimeSeconds}`
+        `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=0&rel=0&modestbranding=1&start=${facility.videoTimeSeconds}`
       );
     }
   };
@@ -315,59 +327,59 @@ export const VirtualTour360: React.FC = () => {
   };
 
   return (
-    <section id="tour360" className="relative py-20 sm:py-28 bg-white text-stone-900 border-b border-stone-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="tour360" className="relative py-32 md:py-48 bg-white text-sadhana-dark overflow-hidden">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-600/30 bg-amber-50 text-amber-900 text-xs uppercase tracking-widest mb-3 font-mono font-bold shadow-sm">
-            <Film className="w-3.5 h-3.5 text-amber-700" />
-            <span>VIDEO REFERENCIAL & RECORRIDO VIRTUAL · PAMPA ÑUSTA</span>
+        <div className="max-w-4xl mb-16 md:mb-24">
+          <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-sadhana-primary font-bold mb-8">
+            02 — Recorrido Inmersivo
           </div>
-          <h2 className="font-cinzel text-3xl sm:text-5xl font-extrabold tracking-tight text-stone-950">
-            Recorrido Virtual: <span className="text-amber-800">Pampa Ñusta</span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-sadhana-dark mb-6">
+            TOUR <br />
+            <span className="text-sadhana-sand">360°</span>
           </h2>
-          <p className="mt-3 text-stone-600 text-sm sm:text-base leading-relaxed font-sans font-medium">
-            Conoce a través de nuestro video referencial y recorrido virtual las instalaciones ecológicas, domos botánicos y servicios comunitarios del santuario en las laderas de Pisac (3,347 msnm).
+          <p className="text-lg md:text-xl text-sadhana-brown/70 font-medium max-w-2xl leading-relaxed">
+            Conoce a través de nuestro video referencial y recorrido virtual las instalaciones ecológicas, domos botánicos y servicios comunitarios del santuario.
           </p>
         </div>
 
         {/* Mode Selector Pill Strip */}
-        <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+        <div className="flex flex-wrap items-center gap-4 mb-12">
           <button
             onClick={() => setActiveMode('video')}
-            className={`px-5 py-2.5 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 font-bold shadow-sm ${
+            className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-3 ${
               activeMode === 'video'
-                ? 'bg-amber-600 text-white border-2 border-amber-600 shadow-amber-900/20'
-                : 'bg-stone-50 border border-stone-300 text-stone-700 hover:text-stone-950 hover:bg-stone-100'
+                ? 'bg-sadhana-primary text-white'
+                : 'bg-sadhana-sand/20 text-sadhana-dark hover:bg-sadhana-sand/40'
             }`}
           >
             <Video className="w-4 h-4" />
-            <span>Video Referencial de las Instalaciones (4K & 360°)</span>
+            <span>Video Documental</span>
           </button>
 
           <button
             onClick={() => setActiveMode('panorama360')}
-            className={`px-5 py-2.5 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 font-bold shadow-sm ${
+            className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-3 ${
               activeMode === 'panorama360'
-                ? 'bg-amber-600 text-white border-2 border-amber-600 shadow-amber-900/20'
-                : 'bg-stone-50 border border-stone-300 text-stone-700 hover:text-stone-950 hover:bg-stone-100'
+                ? 'bg-sadhana-primary text-white'
+                : 'bg-sadhana-sand/20 text-sadhana-dark hover:bg-sadhana-sand/40'
             }`}
           >
             <CompassIcon className="w-4 h-4" />
-            <span>Explorador Esférico Panorámico por Sectores</span>
+            <span>Explorador 360°</span>
           </button>
 
           <button
             onClick={() => setActiveMode('map')}
-            className={`px-5 py-2.5 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 font-bold shadow-sm ${
+            className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-3 ${
               activeMode === 'map'
-                ? 'bg-amber-600 text-white border-2 border-amber-600 shadow-amber-900/20'
-                : 'bg-stone-50 border border-stone-300 text-stone-700 hover:text-stone-950 hover:bg-stone-100'
+                ? 'bg-sadhana-primary text-white'
+                : 'bg-sadhana-sand/20 text-sadhana-dark hover:bg-sadhana-sand/40'
             }`}
           >
             <MapPin className="w-4 h-4" />
-            <span>Mapa Interactivo del Santuario</span>
+            <span>Mapa del Santuario</span>
           </button>
         </div>
 
@@ -385,11 +397,11 @@ export const VirtualTour360: React.FC = () => {
             </div>
 
             {/* Main Video Viewport Container (Simplified) */}
-            <div className="relative w-full aspect-[16/9] min-h-[440px] sm:min-h-[560px] rounded-3xl overflow-hidden border border-sadhana-primary/30 shadow-2xl bg-sadhana-sand/30">
+            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-sadhana-dark overflow-hidden">
               {isVideoPlaying ? (
                 <iframe
                   title="Pampa Ñusta Video Referencial"
-                  src="https://www.youtube-nocookie.com/embed/CheJWYQvP98?autoplay=1&rel=0&modestbranding=1"
+                  src="https://www.youtube-nocookie.com/embed/CheJWYQvP98?autoplay=0&rel=0&modestbranding=1"
                   className="w-full h-full border-0 absolute inset-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; vr"
                   allowFullScreen
@@ -402,20 +414,20 @@ export const VirtualTour360: React.FC = () => {
                   <img
                     src="https://img.youtube.com/vi/CheJWYQvP98/hqdefault.jpg"
                     alt="Expedición Andina"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-sadhana-dark/40 backdrop-blur-[2px] group-hover:bg-sadhana-dark/20 transition-colors" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700" />
 
                   <div className="relative z-10 text-center max-w-xl">
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/30 border border-emerald-400/50 text-emerald-300 text-xs font-mono uppercase tracking-widest mb-4 inline-block font-bold">
+                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white mb-6 block">
                       Documental Oficial · 22:45 min
                     </span>
-                    <h3 className="font-cinzel text-2xl sm:text-4xl font-extrabold text-white mb-6">
-                      Expedición Andina: Enigma y Entorno de Pisac
+                    <h3 className="text-3xl md:text-5xl font-black text-white mb-8">
+                      EXPEDICIÓN ANDINA
                     </h3>
 
-                    <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-emerald-600 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-2xl group-hover:bg-emerald-500 transition-all">
-                      <Play className="w-5 h-5 fill-white" />
+                    <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white text-sadhana-dark font-bold text-xs uppercase tracking-widest hover:bg-sadhana-sand transition-colors">
+                      <Play className="w-4 h-4" />
                       <span>Reproducir Documental</span>
                     </div>
                   </div>
@@ -451,7 +463,7 @@ export const VirtualTour360: React.FC = () => {
             {/* 360 Viewer Canvas Viewport */}
             <div
               ref={containerRef}
-              className="relative w-full aspect-[16/9] min-h-[460px] sm:min-h-[580px] rounded-3xl overflow-hidden border border-stone-300 shadow-2xl bg-stone-900 cursor-grab active:cursor-grabbing select-none"
+              className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-sadhana-dark cursor-grab active:cursor-grabbing select-none overflow-hidden"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
@@ -578,71 +590,76 @@ export const VirtualTour360: React.FC = () => {
         )}
 
         {/* ------------------------------------------------------------- */}
-        {/* THE 5 SANCTUARY FACILITIES & SERVICES CARDS STRIP */}
+        {/* THE 5 SANCTUARY FACILITIES & SERVICES */}
         {/* ------------------------------------------------------------- */}
-        <div className="mt-14">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-3 border-b border-stone-200">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-amber-800 font-bold block mb-1">
-                Directorio Oficial del Santuario
-              </span>
-              <h3 className="font-cinzel text-2xl font-bold text-stone-950">
-                Las 5 Instalaciones y Servicios de Pampa Ñusta
-              </h3>
+        <div className="mt-32 md:mt-48">
+          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-sadhana-dark">
+              INSTALACIONES
+            </h3>
+            
+            <div className="flex gap-3">
+              <button 
+                onClick={() => scrollCarousel('left')}
+                className="w-12 h-12 rounded-full border border-sadhana-dark/20 text-sadhana-dark flex items-center justify-center hover:bg-sadhana-dark hover:text-white transition-colors cursor-pointer shadow-sm"
+                aria-label="Desplazar a la izquierda"
+              >
+                <ChevronRight className="w-5 h-5 rotate-180" />
+              </button>
+              <button 
+                onClick={() => scrollCarousel('right')}
+                className="w-12 h-12 rounded-full bg-sadhana-dark text-white flex items-center justify-center hover:bg-sadhana-primary transition-colors cursor-pointer shadow-sm"
+                aria-label="Desplazar a la derecha"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
-            <p className="text-xs text-stone-600 font-mono">
-              Abiertas a investigadores, familias, mecenas y comunidades
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div ref={carouselRef} className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-6 md:gap-8 pb-12 cursor-grab active:cursor-grabbing px-6 md:px-12 -mx-6 md:-mx-12 scroll-smooth">
             {PAMPA_NUSTA_FACILITIES.map((facility, idx) => (
               <div
                 key={facility.id}
-                className="rounded-2xl bg-stone-50 border border-stone-200 hover:border-emerald-600 hover:bg-white text-left transition-all flex flex-col group shadow-sm hover:shadow-md overflow-hidden"
+                className="relative group cursor-pointer flex-shrink-0 w-[85vw] md:w-[450px] aspect-[4/5] snap-center overflow-hidden bg-sadhana-dark"
+                onClick={() => setSelectedFacility(facility)}
               >
-                {/* Thumbnail Image Header */}
-                <div className="w-full h-36 relative overflow-hidden bg-stone-900 shrink-0">
-                  <img 
-                    src={facility.imageUrl} 
-                    alt={facility.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors" />
-                  <div className="absolute top-2 left-2 px-2 py-0.5 rounded border border-white/20 bg-black/40 backdrop-blur-sm text-[10px] font-mono text-white font-bold uppercase">
-                    SECTOR 0{idx + 1}
-                  </div>
-                </div>
+                {/* Background Image */}
+                <img 
+                  src={facility.imageUrl} 
+                  alt={facility.name} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                />
+                
+                {/* Dark Overlays for Cinematic Effect */}
+                <div className="absolute inset-0 bg-sadhana-dark/40 group-hover:bg-sadhana-dark/20 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/20 to-transparent opacity-90" />
 
-                {/* Card Content */}
-                <div className="p-4 flex flex-col justify-between flex-1">
-                  <div>
-                    <h4 className="font-cinzel text-sm font-bold text-stone-950 group-hover:text-emerald-900 transition-colors line-clamp-2 leading-snug">
+                {/* Card Content Overlay */}
+                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between">
+                  {/* Top Bar */}
+                  <div className="flex justify-between items-start">
+                    <div className="text-xs md:text-sm font-bold text-sadhana-primary font-mono uppercase tracking-[0.3em]">
+                      0{idx + 1}
+                    </div>
+                    <div className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
+                      <ExternalLink className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  {/* Bottom Info */}
+                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 className="font-black text-2xl md:text-3xl text-white uppercase tracking-tighter mb-3 drop-shadow-md">
                       {facility.name}
                     </h4>
-
-                    <span className="text-[10px] text-emerald-800 font-serif italic block mt-0.5 line-clamp-1">
-                      {facility.quechuaName}
-                    </span>
-
-                    <p className="text-xs text-stone-600 font-sans mt-2 line-clamp-3 leading-relaxed">
+                    <p className="text-sadhana-sand/90 text-sm leading-relaxed line-clamp-2 mb-6 font-medium">
                       {facility.shortDesc}
                     </p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-stone-200 space-y-2">
-                    <div className="flex items-center gap-1.5 text-[10px] font-mono text-stone-500">
-                      <Users className="w-3 h-3 text-emerald-700" />
-                      <span>{facility.capacity}</span>
+                    
+                    {/* Fake Button Line */}
+                    <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-bold text-white group-hover:text-sadhana-primary transition-colors">
+                      <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12"></span>
+                      <span>Explorar Instalación</span>
                     </div>
-
-                    <button
-                      onClick={() => setSelectedFacility(facility)}
-                      className="w-full py-2 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-mono text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-sm"
-                    >
-                      <span>Ver Servicios</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
                   </div>
                 </div>
               </div>
@@ -655,8 +672,8 @@ export const VirtualTour360: React.FC = () => {
       {/* ------------------------------------------------------------- */}
       {/* SELECTED FACILITY & SERVICES MODAL DRAWER */}
       {/* ------------------------------------------------------------- */}
-      {selectedFacility && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/60 backdrop-blur-md animate-fadeIn">
+      {selectedFacility && createPortal(
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-white/60 backdrop-blur-md animate-fadeIn">
           <div className="relative w-full max-w-3xl bg-white border border-sadhana-dark/10 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[92vh]">
             <button
               onClick={() => setSelectedFacility(null)}
@@ -774,7 +791,8 @@ export const VirtualTour360: React.FC = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

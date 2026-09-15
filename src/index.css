@@ -121,12 +121,9 @@
 
 /* Cinematic Scene Snapping (Turns website into a reel of scenes) */
 .scene-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
+  height: auto;
+  overflow-y: visible;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
   
   /* Andean Cosmovision Background (Lightened) */
   background-color: var(--color-sadhana-bg);
@@ -142,8 +139,6 @@
 }
 .scene {
   min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   position: relative;
   /* Add padding to prevent content from hiding under letterboxes */
   padding-top: 12vh;
@@ -178,10 +173,17 @@
   background-size: 24px 24px;
 }
 
-/* Smooth custom scrollbar (Hidden for cinematic feel) */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Glassmorphism Utilities */
@@ -309,4 +311,10 @@ button:active, a:active {
 .hover-glow:hover {
   box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
   filter: brightness(1.1);
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }

@@ -12,40 +12,40 @@ export const DualStonesLegendArtwork: React.FC = () => {
   };
 
   return (
-    <div className="rounded-3xl border border-stone-300 bg-white p-6 sm:p-8 shadow-xl">
+    <div className="relative w-full">
       {/* Top Badge & Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200 pb-5 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5 mb-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-600/30 bg-amber-50 text-amber-900 text-xs font-mono font-bold tracking-widest uppercase mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sadhana-primary/30 bg-sadhana-primary/10 text-sadhana-sand text-[10px] font-mono font-bold tracking-[0.2em] uppercase mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-sadhana-primary" />
             <span>ARTE VISUAL ANCESTRAL · MONOLITOS TUTELARES DE PISAC</span>
           </div>
-          <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-stone-950">
-            Las Dos Piedras Sagradas: <span className="text-amber-800">Energía Femenina & Masculina</span>
+          <h3 className="font-black text-2xl sm:text-4xl text-white tracking-tighter uppercase">
+            Las Dos Piedras Sagradas: <span className="text-sadhana-sand">Energía Femenina & Masculina</span>
           </h3>
-          <p className="text-xs sm:text-sm text-stone-600 mt-1 font-sans">
+          <p className="text-sm sm:text-base text-sadhana-sand/70 mt-2 font-medium">
             La Ñusta y el Príncipe transmutados en roca viva, enseñando la siembra sagrada (Tarpuy) a los niños y al pueblo andino.
           </p>
         </div>
 
         {/* Energy Filter Buttons */}
-        <div className="flex items-center gap-1.5 p-1 bg-stone-100 rounded-xl border border-stone-200 shrink-0">
+        <div className="flex items-center gap-1.5 p-1 bg-white/5 backdrop-blur-md rounded-full border border-white/10 shrink-0">
           <button
             onClick={() => setActiveEnergyFocus('both')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+            className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-[0.2em] transition-all uppercase ${
               activeEnergyFocus === 'both'
-                ? 'bg-amber-700 text-white shadow-sm'
-                : 'text-stone-700 hover:text-stone-950'
+                ? 'bg-sadhana-primary text-white shadow-lg'
+                : 'text-sadhana-sand/70 hover:text-white'
             }`}
           >
             Dualidad Yanantin
           </button>
           <button
             onClick={() => setActiveEnergyFocus('femenina')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1 ${
+            className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-[0.2em] transition-all uppercase flex items-center gap-1.5 ${
               activeEnergyFocus === 'femenina'
-                ? 'bg-emerald-700 text-white shadow-sm'
-                : 'text-stone-700 hover:text-stone-950'
+                ? 'bg-sadhana-primary text-white shadow-lg'
+                : 'text-sadhana-sand/70 hover:text-white'
             }`}
           >
             <Moon className="w-3 h-3" />
@@ -53,10 +53,10 @@ export const DualStonesLegendArtwork: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveEnergyFocus('masculina')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1 ${
+            className={`px-4 py-2 rounded-full text-[10px] font-bold tracking-[0.2em] transition-all uppercase flex items-center gap-1.5 ${
               activeEnergyFocus === 'masculina'
-                ? 'bg-orange-700 text-white shadow-sm'
-                : 'text-stone-700 hover:text-stone-950'
+                ? 'bg-sadhana-primary text-white shadow-lg'
+                : 'text-sadhana-sand/70 hover:text-white'
             }`}
           >
             <Sun className="w-3 h-3" />
@@ -66,17 +66,17 @@ export const DualStonesLegendArtwork: React.FC = () => {
       </div>
 
       {/* Visual Canvas Stage */}
-      <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-stone-300 shadow-2xl bg-stone-950">
+      <div className="relative aspect-[16/9] w-full rounded-none overflow-hidden bg-sadhana-dark">
         {/* Photographic Underlay: Real Pisac Archeological Terraces & Sky */}
         <img
           src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=85&w=1600&auto=format&fit=crop"
           alt="Andenes de Pisac y Rocas Sagradas"
           referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-65"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-40 mix-blend-luminosity"
         />
 
         {/* Ambient Gradient for Rich Depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/40 to-sadhana-dark/20 mix-blend-multiply" />
 
         {/* SVG ARTWORK: The 2 Sacred Megaliths radiating Feminine & Masculine energy while teaching sowing to children and community */}
         <svg
@@ -252,16 +252,16 @@ export const DualStonesLegendArtwork: React.FC = () => {
         </div>
 
         {/* Bottom Banner inside Image: Teaching the Village */}
-        <div className="absolute bottom-4 left-4 right-4 p-3 sm:p-4 rounded-xl bg-stone-950/90 backdrop-blur-md border border-stone-700/80 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/50 flex items-center justify-center shrink-0">
-              <Sprout className="w-5 h-5 text-amber-300" />
+        <div className="absolute bottom-6 left-6 right-6 p-4 md:p-6 rounded-none bg-sadhana-dark/80 backdrop-blur-md border border-white/10 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-sadhana-primary/20 border border-sadhana-primary/50 flex items-center justify-center shrink-0">
+              <Sprout className="w-6 h-6 text-sadhana-primary" />
             </div>
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-amber-300 font-bold">
+              <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-sadhana-sand font-bold block mb-1">
                 Tarpuy Raymi · La Transmisión a los Niños
               </span>
-              <p className="text-xs text-stone-200 font-sans">
+              <p className="text-sm text-sadhana-sand/70 font-medium">
                 Las dos piedras emiten sus bendiciones para que las nuevas generaciones aprendan a sembrar maíz blanco y quinua con respeto a la Pachamama.
               </p>
             </div>
@@ -269,42 +269,42 @@ export const DualStonesLegendArtwork: React.FC = () => {
 
           <button
             onClick={handlePlaySound}
-            className="px-3 py-1.5 rounded-lg bg-stone-900 border border-amber-500/40 hover:border-amber-400 text-amber-300 text-xs font-mono flex items-center justify-center gap-1.5 transition-all shrink-0 cursor-pointer"
+            className="px-6 py-3 rounded-full bg-white/5 backdrop-blur-md border border-sadhana-primary/40 hover:bg-sadhana-primary text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all shrink-0 cursor-pointer"
           >
-            <Volume2 className="w-3.5 h-3.5" />
+            <Volume2 className="w-4 h-4" />
             <span>{isPlayingSound ? 'Sonido Sagrado Activo' : 'Canto de Siembra'}</span>
           </button>
         </div>
       </div>
 
       {/* Explanatory Triad Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-        <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200">
-          <div className="flex items-center gap-2 text-emerald-800 font-cinzel font-bold text-sm mb-1">
-            <Moon className="w-4 h-4 text-emerald-700" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="p-6 md:p-8 border border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="flex items-center gap-3 text-sadhana-primary font-bold text-sm mb-4 uppercase tracking-widest">
+            <Moon className="w-5 h-5" />
             <h4>1. Energía Femenina (Pachamama)</h4>
           </div>
-          <p className="text-xs text-stone-600 leading-relaxed">
+          <p className="text-sm text-sadhana-sand/70 leading-relaxed font-medium">
             La princesa petrificada se convirtió en la matriz que acoge la semilla en la oscuridad fértil de la tierra, enseñando a las niñas y mujeres el cuidado lunar.
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200">
-          <div className="flex items-center gap-2 text-amber-800 font-cinzel font-bold text-sm mb-1">
-            <Sun className="w-4 h-4 text-amber-700" />
+        <div className="p-6 md:p-8 border border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="flex items-center gap-3 text-sadhana-sand font-bold text-sm mb-4 uppercase tracking-widest">
+            <Sun className="w-5 h-5" />
             <h4>2. Energía Masculina (Apu Linli)</h4>
           </div>
-          <p className="text-xs text-stone-600 leading-relaxed">
+          <p className="text-sm text-sadhana-sand/70 leading-relaxed font-medium">
             El noble guerrero en piedra sostiene la estructura de los muros de contención, enseñando a los varones y jóvenes el trazo de canales y la tracción del arado.
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200">
-          <div className="flex items-center gap-2 text-orange-800 font-cinzel font-bold text-sm mb-1">
-            <Users className="w-4 h-4 text-orange-700" />
+        <div className="p-6 md:p-8 border border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="flex items-center gap-3 text-white font-bold text-sm mb-4 uppercase tracking-widest">
+            <Users className="w-5 h-5" />
             <h4>3. Herencia al Pueblo & Ayllu</h4>
           </div>
-          <p className="text-xs text-stone-600 leading-relaxed">
+          <p className="text-sm text-sadhana-sand/70 leading-relaxed font-medium">
             Ninguna piedra compite: ambas se complementan en el principio andino del <em>Yanantin</em>, asegurando que la comunidad jamás pase hambre ni olvide sus raíces.
           </p>
         </div>

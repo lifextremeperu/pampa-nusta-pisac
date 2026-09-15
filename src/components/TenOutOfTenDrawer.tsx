@@ -37,7 +37,7 @@ export const TenOutOfTenDrawer: React.FC<TenOutOfTenDrawerProps> = ({
       {/* Dark backdrop overlay */}
       <div
         onClick={onClose}
-        className={`fixed inset-0 bg-black/75 z-40 transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-black/75 z-[1000] transition-opacity duration-500 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       />
@@ -45,7 +45,7 @@ export const TenOutOfTenDrawer: React.FC<TenOutOfTenDrawerProps> = ({
       {/* Slide-up 10/10 style Modal Drawer */}
       <aside
         aria-label={`Detalles de ${item.title}`}
-        className={`fixed bottom-0 left-0 w-full max-h-[90vh] sm:max-h-[85vh] bg-[#070605] border-t border-stone-800/90 text-stone-100 z-50 overflow-y-auto transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_-20px_50px_rgba(0,0,0,0.9)] ${
+        className={`fixed bottom-0 left-0 w-full max-h-[90vh] sm:max-h-[85vh] bg-[#070605] border-t border-stone-800/90 text-stone-100 z-[1001] overflow-y-auto transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_-20px_50px_rgba(0,0,0,0.9)] ${
           isOpen ? 'translate-y-0 pointer-events-auto' : 'translate-y-full pointer-events-none'
         }`}
       >

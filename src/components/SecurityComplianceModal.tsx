@@ -33,7 +33,7 @@ export const SecurityComplianceModal: React.FC<SecurityComplianceModalProps> = (
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-white/85 backdrop-blur-xl animate-fadeIn">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-6 bg-white/85 backdrop-blur-xl animate-fadeIn">
       
       {/* Modal Container */}
       <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-white border border-sadhana-dark/10 rounded-3xl shadow-2xl overflow-hidden text-sadhana-dark">
