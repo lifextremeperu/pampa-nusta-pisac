@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Leaf } from 'lucide-react';
+
+const WachumitaIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M6 9v1a3 3 0 0 0 3 3h1" />
+    <path d="M18 11v5a3 3 0 0 1 -3 3h-1" />
+    <path d="M10 21v-16a2 2 0 1 1 4 0v16" />
+    <path d="M7 21h10" />
+  </svg>
+);
 
 export const Preloader: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,14 +40,14 @@ export const Preloader: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="relative z-10 flex flex-col items-center"
           >
-            {/* Spinning Leaf Icon */}
+            {/* Floating Wachuma Icon */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="mb-6 relative"
             >
               <div className="absolute inset-0 bg-sadhana-primary blur-xl opacity-20 rounded-full animate-pulse" />
-              <Leaf className="w-16 h-16 text-sadhana-primary relative z-10 drop-shadow-sm" />
+              <WachumitaIcon className="w-16 h-16 text-sadhana-primary relative z-10 drop-shadow-sm" />
             </motion.div>
 
             {/* Title Reveal */}
