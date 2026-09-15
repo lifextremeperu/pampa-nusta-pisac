@@ -274,7 +274,10 @@ const StreetView: React.FC<{ onExplore: () => void }> = ({ onExplore }) => {
 
         {/* Explore button */}
         <button
-          onClick={onExplore}
+          onClick={() => {
+            onExplore();
+            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 120);
+          }}
           style={{
             width: '100%',
             background: 'linear-gradient(135deg, #16a34a, #15803d)',
