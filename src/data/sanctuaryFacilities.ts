@@ -65,7 +65,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
     schedule: 'Martes a Domingo: 09:00 - 17:00 hrs',
     videoTimestamp: '01:15',
     videoTimeSeconds: 75,
-    imageUrl: '/facilities/domo_geodesico.jpg',
+    imageUrl: '/assets/ecoaldea/instalacion_domo_wachuma.jpg',
     accentColor: 'emerald'
   },
   {
@@ -105,7 +105,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
     schedule: 'Miércoles a Sábado: 10:00 - 16:00 hrs',
     videoTimestamp: '02:40',
     videoTimeSeconds: 160,
-    imageUrl: '/facilities/arca_semillas.jpg',
+    imageUrl: '/assets/ecoaldea/instalacion_arca_semillas.jpg',
     accentColor: 'emerald'
   },
   {
@@ -145,7 +145,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
     schedule: 'Sábados y Domingos: 10:00 - 15:30 hrs (Entre semana para colegios)',
     videoTimestamp: '04:05',
     videoTimeSeconds: 245,
-    imageUrl: '/facilities/escuela_viva.jpg',
+    imageUrl: '/assets/ecoaldea/instalacion_escuela_viva.jpg',
     accentColor: 'emerald'
   },
   {
@@ -185,7 +185,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
     schedule: 'Previa reserva y entrevista dietaria previa',
     videoTimestamp: '05:25',
     videoTimeSeconds: 325,
-    imageUrl: '/facilities/maloka_ceremonial.jpg',
+    imageUrl: '/assets/ecoaldea/instalacion_maloka_ceremonial.jpg',
     accentColor: 'emerald'
   },
   {
@@ -225,7 +225,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
     schedule: 'Lunes a Domingo: 08:30 - 17:00 hrs',
     videoTimestamp: '06:45',
     videoTimeSeconds: 405,
-    imageUrl: '/facilities/terrazas_permacultura.jpg',
+    imageUrl: '/assets/ecoaldea/instalacion_terrazas_permacultura.jpg',
     accentColor: 'emerald'
   }
 ];

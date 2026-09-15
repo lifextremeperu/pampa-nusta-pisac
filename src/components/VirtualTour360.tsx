@@ -43,8 +43,17 @@ export const VirtualTour360: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
-  // Active Viewing Mode: 'video' (Video Referencial & 360) or 'panorama360' (Explorador Esférico Canvas)
   const [activeMode, setActiveMode] = useState<'video' | 'panorama360' | 'map'>('video');
+  const [activeCinematicIndex, setActiveCinematicIndex] = useState(0);
+
+  // Auto-advance cinematic slider
+  useEffect(() => {
+    if (activeMode !== 'video') return;
+    const interval = setInterval(() => {
+      setActiveCinematicIndex((prev) => (prev + 1) % PAMPA_NUSTA_FACILITIES.length);
+    }, 6000); // 6 seconds per slide
+    return () => clearInterval(interval);
+  }, [activeMode]);
 
   // Video Player State
   const [activeVideo, setActiveVideo] = useState<SanctuaryReferenceVideo>(SANCTUARY_REFERENCE_VIDEOS[0]);
@@ -355,7 +364,7 @@ export const VirtualTour360: React.FC = () => {
             }`}
           >
             <Video className="w-4 h-4" />
-            <span>Video Documental</span>
+            <span>Explorador Cinemático</span>
           </button>
 
           <button
@@ -384,7 +393,7 @@ export const VirtualTour360: React.FC = () => {
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* MODE 1: VIDEO REFERENCIAL E INTERACTIVO DE LAS INSTALACIONES */}
+        {/* MODE 1: EXPLORADOR CINEMÁTICO (REPLACES YOUTUBE)            */}
         {/* ------------------------------------------------------------- */}
         {activeMode === 'video' && (
           <div className="space-y-6">
@@ -392,47 +401,55 @@ export const VirtualTour360: React.FC = () => {
             {/* Simple Reseña (Description) */}
             <div className="bg-white/80 backdrop-blur-md border border-sadhana-dark/10 rounded-2xl p-5 sm:p-6 shadow-xl text-sadhana-brown/90 text-sm sm:text-base leading-relaxed font-medium">
               <p>
-                Sumérgete en la inmensidad del Valle Sagrado a través de esta expedición visual. Este documento audiovisual te lleva por las laderas, la andenería y la geografía sagrada que rodea a Pampa Ñusta en Pisac, ofreciendo una perspectiva única de la biodiversidad, la bioconstrucción y la herencia viva que protegemos a más de 3,300 metros sobre el nivel del mar.
+                Sumérgete en la inmensidad del Valle Sagrado a través de esta expedición visual en ultra alta definición. Este recorrido cinemático te transporta por la bioconstrucción y la herencia viva de cada una de nuestras instalaciones ecológicas.
               </p>
             </div>
 
-            {/* Main Video Viewport Container (Simplified) */}
-            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-sadhana-dark overflow-hidden">
-              {isVideoPlaying ? (
-                <iframe
-                  title="Pampa Ñusta Video Referencial"
-                  src="https://www.youtube-nocookie.com/embed/CheJWYQvP98?autoplay=0&rel=0&modestbranding=1"
-                  className="w-full h-full border-0 absolute inset-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; vr"
-                  allowFullScreen
-                />
-              ) : (
+            {/* Cinematic Viewport Container */}
+            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-sadhana-dark overflow-hidden rounded-2xl shadow-2xl">
+              {PAMPA_NUSTA_FACILITIES.map((facility, idx) => (
                 <div
-                  className="relative w-full h-full flex flex-col items-center justify-center p-6 cursor-pointer group"
-                  onClick={() => setIsVideoPlaying(true)}
+                  key={facility.id}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    activeCinematicIndex === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
                 >
                   <img
-                    src="https://img.youtube.com/vi/CheJWYQvP98/hqdefault.jpg"
-                    alt="Expedición Andina"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                    src={facility.imageUrl}
+                    alt={facility.name}
+                    className={`w-full h-full object-cover transition-transform duration-[15000ms] ease-out ${
+                      activeCinematicIndex === idx ? 'scale-110' : 'scale-100'
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700" />
-
-                  <div className="relative z-10 text-center max-w-xl">
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white mb-6 block">
-                      Documental Oficial · 22:45 min
+                  <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/20 to-transparent opacity-80" />
+                  
+                  <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-sadhana-primary mb-4 block">
+                      {facility.category} · {facility.altitude}
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-black text-white mb-8">
-                      EXPEDICIÓN ANDINA
+                    <h3 className="text-3xl md:text-5xl font-black text-white mb-4">
+                      {facility.name}
                     </h3>
-
-                    <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white text-sadhana-dark font-bold text-xs uppercase tracking-widest hover:bg-sadhana-sand transition-colors">
-                      <Play className="w-4 h-4" />
-                      <span>Reproducir Documental</span>
-                    </div>
+                    <p className="text-sadhana-sand/90 text-sm md:text-base font-medium max-w-2xl leading-relaxed">
+                      {facility.shortDesc}
+                    </p>
                   </div>
                 </div>
-              )}
+              ))}
+              
+              {/* Progress Indicators */}
+              <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                {PAMPA_NUSTA_FACILITIES.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveCinematicIndex(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                      activeCinematicIndex === idx ? 'w-10 bg-sadhana-primary' : 'w-2.5 bg-white/40 hover:bg-white/60'
+                    }`}
+                    aria-label={`Ver instalación ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         )}

@@ -6,8 +6,8 @@ export const GlobalAudioPlayer = () => {
   const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Frecuencia Solfeggio pura (sin voz, solo frecuencias sanadoras)
-  const AUDIO_SRC = "https://cdn.pixabay.com/download/audio/2022/01/21/audio_31743c58bc.mp3?filename=pure-solfeggio-432hz-no-voice.mp3";
+  // Frecuencia Solfeggio pura (432 Hz Healing Frequency Meditation)
+  const AUDIO_SRC = "https://archive.org/download/jamendo-524803/01-2039515-STOCK%20ELITE%20MUSIC-432%20Hz%20Healing%20Frequency%20Meditation.mp3";
 
   // Intentar auto-reproducir después de la primera interacción
   useEffect(() => {
