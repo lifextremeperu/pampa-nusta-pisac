@@ -346,6 +346,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
   };
 
   return (
+    <>
     <section id="tour360" className="relative py-32 md:py-48 bg-white text-sadhana-dark overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
         
@@ -725,5 +726,6 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
         50% { box-shadow: 0 0 30px rgba(74,222,128,0.6), 0 0 60px rgba(74,222,128,0.25); }
       }
     `}</style>
+    </>
   );
 };
