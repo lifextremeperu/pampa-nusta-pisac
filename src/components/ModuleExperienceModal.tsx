@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Check, Calendar, Users, MapPin, Sparkles, Shield, ArrowRight, Compass, HeartHandshake, MessageCircle } from 'lucide-react';
+import { X, Check, Calendar, Users, HeartHandshake, MessageCircle, Target, Sparkles, Milestone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { EcoaldeaModule } from '../types';
 
@@ -20,20 +20,12 @@ export const ModuleExperienceModal: React.FC<ModuleExperienceModalProps> = ({ mo
 
   const YAPE_WHATSAPP_NUMBER = '51958050928';
   const getWhatsAppBookingUrl = () => {
-    const text = `¡Hola Santuario Pampa Ñusta! Deseo reservar el módulo "${module.title}" para ${participants} persona(s) con fecha ${selectedDate}. Mi nombre es ${contactName || 'Hermano de la Tierra'} y deseo coordinar mi aporte por Yape / Plin (+51 958 050 928).`;
+    const text = `¡Hola Santuario Pampa Ñusta! Deseo sumarme al módulo "${module.title}" para ${participants} persona(s) con fecha ${selectedDate}. Mi nombre es ${contactName || 'Hermano de la Tierra'} y deseo coordinar mi aporte por Yape / Plin.`;
     return `https://wa.me/${YAPE_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   };
 
-  // Pricing based on module
-  const basePricesUSD: Record<string, number> = {
-    wachuma: 65,
-    semillas: 40,
-    ninos: 50,
-    ceremonias: 190,
-    talleres: 380,
-  };
-
-  const unitPriceUSD = basePricesUSD[module.id] || 80;
+  const basePricesUSD: Record<string, number> = { wachuma: 65, semillas: 40, ninos: 50, ceremonias: 190, talleres: 380 };
+  const unitPriceUSD = basePricesUSD[module.id.split('-')[0]] || 80;
   const exchangeRate = 3.75;
   const unitPrice = currency === 'USD' ? unitPriceUSD : Math.round(unitPriceUSD * exchangeRate);
   const totalPrice = unitPrice * participants;
@@ -41,272 +33,222 @@ export const ModuleExperienceModal: React.FC<ModuleExperienceModalProps> = ({ mo
   const handleConfirm = (e: React.FormEvent) => {
     e.preventDefault();
     setIsBooked(true);
-    confetti({
-      particleCount: 90,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#f59e0b', '#d97706', '#10b981', '#38bdf8'],
-    });
+    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#34E0A1', '#FF7A00', '#ffffff'] });
   };
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-white/90 backdrop-blur-md p-3 sm:p-6 overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-white border border-sadhana-dark/10 rounded-3xl overflow-hidden shadow-2xl shadow-sadhana-dark/10 my-auto">
-        {/* Modal Top Banner with Image */}
-        <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-sadhana-sand">
-          <img
-            src={module.imageUrl}
-            alt={module.title}
-            className="w-full h-full object-cover filter brightness-[0.85] contrast-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
-
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/80 text-sadhana-dark hover:text-sadhana-primary hover:bg-white transition-colors border border-sadhana-dark/10 shadow-sm"
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-xl p-0 md:p-6 overflow-hidden animate-fadeIn">
+      <div className="relative w-full max-w-5xl bg-sadhana-dark border border-white/10 md:rounded-[40px] overflow-hidden shadow-2xl h-full flex flex-col">
+        
+        {/* Sticky Header with Close Button */}
+        <div className="absolute top-4 right-4 md:top-6 md:right-6 z-[60]">
+          <button 
+            onClick={onClose} 
+            className="p-3 md:p-4 rounded-full bg-black/50 text-white hover:bg-sadhana-primary hover:text-sadhana-dark transition-all backdrop-blur-md border border-white/20 hover:scale-110 cursor-pointer"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 md:w-6 md:h-6" />
           </button>
-
-          {/* Header titles */}
-          <div className="absolute bottom-4 left-6 right-6">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded bg-sadhana-primary/10 border border-sadhana-primary/20 text-[10px] font-mono tracking-widest text-sadhana-primary uppercase font-bold">
-                {module.chapterNumber}
-              </span>
-              <span className="text-[11px] font-mono text-sadhana-brown font-bold">
-                {module.altitude} · Elemento {module.element}
-              </span>
-            </div>
-            <h2 className="font-sans text-xl sm:text-2xl font-extrabold text-sadhana-dark">
-              {module.title}
-            </h2>
-            <p className="text-xs text-sadhana-primary/80 font-mono italic font-bold">
-              {module.quechuaTitle} — {module.tagline}
-            </p>
-          </div>
         </div>
 
-        {/* Modal Content */}
-        <div className="p-6">
-          {!isBooked ? (
-            <form onSubmit={handleConfirm} className="space-y-5">
-              {/* Highlights Chips - Menos texto, alta claridad */}
+        <div 
+          className="overflow-y-auto flex-1 relative w-full h-full pb-20 md:pb-0 scrollbar-thin scrollbar-thumb-sadhana-primary/50 scrollbar-track-black/20"
+          data-lenis-prevent="true"
+        >
+          
+          {/* Hero Cinematic Section */}
+          <div className="relative h-[45vh] md:h-[60vh] w-full shrink-0">
+            <img 
+              src={module.imageUrl} 
+              alt={module.title} 
+              className="w-full h-full object-cover filter brightness-[0.6] contrast-125" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/20 to-transparent" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-16">
+              <div className="inline-flex items-center gap-2 md:gap-3 px-4 py-1.5 md:px-5 md:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-4 md:mb-6">
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-sadhana-primary" />
+                <span className="text-[9px] md:text-xs font-mono font-bold tracking-[0.3em] uppercase">{module.badge}</span>
+              </div>
+              
+              <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-4 md:mb-8 drop-shadow-2xl">
+                {module.title}
+              </h2>
+              
+              <p className="text-sm md:text-xl lg:text-3xl text-sadhana-sand font-serif italic max-w-4xl leading-relaxed border-l-4 border-sadhana-primary pl-4 md:pl-6">
+                «{module.neuromarketingHook}»
+              </p>
+            </div>
+          </div>
+
+          {/* Body Content - The Story */}
+          <div className="px-5 py-10 md:px-8 md:py-16 lg:p-24 space-y-16 md:space-y-24 bg-sadhana-dark">
+            
+            {/* Vision & Mission */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-sadhana-orange font-bold mb-2">
-                  Ejes de la Experiencia
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {module.keyHighlights.map((highlight, idx) => (
-                    <div
-                      key={idx}
-                      className="p-2.5 rounded-xl bg-sadhana-sand/30 border border-sadhana-dark/5 text-xs text-sadhana-dark flex items-start gap-2 font-medium"
-                    >
-                      <Sparkles className="w-3.5 h-3.5 text-sadhana-orange shrink-0 mt-0.5" />
-                      <span>{highlight}</span>
-                    </div>
+                <h3 className="text-xs font-mono text-sadhana-primary tracking-[0.4em] uppercase mb-6 font-bold flex items-center gap-4">
+                  <span className="w-8 h-[1px] bg-sadhana-primary"></span>
+                  La Visión
+                </h3>
+                <p className="text-sadhana-sand/90 text-lg md:text-xl leading-relaxed font-medium">
+                  {module.projectVision}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {module.keyHighlights?.map((highlight, idx) => (
+                    <span key={idx} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-sadhana-sand">
+                      {highlight}
+                    </span>
                   ))}
                 </div>
               </div>
-
-              {/* Reservation Controls */}
-              <div className="bg-white p-4 rounded-2xl border border-sadhana-dark/10 shadow-sm space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Date Selector */}
-                  <div>
-                    <label className="block text-xs font-mono text-sadhana-brown uppercase tracking-wider mb-1.5 flex items-center gap-1.5 font-bold">
-                      <Calendar className="w-3.5 h-3.5 text-sadhana-orange" />
-                      Fecha de Inmersión / Luna
-                    </label>
-                    <input
-                      type="date"
-                      value={selectedDate}
-                      onChange={(e) => setSelectedDate(e.target.value)}
-                      min="2026-10-01"
-                      className="w-full px-3 py-2 rounded-xl bg-sadhana-sand/30 border border-sadhana-dark/10 text-sadhana-dark text-xs font-mono focus:outline-none focus:border-sadhana-primary shadow-inner"
-                      required
-                    />
-                  </div>
-
-                  {/* Participants */}
-                  <div>
-                    <label className="block text-xs font-mono text-sadhana-brown uppercase tracking-wider mb-1.5 flex items-center gap-1.5 font-bold">
-                      <Users className="w-3.5 h-3.5 text-sadhana-orange" />
-                      Participantes
-                    </label>
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setParticipants((p) => Math.max(1, p - 1))}
-                        className="w-8 h-8 rounded-lg bg-white border border-sadhana-dark/20 text-sadhana-dark hover:border-sadhana-primary hover:bg-sadhana-sand/30 text-sm font-bold flex items-center justify-center shadow-sm"
-                      >
-                        -
-                      </button>
-                      <span className="flex-1 text-center font-mono text-sm font-bold text-sadhana-dark">
-                        {participants} {participants === 1 ? 'persona' : 'personas'}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setParticipants((p) => Math.min(8, p + 1))}
-                        className="w-8 h-8 rounded-lg bg-white border border-sadhana-dark/20 text-sadhana-dark hover:border-sadhana-primary hover:bg-sadhana-sand/30 text-sm font-bold flex items-center justify-center shadow-sm"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Name and Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-sadhana-dark/5">
-                  <div>
-                    <label className="block text-xs font-mono text-sadhana-brown uppercase tracking-wider mb-1 font-bold">
-                      Nombre Completo
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Tu nombre"
-                      value={contactName}
-                      onChange={(e) => setContactName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-sadhana-sand/30 border border-sadhana-dark/10 text-sadhana-dark text-xs focus:outline-none focus:border-sadhana-primary shadow-inner"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-mono text-sadhana-brown uppercase tracking-wider mb-1 font-bold">
-                      Correo Electrónico
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="tu@correo.com"
-                      value={contactEmail}
-                      onChange={(e) => setContactEmail(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-sadhana-sand/30 border border-sadhana-dark/10 text-sadhana-dark text-xs focus:outline-none focus:border-sadhana-primary shadow-inner"
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Currency & Total */}
-                <div className="flex items-center justify-between pt-3 border-t border-sadhana-dark/5 text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sadhana-brown font-mono font-bold">Moneda:</span>
-                    <div className="inline-flex rounded-lg border border-sadhana-dark/10 bg-sadhana-sand p-0.5">
-                      <button
-                        type="button"
-                        onClick={() => setCurrency('USD')}
-                        className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold transition-colors ${
-                          currency === 'USD' ? 'bg-sadhana-primary text-white shadow-sm' : 'text-sadhana-brown hover:text-sadhana-dark'
-                        }`}
-                      >
-                        USD
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setCurrency('PEN')}
-                        className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold transition-colors ${
-                          currency === 'PEN' ? 'bg-sadhana-primary text-white shadow-sm' : 'text-sadhana-brown hover:text-sadhana-dark'
-                        }`}
-                      >
-                        PEN (S/)
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="text-[10px] text-sadhana-brown block font-mono font-bold">Aporte Total Sugerido</span>
-                    <span className="text-lg font-mono font-extrabold text-sadhana-primary">
-                      {currency === 'USD' ? `$${totalPrice} USD` : `S/ ${totalPrice} PEN`}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <div className="space-y-2">
-                <button
-                  type="submit"
-                  className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-sadhana-primary to-sadhana-orange text-white font-sans font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01] transition-all cursor-pointer"
-                >
-                  <HeartHandshake className="w-5 h-5 text-white" />
-                  <span>Emitir Pase Ceremonial de la Ecoaldea</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
-
-                <a
-                  href={getWhatsAppBookingUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-sadhana-primary/5 hover:bg-sadhana-primary/10 border border-sadhana-primary/30 text-sadhana-primary font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
-                >
-                  <MessageCircle className="w-4 h-4 fill-sadhana-primary text-white" />
-                  <span>Reservar con Yape / Plin por WhatsApp (+51 958 050 928)</span>
-                </a>
-              </div>
-            </form>
-          ) : (
-            /* Digital Certificate / Pase Ceremonial */
-            <div className="p-6 rounded-2xl bg-white border-2 border-sadhana-primary/50 text-center space-y-4 shadow-xl">
-              <div className="w-12 h-12 mx-auto rounded-full bg-sadhana-primary/10 border border-sadhana-primary flex items-center justify-center shadow-sm">
-                <Check className="w-6 h-6 text-sadhana-primary" />
-              </div>
-
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-sadhana-orange font-bold block">
-                  PASE CEREMONIAL EMITIDO
-                </span>
-                <h3 className="font-sans text-xl font-bold text-sadhana-dark mt-1">
-                  Bienvenido a la Ecoaldea Pampa Ñusta
-                </h3>
-                <p className="text-xs text-sadhana-brown font-mono mt-1">
-                  Titular: <strong className="text-sadhana-primary">{contactName || 'Hermano de la Tierra'}</strong>
-                </p>
-                <p className="text-xs text-sadhana-brown font-mono font-medium">
-                  Módulo: {module.title} · Fecha: {selectedDate} · {participants} cupo(s)
-                </p>
-              </div>
-
-              <div className="p-3 rounded-xl bg-sadhana-sand/30 border border-sadhana-dark/10 text-[11px] font-mono text-sadhana-brown text-left space-y-1">
-                <div className="flex justify-between">
-                  <span>Código de Pase:</span>
-                  <span className="text-sadhana-primary font-bold">PN-{Math.random().toString(36).substring(2, 8).toUpperCase()}-2026</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Punto de Encuentro:</span>
-                  <span className="text-sadhana-dark font-medium">Puente Colgante Pisac, 3,347 msnm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Aporte Ayni:</span>
-                  <span className="text-sadhana-orange font-bold">
-                    {currency === 'USD' ? `$${totalPrice} USD` : `S/ ${totalPrice} PEN`}
-                  </span>
-                </div>
-              </div>
-
-              <p className="text-[11px] text-sadhana-brown italic font-medium">
-                Hemos enviado las pautas de dieta y preparación sagrada a <strong>{contactEmail}</strong>. ¡Nos vemos bajo el cielo del Valle Sagrado!
-              </p>
-
-              <div className="space-y-2">
-                <a
-                  href={getWhatsAppBookingUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-sadhana-primary hover:bg-sadhana-primary/90 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md"
-                >
-                  <MessageCircle className="w-4 h-4 fill-white" />
-                  <span>Enviar Constancia Yape/Plin a WhatsApp</span>
-                </a>
-
-                <button
-                  onClick={onClose}
-                  className="w-full py-2.5 rounded-xl bg-white border border-sadhana-dark/20 hover:bg-sadhana-sand/50 text-sadhana-dark font-mono text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer"
-                >
-                  Cerrar y Volver a la Película
-                </button>
+              <div className="grid grid-cols-2 gap-4">
+                {module.gallery?.map((img, idx) => (
+                  <img key={idx} src={img} alt="Gallery" className="w-full h-48 md:h-64 object-cover rounded-3xl border border-white/10 hover:scale-105 transition-transform duration-500" />
+                ))}
               </div>
             </div>
-          )}
+
+            {/* Objectives */}
+            <div className="bg-white/5 rounded-3xl md:rounded-[40px] p-6 md:p-16 border border-white/5 relative overflow-hidden">
+              <div className="absolute -right-20 -top-20 w-64 h-64 bg-sadhana-primary/10 rounded-full blur-3xl"></div>
+              
+              <h3 className="text-[10px] md:text-xs font-mono text-sadhana-primary tracking-[0.4em] uppercase mb-8 md:mb-12 font-bold flex items-center gap-4">
+                <Target className="w-5 h-5" /> Objetivos Fundamentales
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+                {module.objectives?.map((obj, idx) => (
+                  <div key={idx} className="flex flex-col gap-3 md:gap-4">
+                    <span className="text-4xl md:text-5xl font-black text-white/10 leading-none">0{idx + 1}</span>
+                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">{obj}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Roadmap Timeline */}
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-[10px] md:text-xs font-mono text-sadhana-primary tracking-[0.4em] uppercase mb-10 md:mb-16 font-bold flex items-center justify-center gap-4 text-center">
+                <Milestone className="w-5 h-5" /> Mapa de Ruta del Proyecto
+              </h3>
+              
+              <div className="relative border-l border-white/20 ml-3 md:ml-12 space-y-12 md:space-y-16">
+                {module.roadmap?.map((step, idx) => (
+                  <div key={idx} className="relative pl-8 md:pl-16">
+                    {/* Glowing Dot */}
+                    <div className="absolute -left-[7px] top-1 w-3 h-3 md:w-4 md:h-4 rounded-full bg-sadhana-dark border-2 border-sadhana-primary shadow-[0_0_20px_rgba(52,224,161,0.6)]" />
+                    
+                    <span className="text-[9px] md:text-[10px] font-mono text-sadhana-orange tracking-[0.3em] uppercase font-bold block mb-2 md:mb-3">
+                      {step.phase}
+                    </span>
+                    <h4 className="text-xl md:text-2xl font-black text-white mb-2 md:mb-4">{step.title}</h4>
+                    <p className="text-sadhana-sand/70 text-sm md:text-base leading-relaxed">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Conversion Area (Reservation / Support) */}
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl md:rounded-[40px] p-6 md:p-16 border border-white/10 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+              
+              <div className="text-center mb-10 md:mb-12">
+                <h3 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">Involúcrate en este Capítulo</h3>
+                <p className="text-sadhana-sand/80 text-sm md:text-lg max-w-2xl mx-auto">Únete a nuestra misión. Selecciona tu fecha de inmersión y asegura tu lugar en la historia de Pampa Ñusta.</p>
+              </div>
+
+              {!isBooked ? (
+                <form onSubmit={handleConfirm} className="max-w-2xl mx-auto space-y-8 relative z-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Date Selector */}
+                    <div className="bg-black/20 p-4 rounded-2xl border border-white/5">
+                      <label className="block text-xs font-mono text-sadhana-sand/50 uppercase tracking-widest mb-3 flex items-center gap-2 font-bold">
+                        <Calendar className="w-4 h-4 text-sadhana-primary" /> Fecha de Inmersión
+                      </label>
+                      <input
+                        type="date"
+                        value={selectedDate}
+                        onChange={(e) => setSelectedDate(e.target.value)}
+                        min="2026-10-01"
+                        className="w-full bg-transparent border-b border-white/20 text-white font-mono text-lg focus:outline-none focus:border-sadhana-primary py-2"
+                        required
+                      />
+                    </div>
+
+                    {/* Participants */}
+                    <div className="bg-black/20 p-4 rounded-2xl border border-white/5">
+                      <label className="block text-xs font-mono text-sadhana-sand/50 uppercase tracking-widest mb-3 flex items-center gap-2 font-bold">
+                        <Users className="w-4 h-4 text-sadhana-primary" /> Participantes
+                      </label>
+                      <div className="flex items-center justify-between bg-white/5 rounded-xl border border-white/10 p-1">
+                        <button type="button" onClick={() => setParticipants((p) => Math.max(1, p - 1))} className="w-10 h-10 rounded-lg bg-white/10 hover:bg-sadhana-primary text-white flex items-center justify-center font-bold transition-colors">-</button>
+                        <span className="font-mono text-xl font-bold text-white">{participants}</span>
+                        <button type="button" onClick={() => setParticipants((p) => Math.min(8, p + 1))} className="w-10 h-10 rounded-lg bg-white/10 hover:bg-sadhana-primary text-white flex items-center justify-center font-bold transition-colors">+</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Name and Email */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Nombre Completo" value={contactName} onChange={(e) => setContactName(e.target.value)} className="w-full px-6 py-4 rounded-2xl bg-black/20 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-sadhana-primary transition-colors" required />
+                    <input type="email" placeholder="Correo Electrónico" value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} className="w-full px-6 py-4 rounded-2xl bg-black/20 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-sadhana-primary transition-colors" required />
+                  </div>
+
+                  {/* Currency & Total */}
+                  <div className="flex items-center justify-between p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-sadhana-sand/50 text-[10px] font-mono tracking-widest uppercase">Moneda</span>
+                      <div className="flex bg-white/10 rounded-lg p-1">
+                        <button type="button" onClick={() => setCurrency('USD')} className={`px-4 py-1.5 rounded-md text-xs font-mono font-bold transition-colors ${ currency === 'USD' ? 'bg-sadhana-primary text-sadhana-dark' : 'text-white hover:bg-white/10'}`}>USD</button>
+                        <button type="button" onClick={() => setCurrency('PEN')} className={`px-4 py-1.5 rounded-md text-xs font-mono font-bold transition-colors ${ currency === 'PEN' ? 'bg-sadhana-primary text-sadhana-dark' : 'text-white hover:bg-white/10'}`}>PEN</button>
+                      </div>
+                    </div>
+
+                    <div className="text-right">
+                      <span className="text-[10px] text-sadhana-sand/50 block font-mono tracking-widest uppercase mb-1">Aporte Total</span>
+                      <span className="text-4xl font-black text-sadhana-primary">
+                        {currency === 'USD' ? `$${totalPrice}` : `S/${totalPrice}`}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Submit Buttons */}
+                  <div className="space-y-4 pt-4">
+                    <button type="submit" className="w-full py-5 rounded-2xl bg-sadhana-primary hover:bg-white text-sadhana-dark font-black text-sm tracking-[0.2em] uppercase flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(52,224,161,0.3)]">
+                      <span>{module.ctaText}</span>
+                    </button>
+
+                    <a href={getWhatsAppBookingUrl()} target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-2xl bg-[#25D366]/10 hover:bg-[#25D366] text-[#25D366] hover:text-white border border-[#25D366]/30 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-3 transition-all">
+                      <MessageCircle className="w-5 h-5" />
+                      <span>Coordinar por WhatsApp (+51 958 050 928)</span>
+                    </a>
+                  </div>
+                </form>
+              ) : (
+                /* Digital Certificate / Pase Ceremonial */
+                <div className="max-w-md mx-auto p-8 rounded-3xl bg-black/40 border border-sadhana-primary/50 text-center space-y-6">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-sadhana-primary/20 border border-sadhana-primary flex items-center justify-center animate-bounce">
+                    <Check className="w-10 h-10 text-sadhana-primary" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-[0.3em] text-sadhana-primary font-bold block mb-2">¡Pase Emitido!</span>
+                    <h3 className="text-2xl font-black text-white">Bienvenido a la tribu, {contactName || 'Hermano'}</h3>
+                    <p className="text-sadhana-sand/80 mt-4 text-sm leading-relaxed">
+                      Se ha generado tu código sagrado. Te hemos enviado las pautas de inmersión a {contactEmail}.
+                    </p>
+                  </div>
+                  <div className="space-y-4 pt-6">
+                    <a href={getWhatsAppBookingUrl()} target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:scale-105 transition-transform shadow-lg">
+                      <MessageCircle className="w-5 h-5" /> Enviar constancia por WhatsApp
+                    </a>
+                    <button onClick={onClose} className="w-full py-4 rounded-xl bg-white/10 text-white hover:bg-white/20 font-bold text-xs uppercase tracking-widest transition-colors">
+                      Cerrar y Volver
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

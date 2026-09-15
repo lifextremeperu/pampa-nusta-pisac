@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowRight, Leaf } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -51,14 +51,102 @@ const TRANSITIONS: CinematicTransition[] = [
 export const CinematicTransitions: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const titlesRef = useRef<(HTMLHeadingElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
   
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const throttleRef = useRef<number>(0);
+  const touchStartY = useRef<number>(0);
+
+  const startAutoPlay = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % TRANSITIONS.length);
+    }, 8000); // 8 seconds per slide
+  }, []);
+
   // Auto cycle logic
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % TRANSITIONS.length);
-    }, 8000); // 8 seconds per slide to allow reading
-    return () => clearInterval(interval);
-  }, []);
+    startAutoPlay();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [startAutoPlay]);
+
+  // Native wheel & touch handling to trap scroll and advance slides
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const isScrollingDown = e.deltaY > 0;
+      const isScrollingUp = e.deltaY < 0;
+
+      if (isScrollingDown && activeIndex < TRANSITIONS.length - 1) {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - throttleRef.current > 1200) {
+          throttleRef.current = now;
+          startAutoPlay();
+          setActiveIndex(prev => prev + 1);
+        }
+      }
+      
+      if (isScrollingUp && activeIndex > 0) {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - throttleRef.current > 1200) {
+          throttleRef.current = now;
+          startAutoPlay();
+          setActiveIndex(prev => prev - 1);
+        }
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!touchStartY.current) return;
+      const touchEndY = e.touches[0].clientY;
+      const diff = touchStartY.current - touchEndY;
+      
+      if (Math.abs(diff) < 30) return; // Threshold
+
+      if (diff > 0 && activeIndex < TRANSITIONS.length - 1) {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - throttleRef.current > 1000) {
+          throttleRef.current = now;
+          startAutoPlay();
+          setActiveIndex(prev => prev + 1);
+          touchStartY.current = touchEndY;
+        }
+      }
+
+      if (diff < 0 && activeIndex > 0) {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - throttleRef.current > 1000) {
+          throttleRef.current = now;
+          startAutoPlay();
+          setActiveIndex(prev => prev - 1);
+          touchStartY.current = touchEndY;
+        }
+      }
+    };
+
+    // Use passive: false to allow e.preventDefault()
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    el.addEventListener('touchstart', handleTouchStart, { passive: false });
+    el.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      el.removeEventListener('wheel', handleWheel);
+      el.removeEventListener('touchstart', handleTouchStart);
+      el.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [activeIndex, startAutoPlay]);
 
   // Title animations on change
   useEffect(() => {
@@ -80,8 +168,13 @@ export const CinematicTransitions: React.FC = () => {
     });
   }, [activeIndex]);
 
+  const handleManualClick = (idx: number) => {
+    startAutoPlay();
+    setActiveIndex(idx);
+  };
+
   return (
-    <section id="transiciones-cinematicas" className="relative w-full h-[90vh] md:h-screen overflow-hidden bg-sadhana-dark text-white">
+    <section ref={sectionRef} id="transiciones-cinematicas" className="relative w-full h-[90vh] md:h-screen overflow-hidden bg-sadhana-dark text-white">
       {/* Background Images with Ken Burns Effect */}
       {TRANSITIONS.map((transition, idx) => (
         <div 
@@ -168,7 +261,7 @@ export const CinematicTransitions: React.FC = () => {
         {/* Progress Bars */}
         <div className="flex-1 max-w-lg mx-6 md:mx-12 flex gap-3 md:gap-4 items-center">
           {TRANSITIONS.map((_, idx) => (
-            <div key={`progress-${idx}`} className="flex-1 h-[2px] bg-white/10 rounded-full overflow-hidden cursor-pointer hover:h-[4px] transition-all" onClick={() => setActiveIndex(idx)}>
+            <div key={`progress-${idx}`} className="flex-1 h-[2px] bg-white/10 rounded-full overflow-hidden cursor-pointer hover:h-[4px] transition-all" onClick={() => handleManualClick(idx)}>
               <div 
                 className="h-full bg-sadhana-primary transition-all ease-linear"
                 style={{

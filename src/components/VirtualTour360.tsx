@@ -26,7 +26,11 @@ import {
   Film,
   Compass as CompassIcon,
   HelpCircle,
-  Plus
+  Plus,
+  Target,
+  Banknote,
+  GitCommit,
+  Quote
 } from 'lucide-react';
 import {
   PAMPA_NUSTA_FACILITIES,
@@ -38,7 +42,11 @@ import {
 } from '../data/sanctuaryFacilities';
 import { InteractiveSanctuaryMap } from './InteractiveSanctuaryMap';
 
-export const VirtualTour360: React.FC = () => {
+interface VirtualTour360Props {
+  onOpenProject?: (facility: SanctuaryFacility) => void;
+}
+
+export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -71,7 +79,6 @@ export const VirtualTour360: React.FC = () => {
   const [pitch, setPitch] = useState<number>(-5);
   const [fov, setFov] = useState<number>(75);
   const [isAutoRotating, setIsAutoRotating] = useState<boolean>(true);
-  const [selectedFacility, setSelectedFacility] = useState<SanctuaryFacility | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
@@ -686,131 +693,6 @@ export const VirtualTour360: React.FC = () => {
 
       </div>
 
-      {/* ------------------------------------------------------------- */}
-      {/* SELECTED FACILITY & SERVICES MODAL DRAWER */}
-      {/* ------------------------------------------------------------- */}
-      {selectedFacility && createPortal(
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-white/60 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-3xl bg-white border border-sadhana-dark/10 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[92vh]">
-            <button
-              onClick={() => setSelectedFacility(null)}
-              className="absolute top-4 right-4 p-2.5 rounded-xl bg-sadhana-sand/30 text-sadhana-brown hover:text-sadhana-dark hover:bg-sadhana-sand/50 transition-colors cursor-pointer"
-              aria-label="Cerrar modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Category & Altitude Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono uppercase tracking-wider mb-2 font-bold">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-              <span>{selectedFacility.category} · {selectedFacility.altitude}</span>
-            </div>
-
-            <h3 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-stone-950">
-              {selectedFacility.name}
-            </h3>
-            <p className="text-amber-800 font-serif italic text-sm mt-0.5">
-              {selectedFacility.quechuaName}
-            </p>
-
-            {/* Facility Image with Overlay */}
-            <div className="mt-4 aspect-[16/9] rounded-2xl overflow-hidden border border-stone-200 relative shadow-sm">
-              <img
-                src={selectedFacility.imageUrl}
-                alt={selectedFacility.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-stone-950/80 text-stone-200 text-[11px] font-mono backdrop-blur-sm">
-                Sector en Pampa Ñusta, Pisac · 3,347 msnm
-              </div>
-            </div>
-
-            {/* Full Description */}
-            <p className="mt-5 text-stone-700 text-sm sm:text-base leading-relaxed font-sans">
-              {selectedFacility.fullDesc}
-            </p>
-
-            {/* Structured Services Offered List */}
-            <div className="mt-6 space-y-3">
-              <h4 className="font-cinzel text-xs uppercase tracking-widest text-amber-900 font-bold flex items-center gap-2">
-                <Layers className="w-4 h-4 text-amber-700" />
-                Servicios del Santuario en esta Instalación:
-              </h4>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {selectedFacility.servicesOffered.map((service, i) => (
-                  <div key={i} className="p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-1.5 shadow-sm">
-                    <div className="flex items-center gap-1.5 text-amber-900 font-bold font-cinzel text-xs">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
-                      <span>{service.title}</span>
-                    </div>
-                    <p className="text-[11px] text-stone-600 font-sans leading-relaxed">
-                      {service.description}
-                    </p>
-                    <span className="text-[10px] font-mono text-stone-500 block pt-1 border-t border-stone-200/80">
-                      Público: {service.targetAudience}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Infrastructure Specs */}
-            <div className="mt-6 space-y-2">
-              <h4 className="font-cinzel text-xs uppercase tracking-widest text-amber-900 font-bold flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-700" />
-                Especificaciones de Infraestructura & Bioconstrucción:
-              </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700 font-sans">
-                {selectedFacility.infrastructureDetails.map((detail, i) => (
-                  <li key={i} className="flex items-start gap-2 bg-stone-50 p-2.5 rounded-lg border border-stone-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-700 mt-1.5 shrink-0" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Logistics & Booking info */}
-            <div className="mt-6 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-stone-800 space-y-2">
-              <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
-                <div className="flex items-center gap-1.5 text-stone-700">
-                  <Calendar className="w-3.5 h-3.5 text-amber-800" />
-                  <span><strong>Horario:</strong> {selectedFacility.schedule}</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-stone-700">
-                  <Users className="w-3.5 h-3.5 text-amber-800" />
-                  <span><strong>Capacidad:</strong> {selectedFacility.capacity}</span>
-                </div>
-              </div>
-              <p className="text-[11px] text-stone-600">
-                Las visitas y actividades se realizan bajo principios de respeto comunitario andino (Ayni) y reciprocidad voluntaria con la reserva natural.
-              </p>
-            </div>
-
-            {/* Modal Bottom CTAs */}
-            <div className="mt-6 pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <a
-                href={`https://wa.me/51958050928?text=Hola%20Pampa%20%C3%91usta%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20agendar%20una%20visita%20para%20el%20sector%3A%20${encodeURIComponent(selectedFacility.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-md"
-              >
-                <MessageCircle className="w-4 h-4 fill-white" />
-                <span>Consultar por WhatsApp (+51 958 050 928)</span>
-              </a>
-
-              <button
-                onClick={() => setSelectedFacility(null)}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-cinzel font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer border border-stone-300"
-              >
-                Cerrar Ficha
-              </button>
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
     </section>
   );
 };

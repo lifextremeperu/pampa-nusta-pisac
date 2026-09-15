@@ -25,15 +25,31 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Investigación etnobotánica sobre bioindicadores lunares y solares.',
       'Santuario de polinización nocturna con murciélagos y polillas andinas.'
     ],
-    imageUrl: '/assets/ecoaldea/garden-wheelbarrow.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=1200&q=80',
     quote: '«La Wachuma no es sólo una planta; es la memoria mineral y vegetal que sostiene la visión de la cordillera.»',
     ctaText: 'Explorar Santuario Botánico',
+    projectVision: 'Nuestra visión trasciende la botánica; es un acto de resistencia espiritual. Ante el saqueo comercial y el cambio climático, resguardamos el ADN puro del cactus más sagrado de los Andes para que las próximas generaciones aún puedan acceder a la medicina de la tierra.',
+    objectives: [
+      'Clonar genéticas milenarias resistentes a plagas modernas.',
+      'Establecer el primer registro etnobotánico de floración lunar en Pisac.',
+      'Educar a la comunidad local sobre la cosecha ética y sustentable.'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Cimientos', title: 'Acondicionamiento de Terrazas', description: 'Restauración de muros incas y preparación de sustrato volcánico mineralizado.' },
+      { phase: 'Fase II: Siembra', title: 'Traslado de Clones Madre', description: 'Plantación de los 12 linajes puros recolectados de maestros curanderos de los Andes.' },
+      { phase: 'Fase III: Legado', title: 'Apertura del Vivero Educativo', description: 'Acceso para investigadores y donación de esquejes a comunidades guardianas.' }
+    ],
+    neuromarketingHook: 'No estás financiando un jardín; estás salvando el código genético de la medicina ancestral más antigua de América. Si nosotros no la protegemos hoy, mañana será un mito.',
+    gallery: [
+      'https://images.unsplash.com/photo-1555626906-f31f09ce8817?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1587313632739-c8959d282b0e?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'wachuma-01',
     chapterNumber: 'LINAJE ANCESTRAL',
-    title: 'Trichocereus Pachanoi · 7 y 8 Costillas',
+    title: 'Trichocereus Pachanoi · 7 Costillas',
     quechuaTitle: 'Achuma Kawsay',
     tagline: 'Genética Ancestral del Valle Sagrado',
     cinemaLogline: 'Resguardamos esquejes madre que datan de las antiguas terrazas de cultivo inca.',
@@ -54,10 +70,26 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Riego con agua de deshielo tratada con cuarzo.',
       'Cuidado manual sin ningún tipo de agroquímico.'
     ],
-    imageUrl: '/assets/ecoaldea/wachuma-cinematic-master.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=1200&q=80',
     quote: '«La Wachuma no es sólo una planta; es la memoria mineral y vegetal que sostiene la visión de la cordillera.»',
     ctaText: 'Solicitar Adopción Genética',
+    projectVision: 'Protegemos específicamente el linaje de 7 y 8 costillas, considerado por los ancestros pre-incas como los más altos conductores de energía geomagnética. Estos especímenes son la realeza botánica del continente.',
+    objectives: [
+      'Prevenir la extinción de fenotipos raros.',
+      'Propagar libre de cruces híbridos comerciales.',
+      'Sistematizar sus ciclos de absorción de agua de deshielo.'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Identificación', title: 'Mapeo Genético', description: 'Viajes a zonas remotas para ubicar abuelos cactáceos centenarios.' },
+      { phase: 'Fase II: Custodia', title: 'Extracción de Esquejes', description: 'Cortes rituales y cicatrización al sol con ceniza sagrada.' },
+      { phase: 'Fase III: Propagación', title: 'Enraizamiento en Domo', description: 'Siembra en arena de río estéril para garantizar un enraizamiento del 100%.' }
+    ],
+    neuromarketingHook: 'Adopta una porción de historia viva. Al custodiar genéticamente este linaje, te conviertes en un guardián de la memoria de la tierra.',
+    gallery: [
+      'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544321303-34e8d35688a4?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'wachuma-02',
@@ -83,39 +115,26 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Protección contra heladas nocturnas durante el brote.',
       'Fotografía y registro de especies polinizadoras nocturnas.'
     ],
-    imageUrl: '/assets/ecoaldea/wachuma-bloom.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1592417817098-8f3d69102a5e?auto=format&fit=crop&w=1200&q=80',
     quote: '«Una sola noche basta para entregar la belleza suprema al universo.»',
     ctaText: 'Ver Registro Botánico',
-  },
-  {
-    id: 'wachuma-03',
-    chapterNumber: 'RESERVA GENÉTICA',
-    title: 'Esquejes Madre en Custodia',
-    quechuaTitle: 'Kawsay Waqaychay',
-    tagline: 'Bóveda Viva del Germoplasma',
-    cinemaLogline: 'El arca botánica donde se preserva el ADN original frente al cambio climático.',
-    badge: 'PRESERVACIÓN · ARCA VIVA',
-    element: 'Éter',
-    altitude: '3,347 msnm',
-    duration: 'Monitoreo Diario',
-    capacity: 'Cientos de Esquejes',
-    metrics: [
-      { label: 'Esquejes Enraizados', value: '250 Ecotipos' },
-      { label: 'Sustrato', value: 'Tierra Preparada y Arena' },
-      { label: 'Tasa de Supervivencia', value: '98%' },
-      { label: 'Red Comunitaria', value: 'Intercambio Sagrado' },
+    projectVision: 'Documentar el misterioso y fugaz ciclo de polinización nocturna de la Wachuma. Esta floración es el clímax biológico del desierto y las montañas, un baile oculto entre la planta, la luna y los murciélagos polinizadores.',
+    objectives: [
+      'Fotografiar y registrar el horario exacto de apertura floral.',
+      'Identificar la fauna polinizadora andina específica.',
+      'Recolectar semillas polinizadas naturalmente para el Banco Genético.'
     ],
-    keyHighlights: [
-      'Técnicas de corte y cicatrización al sol con ceniza volcánica.',
-      'Enraizamiento en arena de río lavada y esterilizada.',
-      'Muestrario sensorial de fenotipos andinos precolombinos.',
-      'Intercambio ritual (Chhalay) con otras comunidades guardianas.'
+    roadmap: [
+      { phase: 'Fase I: Vigilia', title: 'Monitoreo de Botones', description: 'Registro fotográfico diario de la hinchazón del botón floral.' },
+      { phase: 'Fase II: El Clímax', title: 'Vigilia Nocturna', description: 'Turnos de guardia durante la luna llena para captar la apertura total.' },
+      { phase: 'Fase III: Cosecha', title: 'Recolección del Fruto', description: 'Extracción cuidadosa del fruto dulce meses después para extraer sus semillas negras.' }
     ],
-    imageUrl: '/assets/ecoaldea/wachuma-closeup-cinematic.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80',
-    quote: '«Quien custodia el ADN sagrado custodia los próximos mil años de sanación humana.»',
-    ctaText: 'Apoyar Banco Genético',
+    neuromarketingHook: 'Solo abre una noche al año. Ser testigo de este momento requiere paciencia, respeto y sincronía con el cosmos. ¿Estás listo para entender los tiempos de la naturaleza?',
+    gallery: [
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'semillas',
@@ -141,10 +160,26 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Selección de cultivares resistentes a sequías y heladas del cambio climático.',
       'Muestrario sensorial de colores, texturas y fenotipos precolombinos.'
     ],
-    imageUrl: '/assets/ecoaldea/seed-bank-terrace.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_semillas_1789490316096.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1592417817098-8f3d69102a5e?auto=format&fit=crop&w=1200&q=80',
     quote: '«Quien custodia una semilla custodia los próximos mil años de la humanidad.»',
     ctaText: 'Ver Bóveda de Semillas',
+    projectVision: 'Frente a la homogenización de la agricultura moderna y los transgénicos, nuestra Arca de Semillas es un baluarte de soberanía alimentaria. Protegemos los colores, nutrientes y resistencia genética de los Andes.',
+    objectives: [
+      'Evitar la pérdida irreversible de papas y maíces originarios.',
+      'Garantizar semillas de alta resistencia climática para la comunidad local.',
+      'Fomentar la dieta prehispánica y nutrición viva (sin químicos).'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Arquitectura', title: 'Construcción Bioclimática', description: 'Levantamiento de la bóveda subterránea (Qollqa) para mantener temperatura constante.' },
+      { phase: 'Fase II: Recolección', title: 'Chhalay (Intercambio)', description: 'Recorrido por comunidades altas intercambiando semillas endémicas y raras.' },
+      { phase: 'Fase III: Renovación', title: 'Siembra Anual', description: 'Siembra obligatoria cada 3 años para que la semilla mantenga su viabilidad y vigor vital.' }
+    ],
+    neuromarketingHook: 'Una semilla extinta jamás regresa. Tu apoyo permite mantener vivo el banco genético alimentario más poderoso de la civilización Inca.',
+    gallery: [
+      'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1615485966567-a5ec082a6fdf?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'ninos',
@@ -170,10 +205,26 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Cuentacuentos sobre los Apus guardianes, la Ñusta encantada y el cóndor sagrado.',
       'Exploración botánica segura, círculos de música andina y tirolina rústica.'
     ],
-    imageUrl: '/assets/ecoaldea/tipis-pisac.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_ninos_1789490327633.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80',
     quote: '«Los niños no necesitan aulas de cemento; necesitan tierra fértil donde florecer libres.»',
     ctaText: 'Inscribir en la Escuela',
+    projectVision: 'Creemos que curar la tierra empieza por educar el alma. Esta escuela libre está diseñada para des-escolarizar a los niños del asfalto y reconectarlos con la sensibilidad de los ciclos lunares, las plantas y el barro.',
+    objectives: [
+      'Fomentar la inteligencia emocional a través del juego libre en la naturaleza.',
+      'Enseñar sostenibilidad práctica: cultivar, cosechar y cocinar sus propios alimentos.',
+      'Transmitir las leyendas ancestrales para preservar el idioma quechua y el respeto a la Pachamama.'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Espacios', title: 'Zonas de Juego Natural', description: 'Creación del laberinto de piedras, tirolina sobre el río y casitas de adobe.' },
+      { phase: 'Fase II: Pedagogía', title: 'Huertos Infantiles', description: 'Asignación de parcelas de tierra para que cada niño sea responsable de su cosecha.' },
+      { phase: 'Fase III: Expansión', title: 'Campamentos de Verano', description: 'Lanzamiento de retiros infantiles de inmersión de 7 días sin pantallas ni tecnología.' }
+    ],
+    neuromarketingHook: 'No inviertes en una escuela tradicional; estás patrocinando la reconexión de una generación entera con la inteligencia de la Tierra. El futuro depende de la sensibilidad que cultivemos hoy en sus corazones.',
+    gallery: [
+      'https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519340241574-2c6b4f60f64c?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'ceremonias',
@@ -199,10 +250,26 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Ceremonia nocturna de fuego frente a los nevados sagrados del Apu Linli.',
       'Círculo de integración psicológica y emocional al amanecer con baño de flores.'
     ],
-    imageUrl: '/assets/ecoaldea/maloka-ceremony.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1508873535684-277a3cb8c9ea?q=80&w=1200&auto=format&fit=crop',
     secondaryImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
     quote: '«Sanar no es borrar el dolor, sino devolver el alma a su eje cósmico original.»',
     ctaText: 'Reservar Ceremonia Sagrada',
+    projectVision: 'Nuestra Maloka Ceremonial no es un espacio turístico; es un hospital del espíritu. Creemos en el uso guiado, ético y respetuoso de las plantas maestras para lograr la desintoxicación mental y emocional de una sociedad deprimida y ansiosa.',
+    objectives: [
+      'Ofrecer un marco absoluto de seguridad física y psicológica para la medicina sagrada.',
+      'Respetar estrictamente los linajes y cantos de los Taitas andinos.',
+      'Facilitar la integración terapéutica post-ceremonia para garantizar cambios de vida reales.'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Arquitectura', title: 'Maloka Circular', description: 'Levantamiento de la estructura en forma octogonal con maderas nobles y techo de paja brava, alineada acústicamente.' },
+      { phase: 'Fase II: El Fuego', title: 'Altar Central', description: 'Diseño del fogón sin humo y consagración del espacio por los curanderos de la nación Q\'eros.' },
+      { phase: 'Fase III: Servicios', title: 'Temazcal (Cabaña de Sudar)', description: 'Construcción del domo de piedras calientes para la purificación previa al trabajo con medicina.' }
+    ],
+    neuromarketingHook: 'Cerrar los ojos alrededor del fuego aquí no es una experiencia más, es el punto de quiebre donde tu vida pasada termina y tu verdadera esencia se revela. Solo hay 10 cupos por luna llena.',
+    gallery: [
+      'https://images.unsplash.com/photo-1519750058525-4c01d4a0fc84?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1463131754021-d144e5900506?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
   {
     id: 'talleres',
@@ -228,9 +295,25 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Día 3: Agricultura regenerativa sintrópica y manejo de terrazas ancestrales.',
       'Día 4+: Vida comunitaria activa, cocina solar, gobernanza sociocrática y celebración comunitaria.'
     ],
-    imageUrl: '/assets/ecoaldea/adobe-house.jpg',
+    imageUrl: '/assets/ecoaldea/capitulo_talleres_1789490352579.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
     quote: '«La tierra no se estudia en libros; se comprende cuando tus manos tocan su latido.»',
     ctaText: 'Postular al Taller Inmersivo',
+    projectVision: 'El mundo moderno te enseña a consumir; nosotros te enseñamos a co-crear. Este retiro residencial es una maestría acelerada en autogestión, donde aprendes a construir tu propia casa con barro y cosechar el agua de lluvia. Es la transferencia tecnológica más antigua y avanzada del planeta.',
+    objectives: [
+      'Democratizar el conocimiento técnico de bioconstrucción y permacultura.',
+      'Forjar redes globales de eco-activistas capacitados para fundar sus propios proyectos.',
+      'Ofrecer un espacio de descompresión radical del sistema capitalista.'
+    ],
+    roadmap: [
+      { phase: 'Fase I: Alojamiento', title: 'Eco-Domos Estudiantiles', description: 'Construcción de los dormitorios ecológicos con baño seco y duchas solares para alojar a los aprendices.' },
+      { phase: 'Fase II: Taller Práctico', title: 'Equipamiento de Herramientas', description: 'Adquisición de mezcladoras de barro, herramientas de carpintería y laboratorio de suelos.' },
+      { phase: 'Fase III: Certificación', title: 'Alianzas Universitarias', description: 'Lograr el aval internacional para certificar el Diseño de Permacultura PDC (Permaculture Design Course).' }
+    ],
+    neuromarketingHook: 'No es un curso, es un "reset" profundo a tus habilidades de supervivencia. Aprender a levantar un muro con tus propias manos cambia la forma en que ves el universo para siempre. Quedan escasos cupos para la próxima temporada.',
+    gallery: [
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=1200&auto=format&fit=crop'
+    ]
   },
 ];

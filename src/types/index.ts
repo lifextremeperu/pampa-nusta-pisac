@@ -68,6 +68,7 @@ export interface DonationTier {
   impactMetric: string;
   popular?: boolean;
   terraceLevel: number; // For andenería visual stacking
+  impactImage?: string; // Neuromarketing background visual
 }
 
 export interface EcoaldeaModule {
@@ -88,6 +89,12 @@ export interface EcoaldeaModule {
   secondaryImage: string;
   quote: string;
   ctaText: string;
+  // Neuromarketing & Roadmap Fields
+  projectVision: string;
+  objectives: string[];
+  roadmap: { phase: string; title: string; description: string }[];
+  neuromarketingHook: string;
+  gallery: string[];
 }
 
 export interface VideoCallTopic {

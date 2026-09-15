@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "bookingCode": "PN-CALL-7183",
+    "topicId": "ceremonias",
+    "topicTitle": "Plantas Maestras, Retiros & Armonización 432 Hz",
+    "collaboratorName": "Kantu Valderrama",
+    "collaboratorRole": "Facilitador Ceremonial & Terapeuta de Sonido",
+    "date": "Miércoles 16 Set",
+    "timeSlot": "11:30 AM - 12:00 PM",
+    "platform": "whatsapp",
+    "userName": "dff",
+    "userEmail": "lifextremeru@gmail.com",
+    "userPhone": "d45242",
+    "userNotes": "lm--",
+    "createdAt": "2026-09-15T18:12:00.992Z",
+    "status": "confirmed"
+  },
+  {
+    "bookingCode": "PN-CALL-3474",
+    "topicId": "wachuma",
+    "topicTitle": "Banco Genético de Wachuma & Botánica Sagrada",
+    "collaboratorName": "Saywa Quispe",
+    "collaboratorRole": "Bióloga & Curadora Botánica del Santuario",
+    "date": "Miércoles 16 Set",
+    "timeSlot": "10:00 AM - 10:30 AM",
+    "platform": "whatsapp",
+    "userName": "ret",
+    "userEmail": "lifextremeperu@gmail.com",
+    "userPhone": "424",
+    "userNotes": "ghkg",
+    "createdAt": "2026-09-15T18:26:11.091Z",
+    "status": "confirmed"
+  }
+]

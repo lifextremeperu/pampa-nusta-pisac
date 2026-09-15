@@ -121,7 +121,10 @@ export const SecurityComplianceModal: React.FC<SecurityComplianceModalProps> = (
         </div>
 
         {/* Tab Content Body */}
-        <div className="flex-1 overflow-y-auto p-5 sm:p-8 space-y-6 text-sm">
+        <div 
+          className="flex-1 overflow-y-auto p-5 sm:p-8 space-y-6 text-sm scrollbar-thin scrollbar-thumb-sadhana-primary/50 scrollbar-track-black/20"
+          data-lenis-prevent="true"
+        >
           
           {/* TAB 1: COMPROMISO DE NO RIESGO */}
           {activeTab === 'guarantee' && (

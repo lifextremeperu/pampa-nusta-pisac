@@ -9,9 +9,11 @@ import { FullscreenMenu } from './components/1820/FullscreenMenu';
 import { LogoMarquee } from './components/1820/LogoMarquee';
 
 import { EcoaldeaModules } from './components/EcoaldeaModules';
+import { ImpactStoryScroll } from './components/ImpactStoryScroll';
 import { SocialProofSection } from './components/SocialProofSection';
 import { DonationBanner } from './components/DonationBanner';
 import { DonationSystem } from './components/DonationSystem';
+import { LocationSection } from './components/LocationSection';
 import { Footer } from './components/Footer';
 
 // Modals & Overlays
@@ -23,6 +25,9 @@ import { ModuleExperienceModal } from './components/ModuleExperienceModal';
 import { MobileCinematicDock } from './components/MobileCinematicDock';
 import { ECOALDEA_MODULES } from './data/ecoaldeaModules';
 import { EcoaldeaModule } from './types';
+import { SanctuaryFacility } from './data/sanctuaryFacilities';
+import { ProjectLandingPage } from './components/ProjectLandingPage';
+import { NustaScrollTelling } from './components/NustaScrollTelling';
 
 const VirtualTour360 = lazy(() => import('./components/VirtualTour360').then(module => ({ default: module.VirtualTour360 })));
 const CinematicTrailerModal = lazy(() => import('./components/CinematicTrailerModal').then(module => ({ default: module.CinematicTrailerModal })));
@@ -34,7 +39,9 @@ export default function App() {
   const [isSecurityModalOpen, setIsSecurityModalOpen] = useState(false);
   const [securityModalTab, setSecurityModalTab] = useState<'guarantee' | 'ssl' | 'altitude' | 'payments'>('guarantee');
   const [selectedExperienceModule, setSelectedExperienceModule] = useState<EcoaldeaModule | null>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'mecenazgo'>('home');
+  
+  const [currentPage, setCurrentPage] = useState<'home' | 'mecenazgo' | 'project-landing'>('home');
+  const [selectedSanctuaryFacility, setSelectedSanctuaryFacility] = useState<SanctuaryFacility | null>(null);
 
   // Initialize Lenis for Smooth Scrolling
   useEffect(() => {
@@ -96,6 +103,19 @@ export default function App() {
     );
   }
 
+  if (currentPage === 'project-landing' && selectedSanctuaryFacility) {
+    return (
+      <>
+        <CustomCursor />
+        <GlobalAudioPlayer />
+        <ProjectLandingPage 
+          project={selectedSanctuaryFacility} 
+          onBack={() => setCurrentPage('home')} 
+        />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white text-sadhana-dark font-sans relative overflow-x-hidden selection:bg-sadhana-primary selection:text-white">
       {/* 1. INITIAL LOADERS & AUDIO */}
@@ -108,7 +128,7 @@ export default function App() {
         <button onClick={() => setCurrentPage('home')} className="text-xl font-bold tracking-[0.2em] cursor-pointer">PAMPA ÑUSTA</button>
         <button 
           onClick={() => setIsMenuOpen(true)}
-          className="flex items-center gap-3 hover:text-sadhana-primary transition-colors"
+          className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
         >
           <span className="text-xs uppercase tracking-widest hidden md:inline font-medium">Menú</span>
           <Menu className="w-8 h-8" />
@@ -127,17 +147,31 @@ export default function App() {
         {/* Marquesina de confianza */}
         <LogoMarquee />
 
-        <div id="ecoaldea-modulos">
+        <div id="memoria-viva">
           <CinematicTransitions />
+        </div>
+
+        <div id="leyenda-originaria">
+          <NustaScrollTelling />
+        </div>
+
+        <div id="ecoaldea-modulos">
           <EcoaldeaModules 
             onSelectModuleForExperience={(module) => setSelectedExperienceModule(module)} 
             onOpenTrailer={() => setIsTrailerOpen(true)} 
           />
         </div>
 
+        <div id="historia-impacto">
+          <ImpactStoryScroll />
+        </div>
+
         <div id="recorrido-360">
           <Suspense fallback={<div className="h-[50vh] w-full flex items-center justify-center bg-sadhana-sand text-sadhana-dark">Cargando Recorrido 360°...</div>}>
-            <VirtualTour360 />
+            <VirtualTour360 onOpenProject={(fac) => {
+              setSelectedSanctuaryFacility(fac);
+              setCurrentPage('project-landing');
+            }} />
           </Suspense>
         </div>
 
@@ -151,6 +185,8 @@ export default function App() {
             window.scrollTo(0, 0);
           }} />
         </div>
+        
+        <LocationSection />
 
       </div>
 
@@ -179,7 +215,10 @@ export default function App() {
         onOpenTrailer={() => setIsTrailerOpen(true)}
         onOpenDonate={() => scrollToSection('donaciones')}
         onScrollToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        onOpenChatbot={() => setIsChatbotOpen(true)}
+        onOpenChatbot={() => {
+          setIsChatbotOpen(false);
+          setTimeout(() => setIsChatbotOpen(true), 10);
+        }}
         onOpenSecurityModal={handleOpenSecurityModal}
       />
 

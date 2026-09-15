@@ -35,34 +35,34 @@ export const GlobalAudioPlayer = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] flex items-center gap-3">
+    <div className="fixed top-5 md:top-7 right-20 md:right-40 z-[100] flex items-center gap-3 mix-blend-difference text-white">
       {/* Etiqueta de texto sutil - Neuromarketing: Genera curiosidad */}
       <div 
         className={`transition-opacity duration-700 ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'} hidden md:block`}
       >
-        <span className="text-[10px] uppercase tracking-widest text-sadhana-brown bg-white/80 px-3 py-1.5 rounded-full backdrop-blur-sm border border-sadhana-sand shadow-sm cursor-pointer" onClick={togglePlay}>
-          Activar Frecuencia de Sanación
+        <span className="text-[9px] uppercase tracking-widest bg-white/10 px-3 py-1.5 rounded-full border border-white/20 shadow-sm cursor-pointer hover:bg-white/20 transition-all font-mono font-bold" onClick={togglePlay}>
+          Activar Frecuencia
         </span>
       </div>
       
       {/* Botón Flotante */}
       <button 
         onClick={togglePlay}
-        className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-sadhana-sand/50 transition-transform hover:scale-105 active:scale-95 group relative"
+        className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white/20 transition-transform hover:scale-105 active:scale-95 group relative cursor-pointer"
         aria-label="Toggle Shamanic Audio"
       >
         {/* Anillos de expansión cuando suena */}
         {isPlaying && (
           <>
-            <span className="absolute inset-0 rounded-full border border-sadhana-primary/30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-            <span className="absolute inset-0 rounded-full border border-sadhana-primary/10 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite_1s]"></span>
+            <span className="absolute inset-0 rounded-full border border-white/40 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+            <span className="absolute inset-0 rounded-full border border-white/20 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite_1s]"></span>
           </>
         )}
         
         {isPlaying ? (
-          <Volume2 className="w-5 h-5 text-sadhana-primary" />
+          <Volume2 className="w-4 h-4 md:w-5 md:h-5 text-white" />
         ) : (
-          <VolumeX className="w-5 h-5 text-sadhana-brown/50 group-hover:text-sadhana-brown transition-colors" />
+          <VolumeX className="w-4 h-4 md:w-5 md:h-5 text-white/50 group-hover:text-white transition-colors" />
         )}
       </button>
 

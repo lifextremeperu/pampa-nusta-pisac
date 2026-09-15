@@ -255,6 +255,54 @@ export const TRIPADVISOR_REVIEWS: TripAdvisorReview[] = [
     comment: 'The stone carving technique without mortar is so precise you cannot fit a sheet of paper. Watching the sunset turn the Vilcanota River into liquid gold from Qoriwayrachina is a memory I will carry forever.',
     avatarUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200&auto=format&fit=crop',
     helpfulCount: 56
+  },
+  {
+    id: 'rev-5',
+    author: 'Clara Domínguez',
+    country: 'España',
+    countryFlag: '🇪🇸',
+    date: 'Febrero 2026',
+    rating: 5,
+    title: 'Una inmersión auténtica en la botánica andina',
+    comment: 'Participamos en el retiro de bioconstrucción y permacultura. La dedicación que tienen con el Banco Genético de la Wachuma es inspiradora. No es solo un hospedaje, es una escuela viva que transforma tu forma de ver el mundo.',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop',
+    helpfulCount: 23
+  },
+  {
+    id: 'rev-6',
+    author: 'Lucas Van Der Berg',
+    country: 'Países Bajos',
+    countryFlag: '🇳🇱',
+    date: 'Abril 2026',
+    rating: 5,
+    title: 'The true spirit of the Sacred Valley',
+    comment: 'The ceremony under the stars in the geodesic dome was the most profound experience of our trip to Peru. The respect for the ancestral traditions and the absolute safety and care provided by the guides is unmatched.',
+    avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop',
+    helpfulCount: 15
+  },
+  {
+    id: 'rev-7',
+    author: 'Julia Martins',
+    country: 'Brasil',
+    countryFlag: '🇧🇷',
+    date: 'Mayo 2026',
+    rating: 5,
+    title: 'Energía pura y sanación total',
+    comment: 'Llegar a Pampa Ñusta es desconectarse del ruido del mundo moderno. La atención al detalle en cada rincón, desde los domos hasta la comida orgánica, es impecable.',
+    avatarUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200&auto=format&fit=crop',
+    helpfulCount: 31
+  },
+  {
+    id: 'rev-8',
+    author: 'Thomas Müller',
+    country: 'Alemania',
+    countryFlag: '🇩🇪',
+    date: 'Agosto 2026',
+    rating: 5,
+    title: 'A deeply transformative experience',
+    comment: 'The permaculture practices here are not just for show; they live and breathe sustainability. The local community involvement makes everything feel absolutely genuine.',
+    avatarUrl: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=200&auto=format&fit=crop',
+    helpfulCount: 19
   }
 ];
 
@@ -269,6 +317,7 @@ export const DONATION_TIERS: DonationTier[] = [
     terraceLevel: 1,
     description: 'Destinado al cuidado botánico de la Wachuma madre, fertilización orgánica y almacenamiento bioclimático de semillas nativas.',
     impactMetric: 'Protege 1 clon madre de Wachuma y almacena 15 variedades de semillas andinas al mes.',
+    impactImage: 'https://images.unsplash.com/photo-1599420087702-8a9d949df29c?q=80&w=1200&auto=format&fit=crop',
     benefits: [
       'Certificado Digital de Mecenas con glifo ancestral',
       'Acceso al catálogo botánico y fenotipos de Wachuma',
@@ -287,6 +336,7 @@ export const DONATION_TIERS: DonationTier[] = [
     terraceLevel: 2,
     description: 'Beca y financiamiento para niños locales en la escuela libre de bioconstrucción, huertos pedagógicos y cuentacuentos bajo el queñual.',
     impactMetric: 'Beca a 1 niño de las comunidades de Pisac en el programa semanal de educación viva.',
+    impactImage: 'https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=1200&auto=format&fit=crop',
     benefits: [
       'Todos los privilegios del nivel anterior',
       'Carta y dibujo hecho a mano por los niños de la escuela',
@@ -304,6 +354,7 @@ export const DONATION_TIERS: DonationTier[] = [
     terraceLevel: 3,
     description: 'Sostiene el fuego ceremonial de plantas maestras, insumos de bioconstrucción con adobe y quincha para los talleres inmersivos de 4+ días.',
     impactMetric: 'Financia herramientas comunitarias de bioconstrucción y materiales de retiros regenerativos.',
+    impactImage: 'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=1200&auto=format&fit=crop',
     benefits: [
       'Todos los beneficios de los niveles anteriores',
       'Invitación preferente a 1 retiro o ceremonia de Luna Llena',

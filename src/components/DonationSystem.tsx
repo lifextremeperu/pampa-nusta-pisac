@@ -177,32 +177,36 @@ export const DonationSystem: React.FC = () => {
               />
             </div>
 
-            {/* Impact Metric Counters Grid */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <span className="text-3xl md:text-4xl font-black text-white block mb-2">
-                  {calculatedTerraceMeters} <span className="text-xl">m²</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-widest text-sadhana-sand/50 font-bold block leading-snug">
-                  Restauración <br />Andenes
-                </span>
+            {/* Impact Visual Cards */}
+            <div className="grid grid-cols-1 gap-6">
+              
+              {/* Terrace Restoration */}
+              <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
+                <img src="/assets/ecoaldea/mecenazgo_andenes_1789490501293.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Andenes Milenarios" />
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedTerraceMeters} <span className="text-xl md:text-2xl font-bold text-white/70">m²</span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Restauración de <br/><span className="text-[#34E0A1]">Andenes Inkas</span></span>
+                </div>
               </div>
-              <div className="text-center border-l border-r border-white/10">
-                <span className="text-3xl md:text-4xl font-black text-sadhana-primary block mb-2">
-                  {calculatedSeedBags} <span className="text-xl">fam.</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-widest text-sadhana-sand/50 font-bold block leading-snug">
-                  Apoyo <br />Familias
-                </span>
+              
+              {/* Family Support */}
+              <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
+                <img src="/assets/ecoaldea/mecenazgo_ninos_1789490513046.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Niños y Familias" />
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedSeedBags} <span className="text-xl md:text-2xl font-bold text-white/70">niños</span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Educación Viva <br/><span className="text-[#FF7A00]">Familias Locales</span></span>
+                </div>
               </div>
-              <div className="text-center">
-                <span className="text-3xl md:text-4xl font-black text-white block mb-2">
-                  {calculatedHydraulicHours} <span className="text-xl">hrs</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-widest text-sadhana-sand/50 font-bold block leading-snug">
-                  Limpieza <br />Canales
-                </span>
+
+              {/* Water & Seeds */}
+              <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
+                <img src="/assets/ecoaldea/capitulo_semillas_1789490316096.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Agua y Semillas" />
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedHydraulicHours} <span className="text-xl md:text-2xl font-bold text-white/70">semillas</span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Preservación de <br/><span className="text-sadhana-primary">Bancos Genéticos</span></span>
+                </div>
               </div>
+
             </div>
           </div>
 

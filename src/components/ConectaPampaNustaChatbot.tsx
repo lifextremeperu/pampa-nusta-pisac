@@ -102,45 +102,18 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     }
   }, [availableDates, selectedDate]);
 
-  // Initialize chat messages
+  // Initialize chat messages - always start fresh
   useEffect(() => {
-    try {
-      const savedBooking = localStorage.getItem('pampa_nusta_active_booking');
-      if (savedBooking) {
-        const parsed = JSON.parse(savedBooking);
-        setCompletedBooking(parsed);
-      }
-
-      const savedChat = localStorage.getItem('pampa_nusta_chat_history');
-      if (savedChat) {
-        setMessages(JSON.parse(savedChat));
-        return;
-      }
-    } catch {
-      // Ignore
-    }
-
     // Default starting message
     const initialMessage: Message = {
       id: 'msg-1',
       sender: 'bot',
-      text: '¡Allillanchu! Bienvenido a Conecta con Pampa Ñusta. Soy el asistente de coordinación del santuario en Pisac. Puedes agendar una sesión de videollamada personalizada de 30 minutos con uno de nuestros colaboradores o guardianes. ¿Sobre qué tema te gustaría conversar?',
+      text: 'Bienvenido a Pampa Ñusta. Estás a un paso de conectar con los guardianes del santuario. Selecciona el propósito de tu sesión privada (30 min):',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       optionsType: 'topic',
     };
     setMessages([initialMessage]);
   }, []);
-
-  // Save chat to localStorage
-  useEffect(() => {
-    if (messages.length > 0) {
-      try {
-        localStorage.setItem('pampa_nusta_chat_history', JSON.stringify(messages));
-      } catch {
-        // Ignore
-      }
-    }
-  }, [messages]);
 
   // Auto-scroll to bottom of chat
   useEffect(() => {
@@ -183,10 +156,10 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   // Step 1: Handle Topic Selection
   const handleSelectTopic = (topic: VideoCallTopic) => {
     setSelectedTopic(topic);
-    addUserMessage(`Quiero conversar sobre: ${topic.title}`);
+    addUserMessage(topic.title);
 
     addBotMessage(
-      `Excelente. Te conectaremos con ${topic.collaboratorName} (${topic.collaboratorRole}). ${topic.description} ¿A través de qué plataforma prefieres realizar la videollamada de 30 minutos?`,
+      `Perfecto. Tu sesión será con ${topic.collaboratorName} (${topic.collaboratorRole}). ¿Qué plataforma prefieres usar?`,
       'platform'
     );
   };
@@ -195,14 +168,14 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   const handleSelectPlatform = (platform: 'meet' | 'whatsapp' | 'zoom') => {
     setSelectedPlatform(platform);
     const platformNames = {
-      meet: 'Google Meet (Enlace directo)',
+      meet: 'Google Meet',
       whatsapp: 'WhatsApp Video',
       zoom: 'Zoom',
     };
-    addUserMessage(`Plataforma elegida: ${platformNames[platform]}`);
+    addUserMessage(platformNames[platform]);
 
     addBotMessage(
-      `Perfecto, usaremos ${platformNames[platform]}. Ahora, por favor selecciona el día y el turno horario que mejor se acomode a tu agenda (Hora de Perú / Cusco GMT-5):`,
+      `Excelente. Por favor selecciona el día y la hora de tu preferencia (Hora Perú GMT-5):`,
       'date_time'
     );
   };
@@ -211,10 +184,10 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   const handleConfirmDateTime = () => {
     if (!selectedDate || !selectedSlot) return;
     const slotObj = AVAILABLE_TIME_SLOTS.find((s) => s.id === selectedSlot);
-    addUserMessage(`Fecha: ${selectedDate} · Horario: ${slotObj?.label || selectedSlot}`);
+    addUserMessage(`${selectedDate} · ${slotObj?.label || selectedSlot}`);
 
     addBotMessage(
-      `¡Excelente disponibilidad! Para formalizar la videollamada y enviarte el acceso directo, por favor indícanos tus datos de contacto:`,
+      `Ya casi terminamos. Déjanos tus datos de contacto para enviarte el enlace de acceso:`,
       'contact_form'
     );
   };
@@ -224,7 +197,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     e.preventDefault();
     if (!userName.trim() || !userEmail.trim() || !userPhone.trim()) return;
 
-    addUserMessage(`Mis datos: ${userName} · ${userEmail} · ${userPhone}${userNotes ? ` · Consulta: "${userNotes}"` : ''}`);
+    addUserMessage(`Datos enviados: ${userName}`);
 
     const bookingCode = `PN-CALL-${Math.floor(1000 + Math.random() * 9000)}`;
     const slotObj = AVAILABLE_TIME_SLOTS.find((s) => s.id === selectedSlot);
@@ -248,7 +221,6 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
 
     setCompletedBooking(newBooking);
     try {
-      localStorage.setItem('pampa_nusta_active_booking', JSON.stringify(newBooking));
       await fetch('/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -259,52 +231,13 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     }
 
     addBotMessage(
-      `¡Tu videollamada ha sido programada con éxito! Tu código oficial de reserva es ${bookingCode}. A continuación tienes la ficha con todos los detalles y las opciones para sincronizarla en tu calendario o avisar directamente por WhatsApp a nuestro equipo en Pisac:`,
+      `¡Reserva confirmada con éxito! Tu código es ${bookingCode}. Puedes agregarla a tu calendario o notificarnos por WhatsApp.`,
       'confirmation',
       newBooking
     );
   };
 
-  // Handle Free-Form Chat Questions
-  const handleSendFreeText = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputText.trim()) return;
-
-    const userText = inputText.trim();
-    setInputText('');
-    addUserMessage(userText);
-
-    const lower = userText.toLowerCase();
-
-    if (lower.includes('reiniciar') || lower.includes('nuevo') || lower.includes('otra')) {
-      handleResetChat();
-      return;
-    }
-
-    setIsTyping(true);
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userText })
-      });
-      const data = await res.json();
-      if (data.reply) {
-        addBotMessage(data.reply);
-      } else {
-        throw new Error('No reply');
-      }
-    } catch (error) {
-      console.error(error);
-      addBotMessage('Lo siento, tuve un problema conectando con mi base de conocimientos. Por favor intenta de nuevo.');
-    } finally {
-      setIsTyping(false);
-    }
-  };
-
   const handleResetChat = () => {
-    localStorage.removeItem('pampa_nusta_chat_history');
-    localStorage.removeItem('pampa_nusta_active_booking');
     setSelectedTopic(null);
     setCompletedBooking(null);
     setUserName('');
@@ -315,7 +248,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
       {
         id: `msg-${Date.now()}`,
         sender: 'bot',
-        text: '¡Sesión reiniciada! Bienvenido/a nuevamente a Conecta con Pampa Ñusta. ¿Sobre qué tema deseas agendar tu videollamada programada?',
+        text: 'Sesión reiniciada. ¿Sobre qué tema deseas agendar tu videollamada?',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         optionsType: 'topic',
       },
@@ -340,26 +273,25 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   // WhatsApp Message Generator
   const getWhatsAppBookingUrl = (booking: VideoCallBooking) => {
     const text = encodeURIComponent(
-      `¡Hola Pampa Ñusta! He programado una videollamada a través del chatbot:\n\n` +
+      `¡Hola Pampa Ñusta! He programado una videollamada:\n\n` +
       `📌 *Código:* ${booking.bookingCode}\n` +
       `👤 *Nombre:* ${booking.userName}\n` +
       `🌿 *Tema:* ${booking.topicTitle}\n` +
-      `🤝 *Colaborador:* ${booking.collaboratorName}\n` +
-      `📅 *Fecha:* ${booking.date}\n` +
-      `⏰ *Horario:* ${booking.timeSlot} (Hora Perú)\n` +
-      `💻 *Plataforma:* ${booking.platform.toUpperCase()}\n\n` +
-      `Agradezco la confirmación por este medio.`
+      `🤝 *Con:* ${booking.collaboratorName}\n` +
+      `📅 *Fecha:* ${booking.date} | ${booking.timeSlot} (Hora Perú)\n` +
+      `💻 *Vía:* ${booking.platform.toUpperCase()}\n\n` +
+      `Agradezco la confirmación.`
     );
     return `https://wa.me/51958050928?text=${text}`;
   };
 
   const getTopicIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Sprout': return <Sprout className="w-4 h-4 text-emerald-400" />;
-      case 'Wheat': return <Wheat className="w-4 h-4 text-amber-400" />;
-      case 'Flame': return <Flame className="w-4 h-4 text-rose-400" />;
-      case 'Tent': return <Tent className="w-4 h-4 text-yellow-400" />;
-      default: return <Compass className="w-4 h-4 text-[#d8974a]" />;
+      case 'Sprout': return <Sprout className="w-5 h-5 text-emerald-600" />;
+      case 'Wheat': return <Wheat className="w-5 h-5 text-emerald-600" />;
+      case 'Flame': return <Flame className="w-5 h-5 text-emerald-600" />;
+      case 'Tent': return <Tent className="w-5 h-5 text-emerald-600" />;
+      default: return <Compass className="w-5 h-5 text-emerald-600" />;
     }
   };
 
@@ -369,21 +301,22 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
       {/* FLOATING TRIGGER BUTTON (WHATSAPP REDIRECT)                   */}
       {/* ------------------------------------------------------------- */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 pointer-events-auto">
-           <a
-             href="https://wa.me/51958050928?text=Hola%20Pampa%20%C3%91usta%2C%20deseo%20agendar%20una%20videollamada%20para%20conocer%20m%C3%A1s%20sobre%20el%20Santuario%20y%20las%20experiencias."
-             target="_blank"
-             rel="noopener noreferrer"
-             className="group relative flex items-center gap-3 px-5 py-3.5 bg-sadhana-dark/95 backdrop-blur-md border border-sadhana-primary/40 text-sadhana-sand hover:text-white hover:border-sadhana-primary hover:bg-sadhana-dark transition-all rounded-full shadow-2xl cursor-pointer"
+        <div className="hidden md:block fixed bottom-6 right-6 z-50 pointer-events-auto">
+           <button
+             onClick={() => {
+               setIsOpen(true);
+               setIsMinimized(false);
+             }}
+             className="group relative flex items-center gap-3 px-5 py-3.5 bg-emerald-600 backdrop-blur-md border border-emerald-500 text-white hover:bg-emerald-700 transition-all rounded-full shadow-2xl cursor-pointer"
            >
              <div className="relative">
-               <span className="absolute -inset-1 bg-sadhana-primary/30 rounded-full animate-ping" />
+               <span className="absolute -inset-1 bg-emerald-400/50 rounded-full animate-ping" />
                <MessageSquare className="w-5 h-5 relative z-10" />
              </div>
-             <span className="font-cinzel text-xs font-bold uppercase tracking-widest hidden sm:inline-block">
+             <span className="font-sans text-xs font-bold uppercase tracking-widest hidden sm:inline-block">
                Agendar Videollamada
              </span>
-           </a>
+           </button>
         </div>
       )}
 
@@ -392,48 +325,48 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
       {/* ------------------------------------------------------------- */}
       {isOpen && (
         <div
-          className={`fixed z-50 transition-all duration-300 font-sans text-sadhana-dark ${
+          className={`fixed z-50 transition-all duration-300 font-sans ${
             isMinimized
               ? 'bottom-4 right-4 w-72 sm:w-80 h-14 rounded-t-2xl shadow-xl'
-              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-full sm:w-[480px] h-[92vh] sm:h-[700px] max-h-[95vh] rounded-2xl shadow-2xl'
+              : 'bottom-0 left-0 w-full h-[90vh] sm:bottom-6 sm:right-6 sm:left-auto sm:w-[480px] sm:h-[700px] sm:max-h-[95vh] sm:rounded-2xl shadow-2xl rounded-t-2xl'
           }`}
         >
-          <div className="w-full h-full flex flex-col bg-white border border-sadhana-dark/10 relative overflow-hidden backdrop-blur-xl rounded-[inherit]">
+          <div className="w-full h-full flex flex-col bg-gray-50 border border-emerald-100 relative overflow-hidden backdrop-blur-2xl rounded-[inherit] shadow-2xl">
             
             {/* Top Header */}
             <div
               onClick={() => {
                 if (isMinimized) setIsMinimized(false);
               }}
-              className={`px-5 py-4 bg-sadhana-dark border-b border-sadhana-primary/30 flex items-center justify-between shrink-0 relative z-10 ${
-                isMinimized ? 'cursor-pointer hover:bg-sadhana-dark/90' : ''
+              className={`px-5 py-4 bg-emerald-700 border-b border-emerald-800 flex items-center justify-between shrink-0 relative z-10 ${
+                isMinimized ? 'cursor-pointer hover:bg-emerald-800' : ''
               }`}
             >
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-sadhana-primary/20 flex items-center justify-center border border-sadhana-primary/30">
-                  <Compass className="w-4 h-4 text-sadhana-primary" />
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center border border-white/30 shadow-inner">
+                  <Video className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-bold text-white tracking-widest uppercase font-cinzel">
-                    Conecta Pampa Ñusta
+                  <h2 className="text-sm font-bold text-white tracking-widest uppercase font-sans">
+                    Reservas Oficiales
                   </h2>
-                  <p className="text-[10px] text-sadhana-sand font-mono">
-                    {isMinimized ? 'Click para maximizar' : 'Asistencia y Reservas 24/7'}
+                  <p className="text-[10px] text-emerald-200 font-mono tracking-widest uppercase">
+                    {isMinimized ? 'Maximizar panel' : 'Pampa Ñusta · Pisac'}
                   </p>
                 </div>
               </div>
 
               {/* Action Icons */}
-              <div className="flex items-center gap-3 text-sadhana-sand hover:text-white transition-colors" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center gap-4 text-emerald-100 hover:text-white transition-colors" onClick={(e) => e.stopPropagation()}>
                 {!isMinimized && (
-                  <button onClick={handleResetChat} className="hover:text-sadhana-primary transition-colors cursor-pointer" title="Reiniciar Sesión">
+                  <button onClick={handleResetChat} className="hover:text-white transition-colors cursor-pointer" title="Reiniciar Sesión">
                     <RotateCcw className="w-4 h-4" />
                   </button>
                 )}
-                <button onClick={() => setIsMinimized(!isMinimized)} className="hover:text-sadhana-primary transition-colors cursor-pointer">
+                <button onClick={() => setIsMinimized(!isMinimized)} className="hover:text-white transition-colors cursor-pointer">
                   {isMinimized ? <Maximize2 className="w-4 h-4" /> : <Minimize2 className="w-4 h-4" />}
                 </button>
-                <button onClick={handleClose} className="hover:text-sadhana-primary transition-colors cursor-pointer" title="Cerrar">
+                <button onClick={handleClose} className="hover:text-white transition-colors cursor-pointer" title="Cerrar">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -443,27 +376,24 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
             {!isMinimized && (
               <>
                 {/* Chat Messages Stream */}
-                <div className="flex-1 overflow-y-auto p-5 space-y-6 text-sm bg-[#faf8f5] relative z-10 scrollbar-thin scrollbar-thumb-sadhana-primary scrollbar-track-transparent">
+                <div 
+                  className="flex-1 overflow-y-auto p-5 space-y-6 text-sm relative z-10 scrollbar-thin scrollbar-thumb-emerald-200 scrollbar-track-transparent"
+                  data-lenis-prevent="true"
+                >
                   
-                  {/* Banner */}
-                  <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[11px] leading-relaxed mb-4">
-                    <span className="font-bold block mb-1 font-cinzel text-xs">SISTEMA DE RESERVAS</span>
-                    Canal seguro para agendar una videollamada de 30 minutos con los guardianes del santuario.
-                  </div>
-
                   {messages.map((msg) => (
                     <div
                       key={msg.id}
                       className={`flex flex-col mb-4 ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
                     >
-                      <span className="text-[9px] text-stone-400 font-mono mb-1 px-1">
+                      <span className="text-[9px] text-gray-400 font-mono mb-1 px-1">
                         {msg.timestamp}
                       </span>
                       <div
-                        className={`px-4 py-2.5 rounded-2xl max-w-[85%] ${
+                        className={`px-4 py-3 rounded-2xl max-w-[85%] text-sm shadow-sm ${
                           msg.sender === 'user'
-                            ? 'bg-sadhana-dark text-white rounded-tr-sm'
-                            : 'bg-white border border-stone-200 text-stone-800 rounded-tl-sm shadow-sm'
+                            ? 'bg-emerald-600 text-white rounded-tr-sm font-medium'
+                            : 'bg-white border border-gray-100 text-gray-800 rounded-tl-sm font-sans'
                         }`}
                       >
                         {msg.text}
@@ -473,34 +403,21 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                       {/* INTERACTIVE COMPONENT: STEP 1 - TOPIC SELECTION     */}
                       {/* --------------------------------------------------- */}
                       {msg.optionsType === 'topic' && (
-                        <div className="mt-3 w-full space-y-2 animate-fadeIn">
-                          <span className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider block">
-                            Elige el tema de tu videollamada:
-                          </span>
-                          <div className="grid grid-cols-1 gap-2">
-                            {VIDEO_CALL_TOPICS.map((topic) => (
-                              <button
-                                key={topic.id}
-                                onClick={() => handleSelectTopic(topic)}
-                                className="p-3 rounded-xl bg-[#1e150f] border border-[#443123] hover:border-amber-500 hover:bg-[#2c1e15] transition-all text-left flex items-start gap-3 group cursor-pointer"
-                              >
-                                <div className="w-8 h-8 rounded-lg bg-[#2e1f15] border border-[#523d2b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                  {getTopicIcon(topic.iconName)}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center justify-between">
-                                    <h4 className="font-cinzel text-xs font-bold text-[#f5eee6] group-hover:text-amber-300 truncate">
-                                      {topic.title}
-                                    </h4>
-                                    <ChevronRight className="w-3.5 h-3.5 text-stone-500 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all shrink-0" />
-                                  </div>
-                                  <p className="font-mono text-[10px] text-amber-500 font-semibold mt-0.5">
-                                    Con: {topic.collaboratorName} · {topic.collaboratorRole}
-                                  </p>
-                                </div>
-                              </button>
-                            ))}
-                          </div>
+                        <div className="mt-4 w-full grid grid-cols-2 gap-3 animate-fadeIn">
+                          {VIDEO_CALL_TOPICS.map((topic) => (
+                            <button
+                              key={topic.id}
+                              onClick={() => handleSelectTopic(topic)}
+                              className="p-4 rounded-2xl bg-white border border-emerald-100 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-center flex flex-col items-center justify-center gap-3 group cursor-pointer shadow-sm hover:shadow-md aspect-square"
+                            >
+                              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-200 transition-all shrink-0">
+                                {getTopicIcon(topic.iconName)}
+                              </div>
+                              <span className="font-sans text-[11px] font-bold text-gray-800 group-hover:text-emerald-700 leading-tight line-clamp-2 px-1">
+                                {topic.title}
+                              </span>
+                            </button>
+                          ))}
                         </div>
                       )}
 
@@ -508,56 +425,36 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                       {/* INTERACTIVE COMPONENT: STEP 2 - PLATFORM SELECTION  */}
                       {/* --------------------------------------------------- */}
                       {msg.optionsType === 'platform' && (
-                        <div className="mt-3 w-full space-y-2 animate-fadeIn">
-                          <span className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider block">
-                            Selecciona tu plataforma de conexión:
-                          </span>
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                            <button
-                              onClick={() => handleSelectPlatform('meet')}
-                              className="p-3 rounded-xl bg-[#1e150f] border border-[#443123] hover:border-emerald-500 hover:bg-[#281c13] transition-all text-center flex flex-col items-center gap-1.5 cursor-pointer group"
-                            >
-                              <div className="w-8 h-8 rounded-full bg-emerald-950/60 border border-emerald-600/50 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                                <Video className="w-4 h-4" />
-                              </div>
-                              <span className="font-cinzel text-xs font-bold text-stone-200 group-hover:text-emerald-300">
-                                Google Meet
-                              </span>
-                              <span className="text-[9px] font-mono text-stone-400">
-                                Enlace directo
-                              </span>
-                            </button>
+                        <div className="mt-4 w-full grid grid-cols-3 gap-3 animate-fadeIn">
+                          <button
+                            onClick={() => handleSelectPlatform('meet')}
+                            className="p-4 rounded-2xl bg-white border border-emerald-100 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-center flex flex-col items-center gap-2 cursor-pointer group shadow-sm hover:shadow-md"
+                          >
+                            <Video className="w-6 h-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                            <span className="font-sans text-[10px] uppercase font-bold tracking-widest text-gray-700 group-hover:text-emerald-700">
+                              Meet
+                            </span>
+                          </button>
 
-                            <button
-                              onClick={() => handleSelectPlatform('whatsapp')}
-                              className="p-3 rounded-xl bg-[#1e150f] border border-[#443123] hover:border-emerald-500 hover:bg-[#281c13] transition-all text-center flex flex-col items-center gap-1.5 cursor-pointer group"
-                            >
-                              <div className="w-8 h-8 rounded-full bg-emerald-950/60 border border-emerald-600/50 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                                <MessageCircle className="w-4 h-4" />
-                              </div>
-                              <span className="font-cinzel text-xs font-bold text-stone-200 group-hover:text-emerald-300">
-                                WhatsApp
-                              </span>
-                              <span className="text-[9px] font-mono text-stone-400">
-                                Videollamada
-                              </span>
-                            </button>
+                          <button
+                            onClick={() => handleSelectPlatform('whatsapp')}
+                            className="p-4 rounded-2xl bg-white border border-emerald-100 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-center flex flex-col items-center gap-2 cursor-pointer group shadow-sm hover:shadow-md"
+                          >
+                            <MessageCircle className="w-6 h-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                            <span className="font-sans text-[10px] uppercase font-bold tracking-widest text-gray-700 group-hover:text-emerald-700">
+                              WhatsApp
+                            </span>
+                          </button>
 
-                            <button
-                              onClick={() => handleSelectPlatform('zoom')}
-                              className="p-3 rounded-xl bg-[#1e150f] border border-[#443123] hover:border-sky-500 hover:bg-[#281c13] transition-all text-center flex flex-col items-center gap-1.5 cursor-pointer group"
-                            >
-                              <div className="w-8 h-8 rounded-full bg-sky-950/60 border border-sky-600/50 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
-                                <ExternalLink className="w-4 h-4" />
-                              </div>
-                              <span className="font-cinzel text-xs font-bold text-stone-200 group-hover:text-sky-300">
-                                Zoom
-                              </span>
-                              <span className="text-[9px] font-mono text-stone-400">
-                                ID de reunión
-                              </span>
-                            </button>
-                          </div>
+                          <button
+                            onClick={() => handleSelectPlatform('zoom')}
+                            className="p-4 rounded-2xl bg-white border border-emerald-100 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-center flex flex-col items-center gap-2 cursor-pointer group shadow-sm hover:shadow-md"
+                          >
+                            <ExternalLink className="w-6 h-6 text-sky-600 group-hover:scale-110 transition-transform" />
+                            <span className="font-sans text-[10px] uppercase font-bold tracking-widest text-gray-700 group-hover:text-sky-700">
+                              Zoom
+                            </span>
+                          </button>
                         </div>
                       )}
 
@@ -565,47 +462,39 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                       {/* INTERACTIVE COMPONENT: STEP 3 - DATE & TIME SLOTS   */}
                       {/* --------------------------------------------------- */}
                       {msg.optionsType === 'date_time' && (
-                        <div className="mt-3 w-full p-4 rounded-2xl bg-[#1d140e] border border-[#4a3626] space-y-3.5 animate-fadeIn">
+                        <div className="mt-4 w-full p-5 rounded-2xl bg-white border border-emerald-100 space-y-5 animate-fadeIn shadow-sm">
                           <div>
-                            <span className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                              <Calendar className="w-3.5 h-3.5 text-[#d8974a]" />
-                              <span>1. Selecciona el Día (Próximos 7 días):</span>
-                            </span>
-                            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
+                            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
                               {availableDates.map((dateObj) => (
                                 <button
                                   key={dateObj.value}
                                   onClick={() => setSelectedDate(dateObj.label)}
-                                  className={`px-3 py-2 rounded-xl text-[10px] sm:text-xs font-mono whitespace-nowrap transition-all cursor-pointer ${
+                                  className={`px-4 py-3 rounded-xl text-xs font-sans whitespace-nowrap transition-all cursor-pointer ${
                                     selectedDate === dateObj.label
-                                      ? 'bg-[#c2853f] text-[#14100c] font-bold shadow-md'
-                                      : 'bg-[#291d14] text-stone-300 hover:bg-[#38281b] border border-[#443123]'
+                                      ? 'bg-emerald-600 text-white font-bold shadow-md'
+                                      : 'bg-gray-50 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 border border-gray-200'
                                   }`}
                                 >
-                                  {dateObj.label}
+                                  {dateObj.label.split(',')[0]} {/* Show short day */}
                                 </button>
                               ))}
                             </div>
                           </div>
 
                           <div>
-                            <span className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                              <Clock className="w-3.5 h-3.5 text-[#d8974a]" />
-                              <span>2. Turno Horario (Hora Perú GMT-5):</span>
-                            </span>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                               {AVAILABLE_TIME_SLOTS.map((slot) => (
                                 <button
                                   key={slot.id}
                                   onClick={() => setSelectedSlot(slot.id)}
-                                  className={`p-2.5 rounded-xl text-[11px] font-mono flex items-center justify-between transition-all cursor-pointer ${
+                                  className={`p-3 rounded-xl text-xs font-mono flex items-center justify-between transition-all cursor-pointer ${
                                     selectedSlot === slot.id
-                                      ? 'bg-emerald-900/90 text-emerald-200 border border-emerald-400 font-bold shadow-md'
-                                      : 'bg-[#251a12] text-stone-300 hover:bg-[#342519] border border-[#412f22]'
+                                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-500 font-bold'
+                                      : 'bg-gray-50 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 border border-gray-200'
                                   }`}
                                 >
                                   <span>{slot.label}</span>
-                                  {selectedSlot === slot.id && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
+                                  {selectedSlot === slot.id && <CheckCircle2 className="w-4 h-4 text-emerald-600" />}
                                 </button>
                               ))}
                             </div>
@@ -614,9 +503,9 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                           <button
                             onClick={handleConfirmDateTime}
                             disabled={!selectedDate || !selectedSlot}
-                            className="w-full py-2.5 px-4 rounded-xl bg-[#c2853f] hover:bg-[#d8974a] disabled:opacity-40 disabled:cursor-not-allowed text-[#14100c] font-cinzel font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                            className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md disabled:opacity-40 disabled:cursor-not-allowed mt-2"
                           >
-                            <span>Continuar con este Horario</span>
+                            <span>Continuar</span>
                             <ChevronRight className="w-4 h-4" />
                           </button>
                         </div>
@@ -628,78 +517,66 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                       {msg.optionsType === 'contact_form' && (
                         <form
                           onSubmit={handleSubmitContactForm}
-                          className="mt-3 w-full p-4 rounded-2xl bg-[#1d140e] border border-[#4a3626] space-y-3 animate-fadeIn text-left"
+                          className="mt-4 w-full p-5 rounded-2xl bg-white border border-emerald-100 space-y-4 animate-fadeIn text-left shadow-sm"
                         >
                           <div>
-                            <label className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider block mb-1">
-                              Nombre Completo: *
-                            </label>
                             <div className="relative">
-                              <User className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-3" />
+                              <User className="w-4 h-4 text-emerald-600/60 absolute left-4 top-3.5" />
                               <input
                                 type="text"
                                 required
                                 value={userName}
                                 onChange={(e) => setUserName(e.target.value)}
-                                placeholder="Ej. Maria Elena Quispe"
-                                className="w-full pl-9 pr-3 py-2 rounded-xl bg-[#120c08] border border-[#412f22] text-stone-100 text-xs focus:outline-none focus:border-amber-500"
+                                placeholder="Nombre Completo"
+                                className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
                           </div>
 
                           <div>
-                            <label className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider block mb-1">
-                              Correo Electrónico (para el enlace de reunión): *
-                            </label>
                             <div className="relative">
-                              <Mail className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-3" />
+                              <Mail className="w-4 h-4 text-emerald-600/60 absolute left-4 top-3.5" />
                               <input
                                 type="email"
                                 required
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                placeholder="maria@ejemplo.com"
-                                className="w-full pl-9 pr-3 py-2 rounded-xl bg-[#120c08] border border-[#412f22] text-stone-100 text-xs focus:outline-none focus:border-amber-500"
+                                placeholder="Correo Electrónico"
+                                className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
                           </div>
 
                           <div>
-                            <label className="font-mono text-[10px] text-[#e5aa5d] font-bold uppercase tracking-wider block mb-1">
-                              Teléfono / WhatsApp (con código de país): *
-                            </label>
                             <div className="relative">
-                              <Phone className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-3" />
+                              <Phone className="w-4 h-4 text-emerald-600/60 absolute left-4 top-3.5" />
                               <input
                                 type="tel"
                                 required
                                 value={userPhone}
                                 onChange={(e) => setUserPhone(e.target.value)}
-                                placeholder="+51 987 654 321"
-                                className="w-full pl-9 pr-3 py-2 rounded-xl bg-[#120c08] border border-[#412f22] text-stone-100 text-xs focus:outline-none focus:border-amber-500"
+                                placeholder="WhatsApp (con código país)"
+                                className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
                           </div>
 
                           <div>
-                            <label className="font-mono text-[10px] text-[#a89582] uppercase tracking-wider block mb-1">
-                              ¿Alguna pregunta o tema clave para la llamada? (Opcional)
-                            </label>
                             <textarea
                               rows={2}
                               value={userNotes}
                               onChange={(e) => setUserNotes(e.target.value)}
-                              placeholder="Ej. Deseo conocer fechas del próximo taller y requisitos para visitar el santuario..."
-                              className="w-full p-2.5 rounded-xl bg-[#120c08] border border-[#412f22] text-stone-100 text-xs focus:outline-none focus:border-amber-500 resize-none"
+                              placeholder="Tema o consulta clave (opcional)..."
+                              className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white resize-none transition-colors"
                             />
                           </div>
 
                           <button
                             type="submit"
-                            className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                            className="w-full py-4 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-4"
                           >
-                            <CheckCircle2 className="w-4 h-4" />
-                            <span>Confirmar Reserva de Videollamada</span>
+                            <CheckCircle2 className="w-5 h-5" />
+                            <span>Confirmar Reserva</span>
                           </button>
                         </form>
                       )}
@@ -708,73 +585,66 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                       {/* INTERACTIVE COMPONENT: STEP 5 - CONFIRMATION CARD   */}
                       {/* --------------------------------------------------- */}
                       {msg.optionsType === 'confirmation' && msg.bookingData && (
-                        <div className="mt-3 w-full p-4 rounded-2xl bg-[#1d150f] border-2 border-emerald-500/70 shadow-2xl animate-fadeIn text-left">
+                        <div className="mt-4 w-full p-5 rounded-2xl bg-white border-2 border-emerald-500 shadow-xl animate-fadeIn text-left">
                           
-                          {/* Confirmation Header */}
-                          <div className="flex items-center justify-between pb-3 border-b border-[#3e2c1e]">
-                            <div className="flex items-center gap-2">
-                              <div className="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-emerald-400">
-                                <CheckCircle2 className="w-4 h-4" />
-                              </div>
-                              <div>
-                                <span className="font-mono text-[9px] text-emerald-400 font-bold uppercase tracking-wider block">
-                                  RESERVA CONFIRMADA
-                                </span>
-                                <h4 className="font-cinzel text-xs font-bold text-amber-200">
-                                  Ficha Oficial de Videollamada
-                                </h4>
-                              </div>
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                              <CheckCircle2 className="w-5 h-5" />
                             </div>
-                            <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#2c1e15] border border-amber-600/50 text-amber-400">
-                              {msg.bookingData.bookingCode}
-                            </span>
-                          </div>
-
-                          {/* Reservation Summary */}
-                          <div className="py-3 space-y-2 text-xs">
-                            <div className="flex items-center justify-between text-stone-300">
-                              <span className="text-stone-400 font-mono text-[10px] uppercase">Tema:</span>
-                              <span className="font-semibold text-right max-w-[220px] truncate">{msg.bookingData.topicTitle}</span>
-                            </div>
-                            <div className="flex items-center justify-between text-stone-300">
-                              <span className="text-stone-400 font-mono text-[10px] uppercase">Colaborador:</span>
-                              <span className="font-semibold text-amber-300">{msg.bookingData.collaboratorName}</span>
-                            </div>
-                            <div className="flex items-center justify-between text-stone-300">
-                              <span className="text-stone-400 font-mono text-[10px] uppercase">Fecha y Hora:</span>
-                              <span className="font-semibold text-emerald-300">{msg.bookingData.date} · {msg.bookingData.timeSlot}</span>
-                            </div>
-                            <div className="flex items-center justify-between text-stone-300">
-                              <span className="text-stone-400 font-mono text-[10px] uppercase">Plataforma:</span>
-                              <span className="font-mono uppercase font-bold text-amber-400">{msg.bookingData.platform}</span>
-                            </div>
-                            <div className="flex items-center justify-between text-stone-300">
-                              <span className="text-stone-400 font-mono text-[10px] uppercase">Participante:</span>
-                              <span>{msg.bookingData.userName}</span>
+                            <div>
+                              <span className="font-sans text-[9px] text-emerald-600 font-bold uppercase tracking-widest block">
+                                CÓDIGO DE RESERVA
+                              </span>
+                              <span className="font-mono text-sm font-bold text-gray-900">
+                                {msg.bookingData.bookingCode}
+                              </span>
                             </div>
                           </div>
 
-                          {/* Action Buttons: WhatsApp & Google Calendar */}
-                          <div className="pt-3 border-t border-[#3e2c1e] space-y-2">
+                          <div className="py-4 border-t border-b border-gray-100 space-y-3 text-sm font-sans">
+                            <div className="flex justify-between text-gray-800">
+                              <span className="text-gray-500">Tema:</span>
+                              <span className="font-medium text-right max-w-[200px] truncate">{msg.bookingData.topicTitle}</span>
+                            </div>
+                            <div className="flex justify-between text-gray-800">
+                              <span className="text-gray-500">Con:</span>
+                              <span className="font-bold text-emerald-700">{msg.bookingData.collaboratorName}</span>
+                            </div>
+                            <div className="flex justify-between text-gray-800">
+                              <span className="text-gray-500">Fecha:</span>
+                              <span className="font-medium">{msg.bookingData.date} · {msg.bookingData.timeSlot}</span>
+                            </div>
+                          </div>
+
+                          <div className="pt-4 space-y-3">
                             <a
                               href={getWhatsAppBookingUrl(msg.bookingData as VideoCallBooking)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-full py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-lg text-center"
+                              className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-sans text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2 shadow-md text-center"
                             >
                               <MessageCircle className="w-4 h-4 fill-white" />
-                              <span>Notificar por WhatsApp (+51 958 050 928)</span>
+                              <span>Confirmar vía WhatsApp</span>
                             </a>
 
                             <a
                               href={getGoogleCalendarUrl(msg.bookingData as VideoCallBooking)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-full py-2 px-3 rounded-xl bg-[#281c13] hover:bg-[#38271a] border border-amber-600/50 text-amber-300 font-mono text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-2 text-center"
+                              className="w-full py-3 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 font-sans text-[10px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 text-center"
                             >
-                              <Calendar className="w-3.5 h-3.5" />
-                              <span>Agregar a Google Calendar</span>
+                              <Calendar className="w-4 h-4 text-emerald-600" />
+                              <span>Añadir a Google Calendar</span>
                             </a>
+
+                            {/* Nueomarketing Hook: Nueva Reserva */}
+                            <button
+                              onClick={handleResetChat}
+                              className="w-full py-3 px-4 mt-2 rounded-xl bg-transparent hover:bg-gray-50 text-emerald-600 font-sans font-bold text-[10px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 border-t border-dashed border-gray-200 cursor-pointer"
+                            >
+                              <RotateCcw className="w-3.5 h-3.5" />
+                              <span>Agendar Nueva Sesión</span>
+                            </button>
                           </div>
 
                         </div>
@@ -785,36 +655,15 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
 
                   {/* Typing Indicator */}
                   {isTyping && (
-                    <div className="flex items-center gap-1.5 p-3 rounded-2xl bg-[#221811] border border-[#473426] text-amber-400 max-w-[120px]">
-                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce" />
-                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce [animation-delay:0.2s]" />
-                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce [animation-delay:0.4s]" />
+                    <div className="flex items-center gap-2 p-4 rounded-2xl bg-white border border-gray-100 text-emerald-600 max-w-[100px] shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-bounce" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-bounce [animation-delay:0.2s]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-bounce [animation-delay:0.4s]" />
                     </div>
                   )}
 
                   <div ref={messagesEndRef} />
                 </div>
-
-                {/* Free Text Input Form */}
-                <form
-                  onSubmit={handleSendFreeText}
-                  className="p-4 bg-white border-t border-stone-200 flex items-center gap-3 shrink-0 relative z-10 rounded-b-2xl"
-                >
-                  <input
-                    type="text"
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    placeholder="Escribe tu consulta o dudas aquí..."
-                    className="flex-1 bg-stone-100 text-stone-800 placeholder:text-stone-400 text-sm px-4 py-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-sadhana-primary/50"
-                  />
-                  <button
-                    type="submit"
-                    disabled={!inputText.trim() || isTyping}
-                    className="w-10 h-10 rounded-full bg-sadhana-primary flex items-center justify-center text-white hover:bg-sadhana-dark transition-colors disabled:opacity-50 cursor-pointer"
-                  >
-                    <Send className="w-4 h-4" />
-                  </button>
-                </form>
               </>
             )}
 
