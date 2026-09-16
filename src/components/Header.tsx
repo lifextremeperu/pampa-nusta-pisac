@@ -22,9 +22,11 @@ export const Header: React.FC<HeaderProps> = ({
   const [isAudioPlaying, setIsAudioPlaying] = useState(andeanAudio.getIsPlaying());
   const { i18n } = useTranslation();
 
+  const languages = ['es', 'en', 'fr', 'pt'];
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'es' ? 'en' : 'es';
-    i18n.changeLanguage(newLang);
+    const currentIndex = languages.indexOf(i18n.language) || 0;
+    const nextIndex = (currentIndex + 1) % languages.length;
+    i18n.changeLanguage(languages[nextIndex]);
   };
 
   useEffect(() => {

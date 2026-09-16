@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home": "Home",
+    "location": "Location",
+    "facilities": "Facilities",
+    "donate": "Donate",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "ECOLOGICAL",
+    "title2": "SANCTUARY",
+    "subtitle": "A refuge for the soul in the heart of the Sacred Valley",
+    "cta": "Explore Facilities",
+    "location": "Pampa Ñusta · Pisac"
+  }
+}

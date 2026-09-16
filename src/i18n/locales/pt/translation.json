@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home": "Início",
+    "location": "Localização",
+    "facilities": "Instalações",
+    "donate": "Doar",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title1": "SANTUÁRIO",
+    "title2": "ECOLÓGICO",
+    "subtitle": "Um refúgio para a alma no coração do Vale Sagrado",
+    "cta": "Explorar Instalações",
+    "location": "Pampa Ñusta · Pisac"
+  }
+}

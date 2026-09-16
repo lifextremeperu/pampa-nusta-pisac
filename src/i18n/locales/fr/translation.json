@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home": "Accueil",
+    "location": "Emplacement",
+    "facilities": "Installations",
+    "donate": "Faire un don",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "SANCTUAIRE",
+    "title2": "ÉCOLOGIQUE",
+    "subtitle": "Un refuge pour l'âme au cœur de la Vallée Sacrée",
+    "cta": "Explorer les installations",
+    "location": "Pampa Ñusta · Pisac"
+  }
+}

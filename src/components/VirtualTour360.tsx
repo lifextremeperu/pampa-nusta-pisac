@@ -39,7 +39,8 @@ import {
   PanoramaSceneItem,
   SanctuaryReferenceVideo
 } from '../data/sanctuaryFacilities';
-import { InteractiveSanctuaryMap } from './InteractiveSanctuaryMap';
+
+const InteractiveSanctuaryMap = React.lazy(() => import('./InteractiveSanctuaryMap').then(m => ({ default: m.InteractiveSanctuaryMap })));
 
 interface VirtualTour360Props {
   onOpenProject?: (facility: SanctuaryFacility) => void;
@@ -609,7 +610,9 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
         {/* ------------------------------------------------------------- */}
         {activeMode === 'map' && (
           <div className="w-full mt-6">
-            <InteractiveSanctuaryMap />
+            <React.Suspense fallback={<div className="h-[400px] md:h-[600px] w-full flex flex-col items-center justify-center bg-sadhana-dark/5 rounded-3xl"><div className="w-8 h-8 border-4 border-sadhana-primary border-t-transparent rounded-full animate-spin mb-4"></div><span className="text-sm font-mono text-sadhana-brown/60 tracking-widest uppercase">Cargando mapa...</span></div>}>
+              <InteractiveSanctuaryMap />
+            </React.Suspense>
           </div>
         )}
 
