@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenChatbot,
 }) => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(andeanAudio.getIsPlaying());
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const languages = ['es', 'en', 'fr', 'pt'];
   const toggleLanguage = () => {
@@ -63,9 +63,9 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={onOpenChatbot}
                 className="group flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                title="Abrir Comunicador"
+                title={t('header.audioLog')}
               >
-                <span className="font-mono text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">Audio Log</span>
+                <span className="font-mono text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">{t('header.audioLog')}</span>
                 <Radio className="w-5 h-5" />
               </button>
             )}
@@ -74,9 +74,9 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onOpenTrailer}
               className="group flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-              title="Escenas"
+              title={t('header.scenes')}
             >
-              <span className="font-mono text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">Escenas</span>
+              <span className="font-mono text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">{t('header.scenes')}</span>
               <Video className="w-5 h-5" />
             </button>
 
@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
           >
             <span className="font-mono text-[10px] tracking-widest uppercase">
-              {isAudioPlaying ? 'Mute' : 'Audio'}
+              {isAudioPlaying ? t('header.mute') : t('header.audio')}
             </span>
             {isAudioPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>

@@ -4,13 +4,21 @@
     "location": "Location",
     "facilities": "Facilities",
     "donate": "Donate",
-    "contact": "Contact"
+    "contact": "Contact",
+    "audioLog": "Audio Log",
+    "scenes": "Scenes",
+    "mute": "Mute",
+    "audio": "Audio"
   },
   "hero": {
-    "title1": "ECOLOGICAL",
-    "title2": "SANCTUARY",
-    "subtitle": "A refuge for the soul in the heart of the Sacred Valley",
-    "cta": "Explore Facilities",
-    "location": "Pampa Ñusta · Pisac"
+    "audioOn": "NATURE AUDIO",
+    "audioOff": "ACTIVATE AUDIO",
+    "video": "Video",
+    "poster": "Poster",
+    "badge": "LIVING ECOVILLAGE · SACRED VALLEY",
+    "title": "PAMPA ÑUSTA",
+    "subtitle": "LIVING SANCTUARY",
+    "enter": "Enter",
+    "discover": "Discover"
   }
 }

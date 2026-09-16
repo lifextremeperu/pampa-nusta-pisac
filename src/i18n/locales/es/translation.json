@@ -4,13 +4,21 @@
     "location": "Ubicación",
     "facilities": "Instalaciones",
     "donate": "Donar",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "audioLog": "Audio Log",
+    "scenes": "Escenas",
+    "mute": "Mutear",
+    "audio": "Audio"
   },
   "hero": {
-    "title1": "SANTUARIO",
-    "title2": "ECOLÓGICO",
-    "subtitle": "Un refugio para el alma en el corazón del Valle Sagrado",
-    "cta": "Explorar Instalaciones",
-    "location": "Pampa Ñusta · Pisac"
+    "audioOn": "AUDIO NATURALEZA",
+    "audioOff": "ACTIVAR AUDIO",
+    "video": "Video",
+    "poster": "Póster",
+    "badge": "ECOALDEA VIVA · VALLE SAGRADO",
+    "title": "PAMPA ÑUSTA",
+    "subtitle": "SANTUARIO VIVO",
+    "enter": "Ingresar",
+    "discover": "Descubrir"
   }
 }

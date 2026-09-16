@@ -4,13 +4,21 @@
     "location": "Emplacement",
     "facilities": "Installations",
     "donate": "Faire un don",
-    "contact": "Contact"
+    "contact": "Contact",
+    "audioLog": "Journal Audio",
+    "scenes": "Scènes",
+    "mute": "Sourdine",
+    "audio": "Audio"
   },
   "hero": {
-    "title1": "SANCTUAIRE",
-    "title2": "ÉCOLOGIQUE",
-    "subtitle": "Un refuge pour l'âme au cœur de la Vallée Sacrée",
-    "cta": "Explorer les installations",
-    "location": "Pampa Ñusta · Pisac"
+    "audioOn": "AUDIO NATURE",
+    "audioOff": "ACTIVER L'AUDIO",
+    "video": "Vidéo",
+    "poster": "Affiche",
+    "badge": "ÉCOVILLAGE VIVANT · VALLÉE SACRÉE",
+    "title": "PAMPA ÑUSTA",
+    "subtitle": "SANCTUAIRE VIVANT",
+    "enter": "Entrer",
+    "discover": "Découvrir"
   }
 }

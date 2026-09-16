@@ -4,13 +4,21 @@
     "location": "Localização",
     "facilities": "Instalações",
     "donate": "Doar",
-    "contact": "Contato"
+    "contact": "Contato",
+    "audioLog": "Diário de Áudio",
+    "scenes": "Cenas",
+    "mute": "Mudo",
+    "audio": "Áudio"
   },
   "hero": {
-    "title1": "SANTUÁRIO",
-    "title2": "ECOLÓGICO",
-    "subtitle": "Um refúgio para a alma no coração do Vale Sagrado",
-    "cta": "Explorar Instalações",
-    "location": "Pampa Ñusta · Pisac"
+    "audioOn": "ÁUDIO DA NATUREZA",
+    "audioOff": "ATIVAR ÁUDIO",
+    "video": "Vídeo",
+    "poster": "Pôster",
+    "badge": "ECOVILA VIVA · VALE SAGRADO",
+    "title": "PAMPA ÑUSTA",
+    "subtitle": "SANTUÁRIO VIVO",
+    "enter": "Entrar",
+    "discover": "Descobrir"
   }
 }

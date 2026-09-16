@@ -11,6 +11,7 @@ import {
   Video,
   ChevronDown
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { ThemeMode } from '../types';
 import { andeanAudio } from '../utils/audioSynthesizer';
 import { AtmosphericParticles } from './AtmosphericParticles';
@@ -40,6 +41,7 @@ export const Hero: React.FC<HeroProps> = ({
   const [isAudioActive, setIsAudioActive] = useState<boolean>(false);
   const [customCoverUrl, setCustomCoverUrl] = useState<string | null>(null);
   const [imageLoadError, setImageLoadError] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -203,7 +205,7 @@ export const Hero: React.FC<HeroProps> = ({
               }`}
             >
               {isAudioActive ? <Volume2 className="w-4 h-4 text-sadhana-dark" /> : <VolumeX className="w-4 h-4" />}
-              <span className="hidden sm:inline">{isAudioActive ? 'AUDIO NATURALEZA' : 'ACTIVAR AUDIO'}</span>
+              <span className="hidden sm:inline">{isAudioActive ? t('hero.audioOn') : t('hero.audioOff')}</span>
             </button>
 
             <div className="flex items-center bg-white/60 rounded-xl p-1 border border-sadhana-dark/10">
@@ -213,7 +215,7 @@ export const Hero: React.FC<HeroProps> = ({
                   heroViewMode === 'video' ? 'bg-sadhana-primary/20 text-sadhana-dark shadow-sm' : 'text-sadhana-brown/50 hover:text-sadhana-brown/80'
                 }`}
               >
-                <Film className="w-3 h-3 inline mr-1.5" /> Video
+                <Film className="w-3 h-3 inline mr-1.5" /> {t('hero.video')}
               </button>
               <button
                 onClick={() => setHeroViewMode('poster')}
@@ -221,7 +223,7 @@ export const Hero: React.FC<HeroProps> = ({
                   heroViewMode === 'poster' ? 'bg-sadhana-primary/20 text-sadhana-dark shadow-sm' : 'text-sadhana-brown/50 hover:text-sadhana-brown/80'
                 }`}
               >
-                <Sparkles className="w-3 h-3 inline mr-1.5" /> Póster
+                <Sparkles className="w-3 h-3 inline mr-1.5" /> {t('hero.poster')}
               </button>
             </div>
             <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
@@ -250,7 +252,7 @@ export const Hero: React.FC<HeroProps> = ({
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sadhana-dark/20 bg-sadhana-sand/40 text-sadhana-dark text-[10px] sm:text-xs font-mono tracking-[0.3em] uppercase mb-6"
           >
             <Leaf className="w-3.5 h-3.5 text-sadhana-primary" />
-            <span>ECOALDEA VIVA · VALLE SAGRADO</span>
+            <span>{t('hero.badge')}</span>
           </motion.div>
 
           {/* Main Title - Reveal Animation */}
@@ -261,7 +263,7 @@ export const Hero: React.FC<HeroProps> = ({
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
               className="font-sans text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-bold tracking-widest text-sadhana-dark drop-shadow-md leading-none py-2"
             >
-              PAMPA ÑUSTA
+              {t('hero.title')}
             </motion.h1>
           </div>
 
@@ -271,7 +273,7 @@ export const Hero: React.FC<HeroProps> = ({
             transition={{ delay: 1, duration: 1 }}
             className="mt-4 font-sans text-xs sm:text-sm text-sadhana-orange tracking-[0.3em] uppercase font-bold"
           >
-            SANTUARIO VIVO
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Ocultamos el párrafo largo para mantener la carga cognitiva al mínimo */}
@@ -299,7 +301,7 @@ export const Hero: React.FC<HeroProps> = ({
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               <Play className="w-4 h-4 relative z-10" />
-              <span className="relative z-10">Ingresar</span>
+              <span className="relative z-10">{t('hero.enter')}</span>
             </button>
           </motion.div>
         </motion.div>
@@ -313,7 +315,7 @@ export const Hero: React.FC<HeroProps> = ({
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer"
         onClick={onExploreClick}
       >
-        <span className="text-[9px] font-mono tracking-[0.3em] text-white/40 uppercase">Descubrir</span>
+        <span className="text-[9px] font-mono tracking-[0.3em] text-white/40 uppercase">{t('hero.discover')}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
