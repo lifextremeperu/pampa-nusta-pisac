@@ -14,6 +14,7 @@ export const LocationSection: React.FC = () => {
   const whatsappShareLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
+    <>
     <section id="ubicacion" className="relative py-24 bg-sadhana-dark text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
@@ -157,5 +158,6 @@ export const LocationSection: React.FC = () => {
         50%      { box-shadow: 0 0 36px rgba(74,222,128,0.55); }
       }
     `}</style>
+    </>
   );
 };
