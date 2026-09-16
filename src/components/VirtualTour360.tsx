@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { createPortal } from 'react-dom';
-import { InterdimensionalJourney } from './InterdimensionalJourney';
 import {
   Compass,
   Maximize2,
@@ -31,8 +29,7 @@ import {
   Target,
   Banknote,
   GitCommit,
-  Quote,
-  Zap
+  Quote
 } from 'lucide-react';
 import {
   PAMPA_NUSTA_FACILITIES,
@@ -54,7 +51,6 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
   const [activeMode, setActiveMode] = useState<'video' | 'panorama360' | 'map' | 'journey'>('video');
-  const [showJourney, setShowJourney] = useState(false);
   const [activeCinematicIndex, setActiveCinematicIndex] = useState(0);
 
   // Auto-advance cinematic slider
@@ -401,21 +397,6 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
             <MapPin className="w-4 h-4" />
             <span>Mapa del Santuario</span>
           </button>
-
-          {/* JOURNEY BUTTON - special gradient */}
-          <button
-            onClick={() => setShowJourney(true)}
-            className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-3 text-white"
-            style={{
-              background: 'linear-gradient(135deg, #0d4a1f, #1a2e50, #2d1a4a)',
-              boxShadow: '0 0 20px rgba(74,222,128,0.3), 0 0 40px rgba(74,222,128,0.1)',
-              border: '1px solid rgba(74,222,128,0.4)',
-              animation: 'pulse-glow 2.5s ease-in-out infinite',
-            }}
-          >
-            <Zap className="w-4 h-4" style={{ color: '#4ade80' }} />
-            <span style={{ background: 'linear-gradient(90deg, #4ade80, #fbbf24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Viaje Interdimensional</span>
-          </button>
         </div>
 
         {/* ------------------------------------------------------------- */}
@@ -713,19 +694,6 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
       </div>
 
     </section>
-
-    {/* === INTERDIMENSIONAL JOURNEY PORTAL === */}
-    {showJourney && createPortal(
-      <InterdimensionalJourney onClose={() => setShowJourney(false)} />,
-      document.body
-    )}
-
-    <style>{`
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 20px rgba(74,222,128,0.3), 0 0 40px rgba(74,222,128,0.1); }
-        50% { box-shadow: 0 0 30px rgba(74,222,128,0.6), 0 0 60px rgba(74,222,128,0.25); }
-      }
-    `}</style>
     </>
   );
 };

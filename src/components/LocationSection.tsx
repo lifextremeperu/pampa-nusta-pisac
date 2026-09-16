@@ -1,7 +1,10 @@
-import React from 'react';
-import { MapPin, Navigation, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { MapPin, Navigation, MessageCircle, Zap } from 'lucide-react';
+import { InterdimensionalJourney } from './InterdimensionalJourney';
 
 export const LocationSection: React.FC = () => {
+  const [showJourney, setShowJourney] = useState(false);
   const latitude = -13.407585;
   const longitude = -71.836324;
   const locationName = "Santuario Ecológico Pampa Ñusta, Pisac";
@@ -75,7 +78,25 @@ export const LocationSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
+
+              {/* ── VER EL LUGAR (Viaje Interdimensional) ── */}
+              <button
+                onClick={() => setShowJourney(true)}
+                className="w-full py-4 px-6 rounded-xl text-white font-black text-xs tracking-widest uppercase flex items-center justify-center gap-3 transition-all shadow-lg"
+                style={{
+                  background: 'linear-gradient(135deg, #0d4a1f, #1a2e50, #2d1a4a)',
+                  border: '1px solid rgba(74,222,128,0.45)',
+                  boxShadow: '0 0 22px rgba(74,222,128,0.25)',
+                  animation: 'pulse-glow-loc 2.5s ease-in-out infinite',
+                }}
+              >
+                <Zap className="w-4 h-4" style={{ color: '#4ade80' }} />
+                <span style={{ background: 'linear-gradient(90deg,#4ade80,#fbbf24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Ver el Lugar
+                </span>
+              </button>
+
               <a 
                 href={googleMapsUrl}
                 target="_blank"
@@ -123,5 +144,18 @@ export const LocationSection: React.FC = () => {
         </div>
       </div>
     </section>
+
+    {/* Journey portal */}
+    {showJourney && createPortal(
+      <InterdimensionalJourney onClose={() => setShowJourney(false)} />,
+      document.body
+    )}
+
+    <style>{`
+      @keyframes pulse-glow-loc {
+        0%,100% { box-shadow: 0 0 22px rgba(74,222,128,0.25); }
+        50%      { box-shadow: 0 0 36px rgba(74,222,128,0.55); }
+      }
+    `}</style>
   );
 };
