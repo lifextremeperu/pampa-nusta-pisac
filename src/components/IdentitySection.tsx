@@ -48,7 +48,7 @@ export const IdentitySection: React.FC = () => {
               <Mountain className="w-5 h-5" />
             </div>
             <h3 className="font-sans text-xl font-bold tracking-widest uppercase text-white mb-4">¿Quiénes Somos?</h3>
-            <p className="text-sadhana-brown/80 leading-relaxed font-medium text-sm md:text-base">
+            <p className="text-sadhana-sand/80 leading-relaxed font-medium text-sm md:text-base">
               Somos un colectivo de guardianes de la tierra ubicados en la comunidad de Maska, Pisac. Conformamos una ecoaldea viva dedicada a preservar la memoria ancestral andina, la bioconstrucción y el legado espiritual de los Andes para las futuras generaciones.
             </p>
           </motion.div>
@@ -66,7 +66,7 @@ export const IdentitySection: React.FC = () => {
               <Leaf className="w-5 h-5" />
             </div>
             <h3 className="font-sans text-xl font-bold tracking-widest uppercase text-white mb-4">Nuestra Misión</h3>
-            <p className="text-sadhana-brown/80 leading-relaxed font-medium text-sm md:text-base">
+            <p className="text-sadhana-sand/80 leading-relaxed font-medium text-sm md:text-base">
               Proteger y cultivar el banco genético del cactus sagrado Wachuma y de semillas nativas, brindando un espacio de educación alternativa para niños y un refugio de sanación integral a través de ceremonias y tecnologías regenerativas.
             </p>
           </motion.div>
@@ -84,7 +84,7 @@ export const IdentitySection: React.FC = () => {
               <Sun className="w-5 h-5" />
             </div>
             <h3 className="font-sans text-xl font-bold tracking-widest uppercase text-white mb-4">Nuestra Visión</h3>
-            <p className="text-sadhana-brown/80 leading-relaxed font-medium text-sm md:text-base">
+            <p className="text-sadhana-sand/80 leading-relaxed font-medium text-sm md:text-base">
               Convertirnos en un epicentro global de sabiduría ancestral y permacultura, donde la humanidad recuerde cómo convivir en armonía con la Pachamama, expandiendo la conciencia colectiva desde el Valle Sagrado de los Incas hacia el mundo entero.
             </p>
           </motion.div>

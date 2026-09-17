@@ -95,7 +95,7 @@ export const NustaScrollTelling: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-black text-white overflow-hidden font-sans">
+    <section className="relative bg-sadhana-dark text-white overflow-hidden font-sans">
       
       {/* Intro Overlay / Título fijo superior */}
       <div className="absolute top-8 left-0 w-full z-10 pointer-events-none px-6 md:px-12 text-center">
@@ -125,9 +125,10 @@ export const NustaScrollTelling: React.FC = () => {
                   alt={story.title}
                   className="w-full h-full object-cover object-center"
                 />
-                {/* Gradiente de oscurecimiento */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-90 mix-blend-multiply`} />
-                <div className="absolute inset-0 bg-black/50" />
+                {/* Gradiente de oscurecimiento suave para que la foto se vea bien */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-40 mix-blend-multiply`} />
+                <div className="absolute inset-0 bg-sadhana-dark/30" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sadhana-dark to-transparent opacity-80" />
               </div>
 
               {/* Contenido Narrativo */}

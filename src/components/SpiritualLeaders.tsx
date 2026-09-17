@@ -84,14 +84,18 @@ export const SpiritualLeaders: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 + (index * 0.15) }}
-              className="group relative h-[450px] rounded-3xl overflow-hidden bg-black border border-white/10 shadow-2xl"
+              className="group relative h-[450px] rounded-3xl overflow-hidden bg-sadhana-dark/50 border border-sadhana-primary/10 shadow-2xl"
             >
-              <img 
+              <motion.img 
+                initial={{ opacity: 0, scale: 1.2 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 + (index * 0.15) }}
                 src={leader.image} 
                 alt={leader.name}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/40 to-transparent opacity-80" />
               
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 transform transition-transform duration-500 translate-y-8 group-hover:translate-y-0">
                 <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-sadhana-primary mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
