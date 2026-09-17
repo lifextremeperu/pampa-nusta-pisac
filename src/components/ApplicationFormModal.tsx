@@ -72,7 +72,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-[100] w-screen overflow-y-auto">
-        <div className="flex min-h-full items-center justify-center p-4 sm:p-6 text-left">
+        <div className="flex min-h-full justify-center p-4 sm:p-6 py-8 text-left">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -85,7 +85,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-2xl bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col border border-white/10 my-8"
+            className="relative w-full max-w-2xl bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col border border-white/10 my-auto"
           >
           {/* Header */}
           <div className="flex items-center justify-between p-6 md:p-8 border-b border-white/10 bg-black/20 backdrop-blur-md shrink-0">

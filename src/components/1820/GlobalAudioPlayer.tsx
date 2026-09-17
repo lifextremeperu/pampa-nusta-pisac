@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player';
 
 export const GlobalAudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
