@@ -105,7 +105,7 @@ export const NustaScrollTelling: React.FC = () => {
       {/* Intro Overlay / Título fijo superior */}
       <div className="absolute top-8 left-0 w-full z-10 pointer-events-none px-6 md:px-12 text-center">
         <h2 className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase text-sadhana-primary drop-shadow-md">
-          Arte Visual Ancestral
+          Reseña Histórica
         </h2>
         <div className="w-12 h-px bg-sadhana-primary mx-auto mt-2 md:mt-4 opacity-50" />
       </div>
