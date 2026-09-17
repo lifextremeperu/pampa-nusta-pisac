@@ -117,11 +117,12 @@ export const ImpactStoryScroll: React.FC = () => {
                 <img 
                   src={story.imageUrl} 
                   alt={story.title}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-[center_30%]"
                 />
-                {/* Gradiente de oscurecimiento */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-90 mix-blend-multiply`} />
-                <div className="absolute inset-0 bg-black/40" />
+                {/* Gradiente de oscurecimiento suave para no saturar la imagen */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-40 mix-blend-multiply`} />
+                <div className="absolute inset-0 bg-sadhana-dark/30" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sadhana-dark to-transparent opacity-80" />
               </div>
 
               {/* Contenido Narrativo */}

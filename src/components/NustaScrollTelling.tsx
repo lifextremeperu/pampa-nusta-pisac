@@ -31,7 +31,8 @@ const NUSTA_SLIDES = [
     description: 'Huayllapumap Sasa Munaynin. El cacique exigió construir en una sola noche un puente de piedra o los andenes para probar el valor del príncipe. La princesa Inquill Chumpi rogó a los Apus por su amado.',
     imageUrl: '/assets/nusta/acto1.jpg',
     accentColor: 'from-rose-900/80 to-sadhana-dark',
-    progress: '0% Roca'
+    progress: '0% Roca',
+    objectPosition: 'object-top'
   },
   {
     id: 'acto2',
@@ -40,7 +41,8 @@ const NUSTA_SLIDES = [
     description: 'Asto Rimacpa Tuta Ruwaynin. «Camina sin vacilar hacia la cima sagrada; si tus ojos buscan mi fatiga, la montaña reclamará nuestras almas.» Enamorado, el guerrero convoca a las fuerzas ocultas y a los Apus para levantar los pilares en la tiniebla.',
     imageUrl: '/assets/nusta/acto2.jpg',
     accentColor: 'from-indigo-900/80 to-sadhana-dark',
-    progress: '25% Roca'
+    progress: '25% Roca',
+    objectPosition: 'object-top'
   },
   {
     id: 'acto3',
@@ -49,7 +51,8 @@ const NUSTA_SLIDES = [
     description: 'Hark\'asqa Qaway. Casi al amanecer, con la obra a punto de culminar, Inquill Chumpi no pudo resistir y volteó a ver si su amado sobrevivía al esfuerzo titánico. El pacto con la montaña se rompió.',
     imageUrl: '/assets/nusta/acto3.jpg',
     accentColor: 'from-red-900/80 to-sadhana-dark',
-    progress: '65% Roca'
+    progress: '65% Roca',
+    objectPosition: 'object-top'
   },
   {
     id: 'acto4',
@@ -58,7 +61,8 @@ const NUSTA_SLIDES = [
     description: 'Wiñay Rumi Tukupuy. Ambos fueron convertidos en granito. Hoy, la Piedra Femenina custodia la fertilidad del agua, y la Piedra Masculina guía el calor del sol en los andenes, bendiciendo el Tarpuy Raymi.',
     imageUrl: '/assets/nusta/acto4.jpg',
     accentColor: 'from-stone-900/80 to-sadhana-dark',
-    progress: '100% Roca'
+    progress: '100% Roca',
+    objectPosition: 'object-[center_15%]'
   }
 ];
 
@@ -128,7 +132,7 @@ export const NustaScrollTelling: React.FC = () => {
                   transition={{ duration: 1.5, ease: "easeOut" }}
                   src={story.imageUrl} 
                   alt={story.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-[2000ms] group-hover:scale-105"
+                  className={`w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105 ${story.objectPosition || 'object-center'}`}
                 />
                 {/* Gradiente de oscurecimiento suave para que la foto se vea bien */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-40 mix-blend-multiply`} />
