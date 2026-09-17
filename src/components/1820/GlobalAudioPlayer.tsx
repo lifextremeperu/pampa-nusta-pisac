@@ -1,21 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import ReactPlayer from 'react-player/youtube';
 
 export const GlobalAudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Frecuencia Solfeggio pura (432 Hz Healing Frequency Meditation)
-  const AUDIO_SRC = "https://archive.org/download/jamendo-524803/01-2039515-STOCK%20ELITE%20MUSIC-432%20Hz%20Healing%20Frequency%20Meditation.mp3";
+  // Música chamánica del Camino Rojo (Pájaro - Temazcal)
+  const YOUTUBE_URL = "https://www.youtube.com/watch?v=SkxLdLael84";
 
-  // Intentar auto-reproducir después de la primera interacción
   useEffect(() => {
     const handleInteraction = () => {
-      if (!hasInteracted && audioRef.current) {
+      if (!hasInteracted) {
         setHasInteracted(true);
-        // Opcional: auto-reproducir al primer click en la pantalla
-        // audioRef.current.play().then(() => setIsPlaying(true)).catch(e => console.log(e));
       }
     };
 
@@ -24,21 +21,14 @@ export const GlobalAudioPlayer = () => {
   }, [hasInteracted]);
 
   const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(e => console.error("Audio play failed:", e));
-      }
-      setIsPlaying(!isPlaying);
-    }
+    setIsPlaying(!isPlaying);
   };
 
   return (
-    <div className="fixed top-5 md:top-7 right-20 md:right-40 z-[100] flex items-center gap-3 mix-blend-difference text-white">
-      {/* Etiqueta de texto sutil - Neuromarketing: Genera curiosidad */}
+    <div className="flex items-center gap-3 text-white relative z-[100]">
+      {/* Etiqueta de texto sutil - Neuromarketing */}
       <div 
-        className={`transition-opacity duration-700 ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'} hidden md:block`}
+        className={	ransition-opacity duration-700  hidden md:block}
       >
         <span className="text-[9px] uppercase tracking-widest bg-white/10 px-3 py-1.5 rounded-full border border-white/20 shadow-sm cursor-pointer hover:bg-white/20 transition-all font-mono font-bold" onClick={togglePlay}>
           Activar Frecuencia
@@ -66,12 +56,26 @@ export const GlobalAudioPlayer = () => {
         )}
       </button>
 
-      <audio 
-        ref={audioRef} 
-        src={AUDIO_SRC} 
-        loop 
-        preload="auto"
-      />
+      {/* Hidden YouTube Player */}
+      <div className="hidden">
+        <ReactPlayer 
+          url={YOUTUBE_URL}
+          playing={isPlaying}
+          loop={true}
+          volume={0.6}
+          width="0"
+          height="0"
+          config={{
+            youtube: {
+              playerVars: { 
+                showinfo: 0,
+                controls: 0,
+                modestbranding: 1
+              }
+            }
+          }}
+        />
+      </div>
     </div>
   );
 };

@@ -11,7 +11,6 @@ import { EcoaldeaModules } from './components/EcoaldeaModules';
 import { ImpactStoryScroll } from './components/ImpactStoryScroll';
 import { SocialProofSection } from './components/SocialProofSection';
 import { DonationBanner } from './components/DonationBanner';
-import { CinematicTrailerModal } from './components/CinematicTrailerModal';
 import { DonationSystem } from './components/DonationSystem';
 import { LocationSection } from './components/LocationSection';
 import { FaqSection } from './components/FaqSection';
@@ -137,16 +136,14 @@ export default function App() {
     <div className="min-h-screen bg-white text-sadhana-dark font-sans relative overflow-x-hidden selection:bg-sadhana-primary selection:text-white">
       {/* 1. INITIAL LOADERS & AUDIO */}
       <Preloader />
-      <CustomCursor />
-      <GlobalAudioPlayer />
-
-      {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
+      <CustomCursor />      {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference text-white">
         <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
           <span className="text-xl font-bold tracking-[0.2em] uppercase">Pampa Ñusta</span>
           <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
         </button>
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
+          <GlobalAudioPlayer />
           <LanguageSwitcher />
           <button 
             onClick={() => setIsMenuOpen(true)}
