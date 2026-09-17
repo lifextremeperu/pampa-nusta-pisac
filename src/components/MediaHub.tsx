@@ -30,7 +30,7 @@ export const MediaHub: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'live' | 'interviews'>('live');
 
   return (
-    <section className="relative py-24 bg-sadhana-sand text-sadhana-dark border-t border-sadhana-dark/10 overflow-hidden">
+    <section id="multimedia" className="relative py-24 bg-sadhana-sand text-sadhana-dark border-t border-sadhana-dark/10 overflow-hidden">
       {/* Cinematic background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/40 rounded-full blur-[120px] pointer-events-none" />
       

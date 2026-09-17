@@ -39,7 +39,7 @@ const LEADERS = [
 
 export const SpiritualLeaders: React.FC = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
+    <section id="lideres" className="relative py-24 md:py-32 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">

@@ -95,7 +95,7 @@ export const NustaScrollTelling: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-sadhana-dark text-white overflow-hidden font-sans">
+    <section id="leyenda" className="relative bg-sadhana-dark text-white overflow-hidden font-sans">
       
       {/* Intro Overlay / Título fijo superior */}
       <div className="absolute top-8 left-0 w-full z-10 pointer-events-none px-6 md:px-12 text-center">
@@ -116,14 +116,18 @@ export const NustaScrollTelling: React.FC = () => {
           {NUSTA_SLIDES.map((story, index) => (
             <div 
               key={story.id} 
-              className="nusta-slide h-screen w-screen relative flex items-center justify-center shrink-0"
+              className="nusta-slide group h-screen w-screen relative flex items-center justify-center shrink-0"
             >
               {/* Imagen de fondo hiperrealista */}
-              <div className="absolute inset-0">
-                <img 
+              <div className="absolute inset-0 overflow-hidden">
+                <motion.img 
+                  initial={{ scale: 1.15, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
                   src={story.imageUrl} 
                   alt={story.title}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-[2000ms] group-hover:scale-105"
                 />
                 {/* Gradiente de oscurecimiento suave para que la foto se vea bien */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-40 mix-blend-multiply`} />

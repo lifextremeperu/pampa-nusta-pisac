@@ -4,7 +4,7 @@ import { Leaf, Mountain, Sun } from 'lucide-react';
 
 export const IdentitySection: React.FC = () => {
   return (
-    <section className="relative py-24 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
+    <section id="identidad" className="relative py-24 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sadhana-primary/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />

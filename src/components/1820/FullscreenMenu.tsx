@@ -16,6 +16,9 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
     { label: 'INICIO', id: 'hero' },
     { label: 'LEYENDA ORIGINARIA', id: 'leyenda' },
     { label: 'BOTÁNICA SAGRADA', id: 'ecoaldea-modulos' },
+    { label: 'IDENTIDAD', id: 'identidad' },
+    { label: 'LÍDERES ESPIRITUALES', id: 'lideres' },
+    { label: 'CENTRO MULTIMEDIA', id: 'multimedia' },
     { label: 'RECORRIDO 360°', id: 'recorrido-360' },
     { label: 'TESTIMONIOS', id: 'testimonios' },
     { label: 'AYNI / DONACIONES', id: 'donaciones' },
@@ -78,7 +81,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
             <li key={item.id} className="overflow-hidden">
               <button 
                 onClick={() => handleLinkClick(item.id)}
-                className="group relative text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-sadhana-dark hover:text-sadhana-primary transition-colors text-left"
+                className="group relative text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-sadhana-dark hover:text-sadhana-primary transition-colors text-left"
               >
                 {/* 1820 Style Number indicator */}
                 <span className="absolute -left-8 top-2 md:top-6 text-[10px] md:text-sm font-normal tracking-widest opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-300">
