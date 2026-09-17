@@ -187,9 +187,15 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
 
         {/* Bottom Bar: Copyright & Tech Badges */}
         <div className="mt-8 pt-8 border-t border-sadhana-dark/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-xs font-mono text-sadhana-brown font-bold">
-            <Mountain className="w-3.5 h-3.5 text-sadhana-primary/70" />
-            <span>© {currentYear} Proyecto Pampa Ñusta Pisac.</span>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-xs font-mono text-sadhana-brown font-bold">
+            <div className="flex items-center gap-2">
+              <Mountain className="w-3.5 h-3.5 text-sadhana-primary/70" />
+              <span>© {currentYear} Proyecto Pampa Ñusta Pisac.</span>
+            </div>
+            <span className="hidden md:inline text-sadhana-dark/20">|</span>
+            <span className="text-sadhana-brown/80 font-sans text-[10px] md:text-xs tracking-wider">
+              Desarrollado por <a href="https://www.cixlab.site" target="_blank" rel="noopener noreferrer" className="text-sadhana-primary hover:text-sadhana-orange transition-colors font-bold uppercase underline decoration-sadhana-primary/30 underline-offset-4">Cix Lab</a>
+            </span>
           </div>
 
           <div className="flex items-center gap-4 text-[10px] font-mono text-sadhana-brown/80 font-bold uppercase tracking-widest">
