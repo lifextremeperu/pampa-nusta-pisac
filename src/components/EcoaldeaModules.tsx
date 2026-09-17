@@ -104,7 +104,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
       </div>
 
       {/* Book Container */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 mt-16 md:mt-24 h-[80vh] md:h-[65vh] lg:h-[70vh]">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 mt-12 md:mt-16 mb-24">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={activeIndex}
@@ -113,7 +113,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
             initial="initial"
             animate="animate"
             exit="exit"
-            className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
+            className="relative w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
           >
             {/* Imagen panorámica de fondo */}
             <div className="absolute inset-0">
@@ -127,8 +127,8 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
             </div>
 
             {/* Contenido (Glassmorphism) */}
-            <div className="absolute inset-0 z-10 w-full lg:max-w-2xl px-6 py-8 md:px-12 md:py-12 flex flex-col justify-center h-full">
-              <div className="bg-sadhana-dark/40 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] w-full max-h-full overflow-y-auto hide-scrollbar">
+            <div className="relative z-10 w-full lg:max-w-2xl px-6 py-12 md:px-12 md:py-16 flex flex-col justify-center min-h-[70vh] md:min-h-[600px]">
+              <div className="bg-sadhana-dark/40 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] w-full">
                 <div className="flex items-center gap-2 text-[9px] md:text-xs font-mono text-sadhana-primary uppercase tracking-widest font-bold mb-3 md:mb-4 flex-wrap">
                   <span className="bg-white/10 px-2 py-1 rounded">{currentModule.chapterNumber}</span>
                   <span className="hidden sm:inline">·</span>
