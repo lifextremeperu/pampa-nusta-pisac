@@ -29,7 +29,7 @@ export const DonationBanner: React.FC<DonationBannerProps> = ({ onNavigate }) =>
           La preservación de los andenes, las semillas nativas y el legado de Pampa Ñusta 
           se sostiene a través del Ayni, la antigua práctica andina de dar y recibir. 
           Si sientes el llamado a ser parte de esta custodia, te invitamos a conocer 
-          nuestro programa de mecenazgo cultural.
+          nuestro programa de adopción.
         </p>
 
         <button 
@@ -37,7 +37,7 @@ export const DonationBanner: React.FC<DonationBannerProps> = ({ onNavigate }) =>
           className="group relative flex items-center gap-4 px-8 py-4 bg-transparent border border-sadhana-primary/30 hover:bg-sadhana-primary/10 rounded-full transition-all"
         >
           <span className="text-xs font-bold uppercase tracking-widest text-white group-hover:text-sadhana-sand transition-colors">
-            Explorar el Mecenazgo
+            Ver Programa de Adopción
           </span>
           <ArrowRight className="w-4 h-4 text-sadhana-primary group-hover:translate-x-1 transition-transform" />
         </button>

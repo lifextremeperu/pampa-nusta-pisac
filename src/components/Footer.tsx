@@ -76,8 +76,8 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
               <Compass className="w-3.5 h-3.5 text-sadhana-primary" />
               Explorar
             </h4>
-            <ul className="space-y-3">
-              {['El Santuario', 'Jardín Botánico', 'Recorrido 3D', 'Mecenazgo'].map((item) => (
+            <ul className="space-y-4">
+              {['El Santuario', 'Jardín Botánico', 'Recorrido 3D', 'Adopción'].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-sadhana-dark/20 group-hover:bg-sadhana-primary transition-colors" />

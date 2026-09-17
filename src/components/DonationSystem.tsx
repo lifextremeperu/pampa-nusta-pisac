@@ -37,7 +37,7 @@ export const DonationSystem: React.FC = () => {
   };
 
   const getWhatsAppYapeUrl = () => {
-    const text = `¡Hola Santuario Pampa Ñusta! Deseo confirmar mi aporte de Ayni mediante Yape / Plin por un monto de S/ ${customAmount}. Mi nombre es ${donorName || 'Mecenas'}. Les adjunto aquí el comprobante.`;
+    const text = `¡Hola Santuario Pampa Ñusta! Deseo confirmar mi aporte de Ayni mediante Yape / Plin por un monto de S/ ${customAmount}. Mi nombre es ${donorName || 'Custodio'}. Les adjunto aquí el comprobante.`;
     return `https://wa.me/51958050928?text=${encodeURIComponent(text)}`;
   };
 
@@ -49,7 +49,7 @@ export const DonationSystem: React.FC = () => {
   const handleProcessDonation = (e: React.FormEvent) => {
     e.preventDefault();
     if (!donorName.trim()) {
-      alert('Por favor, ingresa tu nombre de mecenas para el registro del santuario.');
+      alert('Por favor, ingresa tu nombre de custodio para el registro del santuario.');
       return;
     }
 

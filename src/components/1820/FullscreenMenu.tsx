@@ -13,7 +13,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
   const linksRef = useRef<HTMLUListElement>(null);
 
   const MENU_ITEMS = [
-    { label: 'INICIO', id: 'hero' },
+    { label: 'INICIO', id: 'memoria-viva' },
     { label: 'LEYENDA ORIGINARIA', id: 'leyenda-originaria' },
     { label: 'BOTÁNICA SAGRADA', id: 'ecoaldea-modulos' },
     { label: 'IDENTIDAD', id: 'identidad-corporativa' },

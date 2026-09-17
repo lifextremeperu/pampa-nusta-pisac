@@ -106,7 +106,7 @@ export const PAMPA_NUSTA_FACILITIES: SanctuaryFacility[] = [
       }
     ],
     benefits: [
-      { icon: 'award', title: 'Certificado de Mecenazgo', description: 'Reconocimiento fiscal deducible de impuestos (según país de origen).' },
+      { icon: 'award', title: 'Certificado de Adopción', description: 'Reconocimiento fiscal deducible de impuestos (según país de origen).' },
       { icon: 'leaf', title: 'Apadrinamiento Directo', description: 'Tu nombre en un linaje madre ancestral custodiado en el domo.' },
       { icon: 'heart', title: 'Retiros Exclusivos', description: 'Acceso anual a ceremonias privadas de integración botánica.' }
     ],
