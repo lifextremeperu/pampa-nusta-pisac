@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import ReactPlayer from 'react-player/youtube';
 
@@ -28,7 +28,7 @@ export const GlobalAudioPlayer = () => {
     <div className="flex items-center gap-3 text-white relative z-[100]">
       {/* Etiqueta de texto sutil - Neuromarketing */}
       <div 
-        className={	ransition-opacity duration-700  hidden md:block}
+        className={`transition-opacity duration-700 ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'} hidden md:block`}
       >
         <span className="text-[9px] uppercase tracking-widest bg-white/10 px-3 py-1.5 rounded-full border border-white/20 shadow-sm cursor-pointer hover:bg-white/20 transition-all font-mono font-bold" onClick={togglePlay}>
           Activar Frecuencia
