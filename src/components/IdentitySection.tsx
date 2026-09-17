@@ -45,7 +45,7 @@ export const IdentitySection: React.FC = () => {
             className="rounded-[2.5rem] border border-white/10 relative group overflow-hidden shadow-2xl flex flex-col h-[500px]"
           >
             {/* Dynamic Image Background */}
-            <img src="/assets/ecoaldea/elemento_tierra.jpg" alt="Quiénes Somos" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
+            <img src="/assets/ecoaldea/identidad_quienes_somos_1789663565033.jpg" alt="Quiénes Somos" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-black/20" />
 
@@ -70,7 +70,7 @@ export const IdentitySection: React.FC = () => {
             className="rounded-[2.5rem] border border-white/10 relative group overflow-hidden shadow-2xl flex flex-col h-[500px]"
           >
             {/* Dynamic Image Background */}
-            <img src="/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg" alt="Nuestra Misión" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
+            <img src="/assets/ecoaldea/identidad_mision_1789663588075.jpg" alt="Nuestra Misión" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-sadhana-primary/10 mix-blend-overlay" />
 
@@ -95,7 +95,7 @@ export const IdentitySection: React.FC = () => {
             className="rounded-[2.5rem] border border-white/10 relative group overflow-hidden shadow-2xl flex flex-col md:col-span-1 lg:col-span-1 h-[500px]"
           >
             {/* Dynamic Image Background */}
-            <img src="/assets/ecoaldea/elemento_eter.jpg" alt="Nuestra Visión" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
+            <img src="/assets/ecoaldea/identidad_vision_1789663600150.jpg" alt="Nuestra Visión" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-sadhana-dark via-sadhana-dark/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-yellow-500/10 mix-blend-overlay" />
 
