@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+﻿import { useTranslation } from 'react-i18next';
 
 type Currency = 'PEN' | 'USD' | 'EUR' | 'BRL';
 
@@ -12,7 +12,7 @@ const CURRENCY_RATES: Record<Currency, number> = {
 const CURRENCY_SYMBOLS: Record<Currency, string> = {
   USD: '$',
   PEN: 'S/.',
-  EUR: '�',
+  EUR: '€',
   BRL: 'R$',
 };
 
@@ -40,7 +40,7 @@ export const useCurrency = () => {
       maximumFractionDigits: 0,
     }).format(converted);
 
-    return \\ \\;
+    return ${CURRENCY_SYMBOLS[currency]} ;
   };
 
   const getRawPrice = (amountInUSD: number): number => {
