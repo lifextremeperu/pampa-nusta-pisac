@@ -38,65 +38,8 @@ export const MobileCinematicDock: React.FC<MobileCinematicDockProps> = ({
       id="mobile-cinematic-dock"
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#18130e]/95 backdrop-blur-xl border-t border-[#413123] shadow-[0_-10px_30px_rgba(0,0,0,0.8)] pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 px-2"
     >
-      {/* 1-Tap Chapter Rail for Thumbs (Scrollable Horizontal) */}
-      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 px-1">
-        <span className="text-[9px] font-mono uppercase tracking-wider text-[#e5aa5d] font-bold shrink-0">
-          CAPÍTULOS:
-        </span>
-        {SHOWREEL_ITEMS.map((item, idx) => {
-          const isCurrent = idx === selectedChapterIndex;
-          return (
-            <button
-              key={item.id}
-              onClick={() => {
-                onSelectChapter(idx);
-                // Subtle audio feedback
-                andeanAudio.playFluteNote?.(360 + idx * 30, 0.2);
-              }}
-              className={`px-2.5 py-1.5 rounded-lg font-mono text-[10px] uppercase tracking-wider whitespace-nowrap transition-all flex items-center gap-1 shrink-0 ${
-                isCurrent
-                  ? 'bg-[#c2853f] text-[#14100c] font-bold shadow-[0_0_10px_rgba(194,133,63,0.5)] scale-105'
-                  : 'bg-[#251d16] text-[#b8a695] border border-[#443324]'
-              }`}
-            >
-              <span>{item.indexNumber}</span>
-              <span className="max-w-[85px] truncate">{item.navTitle}</span>
-            </button>
-          );
-        })}
-      </div>
-
       {/* Primary Sanctuary Action Bar (Thumb-Height 44px+) */}
-      <div className="flex items-center justify-between gap-1.5 pt-1.5 px-1 border-t border-[#31241a]">
-        {/* Experience Mode Toggles */}
-        <div className="flex items-center bg-[#241c15] rounded-xl p-0.5 border border-[#433123]">
-          <button
-            onClick={() => {
-              onChangeView('dillinger');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className={`px-2.5 py-1.5 rounded-lg font-mono text-[10px] uppercase tracking-wider transition-all ${
-              activeView === 'dillinger'
-                ? 'bg-[#c2853f] text-[#14100c] font-bold'
-                : 'text-[#a89582] hover:text-white'
-            }`}
-          >
-            / SANTUARIO
-          </button>
-          <button
-            onClick={() => {
-              onChangeView('reel');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className={`px-2.5 py-1.5 rounded-lg font-mono text-[10px] uppercase tracking-wider transition-all ${
-              activeView === 'reel'
-                ? 'bg-[#c2853f] text-[#14100c] font-bold'
-                : 'text-[#a89582] hover:text-white'
-            }`}
-          >
-            / SHOWREEL 360
-          </button>
-        </div>
+      <div className="flex items-center justify-between gap-1.5 pt-1.5 px-1">
 
         {/* Quick Conecta Videollamada CTA */}
         {onOpenChatbot && (

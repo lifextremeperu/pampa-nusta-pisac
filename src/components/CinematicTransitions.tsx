@@ -214,7 +214,7 @@ export const CinematicTransitions: React.FC = () => {
       <div className="relative z-30 w-full h-full flex flex-col justify-center items-center px-6 md:px-12 text-center">
         
         {/* Top Tagline */}
-        <div className="absolute top-24 md:top-32 left-0 w-full flex justify-center z-40">
+        <div className="absolute top-32 md:top-32 left-0 w-full flex justify-center z-40">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sadhana-primary/40 bg-sadhana-dark/40 text-sadhana-sand text-[10px] md:text-xs uppercase tracking-[0.3em] font-mono font-bold shadow-sm backdrop-blur-md">
             <Leaf className="w-3.5 h-3.5 text-sadhana-primary" />
             <span>Memoria Viva del Santuario</span>

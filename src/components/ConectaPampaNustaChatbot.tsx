@@ -301,7 +301,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
       {/* FLOATING TRIGGER BUTTON (WHATSAPP REDIRECT)                   */}
       {/* ------------------------------------------------------------- */}
       {!isOpen && (
-        <div className="hidden md:block fixed bottom-6 right-6 z-50 pointer-events-auto">
+        <div className="block fixed bottom-24 md:bottom-6 right-6 z-50 pointer-events-auto">
            <button
              onClick={() => {
                setIsOpen(true);
