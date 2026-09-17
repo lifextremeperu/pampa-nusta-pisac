@@ -96,7 +96,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:info@pisacsacred.org" className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-3">
+                <a href="mailto:contacto@pampanusta.com" className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-white border border-sadhana-dark/10 flex items-center justify-center text-sadhana-brown shadow-sm">
                     <Mail className="w-3.5 h-3.5" />
                   </div>

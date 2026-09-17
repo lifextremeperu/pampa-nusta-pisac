@@ -15,6 +15,9 @@ import { DonationBanner } from './components/DonationBanner';
 import { DonationSystem } from './components/DonationSystem';
 import { LocationSection } from './components/LocationSection';
 import { Footer } from './components/Footer';
+import { IdentitySection } from './components/IdentitySection';
+import { SpiritualLeaders } from './components/SpiritualLeaders';
+import { MediaHub } from './components/MediaHub';
 
 // Modals & Overlays
 import { CustomCursor } from './components/CustomCursor';
@@ -151,6 +154,10 @@ export default function App() {
           <CinematicTransitions />
         </div>
 
+        <div id="identidad-corporativa">
+          <IdentitySection />
+        </div>
+
         <div id="leyenda-originaria">
           <NustaScrollTelling />
         </div>
@@ -177,6 +184,14 @@ export default function App() {
 
         <div id="testimonios">
           <SocialProofSection />
+        </div>
+
+        <div id="guardianes">
+          <SpiritualLeaders />
+        </div>
+
+        <div id="media-hub">
+          <MediaHub />
         </div>
 
         <div id="donaciones">
