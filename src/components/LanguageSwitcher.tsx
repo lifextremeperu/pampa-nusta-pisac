@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, ChevronDown } from 'lucide-react';
 
@@ -40,12 +40,14 @@ export const LanguageSwitcher: React.FC = () => {
       >
         <Globe className="w-3.5 h-3.5 opacity-70" />
         <span>{currentLang.label}</span>
-        <ChevronDown className={w-3.5 h-3.5 opacity-50 transition-transform duration-300 } />
+        <ChevronDown className={`w-3.5 h-3.5 opacity-50 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {/* Dropdown Menu */}
       <div 
-        className={bsolute right-0 top-full mt-2 w-36 bg-sadhana-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 origin-top-right }
+        className={`absolute right-0 top-full mt-2 w-36 bg-sadhana-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 origin-top-right ${
+          isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
+        }`}
       >
         <div className="py-1">
           {LANGUAGES.map((lang) => {
@@ -54,7 +56,11 @@ export const LanguageSwitcher: React.FC = () => {
               <button
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code)}
-                className={w-full text-left px-4 py-2 text-xs flex items-center justify-between transition-colors }
+                className={`w-full text-left px-4 py-2 text-xs flex items-center justify-between transition-colors ${
+                  isSelected 
+                    ? 'bg-sadhana-primary/20 text-sadhana-primary' 
+                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
               >
                 <span>{lang.title}</span>
                 {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-sadhana-primary" />}
