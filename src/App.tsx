@@ -12,8 +12,10 @@ import { EcoaldeaModules } from './components/EcoaldeaModules';
 import { ImpactStoryScroll } from './components/ImpactStoryScroll';
 import { SocialProofSection } from './components/SocialProofSection';
 import { DonationBanner } from './components/DonationBanner';
+import { CinematicTrailerModal } from './components/CinematicTrailerModal';
 import { DonationSystem } from './components/DonationSystem';
 import { LocationSection } from './components/LocationSection';
+import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { IdentitySection } from './components/IdentitySection';
 import { SpiritualLeaders } from './components/SpiritualLeaders';
@@ -224,6 +226,8 @@ export default function App() {
           }} />
         </div>
         
+        <FaqSection />
+
         <LocationSection />
 
       </div>
