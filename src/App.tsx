@@ -88,7 +88,10 @@ export default function App() {
         <GlobalAudioPlayer />
         
         <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center text-white mix-blend-difference">
-          <button onClick={() => setCurrentPage('home')} className="text-xl font-bold tracking-[0.2em] cursor-pointer">PAMPA ÑUSTA</button>
+          <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
+            <span className="text-xl font-bold tracking-[0.2em]">PAMPA ÑUSTA</span>
+            <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
+          </button>
           <button 
             onClick={() => setCurrentPage('home')}
             className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
@@ -129,7 +132,10 @@ export default function App() {
 
       {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference text-white">
-        <button onClick={() => setCurrentPage('home')} className="text-xl font-bold tracking-[0.2em] cursor-pointer">PAMPA ÑUSTA</button>
+        <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
+          <span className="text-xl font-bold tracking-[0.2em]">PAMPA ÑUSTA</span>
+          <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
+        </button>
         <button 
           onClick={() => setIsMenuOpen(true)}
           className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
