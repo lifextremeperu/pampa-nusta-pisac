@@ -26,7 +26,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Santuario de polinización nocturna con murciélagos y polillas andinas.'
     ],
     imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: '/assets/ecoaldea/wachuma-peru.jpg',
     quote: '«La Wachuma no es sólo una planta; es la memoria mineral y vegetal que sostiene la visión de la cordillera.»',
     ctaText: 'Explorar Santuario Botánico',
     projectVision: 'Nuestra visión trasciende la botánica; es un acto de resistencia espiritual. Ante el saqueo comercial y el cambio climático, resguardamos el ADN puro del cactus más sagrado de los Andes para que las próximas generaciones aún puedan acceder a la medicina de la tierra.',
@@ -42,8 +42,8 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ],
     neuromarketingHook: 'No estás financiando un jardín; estás salvando el código genético de la medicina ancestral más antigua de América. Si nosotros no la protegemos hoy, mañana será un mito.',
     gallery: [
-      'https://images.unsplash.com/photo-1555626906-f31f09ce8817?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1587313632739-c8959d282b0e?q=80&w=1200&auto=format&fit=crop'
+      '/assets/ecoaldea/wachuma-closeup.jpg',
+      '/assets/ecoaldea/gallery_wachuma_1789663903221.jpg'
     ]
   },
   {
@@ -71,7 +71,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Cuidado manual sin ningún tipo de agroquímico.'
     ],
     imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: '/assets/ecoaldea/wachuma-peru.jpg',
     quote: '«La Wachuma no es sólo una planta; es la memoria mineral y vegetal que sostiene la visión de la cordillera.»',
     ctaText: 'Solicitar Adopción Genética',
     projectVision: 'Protegemos específicamente el linaje de 7 y 8 costillas, considerado por los ancestros pre-incas como los más altos conductores de energía geomagnética. Estos especímenes son la realeza botánica del continente.',
@@ -87,8 +87,8 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ],
     neuromarketingHook: 'Adopta una porción de historia viva. Al custodiar genéticamente este linaje, te conviertes en un guardián de la memoria de la tierra.',
     gallery: [
-      'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1544321303-34e8d35688a4?q=80&w=1200&auto=format&fit=crop'
+      '/assets/ecoaldea/wachuma-closeup-cinematic.jpg',
+      '/assets/ecoaldea/wachuma-cinematic-master.jpg'
     ]
   },
   {
@@ -116,7 +116,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Fotografía y registro de especies polinizadoras nocturnas.'
     ],
     imageUrl: '/assets/ecoaldea/capitulo_wachuma_1789490305200.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1592417817098-8f3d69102a5e?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: '/assets/ecoaldea/seed-bank-terrace.jpg',
     quote: '«Una sola noche basta para entregar la belleza suprema al universo.»',
     ctaText: 'Ver Registro Botánico',
     projectVision: 'Documentar el misterioso y fugaz ciclo de polinización nocturna de la Wachuma. Esta floración es el clímax biológico del desierto y las montañas, un baile oculto entre la planta, la luna y los murciélagos polinizadores.',
@@ -132,8 +132,8 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ],
     neuromarketingHook: 'Solo abre una noche al año. Ser testigo de este momento requiere paciencia, respeto y sincronía con el cosmos. ¿Estás listo para entender los tiempos de la naturaleza?',
     gallery: [
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1200&auto=format&fit=crop'
+      '/assets/ecoaldea/wachuma-closeup.jpg',
+      '/assets/ecoaldea/wachuma-peru.jpg'
     ]
   },
   {
@@ -161,7 +161,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Muestrario sensorial de colores, texturas y fenotipos precolombinos.'
     ],
     imageUrl: '/assets/ecoaldea/capitulo_semillas_1789490316096.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1592417817098-8f3d69102a5e?auto=format&fit=crop&w=1200&q=80',
+    secondaryImage: '/assets/ecoaldea/seed-bank-terrace.jpg',
     quote: '«Quien custodia una semilla custodia los próximos mil años de la humanidad.»',
     ctaText: 'Ver Bóveda de Semillas',
     projectVision: 'Frente a la homogenización de la agricultura moderna y los transgénicos, nuestra Arca de Semillas es un baluarte de soberanía alimentaria. Protegemos los colores, nutrientes y resistencia genética de los Andes.',
@@ -177,8 +177,8 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ],
     neuromarketingHook: 'Una semilla extinta jamás regresa. Tu apoyo permite mantener vivo el banco genético alimentario más poderoso de la civilización Inca.',
     gallery: [
-      'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1615485966567-a5ec082a6fdf?q=80&w=1200&auto=format&fit=crop'
+      '/assets/ecoaldea/elemento_tierra.jpg',
+      '/assets/ecoaldea/instalacion_arca_semillas.jpg'
     ]
   },
   {
@@ -222,7 +222,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ],
     neuromarketingHook: 'No inviertes en una escuela tradicional; estás patrocinando la reconexión de una generación entera con la inteligencia de la Tierra. El futuro depende de la sensibilidad que cultivemos hoy en sus corazones.',
     gallery: [
-      'https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=1200&auto=format&fit=crop',
+      '/assets/ecoaldea/elemento_viento.jpg',
       'https://images.unsplash.com/photo-1519340241574-2c6b4f60f64c?q=80&w=1200&auto=format&fit=crop'
     ]
   },
@@ -317,3 +317,4 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
     ]
   },
 ];
+

@@ -110,7 +110,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
           </div>
 
           {/* Body */}
-          <div className="p-6 md:p-8 overflow-y-auto flex-1 custom-scrollbar">
+          <div className="p-6 md:p-8 overflow-y-auto flex-1 min-h-0 custom-scrollbar">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center py-12 text-center h-full">
                 <motion.div
