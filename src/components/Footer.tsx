@@ -47,8 +47,8 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
               <div className="w-10 h-10 rounded-full bg-white border border-sadhana-primary/20 flex items-center justify-center text-sadhana-primary shadow-sm">
                 <Mountain className="w-5 h-5" />
               </div>
-              <span className="font-sans font-extrabold text-xl tracking-widest text-sadhana-dark">
-                PISAC
+              <span className="font-sans font-extrabold text-xl tracking-widest text-sadhana-dark uppercase">
+                Pampa Ñusta
               </span>
             </div>
             <p className="text-sm font-sans leading-relaxed text-sadhana-brown font-medium pr-4">
@@ -77,11 +77,21 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
               Explorar
             </h4>
             <ul className="space-y-4">
-              {['El Santuario', 'Jardín Botánico', 'Recorrido 3D', 'Adopción'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-2 group">
+              {[
+                { label: 'Inicio', href: '#memoria-viva' },
+                { label: 'Leyenda Originaria', href: '#leyenda-originaria' },
+                { label: 'Botánica Sagrada', href: '#ecoaldea-modulos' },
+                { label: 'Identidad', href: '#identidad-corporativa' },
+                { label: 'Líderes Espirituales', href: '#guardianes' },
+                { label: 'Centro Multimedia', href: '#media-hub' },
+                { label: 'Cómo Unirse', href: '#como-unirse' },
+                { label: 'Recorrido 360°', href: '#recorrido-360' },
+                { label: 'Adopción', href: '#donaciones' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-sadhana-dark/20 group-hover:bg-sadhana-primary transition-colors" />
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -177,10 +187,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
             <a href="https://ejemplo.com/garantia" target="_blank" rel="noopener noreferrer" className="hover:text-sadhana-primary transition-colors flex items-center gap-2 group">
               <RotateCcw className="w-3.5 h-3.5 text-sadhana-primary/70 group-hover:text-sadhana-primary" />
               <span>Garantía 100% Sin Penalidad</span>
-            </a>
-            <a href="https://ejemplo.com/altitud" target="_blank" rel="noopener noreferrer" className="hover:text-sadhana-primary transition-colors flex items-center gap-2 group">
-              <Activity className="w-3.5 h-3.5 text-sadhana-primary/70 group-hover:text-sadhana-primary" />
-              <span>Oxígeno & Aclimatación 3,347 msnm</span>
             </a>
           </div>
         </div>
