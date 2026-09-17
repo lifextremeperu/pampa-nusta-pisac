@@ -36,6 +36,14 @@ import { NustaScrollTelling } from './components/NustaScrollTelling';
 const VirtualTour360 = lazy(() => import('./components/VirtualTour360').then(module => ({ default: module.VirtualTour360 })));
 const CinematicTrailerModal = lazy(() => import('./components/CinematicTrailerModal').then(module => ({ default: module.CinematicTrailerModal })));
 
+const WachumaIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 2v20" />
+    <path d="M8 22V10c0-1.7 1.3-3 3-3" />
+    <path d="M16 22V14c0-1.7-1.3-3-3-3" />
+  </svg>
+);
+
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
