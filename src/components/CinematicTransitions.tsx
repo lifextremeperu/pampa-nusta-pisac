@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, Leaf } from 'lucide-react';
+import { ArrowRight, Leaf, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 
 interface CinematicTransition {
@@ -173,6 +173,16 @@ export const CinematicTransitions: React.FC = () => {
     setActiveIndex(idx);
   };
 
+  const handlePrev = () => {
+    startAutoPlay();
+    setActiveIndex(prev => (prev === 0 ? TRANSITIONS.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    startAutoPlay();
+    setActiveIndex(prev => (prev + 1) % TRANSITIONS.length);
+  };
+
   return (
     <section ref={sectionRef} id="transiciones-cinematicas" className="relative w-full h-[90vh] md:h-screen overflow-hidden bg-sadhana-dark text-white">
       {/* Background Images with Ken Burns Effect */}
@@ -239,6 +249,16 @@ export const CinematicTransitions: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-40 flex justify-between px-2 md:px-6 pointer-events-none">
+        <button onClick={handlePrev} className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-black/20 hover:bg-sadhana-primary/80 border border-white/20 flex items-center justify-center backdrop-blur-md text-white transition-all pointer-events-auto group">
+          <ChevronLeft className="w-5 h-5 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
+        </button>
+        <button onClick={handleNext} className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-black/20 hover:bg-sadhana-primary/80 border border-white/20 flex items-center justify-center backdrop-blur-md text-white transition-all pointer-events-auto group">
+          <ChevronRight className="w-5 h-5 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
+        </button>
       </div>
 
       {/* Control Component (Bottom Timeline) */}
