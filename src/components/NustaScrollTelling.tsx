@@ -10,7 +10,7 @@ const NUSTA_SLIDES = [
     title: 'Leyenda de la Ñusta Encantada',
     subtitle: 'DOCUMENTAL ORIGINAL: MEMORIA ANCESTRAL',
     description: 'Inquill Chumpi y el príncipe Asto Rímac: amor, pacto con los Apus y la transmutación en guardianes pétreos de la siembra en Pisac.',
-    imageUrl: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/intro.jpg',
     accentColor: 'from-amber-900/80 to-sadhana-dark',
     progress: 'Memoria Viva'
   },
@@ -19,7 +19,7 @@ const NUSTA_SLIDES = [
     title: 'Energía Femenina & Masculina',
     subtitle: 'MONOLITOS TUTELARES DE PISAC',
     description: 'La Ñusta y el Príncipe transmutados en roca viva, enseñando la siembra sagrada (Tarpuy) a los niños y al pueblo andino.',
-    imageUrl: 'https://images.unsplash.com/photo-1590494490710-5384666f2c69?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/piedras.jpg',
     accentColor: 'from-orange-900/80 to-sadhana-dark',
     progress: 'Dualidad Yanantin'
   },
@@ -28,7 +28,7 @@ const NUSTA_SLIDES = [
     title: 'El Desafío Imposible',
     subtitle: 'ACTO 01 · 0% ROCA',
     description: 'Huayllapumap Sasa Munaynin. El cacique exigió construir en una sola noche un puente de piedra o los andenes para probar el valor del príncipe. La princesa Inquill Chumpi rogó a los Apus por su amado.',
-    imageUrl: 'https://images.unsplash.com/photo-1533630252192-349c43d52684?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/acto1.jpg',
     accentColor: 'from-rose-900/80 to-sadhana-dark',
     progress: '0% Roca'
   },
@@ -37,7 +37,7 @@ const NUSTA_SLIDES = [
     title: 'El Juramento de Asto Rímac',
     subtitle: 'ACTO 02 · 25% ROCA',
     description: 'Asto Rimacpa Tuta Ruwaynin. «Camina sin vacilar hacia la cima sagrada; si tus ojos buscan mi fatiga, la montaña reclamará nuestras almas.» Enamorado, el guerrero convoca a las fuerzas ocultas y a los Apus para levantar los pilares en la tiniebla.',
-    imageUrl: 'https://images.unsplash.com/photo-1616117978643-983ee27e5ec0?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/acto2.jpg',
     accentColor: 'from-indigo-900/80 to-sadhana-dark',
     progress: '25% Roca'
   },
@@ -46,7 +46,7 @@ const NUSTA_SLIDES = [
     title: 'La Mirada Prohibida',
     subtitle: 'ACTO 03 · 65% ROCA',
     description: 'Hark\'asqa Qaway. Casi al amanecer, con la obra a punto de culminar, Inquill Chumpi no pudo resistir y volteó a ver si su amado sobrevivía al esfuerzo titánico. El pacto con la montaña se rompió.',
-    imageUrl: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/acto3.jpg',
     accentColor: 'from-red-900/80 to-sadhana-dark',
     progress: '65% Roca'
   },
@@ -55,7 +55,7 @@ const NUSTA_SLIDES = [
     title: 'La Petrificación Eterna',
     subtitle: 'ACTO 04 · 100% ROCA',
     description: 'Wiñay Rumi Tukupuy. Ambos fueron convertidos en granito. Hoy, la Piedra Femenina custodia la fertilidad del agua, y la Piedra Masculina guía el calor del sol en los andenes, bendiciendo el Tarpuy Raymi.',
-    imageUrl: 'https://images.unsplash.com/photo-1549492423-400259a2e574?auto=format&fit=crop&w=2000&q=80',
+    imageUrl: '/assets/nusta/acto4.jpg',
     accentColor: 'from-stone-900/80 to-sadhana-dark',
     progress: '100% Roca'
   }
