@@ -38,10 +38,24 @@ const VirtualTour360 = lazy(() => import('./components/VirtualTour360').then(mod
 const CinematicTrailerModal = lazy(() => import('./components/CinematicTrailerModal').then(module => ({ default: module.CinematicTrailerModal })));
 
 const WachumaIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M12 2v20" />
-    <path d="M8 22V10c0-1.7 1.3-3 3-3" />
-    <path d="M16 22V14c0-1.7-1.3-3-3-3" />
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    {/* Columna Izquierda */}
+    <path d="M6 22V10c0-1 1-2 2-2s2 1 2 2v12" fill="currentColor" fillOpacity="0.1" />
+    <path d="M6 22V10c0-1 1-2 2-2s2 1 2 2v12" />
+    <path d="M8 9v13" strokeWidth="1" strokeOpacity="0.5" />
+    
+    {/* Columna Central (Más alta) */}
+    <path d="M10 22V4c0-1 1-2 2-2s2 1 2 2v18" fill="currentColor" fillOpacity="0.15" />
+    <path d="M10 22V4c0-1 1-2 2-2s2 1 2 2v18" />
+    <path d="M12 3v19" strokeWidth="1" strokeOpacity="0.5" />
+    
+    {/* Columna Derecha */}
+    <path d="M14 22V13c0-.8.8-1.5 1.5-1.5s1.5.8 1.5 1.5v9" fill="currentColor" fillOpacity="0.1" />
+    <path d="M14 22V13c0-.8.8-1.5 1.5-1.5s1.5.8 1.5 1.5v9" />
+    <path d="M15.5 12v10" strokeWidth="1" strokeOpacity="0.5" />
+    
+    {/* Espinas sutiles (Areolas) */}
+    <path d="M10 7h-.5 M14 9h.5 M10 14h-.5 M14 16h.5 M6 13h-.5 M10 18h-.5 M17 17h.5" strokeWidth="1.5" />
   </svg>
 );
 

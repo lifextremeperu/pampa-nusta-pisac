@@ -20,7 +20,8 @@ export const useCurrency = () => {
   const { i18n } = useTranslation();
 
   const getCurrency = (): Currency => {
-    switch (i18n.language) {
+    const lang = (i18n.language || 'es').split('-')[0].toLowerCase();
+    switch (lang) {
       case 'es': return 'PEN';
       case 'fr': return 'EUR';
       case 'pt': return 'BRL';

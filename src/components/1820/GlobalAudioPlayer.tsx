@@ -56,15 +56,15 @@ export const GlobalAudioPlayer = () => {
         )}
       </button>
 
-      {/* Hidden YouTube Player */}
-      <div className="hidden">
+      {/* Hidden YouTube Player (Must not be display:none) */}
+      <div className="absolute opacity-0 pointer-events-none w-1 h-1 overflow-hidden">
         <ReactPlayer 
           url={YOUTUBE_URL}
           playing={isPlaying}
           loop={true}
           volume={0.6}
-          width="0"
-          height="0"
+          width="10px"
+          height="10px"
           config={{
             youtube: {
               playerVars: { 
