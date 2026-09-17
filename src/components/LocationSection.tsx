@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { MapPin, Navigation, MessageCircle, Zap } from 'lucide-react';
-
-const InterdimensionalJourney = React.lazy(() => import('./InterdimensionalJourney').then(m => ({ default: m.InterdimensionalJourney })));
+import { InterdimensionalJourney } from './InterdimensionalJourney';
 
 export const LocationSection: React.FC = () => {
   const [showJourney, setShowJourney] = useState(false);
@@ -149,9 +148,7 @@ export const LocationSection: React.FC = () => {
 
     {/* Journey portal */}
     {showJourney && createPortal(
-      <React.Suspense fallback={<div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black"><div className="w-12 h-12 border-4 border-sadhana-primary border-t-transparent rounded-full animate-spin mb-4"></div><span className="text-white font-mono uppercase tracking-widest text-xs">Iniciando viaje cuántico...</span></div>}>
-        <InterdimensionalJourney onClose={() => setShowJourney(false)} />
-      </React.Suspense>,
+      <InterdimensionalJourney onClose={() => setShowJourney(false)} />,
       document.body
     )}
 
