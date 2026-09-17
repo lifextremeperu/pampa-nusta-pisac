@@ -24,6 +24,7 @@ import { JoinUsSection } from './components/JoinUsSection';
 import { CustomCursor } from './components/CustomCursor';
 import { CinematicTransitions } from './components/CinematicTransitions';
 import { ConectaPampaNustaChatbot } from './components/ConectaPampaNustaChatbot';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { SecurityComplianceModal } from './components/SecurityComplianceModal';
 import { ModuleExperienceModal } from './components/ModuleExperienceModal';
 import { MobileCinematicDock } from './components/MobileCinematicDock';
@@ -141,16 +142,19 @@ export default function App() {
       {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference text-white">
         <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
-          <span className="text-xl font-bold tracking-[0.2em]">PAMPA ÑUSTA</span>
+          <span className="text-xl font-bold tracking-[0.2em] uppercase">Pampa Ñusta</span>
           <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
         </button>
-        <button 
-          onClick={() => setIsMenuOpen(true)}
-          className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
-        >
-          <span className="text-xs uppercase tracking-widest hidden md:inline font-medium">Menú</span>
-          <Menu className="w-8 h-8" />
-        </button>
+        <div className="flex items-center gap-4 md:gap-6">
+          <LanguageSwitcher />
+          <button 
+            onClick={() => setIsMenuOpen(true)}
+            className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
+          >
+            <span className="text-xs uppercase tracking-widest hidden md:inline font-medium">Menú</span>
+            <Menu className="w-8 h-8" />
+          </button>
+        </div>
       </header>
 
       <FullscreenMenu 

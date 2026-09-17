@@ -14,10 +14,16 @@ import {
   Leaf
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useCurrency } from '../hooks/useCurrency';
 
 export const DonationSystem: React.FC = () => {
-  const [currency, setCurrency] = useState<'PEN' | 'USD'>('PEN');
-  const [customAmount, setCustomAmount] = useState<number>(currency === 'PEN' ? 100 : 30);
+  const { currency, symbol, formatPrice, getRawPrice } = useCurrency();
+  const [customAmount, setCustomAmount] = useState<number>(getRawPrice(30)); // Initialize correctly
+
+  React.useEffect(() => {
+    // When currency changes, reset to base 30 USD equivalent
+    setCustomAmount(getRawPrice(30));
+  }, [currency]);
   const [donorName, setDonorName] = useState<string>('');
   const [donorEmail, setDonorEmail] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'yape_plin' | 'stripe'>('card');
@@ -41,10 +47,11 @@ export const DonationSystem: React.FC = () => {
     return `https://wa.me/51958050928?text=${encodeURIComponent(text)}`;
   };
 
-  // Dynamic impact metrics calculation
-  const calculatedTerraceMeters = Math.round(customAmount * (currency === 'PEN' ? 0.12 : 0.45));
-  const calculatedSeedBags = Math.max(1, Math.round(customAmount * (currency === 'PEN' ? 0.05 : 0.2)));
-  const calculatedHydraulicHours = Math.round(customAmount * (currency === 'PEN' ? 0.08 : 0.3));
+  // Dynamic impact metrics calculation based on USD base amount
+  const usdAmount = customAmount / getRawPrice(1);
+  const calculatedTerraceMeters = Math.round(usdAmount * 0.45);
+  const calculatedSeedBags = Math.max(1, Math.round(usdAmount * 0.2));
+  const calculatedHydraulicHours = Math.round(usdAmount * 0.3);
 
   const handleProcessDonation = (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,7 +76,7 @@ export const DonationSystem: React.FC = () => {
       const certCode = 'PN-' + Math.random().toString(36).substring(2, 8).toUpperCase() + '-2026';
       setCertificateData({
         name: donorName,
-        amount: `${currency === 'PEN' ? 'S/' : '$'} ${customAmount}`,
+        amount: symbol + ' ' + customAmount,
         date: new Date().toLocaleDateString('es-PE', { year: 'numeric', month: 'long', day: 'numeric' }),
         code: certCode
       });
@@ -105,39 +112,8 @@ export const DonationSystem: React.FC = () => {
           </p>
         </div>
 
-        {/* Currency Switcher */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-2 p-1.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
-            <button
-              onClick={() => {
-                setCurrency('PEN');
-                setCustomAmount(100);
-                setPaymentMethod('card');
-              }}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${
-                currency === 'PEN'
-                  ? 'bg-sadhana-primary text-white shadow-lg'
-                  : 'text-sadhana-sand/60 hover:text-white'
-              }`}
-            >
-              Soles (PEN)
-            </button>
-            <button
-              onClick={() => {
-                setCurrency('USD');
-                setCustomAmount(30);
-                setPaymentMethod('stripe');
-              }}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${
-                currency === 'USD'
-                  ? 'bg-sadhana-primary text-white shadow-lg'
-                  : 'text-sadhana-sand/60 hover:text-white'
-              }`}
-            >
-              Dólares (USD)
-            </button>
-          </div>
-        </div>
+        {/* Currency Switcher has been replaced by the dynamic i18n Language Switcher */}
+
 
         {/* Main Content: Impact & Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
@@ -167,9 +143,9 @@ export const DonationSystem: React.FC = () => {
               </div>
               <input
                 type="range"
-                min={currency === 'PEN' ? 20 : 10}
-                max={currency === 'PEN' ? 1000 : 300}
-                step={currency === 'PEN' ? 10 : 5}
+                min={getRawPrice(10)}
+                max={getRawPrice(300)}
+                step={getRawPrice(5)}
                 value={customAmount}
                 onChange={(e) => setCustomAmount(Number(e.target.value))}
                 className="w-full h-1 bg-white/20 appearance-none cursor-pointer accent-sadhana-primary rounded-full"
@@ -436,3 +412,4 @@ export const DonationSystem: React.FC = () => {
     </section>
   );
 };
+
