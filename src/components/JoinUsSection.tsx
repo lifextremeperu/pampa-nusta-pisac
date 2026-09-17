@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Leaf, Heart, Home, ArrowRight, Sparkles } from 'lucide-react';
+import { ApplicationFormModal, ApplicationType } from './ApplicationFormModal';
 
 const JOIN_PATHS = [
   {
@@ -30,6 +31,8 @@ const JOIN_PATHS = [
 ];
 
 export const JoinUsSection: React.FC = () => {
+  const [modalType, setModalType] = useState<ApplicationType>(null);
+
   return (
     <section id="unirse" className="relative py-24 md:py-32 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
       {/* Background Elements */}
@@ -104,7 +107,10 @@ export const JoinUsSection: React.FC = () => {
                 </ul>
               </div>
 
-              <button className="w-full py-4 rounded-xl border border-white/10 bg-sadhana-dark hover:bg-sadhana-primary hover:border-sadhana-primary hover:text-sadhana-dark text-white font-sans font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 group/btn mt-auto">
+              <button 
+                onClick={() => setModalType(path.id as ApplicationType)}
+                className="w-full py-4 rounded-xl border border-white/10 bg-sadhana-dark hover:bg-sadhana-primary hover:border-sadhana-primary hover:text-sadhana-dark text-white font-sans font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 group/btn mt-auto"
+              >
                 <span>{path.action}</span>
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </button>
@@ -112,6 +118,12 @@ export const JoinUsSection: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <ApplicationFormModal 
+        isOpen={modalType !== null} 
+        onClose={() => setModalType(null)} 
+        type={modalType} 
+      />
     </section>
   );
 };
