@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, Radio, Calendar, Video, Clock } from 'lucide-react';
+import { Play, Radio, Calendar, Video, Clock, Camera } from 'lucide-react';
 
 const INTERVIEWS = [
   {
@@ -27,7 +27,7 @@ const INTERVIEWS = [
 ];
 
 export const MediaHub: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'live' | 'interviews'>('live');
+  const [activeTab, setActiveTab] = useState<'live' | 'interviews' | 'gallery'>('live');
 
   return (
     <section id="multimedia" className="relative py-24 bg-sadhana-sand text-sadhana-dark border-t border-sadhana-dark/10 overflow-hidden">
@@ -70,7 +70,27 @@ export const MediaHub: React.FC = () => {
               <Video className="w-4 h-4" />
               Entrevistas
             </button>
+            <button
+              onClick={() => setActiveTab('gallery')}
+              className={`px-6 py-2.5 rounded-lg text-xs font-mono tracking-widest uppercase transition-all flex items-center gap-2 hidden md:flex ${
+                activeTab === 'gallery' ? 'bg-sadhana-dark text-white font-bold shadow-md' : 'text-sadhana-brown/60 hover:text-sadhana-brown'
+              }`}
+            >
+              <Camera className="w-4 h-4" />
+              Galería
+            </button>
           </div>
+          
+          {/* Mobile Gallery Button (shows below tabs on small screens) */}
+          <button
+            onClick={() => setActiveTab('gallery')}
+            className={`md:hidden mt-4 w-full px-6 py-2.5 rounded-lg text-xs font-mono tracking-widest uppercase transition-all flex justify-center items-center gap-2 ${
+              activeTab === 'gallery' ? 'bg-sadhana-dark text-white font-bold shadow-md' : 'bg-white/50 text-sadhana-brown/80 border border-sadhana-dark/10'
+            }`}
+          >
+            <Camera className="w-4 h-4" />
+            Galería de Fotos y Videos
+          </button>
         </div>
 
         {/* CONTENIDO TIKTOK LIVE */}
@@ -174,6 +194,28 @@ export const MediaHub: React.FC = () => {
             ))}
           </motion.div>
         )}
+        {/* CONTENIDO GALERÍA */}
+        {activeTab === 'gallery' && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex flex-col items-center justify-center py-24 md:py-32 bg-white/60 backdrop-blur-md rounded-[2.5rem] border border-white shadow-xl text-center px-6"
+          >
+            <div className="w-20 h-20 bg-sadhana-primary/10 rounded-full flex items-center justify-center mb-6">
+              <Camera className="w-10 h-10 text-sadhana-primary" />
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold font-sans text-sadhana-dark mb-4 drop-shadow-sm">
+              Galería Visual
+            </h3>
+            <p className="text-sadhana-brown/80 leading-relaxed font-medium max-w-lg mb-8 text-sm md:text-base">
+              Muy pronto habilitaremos el archivo histórico de fotos y videos de la ecoaldea. Podrás explorar cada rincón, ceremonia y avance de bioconstrucción del Santuario Pampa Ñusta.
+            </p>
+            <button className="px-8 py-3.5 rounded-full border border-sadhana-primary bg-sadhana-primary/5 text-sadhana-primary hover:bg-sadhana-primary hover:text-white font-sans font-bold text-xs md:text-sm uppercase tracking-widest shadow-sm transition-all hover:scale-105">
+              Notificarme cuando esté listo
+            </button>
+          </motion.div>
+        )}
+
       </div>
     </section>
   );
