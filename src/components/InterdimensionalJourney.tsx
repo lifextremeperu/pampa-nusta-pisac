@@ -29,23 +29,35 @@ const FRAG = `
   void main(){
     vec2 uv=v_uv; float prog=clamp(u_p,0.0,1.0);
     vec2 c=uv-0.5; float ang=atan(c.y,c.x); float rad=length(c);
-    float speed=0.3+prog*4.0; float tz=u_t*speed;
-    float sp=ang/(2.0*PI)+tz*0.04; float td=1.0/(rad+0.01)*0.3+tz;
+    
+    // Mandala fold
+    float sides = 12.0; // Mandala petals
+    float a = mod(ang, 2.0*PI/sides) - PI/sides;
+    vec2 kc = rad * vec2(cos(a), sin(a));
+    
+    float speed=0.3+prog*6.0; float tz=u_t*speed;
+    float sp=atan(kc.y,kc.x)/(2.0*PI)+tz*0.04; float td=1.0/(rad+0.01)*0.3+tz;
     vec2 tuv=vec2(sp,td);
-    vec3 col1=vec3(0.05,0.3,0.12),col2=vec3(0.12,0.05,0.35),col3=vec3(0.7,0.5,0.1),col4=vec3(0.02,0.1,0.25);
-    float n1=fbm(tuv*2.0+vec2(u_t*0.05,0.0)),n2=fbm(tuv*3.0-vec2(u_t*0.08,u_t*0.03)),n3=fbm(uv*4.0+vec2(u_t*0.1));
-    vec3 neb=mix(col4,col1,n1); neb=mix(neb,col2,n2*0.6); neb=mix(neb,col3,pow(n3,3.0)*0.5);
+    
+    // Vibrant colors for interdimensional trip
+    vec3 col1=vec3(0.0,0.8,0.5),col2=vec3(0.9,0.1,0.6),col3=vec3(0.2,0.4,1.0),col4=vec3(1.0,0.8,0.1);
+    float n1=fbm(tuv*2.0+vec2(u_t*0.05,0.0)),n2=fbm(tuv*3.0-vec2(u_t*0.08,u_t*0.03)),n3=fbm(kc*5.0+vec2(u_t*0.1));
+    vec3 neb=mix(col4,col1,n1); neb=mix(neb,col2,n2*0.8); neb=mix(neb,col3,pow(n3,2.0)*0.6);
+    
     float core=pow(1.0-smoothstep(0.0,0.15,rad),2.0)*(0.3+prog*1.5);
-    float rim=(smoothstep(0.45,0.5,rad)*(1.0-smoothstep(0.5,0.55,rad))+smoothstep(0.3,0.35,rad)*(1.0-smoothstep(0.35,0.4,rad)))*0.5*(0.5+0.5*sin(ang*8.0+u_t*2.0));
-    float ring=smoothstep(0.05,0.1,fract(td*0.3))*(1.0-smoothstep(0.1,0.15,fract(td*0.3)))*(1.0-smoothstep(0.0,0.5,rad))*(0.5+0.5*sin(ang*12.0+u_t));
+    float rim=(smoothstep(0.45,0.5,rad)*(1.0-smoothstep(0.5,0.55,rad))+smoothstep(0.3,0.35,rad)*(1.0-smoothstep(0.35,0.4,rad)))*0.5*(0.5+0.5*sin(ang*sides+u_t*4.0));
+    float ring=smoothstep(0.05,0.1,fract(td*0.5))*(1.0-smoothstep(0.1,0.15,fract(td*0.5)))*(1.0-smoothstep(0.0,0.5,rad))*(0.5+0.5*sin(ang*24.0+u_t*2.0));
+    
     vec3 final=neb;
-    final=mix(final,mix(col3,vec3(1,0.95,0.8),core),core);
-    final+=vec3(0.1,0.8,0.4)*rim*0.8;
-    final+=col3*ring*(0.5+prog);
-    final+=vec3(0.9,0.95,1)*max(0.0,stars(uv))*(1.0-smoothstep(0.3,0.5,rad*2.0));
+    final=mix(final,mix(vec3(1),vec3(1,0.5,0.8),core),core);
+    final+=vec3(0.4,1.0,0.7)*rim*1.5;
+    final+=col4*ring*(1.0+prog*2.0);
+    final+=vec3(1.0)*max(0.0,stars(uv))*(1.0-smoothstep(0.3,0.5,rad*2.0));
+    
     float vig=max(0.0,1.0-smoothstep(0.3,0.7,rad*2.0)); final*=vig+0.1;
     float wo=smoothstep(0.85,1.0,prog); final=mix(final,vec3(1,0.97,0.85),wo);
-    final=final/(final+vec3(0.7)); final=pow(final,vec3(0.8));
+    
+    final=final/(final+vec3(0.4)); final=pow(final,vec3(0.8));
     gl_FragColor=vec4(final,1.0);
   }
 `;
@@ -77,9 +89,9 @@ const SANCTUARY_SPOTS = [
 
 const LABELS = [
   { at: 0.00, text: 'Iniciando el Viaje Sagrado...', sub: 'Tu alma está despertando' },
-  { at: 0.25, text: 'Cruzando el Umbral Cósmico', sub: 'Europa queda atrás' },
-  { at: 0.50, text: 'Los Apus te llaman', sub: 'Sientes el corazón de los Andes' },
-  { at: 0.75, text: 'Cerca de Pisac · 3,347 msnm', sub: 'El Wachuma guarda el portal' },
+  { at: 0.25, text: 'Cruzando el Umbral Cósmico', sub: 'Mandalas de Luz te guían' },
+  { at: 0.50, text: 'Los Apus te llaman', sub: 'Sientes la fuerza de las montañas' },
+  { at: 0.75, text: 'Valle de los Espíritus · 3,347 msnm', sub: 'El Wachuma abre el portal' },
   { at: 0.92, text: '¡Aterrizando en Pampa Ñusta!', sub: 'Ya estás aquí...' },
 ];
 
@@ -327,7 +339,13 @@ export const InterdimensionalJourney: React.FC<InterdimensionalJourneyProps> = (
   const [showStreetView, setShowStreetView] = useState(false);
 
   const arrived = progress >= 0.94;
-  const label = LABELS.reduce((acc, l) => progress >= l.at ? l : acc, LABELS[0]);
+  const currentLabelIndex = LABELS.findIndex(l => progress < l.at) === -1 ? LABELS.length - 1 : Math.max(0, LABELS.findIndex(l => progress < l.at) - 1);
+  const label = LABELS[currentLabelIndex];
+  const nextLabel = LABELS[currentLabelIndex + 1] || { at: 1.0 };
+  const localProg = (progress - label.at) / (nextLabel.at - label.at || 1);
+  const textScale = 0.8 + localProg * 0.7;
+  const textOpacity = Math.sin(localProg * Math.PI); // parabola
+  const textBlur = Math.abs(localProg - 0.5) * 12; // 6px at start, 0px at middle, 6px at end
   const speedKmH = Math.round(300 + progress * 28700);
 
   // Trigger street view shortly after arrival
@@ -481,20 +499,26 @@ export const InterdimensionalJourney: React.FC<InterdimensionalJourneyProps> = (
 
           {!arrived && (
             <div style={{
-              position: 'absolute', bottom: '22%', left: '50%', transform: 'translateX(-50%)',
-              textAlign: 'center', zIndex: 10, width: '90%', pointerEvents: 'none',
+              position: 'absolute', top: '50%', left: '50%', 
+              transform: `translate(-50%, -50%) scale(${textScale})`,
+              textAlign: 'center', zIndex: 10, width: '100%', pointerEvents: 'none',
+              opacity: textOpacity,
+              filter: `blur(${textBlur}px)`
             }}>
               <p style={{
-                fontSize: 'clamp(18px, 5vw, 44px)', fontWeight: 900, color: '#fff',
-                textShadow: '0 0 40px rgba(74,222,128,0.7)',
+                fontSize: 'clamp(24px, 6vw, 64px)', fontWeight: 900, color: '#fff',
+                textShadow: '0 0 40px rgba(255,255,255,0.8), 0 0 80px rgba(74,222,128,0.8)',
                 margin: 0, fontFamily: "'Inter', system-ui, sans-serif",
+                letterSpacing: '0.05em'
               }}>
                 {label.text}
               </p>
               <p style={{
-                fontSize: 'clamp(11px, 2.5vw, 17px)', color: 'rgba(251,191,36,0.9)',
-                margin: '8px 0 0', fontWeight: 500,
+                fontSize: 'clamp(14px, 3vw, 24px)', color: 'rgba(251,191,36,1)',
+                margin: '12px 0 0', fontWeight: 700,
+                textShadow: '0 0 20px rgba(251,191,36,0.6)',
                 fontFamily: "'Inter', system-ui, sans-serif",
+                letterSpacing: '0.1em', textTransform: 'uppercase'
               }}>
                 {label.sub}
               </p>
