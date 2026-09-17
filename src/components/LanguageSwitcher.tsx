@@ -1,6 +1,6 @@
-﻿import React from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import { Globe, ChevronDown } from 'lucide-react';
 
 const LANGUAGES = [
   { code: 'es', label: 'ES', title: 'Español (PEN)' },
@@ -11,25 +11,57 @@ const LANGUAGES = [
 
 export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const currentLang = LANGUAGES.find(l => i18n.language.startsWith(l.code)) || LANGUAGES[0];
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    setIsOpen(false);
   };
 
+  // Close when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <div className="flex items-center gap-2 text-xs font-mono font-bold">
-      <Globe className="w-4 h-4 opacity-50 hidden sm:block" />
-      <div className="flex items-center bg-white/10 backdrop-blur-md rounded-full p-1 border border-white/20">
-        {LANGUAGES.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => changeLanguage(lang.code)}
-            title={lang.title}
-            className={px-2.5 sm:px-3 py-1.5 rounded-full transition-all duration-300 }
-          >
-            {lang.label}
-          </button>
-        ))}
+    <div className="relative font-mono font-bold text-xs" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all duration-300"
+      >
+        <Globe className="w-3.5 h-3.5 opacity-70" />
+        <span>{currentLang.label}</span>
+        <ChevronDown className={w-3.5 h-3.5 opacity-50 transition-transform duration-300 } />
+      </button>
+
+      {/* Dropdown Menu */}
+      <div 
+        className={bsolute right-0 top-full mt-2 w-36 bg-sadhana-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 origin-top-right }
+      >
+        <div className="py-1">
+          {LANGUAGES.map((lang) => {
+            const isSelected = i18n.language.startsWith(lang.code);
+            return (
+              <button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className={w-full text-left px-4 py-2 text-xs flex items-center justify-between transition-colors }
+              >
+                <span>{lang.title}</span>
+                {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-sadhana-primary" />}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

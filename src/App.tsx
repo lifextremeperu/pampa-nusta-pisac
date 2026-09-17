@@ -6,7 +6,6 @@ import { Menu } from 'lucide-react';
 import { Preloader } from './components/Preloader';
 import { GlobalAudioPlayer } from './components/1820/GlobalAudioPlayer';
 import { FullscreenMenu } from './components/1820/FullscreenMenu';
-import { LogoMarquee } from './components/1820/LogoMarquee';
 
 import { EcoaldeaModules } from './components/EcoaldeaModules';
 import { ImpactStoryScroll } from './components/ImpactStoryScroll';
@@ -167,9 +166,6 @@ export default function App() {
 
       {/* 4. MAIN CONTENT SECTIONS (Parallax & Normal Scroll) */}
       <div className="relative z-10 bg-white">
-        
-        {/* Marquesina de confianza */}
-        <LogoMarquee />
 
         <div id="memoria-viva">
           <CinematicTransitions />
