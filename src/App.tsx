@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { IdentitySection } from './components/IdentitySection';
 import { SpiritualLeaders } from './components/SpiritualLeaders';
 import { MediaHub } from './components/MediaHub';
+import { JoinUsSection } from './components/JoinUsSection';
 
 // Modals & Overlays
 import { CustomCursor } from './components/CustomCursor';
@@ -192,6 +193,10 @@ export default function App() {
 
         <div id="media-hub">
           <MediaHub />
+        </div>
+
+        <div id="como-unirse">
+          <JoinUsSection />
         </div>
 
         <div id="donaciones">
