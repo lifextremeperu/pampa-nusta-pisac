@@ -1,12 +1,12 @@
-import React from 'react';
+ï»¿import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
 
 const LANGUAGES = [
-  { code: 'es', label: 'ES', title: 'Español (PEN)' },
+  { code: 'es', label: 'ES', title: 'EspaÃ±ol (PEN)' },
   { code: 'en', label: 'EN', title: 'English (USD)' },
-  { code: 'fr', label: 'FR', title: 'Français (EUR)' },
-  { code: 'pt', label: 'PT', title: 'Português (BRL)' }
+  { code: 'fr', label: 'FR', title: 'FranÃ§ais (EUR)' },
+  { code: 'pt', label: 'PT', title: 'PortuguÃªs (BRL)' }
 ];
 
 export const LanguageSwitcher: React.FC = () => {
@@ -25,7 +25,7 @@ export const LanguageSwitcher: React.FC = () => {
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
             title={lang.title}
-            className={\px-2.5 sm:px-3 py-1.5 rounded-full transition-all duration-300 \\}
+            className={px-2.5 sm:px-3 py-1.5 rounded-full transition-all duration-300 }
           >
             {lang.label}
           </button>
@@ -34,4 +34,3 @@ export const LanguageSwitcher: React.FC = () => {
     </div>
   );
 };
-
