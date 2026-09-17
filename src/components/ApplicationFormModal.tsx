@@ -71,21 +71,22 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-sadhana-dark/80 backdrop-blur-sm"
-        />
+      <div className="fixed inset-0 z-[100] w-screen overflow-y-auto">
+        <div className="flex min-h-full items-center justify-center p-4 sm:p-6 text-left">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-sadhana-dark/80 backdrop-blur-sm"
+          />
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] md:max-h-[85vh] border border-white/10"
-        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative w-full max-w-2xl bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col border border-white/10 my-8"
+          >
           {/* Header */}
           <div className="flex items-center justify-between p-6 md:p-8 border-b border-white/10 bg-black/20 backdrop-blur-md shrink-0">
             <div className="flex items-center gap-4">
@@ -110,7 +111,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
           </div>
 
           {/* Body */}
-          <div className="p-6 md:p-8 overflow-y-auto flex-1 min-h-0 custom-scrollbar">
+          <div className="p-6 md:p-8 flex-1">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center py-12 text-center h-full">
                 <motion.div
@@ -190,6 +191,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
             )}
           </div>
         </motion.div>
+        </div>
       </div>
     </AnimatePresence>
   );
