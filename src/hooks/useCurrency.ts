@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 type Currency = 'PEN' | 'USD' | 'EUR' | 'BRL';
 
@@ -40,7 +40,7 @@ export const useCurrency = () => {
       maximumFractionDigits: 0,
     }).format(converted);
 
-    return ${CURRENCY_SYMBOLS[currency]} ;
+    return `${CURRENCY_SYMBOLS[currency]} ${formatted}`;
   };
 
   const getRawPrice = (amountInUSD: number): number => {
