@@ -175,8 +175,18 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e6e2db; /* sadhana-sand slightly darker */
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2f24; /* sadhana-dark */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bb6b3d; /* sadhana-primary */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
