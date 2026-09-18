@@ -76,7 +76,16 @@
             "Aprobación del Consejo",
             "Habilidad de aporte",
             "Compromiso vitalicio"
-        ]
+        ],
+        "subtitle": "CAMINOS DE INTEGRACI�N",
+        "title": "�NETE A LA TRIBU",
+        "voluntariado_title": "Voluntariado Semilla",
+        "voluntariado_desc": "Sum�rgete en la permacultura y bioconstrucci�n. Ideal para viajeros que desean aprender sirviendo a la tierra.",
+        "retiro_title": "Retiros de Sanaci�n",
+        "retiro_desc": "Aislamiento profundo, dietas tradicionales y trabajo interno guiado por nuestros maestros andino-amaz�nicos.",
+        "residencia_title": "Residencia Permanente",
+        "residencia_desc": "Para aquellos que han escuchado el llamado profundo de convertirse en guardianes permanentes del santuario.",
+        "apply": "Aplicar para"
     },
     "ecoaldea": {
         "modules": {
@@ -527,7 +536,30 @@
     },
     "faq": {
         "subtitle": "Guía para Viajeros y Custodios",
-        "title": "PREGUNTAS FRECUENTES"
+        "title": "PREGUNTAS FRECUENTES",
+        "desc": "Todo lo que necesitas saber antes de emprender tu viaje hacia el coraz�n del Valle Sagrado.",
+        "items": [
+            {
+                "question": "�Es necesario tener experiencia previa con plantas medicinales?",
+                "answer": "No. Nuestros guardianes espirituales eval�an a cada visitante y dise�an un proceso personalizado de acuerdo a su nivel de sensibilidad y experiencia."
+            },
+            {
+                "question": "�C�mo llego desde Cusco al santuario?",
+                "answer": "Pampa �usta se encuentra a 45 minutos de Cusco. Ofrecemos servicio de transporte privado desde el aeropuerto o puedes tomar un colectivo hacia Pisac y te recogeremos en el pueblo."
+            },
+            {
+                "question": "�Qu� incluye el programa de voluntariado?",
+                "answer": "Incluye alojamiento en carpas de alta monta�a o domos compartidos, 3 comidas vegetarianas al d�a, talleres de bioconstrucci�n y acceso libre al santuario."
+            },
+            {
+                "question": "�Tienen conexi�n a internet (Wi-Fi)?",
+                "answer": "S�. Disponemos de conexi�n satelital en �reas designadas, pero fomentamos la desconexi�n digital para aprovechar la inmersi�n en la naturaleza."
+            },
+            {
+                "question": "�Puedo ir con ni�os?",
+                "answer": "�Por supuesto! La Escuela Viva est� dise�ada precisamente para integrar a los m�s peque�os en la naturaleza con metodolog�as alternativas de aprendizaje."
+            }
+        ]
     },
     "location": {
         "title": "Territorio Sagrado",
