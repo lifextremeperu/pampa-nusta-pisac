@@ -250,7 +250,7 @@ export const ECOALDEA_MODULES: EcoaldeaModule[] = [
       'Ceremonia nocturna de fuego frente a los nevados sagrados del Apu Linli.',
       'Círculo de integración psicológica y emocional al amanecer con baño de flores.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1508873535684-277a3cb8c9ea?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: '/assets/ecoaldea/ceremonia_tipi_wachuma.jpg',
     secondaryImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
     quote: '«Sanar no es borrar el dolor, sino devolver el alma a su eje cósmico original.»',
     ctaText: 'Reservar Ceremonia Sagrada',
