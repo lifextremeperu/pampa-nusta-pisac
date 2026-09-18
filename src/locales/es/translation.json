@@ -522,7 +522,16 @@
     },
     "nav": {
         "pampa": "Pampa Ñusta",
-        "menu": "MENÚ"
+        "menu": "MENÚ",
+        "inicio": "Inicio",
+        "leyenda": "Leyenda",
+        "botanica": "Reserva Bot�nica",
+        "identidad": "Identidad",
+        "lideres": "L�deres",
+        "media": "Media Hub",
+        "unirse": "�nete a Nosotros",
+        "recorrido": "Recorrido 360",
+        "adopcion": "Adopta una Semilla"
     },
     "identity": {
         "title": "Identidad Pampa Ñusta",
@@ -568,6 +577,9 @@
         "altitude": "3,000 msnm",
         "environment": "Valle Sagrado de los Incas",
         "climate": "Templado Andino",
-        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas."
+        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
+        "view_place": "VER EN GOOGLE MAPS",
+        "maps": "ABRIR EN MAPAS",
+        "whatsapp": "CONTACTAR POR WHATSAPP"
     }
 }

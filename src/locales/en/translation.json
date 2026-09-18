@@ -100,7 +100,16 @@
             "location": "Sacred Coordinates",
             "community": "Our Community",
             "modules": "Immersion Modules"
-        }
+        },
+        "inicio": "Inicio",
+        "leyenda": "Leyenda",
+        "botanica": "Reserva Bot�nica",
+        "identidad": "Identidad",
+        "lideres": "L�deres",
+        "media": "Media Hub",
+        "unirse": "�nete a Nosotros",
+        "recorrido": "Recorrido 360",
+        "adopcion": "Adopta una Semilla"
     },
     "hero": {
         "title_line1": "RETURN TO",
@@ -111,10 +120,10 @@
     },
     "location": {
         "subtitle": "Sacred Coordinates",
-        "whatsapp": "Send via WhatsApp",
-        "view_place": "View Location",
+        "whatsapp": "CONTACTAR POR WHATSAPP",
+        "view_place": "VER EN GOOGLE MAPS",
         "desc": "A few minutes from the town of Pisac, nestled in the purity of the Sacred Valley mountains. Our ecological sanctuary does not yet have a name on commercial maps, but these coordinates will guide you straight to the door.",
-        "maps": "Open in Maps",
+        "maps": "ABRIR EN MAPAS",
         "title": "HOW TO GET THERE"
     },
     "donation_banner": {
