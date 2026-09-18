@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, MapPin, Award, HeartHandshake, Leaf, Compass, Trees, MessageCircle, ShieldCheck, Lock, RotateCcw, Activity, CheckCircle2, ChevronRight, CreditCard, Building2, Mountain, Instagram, Facebook, Youtube, Mail, Send, CheckCircle } from 'lucide-react';
 import { ECOALDEA_MODULES } from '../data/ecoaldeaModules';
+import { useTranslation } from 'react-i18next';
 
 interface FooterProps {
   onSelectModule?: (moduleId: string) => void;
@@ -8,6 +9,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityModal }) => {
+  const { t } = useTranslation();
   const [email, setEmail] = React.useState('');
   const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success'>('idle');
   const currentYear = new Date().getFullYear();
@@ -52,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
               </span>
             </div>
             <p className="text-sm font-sans leading-relaxed text-sadhana-brown font-medium pr-4">
-              Protegiendo la memoria ancestral del Valle Sagrado. Un santuario arqueológico, una reserva botánica de Wachuma y una ecoaldea sostenible vibrando en Ayni.
+              {t('footer.brand.desc')}
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a href="#" className="p-2.5 rounded-full bg-white border border-sadhana-dark/10 hover:border-sadhana-primary hover:text-sadhana-primary text-sadhana-brown transition-colors shadow-sm">
@@ -74,19 +76,19 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
           <div className="lg:col-span-2">
             <h4 className="font-mono text-xs uppercase tracking-widest font-extrabold text-sadhana-dark mb-6 flex items-center gap-2">
               <Compass className="w-3.5 h-3.5 text-sadhana-primary" />
-              Explorar
+              {t('footer.explore.title')}
             </h4>
             <ul className="space-y-4">
               {[
-                { label: 'Inicio', href: '#memoria-viva' },
-                { label: 'Leyenda Originaria', href: '#leyenda-originaria' },
-                { label: 'Botánica Sagrada', href: '#ecoaldea-modulos' },
-                { label: 'Identidad', href: '#identidad-corporativa' },
-                { label: 'Líderes Espirituales', href: '#guardianes' },
-                { label: 'Centro Multimedia', href: '#media-hub' },
-                { label: 'Cómo Unirse', href: '#como-unirse' },
-                { label: 'Recorrido 360°', href: '#recorrido-360' },
-                { label: 'Adopción', href: '#donaciones' }
+                { label: t('nav.inicio'), href: '#memoria-viva' },
+                { label: t('nav.leyenda'), href: '#leyenda-originaria' },
+                { label: t('nav.botanica'), href: '#ecoaldea-modulos' },
+                { label: t('nav.identidad'), href: '#identidad-corporativa' },
+                { label: t('nav.lideres'), href: '#guardianes' },
+                { label: t('nav.media'), href: '#media-hub' },
+                { label: t('nav.unirse'), href: '#como-unirse' },
+                { label: t('nav.recorrido'), href: '#recorrido-360' },
+                { label: t('nav.adopcion'), href: '#donaciones' }
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="text-sm font-medium hover:text-sadhana-primary text-sadhana-brown transition-colors flex items-center gap-2 group">
@@ -102,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
           <div className="lg:col-span-3">
             <h4 className="font-mono text-xs uppercase tracking-widest font-extrabold text-sadhana-dark mb-6 flex items-center gap-2">
               <Leaf className="w-3.5 h-3.5 text-sadhana-orange" />
-              Contacto Ecoaldea
+              {t('footer.contact.title')}
             </h4>
             <ul className="space-y-4">
               <li>
@@ -131,17 +133,17 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
           {/* Newsletter / Bulletin */}
           <div className="lg:col-span-3">
             <h4 className="font-mono text-xs uppercase tracking-widest font-extrabold text-sadhana-dark mb-6">
-              Bitácora Arqueológica
+              {t('footer.newsletter.title')}
             </h4>
             <p className="text-xs text-sadhana-brown mb-4 leading-relaxed font-medium">
-              Recibe crónicas mensuales sobre hallazgos, eventos astronómicos y avances en la restauración.
+              {t('footer.newsletter.desc')}
             </p>
             <form onSubmit={handleSubscribe} className="space-y-2 relative">
               <div className="relative">
                 <input
                   type="email"
                   required
-                  placeholder="Tu correo electrónico"
+                  placeholder={t('footer.newsletter.placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-4 pr-12 py-2.5 rounded-xl bg-white border border-sadhana-dark/10 text-sm focus:outline-none focus:border-sadhana-primary transition-colors text-sadhana-dark placeholder-sadhana-brown/60 shadow-inner"
@@ -164,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
               {status === 'success' && (
                 <p className="text-xs text-emerald-600 font-bold flex items-center gap-1.5 animate-fadeIn">
                   <CheckCircle className="w-3.5 h-3.5" />
-                  Suscripción confirmada
+                  {t('footer.newsletter.success')}
                 </p>
               )}
             </form>
@@ -182,11 +184,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
             </a>
             <a href="https://ejemplo.com/pagos" target="_blank" rel="noopener noreferrer" className="hover:text-sadhana-primary transition-colors flex items-center gap-2 group">
               <CreditCard className="w-3.5 h-3.5 text-sadhana-primary/70 group-hover:text-sadhana-primary" />
-              <span>Pagos Seguros (Yape · Plin · Tarjetas)</span>
+              <span>{t('footer.legal.payments')}</span>
             </a>
             <a href="https://ejemplo.com/garantia" target="_blank" rel="noopener noreferrer" className="hover:text-sadhana-primary transition-colors flex items-center gap-2 group">
               <RotateCcw className="w-3.5 h-3.5 text-sadhana-primary/70 group-hover:text-sadhana-primary" />
-              <span>Garantía 100% Sin Penalidad</span>
+              <span>{t('footer.legal.guarantee')}</span>
             </a>
           </div>
         </div>
@@ -205,9 +207,9 @@ export const Footer: React.FC<FooterProps> = ({ onSelectModule, onOpenSecurityMo
           </div>
 
           <div className="flex items-center gap-4 text-[10px] font-mono text-sadhana-brown/80 font-bold uppercase tracking-widest">
-            <a href="#" className="hover:text-sadhana-dark transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-sadhana-dark transition-colors">Transparencia Financiera</a>
-            <a href="#" className="hover:text-sadhana-dark transition-colors">Cookies</a>
+            <a href="#" className="hover:text-sadhana-dark transition-colors">{t('footer.legal.privacy')}</a>
+            <a href="#" className="hover:text-sadhana-dark transition-colors">{t('footer.legal.transparency')}</a>
+            <a href="#" className="hover:text-sadhana-dark transition-colors">{t('footer.legal.cookies')}</a>
           </div>
         </div>
       </div>

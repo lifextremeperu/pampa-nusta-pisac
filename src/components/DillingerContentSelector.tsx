@@ -388,7 +388,7 @@ export const DillingerContentSelector: React.FC<DillingerContentSelectorProps> =
                     src={selectedItem.photoSrc}
                     alt={selectedItem.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 animate-ken-burns"
                   />
                 )}
 

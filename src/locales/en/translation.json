@@ -1,0 +1,157 @@
+{
+    "faq": {
+        "subtitle": "Traveler & Custodian Guide",
+        "title": "FREQUENTLY ASKED QUESTIONS"
+    },
+    "joinus": {
+        "residencia_price": "Entry Fee + Monthly",
+        "residencia_desc": "Become a permanent resident. Design your ecological space and participate in Council decisions. Requires long-term commitment.",
+        "retiro_title": "RETREATS AND DIETS",
+        "subtitle": "Expanding Community",
+        "voluntariado_desc": "Join the physical work of the Sanctuary. Work on terraces, bioconstruction, and organic farming. Includes basic communal lodging and food.",
+        "retiro_price": "From $40 per ceremony",
+        "residencia_title": "GUARDIAN RESIDENT",
+        "apply": "Apply to",
+        "retiro_desc": "Deep immersion in master plants, silence, and guided meditation by local healers. Physical, mental, and spiritual cleansing in the mountains.",
+        "voluntariado_title": "VOLUNTEERING (Ayni)",
+        "title": "HOW TO JOIN PAMPA ÑUSTA",
+        "voluntariado_price": "$10 per day (Food)",
+        "intro_desc": "The call of the mountain is for those who feel the deep desire to reconnect with Pachamama. There are different paths to integrate into our community, from short learning visits to becoming a permanent guardian of the sanctuary.",
+        "requirements": "Requirements",
+        "voluntariado_req": [
+            "Love for nature",
+            "Physical readiness",
+            "Minimum stay of 2 weeks"
+        ],
+        "retiro_req": [
+            "Prior interview",
+            "Diet preparation",
+            "Absolute respect for the lineage"
+        ],
+        "residencia_req": [
+            "Council approval",
+            "Ability to contribute",
+            "Lifelong commitment"
+        ]
+    },
+    "ayni": {
+        "form": {
+            "yape": "Yape / Plin (Peru Only)",
+            "name": "Custodian Name",
+            "payment": "Ayni Method",
+            "processing": "Integrating your energy into the sanctuary...",
+            "submit": "Confirm Contribution",
+            "email": "Email (For Certificate)",
+            "card": "Credit / Debit Card"
+        },
+        "subtitle": "Ecosystem Support",
+        "title": "MAKE AYNI EFFECTIVE",
+        "amount": "Your Voluntary Contribution:",
+        "desc": "Reciprocity (Ayni) allows the sanctuary to breathe and grow. Your contribution funds native seeds, watering hours, ecological classrooms, and the genetic maintenance of our sacred cacti.",
+        "calculator": "Physical Transformation",
+        "calculator_desc": "Slide to visualize how your contribution translates into concrete actions within the archaeological park.",
+        "metrics": {
+            "meters": "Sq.M. of restored terraces",
+            "water": "Days of irrigation system",
+            "seeds": "Kilos of organic seeds"
+        }
+    },
+    "identity": {
+        "mission_desc": "Preserve and expand Andean ancestral wisdom through permaculture, bioconstruction, and traditional medicine. We cultivate a space of human transformation where each individual becomes an active guardian of Mother Earth.",
+        "subtitle": "The heartbeat of the mountain",
+        "vision": "Vision",
+        "title": "OUR IDENTITY",
+        "who_desc": "Pampa Ñusta is more than a sanctuary; it is a living ecosystem in the Sacred Valley (Pisac). We guard a forest of master plants (Wachuma) and millennial permaculture terraces. We are a collective of Andean and modern wise people seeking the return to the unified consciousness of the Earth.",
+        "who": "Who We Are",
+        "vision_desc": "To be the ecological and spiritual beacon of the Andes. A self-sustaining ecovillage where humanity recovers its role as protector of the biosphere, achieving the perfect fusion between clean technology and ancestral technology.",
+        "mission": "Mission"
+    },
+    "nav": {
+        "close": "Close",
+        "menu": "Menu",
+        "pampa": "Pampa Ñusta",
+        "sections": {
+            "faq": "FAQ",
+            "ayni": "Ayni: Principle of Life",
+            "identity": "Identity & Legacy",
+            "location": "Sacred Coordinates",
+            "community": "Our Community",
+            "modules": "Immersion Modules"
+        }
+    },
+    "hero": {
+        "title_line1": "RETURN TO",
+        "subtitle": "Ecological Sanctuary • Certified Organic • Living Permaculture",
+        "start": "Start the Journey",
+        "trailer": "Watch Trailer",
+        "title_line2": "THE ORIGIN"
+    },
+    "location": {
+        "subtitle": "Sacred Coordinates",
+        "whatsapp": "Send via WhatsApp",
+        "view_place": "View Location",
+        "desc": "A few minutes from the town of Pisac, nestled in the purity of the Sacred Valley mountains. Our ecological sanctuary does not yet have a name on commercial maps, but these coordinates will guide you straight to the door.",
+        "maps": "Open in Maps",
+        "title": "HOW TO GET THERE"
+    },
+    "donation_banner": {
+        "subtitle": "The Cycle of Reciprocity",
+        "title_line1": "AYNI AS A",
+        "title_line2": "PRINCIPLE OF LIFE",
+        "desc": "The preservation of the terraces, native seeds, and the legacy of Pampa Ñusta is sustained through Ayni, the ancient Andean practice of giving and receiving. If you feel the call to be part of this custody, we invite you to discover our adoption program.",
+        "action": "View Adoption Program"
+    },
+    "leaders": {
+        "subtitle": "The Guardians",
+        "title": "Spiritual Leaders of America",
+        "desc": "Meet the wise souls who guard the vision and medicine of Pampa Ñusta. Representatives of diverse traditions uniting under the prophecy of the Eagle and the Condor.",
+        "lider1": {
+            "name": "Taita Inti",
+            "role": "Andean Priest (Paqo)",
+            "region": "The Andes",
+            "desc": "Guardian of ancestral medicine and protector of the apus of the Sacred Valley. His lineage preserves the healing songs and deep respect for Pachamama."
+        },
+        "lider2": {
+            "name": "Abuela Yaku",
+            "role": "Wise Healer",
+            "region": "The Amazon",
+            "desc": "Guardian of master plants and water wisdom, connecting the spiritual world with the earthly through the millennial heritage of the deep jungle."
+        },
+        "lider3": {
+            "name": "Chief White Eagle",
+            "role": "Sacred Pipe Carrier",
+            "region": "North America",
+            "desc": "Represents the ancient prophecy of the union of the Eagle and the Condor, bringing the teachings of unity and peace from the northern tribes."
+        },
+        "lider4": {
+            "name": "Master Killa",
+            "role": "Wachuma Specialist",
+            "region": "Southern Curanderismo",
+            "desc": "Guides souls through the expansion of consciousness in the mountains. His medicine opens the heart and restores the spiritual balance of those who visit him."
+        }
+    },
+    "footer": {
+        "brand": {
+            "desc": "Protecting the ancestral memory of the Sacred Valley. An archaeological sanctuary, a botanical reserve of Wachuma, and a sustainable ecovillage vibrating in Ayni."
+        },
+        "explore": {
+            "title": "Explore"
+        },
+        "contact": {
+            "title": "Ecovillage Contact"
+        },
+        "newsletter": {
+            "title": "Archaeological Logbook",
+            "desc": "Receive monthly chronicles about findings, astronomical events, and restoration progress.",
+            "placeholder": "Your email address",
+            "success": "Subscription confirmed"
+        },
+        "legal": {
+            "payments": "Secure Payments (Cards · PayPal)",
+            "guarantee": "100% Penalty-Free Guarantee",
+            "privacy": "Privacy Policy",
+            "transparency": "Financial Transparency",
+            "cookies": "Cookies"
+        }
+    }
+}

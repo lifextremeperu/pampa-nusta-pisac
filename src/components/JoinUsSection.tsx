@@ -2,36 +2,38 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Leaf, Heart, Home, ArrowRight, Sparkles } from 'lucide-react';
 import { ApplicationFormModal, ApplicationType } from './ApplicationFormModal';
-
-const JOIN_PATHS = [
-  {
-    id: 'voluntariado',
-    title: 'Voluntariado (Ayni)',
-    icon: <Leaf className="w-6 h-6 text-sadhana-primary" />,
-    description: 'Aprende bioconstrucción, permacultura y conservación de semillas. Una inmersión de 1 a 3 meses trabajando en armonía con la tierra.',
-    requirements: ['Amor por la naturaleza', 'Disposición física', 'Estadía mínima de 2 semanas'],
-    action: 'Ver Programa'
-  },
-  {
-    id: 'retiro',
-    title: 'Inmersión y Sanación',
-    icon: <Heart className="w-6 h-6 text-sadhana-orange" />,
-    description: 'Participa en nuestros retiros inmersivos. Conecta con las medicinas ancestrales, ceremonias de fuego y limpieza espiritual.',
-    requirements: ['Entrevista previa', 'Preparación de dieta', 'Respeto absoluto al linaje'],
-    action: 'Agendar Retiro'
-  },
-  {
-    id: 'residencia',
-    title: 'Residencia (Guardián)',
-    icon: <Home className="w-6 h-6 text-amber-500" />,
-    description: 'Postula para ser un habitante permanente de la Ecoaldea. Comparte nuestra visión de sostenibilidad y ayuda a guiar el proyecto a largo plazo.',
-    requirements: ['Aprobación del Consejo', 'Habilidad de aporte', 'Compromiso vitalicio'],
-    action: 'Postular'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const JoinUsSection: React.FC = () => {
+  const { t } = useTranslation();
   const [modalType, setModalType] = useState<ApplicationType>(null);
+
+  const JOIN_PATHS = [
+    {
+      id: 'voluntariado',
+      title: t('joinus.voluntariado_title'),
+      icon: <Leaf className="w-6 h-6 text-sadhana-primary" />,
+      description: t('joinus.voluntariado_desc'),
+      requirements: t('joinus.voluntariado_req', { returnObjects: true }) as string[],
+      action: t('joinus.apply') + ' ' + t('joinus.voluntariado_title')
+    },
+    {
+      id: 'retiro',
+      title: t('joinus.retiro_title'),
+      icon: <Heart className="w-6 h-6 text-sadhana-orange" />,
+      description: t('joinus.retiro_desc'),
+      requirements: t('joinus.retiro_req', { returnObjects: true }) as string[],
+      action: t('joinus.apply') + ' ' + t('joinus.retiro_title')
+    },
+    {
+      id: 'residencia',
+      title: t('joinus.residencia_title'),
+      icon: <Home className="w-6 h-6 text-amber-500" />,
+      description: t('joinus.residencia_desc'),
+      requirements: t('joinus.residencia_req', { returnObjects: true }) as string[],
+      action: t('joinus.apply') + ' ' + t('joinus.residencia_title')
+    }
+  ];
 
   return (
     <section id="unirse" className="relative py-24 md:py-32 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
@@ -49,7 +51,7 @@ export const JoinUsSection: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sadhana-primary/20 bg-sadhana-primary/5 text-sadhana-primary text-[10px] sm:text-xs font-mono tracking-[0.3em] uppercase mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Sé Parte de la Tribu</span>
+            <span>{t('joinus.subtitle')}</span>
           </motion.div>
           
           <motion.h2 
@@ -59,7 +61,7 @@ export const JoinUsSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6 uppercase"
           >
-            Cómo Unirse a Pampa Ñusta
+            {t('joinus.title')}
           </motion.h2>
 
           <motion.p 
@@ -69,7 +71,7 @@ export const JoinUsSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-sadhana-sand/80 text-sm md:text-base font-medium leading-relaxed"
           >
-            El llamado de la montaña es para quienes sienten el profundo deseo de reconectar con la Pachamama. Existen diferentes caminos para integrarte a nuestra comunidad, desde visitas cortas de aprendizaje hasta convertirte en un guardián permanente del santuario.
+            {t('joinus.intro_desc')}
           </motion.p>
         </div>
 
@@ -96,7 +98,7 @@ export const JoinUsSection: React.FC = () => {
               </p>
 
               <div className="space-y-3 mb-8">
-                <h4 className="text-[10px] font-mono tracking-widest text-sadhana-primary uppercase">Requisitos:</h4>
+                <h4 className="text-[10px] font-mono tracking-widest text-sadhana-primary uppercase">{t('joinus.requirements')}:</h4>
                 <ul className="space-y-2">
                   {path.requirements.map((req, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-white/70">

@@ -15,8 +15,10 @@ import {
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useCurrency } from '../hooks/useCurrency';
+import { useTranslation } from 'react-i18next';
 
 export const DonationSystem: React.FC = () => {
+  const { t } = useTranslation();
   const { currency, symbol, formatPrice, getRawPrice } = useCurrency();
   const [customAmount, setCustomAmount] = useState<number>(getRawPrice(30)); // Initialize correctly
 
@@ -101,14 +103,11 @@ export const DonationSystem: React.FC = () => {
         {/* Subtle Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Leaf className="w-6 h-6 text-sadhana-primary mx-auto mb-6 opacity-80" />
-          <h2 className="text-3xl md:text-5xl font-sans font-black tracking-tighter text-white mb-6">
-            PROGRAMA DE CUSTODIA VIVA
+          <h2 className="text-3xl md:text-5xl font-sans font-black tracking-tighter text-white mb-6 uppercase">
+            {t('ayni.title')}
           </h2>
           <p className="text-sm md:text-base text-sadhana-sand/80 font-medium leading-relaxed">
-            Tu contribución no es una transacción, es un acto de Ayni (reciprocidad) que 
-            nos permite continuar protegiendo la genética de nuestras semillas, restaurando 
-            los andenes milenarios y educando a las futuras generaciones. 
-            Elige libremente con cuánto deseas aportar.
+            {t('ayni.desc')}
           </p>
         </div>
 
@@ -122,23 +121,22 @@ export const DonationSystem: React.FC = () => {
           <div className="lg:col-span-6 space-y-10">
             <div>
               <span className="text-[10px] uppercase tracking-[0.3em] text-sadhana-primary font-bold mb-3 block">
-                Tu impacto en el ecosistema
+                {t('ayni.subtitle')}
               </span>
-              <h3 className="text-3xl font-black tracking-tight text-white mb-4">
-                LA TRANSFORMACIÓN FÍSICA
+              <h3 className="text-3xl font-black tracking-tight text-white mb-4 uppercase">
+                {t('ayni.calculator')}
               </h3>
               <p className="text-sadhana-sand/70 text-sm leading-relaxed">
-                Desliza para visualizar cómo tu aporte se traduce en acciones 
-                concretas dentro del parque arqueológico.
+                {t('ayni.calculator_desc')}
               </p>
             </div>
 
             {/* Custom Amount Slider */}
             <div className="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm space-y-8">
               <div className="flex items-center justify-between">
-                <span className="text-sadhana-sand/70 font-bold uppercase tracking-widest text-[10px]">Tu Aporte Voluntario:</span>
+                <span className="text-sadhana-sand/70 font-bold uppercase tracking-widest text-[10px]">{t('ayni.amount')}</span>
                 <span className="font-black text-3xl text-sadhana-primary">
-                  {currency === 'PEN' ? 'S/' : '$'} {customAmount}
+                  {symbol} {customAmount}
                 </span>
               </div>
               <input
@@ -160,8 +158,8 @@ export const DonationSystem: React.FC = () => {
               <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
                 <img src="/assets/ecoaldea/mecenazgo_andenes_1789490501293.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Andenes Milenarios" />
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
-                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedTerraceMeters} <span className="text-xl md:text-2xl font-bold text-white/70">m²</span></span>
-                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Restauración de <br/><span className="text-[#34E0A1]">Andenes Inkas</span></span>
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedTerraceMeters} <span className="text-xl md:text-2xl font-bold text-white/70"></span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2"><br/><span className="text-[#34E0A1]">{t('ayni.metrics.meters')}</span></span>
                 </div>
               </div>
               
@@ -169,8 +167,8 @@ export const DonationSystem: React.FC = () => {
               <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
                 <img src="/assets/ecoaldea/mecenazgo_ninos_1789490513046.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Niños y Familias" />
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
-                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedSeedBags} <span className="text-xl md:text-2xl font-bold text-white/70">niños</span></span>
-                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Educación Viva <br/><span className="text-[#FF7A00]">Familias Locales</span></span>
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedSeedBags} <span className="text-xl md:text-2xl font-bold text-white/70"></span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2"><br/><span className="text-[#FF7A00]">{t('ayni.metrics.seeds')}</span></span>
                 </div>
               </div>
 
@@ -178,8 +176,8 @@ export const DonationSystem: React.FC = () => {
               <div className="relative rounded-[30px] overflow-hidden h-64 border border-white/10 group shadow-2xl">
                 <img src="/assets/ecoaldea/capitulo_semillas_1789490316096.jpg" className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] contrast-125 group-hover:scale-105 group-hover:brightness-[0.6] transition-all duration-1000" alt="Agua y Semillas" />
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent">
-                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedHydraulicHours} <span className="text-xl md:text-2xl font-bold text-white/70">semillas</span></span>
-                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2">Preservación de <br/><span className="text-sadhana-primary">Bancos Genéticos</span></span>
+                  <span className="text-5xl md:text-6xl font-black text-white drop-shadow-2xl">{calculatedHydraulicHours} <span className="text-xl md:text-2xl font-bold text-white/70"></span></span>
+                  <span className="text-sm md:text-base uppercase tracking-widest text-white/90 font-bold mt-2"><br/><span className="text-sadhana-primary">{t('ayni.metrics.water')}</span></span>
                 </div>
               </div>
 
@@ -196,7 +194,7 @@ export const DonationSystem: React.FC = () => {
             <form onSubmit={handleProcessDonation} className="space-y-6">
               <div>
                 <label className="block text-[10px] uppercase tracking-widest text-sadhana-sand/70 font-bold mb-2">
-                  Nombre Completo
+                  {t('ayni.form.name')}
                 </label>
                 <input
                   type="text"
@@ -210,7 +208,7 @@ export const DonationSystem: React.FC = () => {
 
               <div>
                 <label className="block text-[10px] uppercase tracking-widest text-sadhana-sand/70 font-bold mb-2">
-                  Correo Electrónico
+                  {t('ayni.form.email')}
                 </label>
                 <input
                   type="email"
@@ -225,7 +223,7 @@ export const DonationSystem: React.FC = () => {
               {/* Payment Method Selector */}
               <div>
                 <label className="block text-[10px] uppercase tracking-widest text-sadhana-sand/70 font-bold mb-3">
-                  Medio de Contribución
+                  {t('ayni.form.payment')}
                 </label>
                 {currency === 'PEN' ? (
                   <div className="space-y-4">

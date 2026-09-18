@@ -1,0 +1,157 @@
+{
+    "faq": {
+        "subtitle": "Guia do Viajante e Guardião",
+        "title": "PERGUNTAS FREQUENTES"
+    },
+    "joinus": {
+        "residencia_price": "Taxa de Entrada + Mensal",
+        "residencia_desc": "Torne-se um residente permanente. Projete seu espaço ecológico e participe das decisões do Conselho. Requer compromisso a longo prazo.",
+        "retiro_title": "RETIROS E DIETAS",
+        "subtitle": "Comunidade em Expansão",
+        "voluntariado_desc": "Junte-se ao trabalho físico do Santuário. Trabalhe nos terraços, bioconstrução e agricultura orgânica. Inclui alojamento comunitário básico e alimentação.",
+        "retiro_price": "A partir de R$ 200 por cerimônia",
+        "residencia_title": "RESIDENTE GUARDIÃO",
+        "apply": "Candidatar-se a",
+        "retiro_desc": "Imersão profunda com plantas mestras, silêncio e meditação guiada por curandeiros locais. Limpeza física, mental e espiritual nas montanhas.",
+        "voluntariado_title": "VOLUNTARIADO (Ayni)",
+        "title": "COMO SE JUNTAR A PAMPA ÑUSTA",
+        "voluntariado_price": "R$ 50 por dia (Alimentação)",
+        "intro_desc": "O chamado da montanha é para aqueles que sentem o profundo desejo de se reconectar com a Pachamama. Existem diferentes caminhos para se integrar à nossa comunidade, desde visitas curtas de aprendizado até se tornar um guardião permanente do santuário.",
+        "requirements": "Requisitos",
+        "voluntariado_req": [
+            "Amor pela natureza",
+            "Disposição física",
+            "Estadia mínima de 2 semanas"
+        ],
+        "retiro_req": [
+            "Entrevista prévia",
+            "Preparação de dieta",
+            "Respeito absoluto à linhagem"
+        ],
+        "residencia_req": [
+            "Aprovação do Conselho",
+            "Habilidade de contribuição",
+            "Compromisso vitalício"
+        ]
+    },
+    "ayni": {
+        "form": {
+            "yape": "Yape / Plin (Apenas Peru)",
+            "name": "Nome do Guardião",
+            "payment": "Método Ayni",
+            "processing": "Integrando sua energia no santuário...",
+            "submit": "Confirmar Contribuição",
+            "email": "E-mail (Para o Certificado)",
+            "card": "Cartão de Crédito / Débito"
+        },
+        "subtitle": "Apoio ao Ecossistema",
+        "title": "TORNAR O AYNI EFETIVO",
+        "amount": "Sua Contribuição Voluntária:",
+        "desc": "A reciprocidade (Ayni) permite que o santuário respire e cresça. Sua contribuição financia sementes nativas, horas de irrigação, salas de aula ecológicas e a manutenção genética de nossos cactos sagrados.",
+        "calculator": "Transformação Física",
+        "calculator_desc": "Deslize para visualizar como sua contribuição se traduz em ações concretas dentro do parque arqueológico.",
+        "metrics": {
+            "meters": "M² de terraços restaurados",
+            "water": "Dias de sistema de irrigação",
+            "seeds": "Quilos de sementes orgânicas"
+        }
+    },
+    "identity": {
+        "mission_desc": "Preservar e expandir a sabedoria ancestral andina através da permacultura, bioconstrução e medicina tradicional. Cultivamos um espaço de transformação humana onde cada indivíduo se torna um guardião ativo da Mãe Terra.",
+        "subtitle": "O bater do coração da montanha",
+        "vision": "Visão",
+        "title": "NOSSA IDENTIDADE",
+        "who_desc": "Pampa Ñusta é mais do que um santuário; é um ecossistema vivo no Vale Sagrado (Pisac). Guardamos uma floresta de plantas mestras (Wachuma) e terraços de permacultura milenares. Somos um coletivo de sábios andinos e modernos buscando o retorno à consciência unificada da Terra.",
+        "who": "Quem Somos",
+        "vision_desc": "Ser o farol ecológico e espiritual dos Andes. Uma ecovila autossustentável onde a humanidade recupera seu papel de protetora da biosfera, alcançando a fusão perfeita entre tecnologia limpa e tecnologia ancestral.",
+        "mission": "Missão"
+    },
+    "nav": {
+        "close": "Fechar",
+        "menu": "Menu",
+        "pampa": "Pampa Ñusta",
+        "sections": {
+            "faq": "FAQ",
+            "ayni": "Ayni: Princípio de Vida",
+            "identity": "Identidade e Legado",
+            "location": "Coordenadas Sagradas",
+            "community": "Nossa Comunidade",
+            "modules": "Módulos de Imersão"
+        }
+    },
+    "hero": {
+        "title_line1": "RETORNO À",
+        "subtitle": "Santuário Ecológico • Orgânico Certificado • Permacultura Viva",
+        "start": "Iniciar a Jornada",
+        "trailer": "Ver Trailer",
+        "title_line2": "ORIGEM"
+    },
+    "location": {
+        "subtitle": "Coordenadas Sagradas",
+        "whatsapp": "Enviar via WhatsApp",
+        "view_place": "Ver Localização",
+        "desc": "A poucos minutos da cidade de Pisac, aninhado na pureza das montanhas do Vale Sagrado. Nosso santuário ecológico ainda não tem nome nos mapas comerciais, mas essas coordenadas o guiarão direto à porta.",
+        "maps": "Abrir no Maps",
+        "title": "COMO CHEGAR"
+    },
+    "donation_banner": {
+        "subtitle": "O Ciclo da Reciprocidade",
+        "title_line1": "O AYNI COMO",
+        "title_line2": "PRINCÍPIO DE VIDA",
+        "desc": "A preservação dos terraços, das sementes nativas e do legado de Pampa Ñusta é sustentada pelo Ayni, a antiga prática andina de dar e receber. Se você sente o chamado para fazer parte desta guarda, convidamos você a conhecer nosso programa de adoção.",
+        "action": "Ver Programa de Adoção"
+    },
+    "leaders": {
+        "subtitle": "Os Guardiões",
+        "title": "Líderes Espirituais da América",
+        "desc": "Conheça as almas sábias que guardam a visão e a medicina de Pampa Ñusta. Representantes de diversas tradições que se unem sob a profecia da Águia e do Condor.",
+        "lider1": {
+            "name": "Taita Inti",
+            "role": "Sacerdote Andino (Paqo)",
+            "region": "Os Andes",
+            "desc": "Guardião da medicina ancestral e protetor dos apus do Vale Sagrado. Sua linhagem preserva os cantos de cura e o profundo respeito à Pachamama."
+        },
+        "lider2": {
+            "name": "Abuela Yaku",
+            "role": "Sábia Curandeira",
+            "region": "A Amazônia",
+            "desc": "Guardiã das plantas mestras e da sabedoria da água, conectando o mundo espiritual com o terreno através da herança milenar da selva profunda."
+        },
+        "lider3": {
+            "name": "Chefe Águia Branca",
+            "role": "Portador do Cachimbo Sagrado",
+            "region": "América do Norte",
+            "desc": "Representa a antiga profecia da união da Águia e do Condor, trazendo consigo os ensinamentos de unidade e paz das tribos do norte."
+        },
+        "lider4": {
+            "name": "Mestre Killa",
+            "role": "Especialista em Wachuma",
+            "region": "Curandeirismo do Sul",
+            "desc": "Guia as almas através da expansão da consciência nas montanhas. Sua medicina abre o coração e restaura o equilíbrio espiritual daqueles que o visitam."
+        }
+    },
+    "footer": {
+        "brand": {
+            "desc": "Protegendo a memória ancestral do Vale Sagrado. Um santuário arqueológico, uma reserva botânica de Wachuma e uma ecovila sustentável vibrando em Ayni."
+        },
+        "explore": {
+            "title": "Explorar"
+        },
+        "contact": {
+            "title": "Contato da Ecovila"
+        },
+        "newsletter": {
+            "title": "Diário Arqueológico",
+            "desc": "Receba crônicas mensais sobre descobertas, eventos astronômicos e avanços na restauração.",
+            "placeholder": "Seu endereço de e-mail",
+            "success": "Assinatura confirmada"
+        },
+        "legal": {
+            "payments": "Pagamentos Seguros (Cartões · PayPal)",
+            "guarantee": "Garantia 100% Sem Penalidade",
+            "privacy": "Privacidade",
+            "transparency": "Transparência Financeira",
+            "cookies": "Cookies"
+        }
+    }
+}

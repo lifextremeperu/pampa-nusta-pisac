@@ -1,43 +1,46 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
-
-const LEADERS = [
-  {
-    id: 'lider1',
-    name: 'Taita Inti',
-    role: 'Sacerdote Andino (Paqo)',
-    region: 'Los Andes',
-    description: 'Guardián de la medicina ancestral y protector de los apus del Valle Sagrado. Su linaje preserva los cantos de sanación y el respeto profundo a la Pachamama.',
-    image: '/assets/leaders/lider1.jpg'
-  },
-  {
-    id: 'lider2',
-    name: 'Abuela Yaku',
-    role: 'Sabia Curandera',
-    region: 'La Amazonía',
-    description: 'Guardiana de las plantas maestras y de la sabiduría del agua, conectando el mundo espiritual con el terrenal a través de la herencia milenaria de la selva profunda.',
-    image: '/assets/leaders/lider2.jpg'
-  },
-  {
-    id: 'lider3',
-    name: 'Jefe Águila Blanca',
-    role: 'Portador de la Pipa Sagrada',
-    region: 'Norteamérica',
-    description: 'Representa la antigua profecía de la unión del Águila y el Cóndor, trayendo consigo las enseñanzas de unidad y paz de las tribus del norte.',
-    image: '/assets/leaders/lider3.jpg'
-  },
-  {
-    id: 'lider4',
-    name: 'Maestro Killa',
-    role: 'Especialista en Wachuma',
-    region: 'Curanderismo del Sur',
-    description: 'Guía a las almas a través de la expansión de la conciencia en las montañas. Su medicina abre el corazón y restaura el equilibrio espiritual de quienes lo visitan.',
-    image: '/assets/leaders/lider4.jpg'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const SpiritualLeaders: React.FC = () => {
+  const { t } = useTranslation();
+
+  const LEADERS = [
+    {
+      id: 'lider1',
+      name: t('leaders.lider1.name'),
+      role: t('leaders.lider1.role'),
+      region: t('leaders.lider1.region'),
+      description: t('leaders.lider1.desc'),
+      image: '/assets/leaders/lider1.jpg'
+    },
+    {
+      id: 'lider2',
+      name: t('leaders.lider2.name'),
+      role: t('leaders.lider2.role'),
+      region: t('leaders.lider2.region'),
+      description: t('leaders.lider2.desc'),
+      image: '/assets/leaders/lider2.jpg'
+    },
+    {
+      id: 'lider3',
+      name: t('leaders.lider3.name'),
+      role: t('leaders.lider3.role'),
+      region: t('leaders.lider3.region'),
+      description: t('leaders.lider3.desc'),
+      image: '/assets/leaders/lider3.jpg'
+    },
+    {
+      id: 'lider4',
+      name: t('leaders.lider4.name'),
+      role: t('leaders.lider4.role'),
+      region: t('leaders.lider4.region'),
+      description: t('leaders.lider4.desc'),
+      image: '/assets/leaders/lider4.jpg'
+    }
+  ];
+
   return (
     <section id="lideres" className="relative py-24 md:py-32 bg-sadhana-dark text-white border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay"></div>
@@ -52,7 +55,7 @@ export const SpiritualLeaders: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sadhana-primary/20 bg-sadhana-primary/5 text-sadhana-primary text-[10px] sm:text-xs font-mono tracking-[0.3em] uppercase mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Los Guardianes</span>
+            <span>{t('leaders.subtitle')}</span>
           </motion.div>
           
           <motion.h2 
@@ -62,7 +65,7 @@ export const SpiritualLeaders: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6 uppercase"
           >
-            Líderes Espirituales de América
+            {t('leaders.title')}
           </motion.h2>
 
           <motion.p 
@@ -72,7 +75,7 @@ export const SpiritualLeaders: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-sadhana-brown/80 max-w-2xl text-sm md:text-base font-medium leading-relaxed"
           >
-            Conoce a las almas sabias que custodian la visión y la medicina de Pampa Ñusta. Representantes de diversas tradiciones que se unen bajo la profecía del Águila y el Cóndor.
+            {t('leaders.desc')}
           </motion.p>
         </div>
 

@@ -85,7 +85,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-2xl bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col border border-white/10 my-auto"
+            className="relative w-full max-w-2xl max-h-[90vh] bg-sadhana-dark rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col border border-white/10 my-auto overflow-hidden"
           >
           {/* Header */}
           <div className="flex items-center justify-between p-6 md:p-8 border-b border-white/10 bg-black/20 backdrop-blur-md shrink-0">
@@ -111,7 +111,7 @@ export const ApplicationFormModal: React.FC<ApplicationFormModalProps> = ({ isOp
           </div>
 
           {/* Body */}
-          <div className="p-6 md:p-8 flex-1">
+          <div className="p-6 md:p-8 flex-1 overflow-y-auto overflow-x-hidden">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center py-12 text-center h-full">
                 <motion.div

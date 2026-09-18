@@ -1,0 +1,17 @@
+<svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.5))">
+    <path d="M6 22V10c0-1 1-2 2-2s2 1 2 2v12" fill="#5A8356" />
+    <path d="M6 22V10c0-1 1-2 2-2s2 1 2 2v12" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8 9v13" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.8" />
+    
+    <path d="M10 22V4c0-1 1-2 2-2s2 1 2 2v18" fill="#42663F" />
+    <path d="M10 22V4c0-1 1-2 2-2s2 1 2 2v18" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M12 3v19" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.8" />
+    
+    <path d="M14 22V13c0-.8.8-1.5 1.5-1.5s1.5.8 1.5 1.5v9" fill="#5A8356" />
+    <path d="M14 22V13c0-.8.8-1.5 1.5-1.5s1.5.8 1.5 1.5v9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M15.5 12v10" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.8" />
+    
+    <path d="M10 7h-.5 M14 9h.5 M10 14h-.5 M14 16h.5 M6 13h-.5 M10 18h-.5 M17 17h.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+</svg>

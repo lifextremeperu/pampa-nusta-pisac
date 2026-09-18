@@ -132,8 +132,15 @@ export const NustaScrollTelling: React.FC = () => {
                   transition={{ duration: 1.5, ease: "easeOut" }}
                   src={story.imageUrl} 
                   alt={story.title}
-                  className={`w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105 ${story.objectPosition || 'object-center'}`}
+                  className={`w-full h-full object-cover animate-ken-burns transition-transform duration-[2000ms] group-hover:scale-110 ${story.objectPosition || 'object-center'}`}
                 />
+                
+                {/* Efecto de Neblina Animado */}
+                <div 
+                  className="absolute inset-0 bg-white/20 mix-blend-screen pointer-events-none animate-fog-move blur-3xl"
+                  style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)' }}
+                />
+
                 {/* Gradiente de oscurecimiento suave para que la foto se vea bien */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${story.accentColor} opacity-40 mix-blend-multiply`} />
                 <div className="absolute inset-0 bg-sadhana-dark/30" />

@@ -1,0 +1,157 @@
+{
+    "faq": {
+        "subtitle": "Guide du Voyageur et du Gardien",
+        "title": "QUESTIONS FRÉQUEMMENT POSÉES"
+    },
+    "joinus": {
+        "residencia_price": "Frais d'Entrée + Mensuel",
+        "residencia_desc": "Devenez résident permanent. Concevez votre espace écologique et participez aux décisions du Conseil. Nécessite un engagement à long terme.",
+        "retiro_title": "RETRAITES ET DIÈTES",
+        "subtitle": "Communauté en Expansion",
+        "voluntariado_desc": "Rejoignez le travail physique du Sanctuaire. Travaillez sur les terrasses, la bioconstruction et l'agriculture biologique. Comprend l'hébergement commun de base et la nourriture.",
+        "retiro_price": "À partir de 35 € par cérémonie",
+        "residencia_title": "RÉSIDENT GARDIEN",
+        "apply": "Postuler à",
+        "retiro_desc": "Immersion profonde avec les plantes maîtresses, silence et méditation guidée par des guérisseurs locaux. Nettoyage physique, mental et spirituel dans les montagnes.",
+        "voluntariado_title": "BÉNÉVOLAT (Ayni)",
+        "title": "COMMENT REJOINDRE PAMPA ÑUSTA",
+        "voluntariado_price": "10 € par jour (Nourriture)",
+        "intro_desc": "L'appel de la montagne s'adresse à ceux qui ressentent le profond désir de se reconnecter avec Pachamama. Il existe différents chemins pour s'intégrer à notre communauté, des courtes visites d'apprentissage à devenir un gardien permanent du sanctuaire.",
+        "requirements": "Exigences",
+        "voluntariado_req": [
+            "Amour de la nature",
+            "Condition physique",
+            "Séjour minimum de 2 semaines"
+        ],
+        "retiro_req": [
+            "Entretien préalable",
+            "Préparation de diète",
+            "Respect absolu de la lignée"
+        ],
+        "residencia_req": [
+            "Approbation du Conseil",
+            "Capacité à contribuer",
+            "Engagement à vie"
+        ]
+    },
+    "ayni": {
+        "form": {
+            "yape": "Yape / Plin (Pérou Uniquement)",
+            "name": "Nom du Gardien",
+            "payment": "Méthode Ayni",
+            "processing": "Intégration de votre énergie dans le sanctuaire...",
+            "submit": "Confirmer la Contribution",
+            "email": "E-mail (Pour le Certificat)",
+            "card": "Carte de Crédit / Débit"
+        },
+        "subtitle": "Soutien de l'Écosystème",
+        "title": "RENDRE L'AYNI EFFECTIF",
+        "amount": "Votre Contribution Volontaire :",
+        "desc": "La réciprocité (Ayni) permet au sanctuaire de respirer et de croître. Votre contribution finance des semences autochtones, des heures d'irrigation, des salles de classe écologiques et l'entretien génétique de nos cactus sacrés.",
+        "calculator": "Transformation Physique",
+        "calculator_desc": "Faites glisser pour visualiser comment votre contribution se traduit en actions concrètes au sein du parc archéologique.",
+        "metrics": {
+            "meters": "M² de terrasses restaurées",
+            "water": "Jours de système d'irrigation",
+            "seeds": "Kilos de semences biologiques"
+        }
+    },
+    "identity": {
+        "mission_desc": "Préserver et développer la sagesse ancestrale andine par la permaculture, la bioconstruction et la médecine traditionnelle. Nous cultivons un espace de transformation humaine où chaque individu devient un gardien actif de la Terre Mère.",
+        "subtitle": "Le battement de cœur de la montagne",
+        "vision": "Vision",
+        "title": "NOTRE IDENTITÉ",
+        "who_desc": "Pampa Ñusta est plus qu'un sanctuaire ; c'est un écosystème vivant dans la Vallée Sacrée (Pisac). Nous gardons une forêt de plantes maîtresses (Wachuma) et des terrasses de permaculture millénaires. Nous sommes un collectif de sages andins et modernes cherchant le retour à la conscience unifiée de la Terre.",
+        "who": "Qui Sommes-Nous",
+        "vision_desc": "Être le phare écologique et spirituel des Andes. Une écovillage autosuffisante où l'humanité retrouve son rôle de protecteur de la biosphère, réalisant la fusion parfaite entre technologie propre et technologie ancestrale.",
+        "mission": "Mission"
+    },
+    "nav": {
+        "close": "Fermer",
+        "menu": "Menu",
+        "pampa": "Pampa Ñusta",
+        "sections": {
+            "faq": "FAQ",
+            "ayni": "Ayni : Principe de Vie",
+            "identity": "Identité et Héritage",
+            "location": "Coordonnées Sacrées",
+            "community": "Notre Communauté",
+            "modules": "Modules d'Immersion"
+        }
+    },
+    "hero": {
+        "title_line1": "RETOUR À",
+        "subtitle": "Sanctuaire Écologique • Certifié Biologique • Permaculture Vivante",
+        "start": "Commencer le Voyage",
+        "trailer": "Voir la Bande-Annonce",
+        "title_line2": "L'ORIGINE"
+    },
+    "location": {
+        "subtitle": "Coordonnées Sacrées",
+        "whatsapp": "Envoyer via WhatsApp",
+        "view_place": "Voir l'Emplacement",
+        "desc": "À quelques minutes de la ville de Pisac, niché dans la pureté des montagnes de la Vallée Sacrée. Notre sanctuaire écologique n'a pas encore de nom sur les cartes commerciales, mais ces coordonnées vous guideront directement à la porte.",
+        "maps": "Ouvrir dans Maps",
+        "title": "COMMENT S'Y RENDRE"
+    },
+    "donation_banner": {
+        "subtitle": "Le Cycle de la Réciprocité",
+        "title_line1": "L'AYNI COMME",
+        "title_line2": "PRINCIPE DE VIE",
+        "desc": "La préservation des terrasses, des semences autochtones et de l'héritage de Pampa Ñusta est soutenue par l'Ayni, l'ancienne pratique andine de donner et recevoir. Si vous ressentez l'appel à faire partie de cette garde, nous vous invitons à découvrir notre programme d'adoption.",
+        "action": "Voir le Programme d'Adoption"
+    },
+    "leaders": {
+        "subtitle": "Les Gardiens",
+        "title": "Leaders Spirituels d'Amérique",
+        "desc": "Rencontrez les âmes sages qui gardent la vision et la médecine de Pampa Ñusta. Représentants de diverses traditions s'unissant sous la prophétie de l'Aigle et du Condor.",
+        "lider1": {
+            "name": "Taita Inti",
+            "role": "Prêtre Andin (Paqo)",
+            "region": "Les Andes",
+            "desc": "Gardien de la médecine ancestrale et protecteur des apus de la Vallée Sacrée. Sa lignée préserve les chants de guérison et le profond respect pour Pachamama."
+        },
+        "lider2": {
+            "name": "Abuela Yaku",
+            "role": "Sage Guérisseuse",
+            "region": "L'Amazonie",
+            "desc": "Gardienne des plantes maîtresses et de la sagesse de l'eau, reliant le monde spirituel au terrestre à travers l'héritage millénaire de la jungle profonde."
+        },
+        "lider3": {
+            "name": "Chef Aigle Blanc",
+            "role": "Porteur de la Pipe Sacrée",
+            "region": "Amérique du Nord",
+            "desc": "Représente l'ancienne prophétie de l'union de l'Aigle et du Condor, apportant les enseignements d'unité et de paix des tribus du nord."
+        },
+        "lider4": {
+            "name": "Maître Killa",
+            "role": "Spécialiste de la Wachuma",
+            "region": "Curanderismo du Sud",
+            "desc": "Guide les âmes à travers l'expansion de la conscience dans les montagnes. Sa médecine ouvre le cœur et restaure l'équilibre spirituel de ceux qui le visitent."
+        }
+    },
+    "footer": {
+        "brand": {
+            "desc": "Protéger la mémoire ancestrale de la Vallée Sacrée. Un sanctuaire archéologique, une réserve botanique de Wachuma et un écovillage durable vibrant en Ayni."
+        },
+        "explore": {
+            "title": "Explorer"
+        },
+        "contact": {
+            "title": "Contact de l'Écovillage"
+        },
+        "newsletter": {
+            "title": "Journal Archéologique",
+            "desc": "Recevez des chroniques mensuelles sur les découvertes, les événements astronomiques et les progrès de la restauration.",
+            "placeholder": "Votre adresse e-mail",
+            "success": "Abonnement confirmé"
+        },
+        "legal": {
+            "payments": "Paiements Sécurisés (Cartes · PayPal)",
+            "guarantee": "Garantie 100% Sans Pénalité",
+            "privacy": "Politique de Confidentialité",
+            "transparency": "Transparence Financière",
+            "cookies": "Cookies"
+        }
+    }
+}

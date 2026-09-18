@@ -1,0 +1,81 @@
+{
+    "donation_banner": {
+        "subtitle": "El Ciclo de la Reciprocidad",
+        "title_line1": "EL AYNI COMO",
+        "title_line2": "PRINCIPIO DE VIDA",
+        "desc": "La preservación de los andenes, las semillas nativas y el legado de Pampa Ñusta se sostiene a través del Ayni, la antigua práctica andina de dar y recibir. Si sientes el llamado a ser parte de esta custodia, te invitamos a conocer nuestro programa de adopción.",
+        "action": "Ver Programa de Adopción"
+    },
+    "leaders": {
+        "subtitle": "Los Guardianes",
+        "title": "Líderes Espirituales de América",
+        "desc": "Conoce a las almas sabias que custodian la visión y la medicina de Pampa Ñusta. Representantes de diversas tradiciones que se unen bajo la profecía del Águila y el Cóndor.",
+        "lider1": {
+            "name": "Taita Inti",
+            "role": "Sacerdote Andino (Paqo)",
+            "region": "Los Andes",
+            "desc": "Guardián de la medicina ancestral y protector de los apus del Valle Sagrado. Su linaje preserva los cantos de sanación y el respeto profundo a la Pachamama."
+        },
+        "lider2": {
+            "name": "Abuela Yaku",
+            "role": "Sabia Curandera",
+            "region": "La Amazonía",
+            "desc": "Guardiana de las plantas maestras y de la sabiduría del agua, conectando el mundo espiritual con el terrenal a través de la herencia milenaria de la selva profunda."
+        },
+        "lider3": {
+            "name": "Jefe Águila Blanca",
+            "role": "Portador de la Pipa Sagrada",
+            "region": "Norteamérica",
+            "desc": "Representa la antigua profecía de la unión del Águila y el Cóndor, trayendo consigo las enseñanzas de unidad y paz de las tribus del norte."
+        },
+        "lider4": {
+            "name": "Maestro Killa",
+            "role": "Especialista en Wachuma",
+            "region": "Curanderismo del Sur",
+            "desc": "Guía a las almas a través de la expansión de la conciencia en las montañas. Su medicina abre el corazón y restaura el equilibrio espiritual de quienes lo visitan."
+        }
+    },
+    "footer": {
+        "brand": {
+            "desc": "Protegiendo la memoria ancestral del Valle Sagrado. Un santuario arqueológico, una reserva botánica de Wachuma y una ecoaldea sostenible vibrando en Ayni."
+        },
+        "explore": {
+            "title": "Explorar"
+        },
+        "contact": {
+            "title": "Contacto Ecoaldea"
+        },
+        "newsletter": {
+            "title": "Bitácora Arqueológica",
+            "desc": "Recibe crónicas mensuales sobre hallazgos, eventos astronómicos y avances en la restauración.",
+            "placeholder": "Tu correo electrónico",
+            "success": "Suscripción confirmada"
+        },
+        "legal": {
+            "payments": "Pagos Seguros (Yape · Plin · Tarjetas)",
+            "guarantee": "Garantía 100% Sin Penalidad",
+            "privacy": "Privacidad",
+            "transparency": "Transparencia Financiera",
+            "cookies": "Cookies"
+        }
+    },
+    "joinus": {
+        "intro_desc": "El llamado de la montaña es para quienes sienten el profundo deseo de reconectar con la Pachamama. Existen diferentes caminos para integrarte a nuestra comunidad, desde visitas cortas de aprendizaje hasta convertirte en un guardián permanente del santuario.",
+        "requirements": "Requisitos",
+        "voluntariado_req": [
+            "Amor por la naturaleza",
+            "Disposición física",
+            "Estadía mínima de 2 semanas"
+        ],
+        "retiro_req": [
+            "Entrevista previa",
+            "Preparación de dieta",
+            "Respeto absoluto al linaje"
+        ],
+        "residencia_req": [
+            "Aprobación del Consejo",
+            "Habilidad de aporte",
+            "Compromiso vitalicio"
+        ]
+    }
+}

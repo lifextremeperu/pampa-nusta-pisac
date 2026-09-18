@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Lenis from '@studio-freight/lenis';
 import { Menu } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Core 1820 Layout Components
 import { Preloader } from './components/Preloader';
@@ -60,6 +61,7 @@ const WachumaIcon = ({ className }: { className?: string }) => (
 );
 
 export default function App() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -112,7 +114,7 @@ export default function App() {
         
         <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center text-white mix-blend-difference">
           <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
-            <span className="text-xl font-bold tracking-[0.2em]">PAMPA ÑUSTA</span>
+            <span className="text-xl font-bold tracking-[0.2em]">{t('nav.pampa')}</span>
             <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
           </button>
           <button 
@@ -153,7 +155,7 @@ export default function App() {
       <CustomCursor />      {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference text-white">
         <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
-          <span className="text-xl font-bold tracking-[0.2em] uppercase">Pampa Ñusta</span>
+          <span className="text-xl font-bold tracking-[0.2em] uppercase">{t('nav.pampa')}</span>
           <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
         </button>
         <div className="flex items-center gap-3 md:gap-6">
@@ -163,7 +165,7 @@ export default function App() {
             onClick={() => setIsMenuOpen(true)}
             className="flex items-center gap-3 hover:text-sadhana-primary transition-colors cursor-pointer"
           >
-            <span className="text-xs uppercase tracking-widest hidden md:inline font-medium">Menú</span>
+            <span className="text-xs uppercase tracking-widest hidden md:inline font-medium">{t('nav.menu')}</span>
             <Menu className="w-8 h-8" />
           </button>
         </div>

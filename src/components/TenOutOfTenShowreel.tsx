@@ -198,7 +198,7 @@ export const TenOutOfTenShowreel: React.FC<TenOutOfTenShowreelProps> = ({
             src={currentPhoto}
             alt={currentItem.title}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center transition-all duration-700 ease-in-out animate-fade-in"
+            className="w-full h-full object-cover object-center transition-all duration-700 ease-in-out animate-fade-in animate-ken-burns"
           />
         )}
 

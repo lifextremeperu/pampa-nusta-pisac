@@ -120,7 +120,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
               <img 
                 src={currentModule.imageUrl} 
                 alt={currentModule.title}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center animate-ken-burns"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-sadhana-dark via-sadhana-dark/70 to-transparent opacity-95 md:opacity-80" />
               <div className="absolute inset-0 bg-black/20" />

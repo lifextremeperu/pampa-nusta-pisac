@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { MapPin, Navigation, MessageCircle, Zap } from 'lucide-react';
 import { InterdimensionalJourney } from './InterdimensionalJourney';
+import { useTranslation } from 'react-i18next';
 
 export const LocationSection: React.FC = () => {
+  const { t } = useTranslation();
   const [showJourney, setShowJourney] = useState(false);
   const latitude = -13.407585;
   const longitude = -71.836324;
@@ -22,11 +24,11 @@ export const LocationSection: React.FC = () => {
         <div className="mb-12 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
             <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-sadhana-primary font-bold">
-              04 — Coordenadas Sagradas
+              04 — {t('location.subtitle')}
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight text-white drop-shadow-md">
-            CÓMO <span className="text-sadhana-sand/80">LLEGAR</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight text-white drop-shadow-md uppercase">
+            {t('location.title')}
           </h2>
         </div>
 
@@ -65,7 +67,7 @@ export const LocationSection: React.FC = () => {
                 Comunidad de Maska
               </h3>
               <p className="text-sadhana-sand/80 font-medium text-sm mb-6 leading-relaxed">
-                A pocos minutos del pueblo de Pisac, enclavado en la pureza de las montañas del Valle Sagrado. Nuestro santuario ecológico todavía no figura con nombre en los mapas comerciales, pero estas coordenadas te guiarán directo a la puerta.
+                {t('location.desc')}
               </p>
 
               <div className="space-y-4 mb-8 bg-black/20 p-4 rounded-xl border border-white/5">
@@ -94,7 +96,7 @@ export const LocationSection: React.FC = () => {
               >
                 <Zap className="w-4 h-4" style={{ color: '#4ade80' }} />
                 <span style={{ background: 'linear-gradient(90deg,#4ade80,#fbbf24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Ver el Lugar
+                  {t('location.view_place')}
                 </span>
               </button>
 
@@ -104,7 +106,7 @@ export const LocationSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-full py-4 px-6 rounded-xl bg-white hover:bg-sadhana-primary text-sadhana-dark hover:text-white font-sans font-black text-xs tracking-widest uppercase flex items-center justify-center gap-3 transition-all shadow-lg"
               >
-                <span>Abrir en Maps</span>
+                <span>{t('location.maps')}</span>
                 <Navigation className="w-4 h-4" />
               </a>
 
@@ -114,7 +116,7 @@ export const LocationSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-full py-4 px-6 rounded-xl bg-[#25D366]/20 hover:bg-[#25D366] text-white font-sans font-black text-xs tracking-widest uppercase flex items-center justify-center gap-3 transition-all border border-[#25D366]/30 shadow-lg group"
               >
-                <span>Enviar por WhatsApp</span>
+                <span>{t('location.whatsapp')}</span>
                 <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </a>
             </div>
