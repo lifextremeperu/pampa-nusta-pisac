@@ -1,60 +1,60 @@
 {
     "faq": {
-        "subtitle": "Guía para Viajeros y Custodios",
-        "title": "PREGUNTAS FRECUENTES",
-        "desc": "Todo lo que necesitas saber antes de emprender tu viaje hacia el corazón del Valle Sagrado.",
+        "title": "FREQUENTLY ASKED QUESTIONS",
+        "subtitle": "Guide for Travelers and Custodians",
+        "desc": "Everything you need to know before embarking on your journey to the heart of the Sacred Valley.",
         "items": [
             {
-                "question": "¿Es necesario tener experiencia previa con plantas medicinales?",
-                "answer": "No. Nuestros guardianes espirituales evalúan a cada visitante y diseñan un proceso personalizado de acuerdo a su nivel de sensibilidad y experiencia."
+                "question": "Is prior experience with medicinal plants necessary?",
+                "answer": "No. Our spiritual guardians evaluate each visitor and design a personalized process according to their sensitivity level and experience."
             },
             {
-                "question": "¿Cómo llego desde Cusco al santuario?",
-                "answer": "Pampa Ñusta se encuentra a 45 minutos de Cusco. Ofrecemos servicio de transporte privado desde el aeropuerto o puedes tomar un colectivo hacia Pisac y te recogeremos en el pueblo."
+                "question": "How do I get to the sanctuary from Cusco?",
+                "answer": "Pampa Ñusta is 45 minutes from Cusco. We offer private transport from the airport, or you can take a colectivo to Pisac and we will pick you up in town."
             },
             {
-                "question": "¿Qué incluye el programa de voluntariado?",
-                "answer": "Incluye alojamiento en carpas de alta montaña o domos compartidos, 3 comidas vegetarianas al día, talleres de bioconstrucción y acceso libre al santuario."
+                "question": "What does the volunteering program include?",
+                "answer": "It includes accommodation in high mountain tents or shared domes, 3 vegetarian meals a day, bioconstruction workshops, and free access to the sanctuary."
             },
             {
-                "question": "¿Tienen conexión a internet (Wi-Fi)?",
-                "answer": "Sí. Disponemos de conexión satelital en áreas designadas, pero fomentamos la desconexión digital para aprovechar la inmersión en la naturaleza."
+                "question": "Do you have internet connection (Wi-Fi)?",
+                "answer": "Yes. We have satellite connection in designated areas, but we encourage digital disconnection to fully immerse in nature."
             },
             {
-                "question": "¿Puedo ir con niños?",
-                "answer": "¡Por supuesto! La Escuela Viva está diseñada precisamente para integrar a los más pequeños en la naturaleza con metodologías alternativas de aprendizaje."
+                "question": "Can I bring children?",
+                "answer": "Of course! The Living School is designed specifically to integrate children into nature with alternative learning methodologies."
             }
         ]
     },
     "joinus": {
         "residencia_price": "Taxa de Entrada + Mensal",
-        "residencia_desc": "Para aquellos que han escuchado el llamado profundo de convertirse en guardianes permanentes del santuario.",
-        "retiro_title": "Retiros de Sanación",
-        "subtitle": "CAMINOS DE INTEGRACIÓN",
-        "voluntariado_desc": "Sumérgete en la permacultura y bioconstrucción. Ideal para viajeros que desean aprender sirviendo a la tierra.",
+        "residencia_desc": "For those who have heard the deep call to become permanent guardians of the sanctuary.",
+        "retiro_title": "Healing Retreats",
+        "subtitle": "INTEGRATION PATHS",
+        "voluntariado_desc": "Immerse yourself in permaculture and bioconstruction. Ideal for travelers who want to learn while serving the earth.",
         "retiro_price": "A partir de R$ 200 por cerimônia",
-        "residencia_title": "Residencia Permanente",
-        "apply": "Aplicar para",
-        "retiro_desc": "Aislamiento profundo, dietas tradicionales y trabajo interno guiado por nuestros maestros andino-amazónicos.",
-        "voluntariado_title": "Voluntariado Semilla",
-        "title": "ÚNETE A LA TRIBU",
+        "residencia_title": "Permanent Residency",
+        "apply": "Apply for",
+        "retiro_desc": "Deep isolation, traditional diets, and internal work guided by our Andean-Amazonian masters.",
+        "voluntariado_title": "Seed Volunteering",
+        "title": "JOIN THE TRIBE",
         "voluntariado_price": "R$ 50 por dia (Alimentação)",
-        "intro_desc": "O chamado da montanha é para aqueles que sentem o profundo desejo de se reconectar com a Pachamama. Existem diferentes caminhos para se integrar à nossa comunidade, desde visitas curtas de aprendizado até se tornar um guardião permanente do santuário.",
-        "requirements": "Requisitos",
+        "intro_desc": "The call of the mountain is for those who feel the deep desire to reconnect with Pachamama. There are different paths to integrate into our community, from short learning visits to becoming a permanent guardian of the sanctuary.",
+        "requirements": "REQUIREMENTS",
         "voluntariado_req": [
-            "Amor pela natureza",
-            "Disposição física",
-            "Estadia mínima de 2 semanas"
+            "Love for nature",
+            "Physical readiness",
+            "Minimum stay of 2 weeks"
         ],
         "retiro_req": [
-            "Entrevista prévia",
-            "Preparação de dieta",
-            "Respeito absoluto à linhagem"
+            "Prior interview",
+            "Diet preparation",
+            "Absolute respect for the lineage"
         ],
         "residencia_req": [
-            "Aprovação do Conselho",
-            "Habilidade de contribuição",
-            "Compromisso vitalício"
+            "Council approval",
+            "Ability to contribute",
+            "Lifelong commitment"
         ]
     },
     "ayni": {
@@ -80,18 +80,18 @@
         }
     },
     "identity": {
-        "title": "Identidad Pampa Ñusta",
-        "subtitle": "El Corazón del Santuario",
-        "who": "¿Quiénes Somos?",
-        "who_desc": "Somos un colectivo de guardianes de la tierra ubicados en la comunidad de Maska, Pisac. Conformamos una ecoaldea viva dedicada a preservar la memoria ancestral andina, la bioconstrucción y el legado espiritual de los Andes para las futuras generaciones.",
-        "mission": "Nuestra Misión",
-        "mission_desc": "Proteger y cultivar el banco genético del cactus sagrado Wachuma y de semillas nativas, brindando un espacio de educación alternativa para niños y un refugio de sanación integral a través de ceremonias y tecnologías regenerativas.",
-        "vision": "Nuestra Visión",
-        "vision_desc": "Convertirnos en un epicentro global de sabiduría ancestral y permacultura, donde la humanidad recuerde cómo convivir en armonía con la Pachamama, expandiendo la conciencia colectiva desde el Valle Sagrado de los Incas hacia el mundo entero."
+        "title": "Pampa Ñusta Identity",
+        "subtitle": "The Heart of the Sanctuary",
+        "who": "Who Are We?",
+        "who_desc": "We are a collective of earth guardians located in the community of Maska, Pisac. We form a living ecovillage dedicated to preserving ancestral Andean memory, bioconstruction, and the spiritual legacy of the Andes for future generations.",
+        "mission": "Our Mission",
+        "mission_desc": "To protect and cultivate the genetic bank of the sacred Wachuma cactus and native seeds, providing an alternative education space for children and a comprehensive healing refuge through ceremonies and regenerative technologies.",
+        "vision": "Our Vision",
+        "vision_desc": "To become a global epicenter of ancestral wisdom and permaculture, where humanity remembers how to live in harmony with Pachamama, expanding collective consciousness from the Sacred Valley of the Incas to the entire world."
     },
     "nav": {
         "pampa": "Pampa Ñusta",
-        "menu": "MENÚ",
+        "menu": "MENU",
         "close": "Fermer",
         "sections": {
             "faq": "FAQ",
@@ -101,15 +101,15 @@
             "community": "Notre Communauté",
             "modules": "Modules d'Immersion"
         },
-        "inicio": "Inicio",
-        "leyenda": "Leyenda",
-        "botanica": "Reserva Botánica",
-        "identidad": "Identidad",
-        "lideres": "Líderes",
+        "inicio": "Home",
+        "leyenda": "Legend",
+        "botanica": "Botanical Reserve",
+        "identidad": "Identity",
+        "lideres": "Leaders",
         "media": "Media Hub",
-        "unirse": "Únete a Nosotros",
-        "recorrido": "Recorrido 360",
-        "adopcion": "Adopta una Semilla"
+        "unirse": "Join Us",
+        "recorrido": "360 Tour",
+        "adopcion": "Adopt a Seed"
     },
     "hero": {
         "title_line1": "RETORNO À",
@@ -119,16 +119,16 @@
         "title_line2": "ORIGEM"
     },
     "location": {
-        "title": "Territorio Sagrado",
-        "subtitle": "COORDENADAS DEL SANTUARIO",
+        "title": "SACRED TERRITORY",
+        "subtitle": "SANCTUARY COORDINATES",
         "location": "Maska, Pisac, Cusco - Perú",
         "altitude": "3,000 msnm",
         "environment": "Valle Sagrado de los Incas",
         "climate": "Templado Andino",
-        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
-        "whatsapp": "CONTACTAR POR WHATSAPP",
-        "view_place": "VER EN GOOGLE MAPS",
-        "maps": "ABRIR EN MAPAS"
+        "desc": "Strategically located at the foot of the imposing archaeological complex of Pisac. Our sanctuary is nourished by the glacial waters of the major Apus, creating a perfect microclimate for the conservation of medicine and seeds.",
+        "whatsapp": "CONTACT VIA WHATSAPP",
+        "view_place": "VIEW IN GOOGLE MAPS",
+        "maps": "OPEN IN MAPS"
     },
     "donation_banner": {
         "subtitle": "O Ciclo da Reciprocidade",
@@ -622,5 +622,8 @@
         "title": "Documentación Multimedia",
         "subtitle": "EXPLORA EL SANTUARIO",
         "description": "Sumérgete en la memoria visual de nuestra ecoaldea. Cada imagen captura un fragmento de nuestro viaje hacia la armonía con la Tierra."
+    },
+    "chatbot": {
+        "schedule": "Schedule Video Call"
     }
 }

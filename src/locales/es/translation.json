@@ -581,5 +581,8 @@
         "view_place": "VER EN GOOGLE MAPS",
         "maps": "ABRIR EN MAPAS",
         "whatsapp": "CONTACTAR POR WHATSAPP"
+    },
+    "chatbot": {
+        "schedule": "Agendar Videollamada"
     }
 }

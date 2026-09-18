@@ -25,6 +25,7 @@ import {
   Maximize2,
   Radio
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { VIDEO_CALL_TOPICS, AVAILABLE_TIME_SLOTS } from '../data/videoCallTopics';
 import { VideoCallBooking, VideoCallTopic } from '../types';
 import { andeanAudio } from '../utils/audioSynthesizer';
@@ -47,6 +48,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   isOpenExternal,
   onCloseExternal,
 }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [isLauncherMinimized, setIsLauncherMinimized] = useState<boolean>(false);
@@ -314,7 +316,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                <MessageSquare className="w-5 h-5 relative z-10" />
              </div>
              <span className="font-sans text-xs font-bold uppercase tracking-widest hidden sm:inline-block">
-               Agendar Videollamada
+               {t('chatbot.schedule')}
              </span>
            </button>
         </div>
