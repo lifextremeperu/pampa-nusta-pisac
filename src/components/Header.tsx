@@ -33,7 +33,27 @@ export const Header: React.FC<HeaderProps> = ({
     const unsub = andeanAudio.subscribe((playing) => {
       setIsAudioPlaying(playing);
     });
-    return unsub;
+
+    const handleFirstInteraction = () => {
+      andeanAudio.autoStart();
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('keydown', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
+
+    // Try to auto-start immediately (some browsers may allow it)
+    setTimeout(() => andeanAudio.autoStart(), 500);
+
+    return () => {
+      unsub();
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+    };
   }, []);
 
   const handleToggleAudio = async () => {
@@ -80,25 +100,28 @@ export const Header: React.FC<HeaderProps> = ({
               <Video className="w-5 h-5" />
             </button>
 
-            {/* Language Selection */}
-            <button
-              onClick={toggleLanguage}
-              className="font-mono text-[10px] tracking-widest border border-white/30 px-2 py-1 hover:bg-white hover:text-black transition-colors"
-            >
-              {i18n.language.toUpperCase()}
-            </button>
+            {/* Language & Audio Pill */}
+            <div className="flex items-center rounded-full border border-white/20 bg-black/10 backdrop-blur-md overflow-hidden shadow-sm">
+              <button
+                onClick={toggleLanguage}
+                className="font-mono text-[10px] tracking-widest px-3 py-1.5 hover:bg-white hover:text-black transition-colors"
+                title="Change Language"
+              >
+                {i18n.language.toUpperCase()}
+              </button>
+              
+              <div className="w-px h-4 bg-white/20" />
+              
+              {/* Sound Toggle */}
+              <button
+                onClick={handleToggleAudio}
+                className="flex items-center justify-center px-3 py-1.5 hover:bg-white hover:text-black transition-colors text-white/90"
+                title={isAudioPlaying ? t('header.mute') : t('header.audio')}
+              >
+                {isAudioPlaying ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
+              </button>
+            </div>
           </div>
-
-          {/* Sound Toggle */}
-          <button
-            onClick={handleToggleAudio}
-            className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
-          >
-            <span className="font-mono text-[10px] tracking-widest uppercase">
-              {isAudioPlaying ? t('header.mute') : t('header.audio')}
-            </span>
-            {isAudioPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-          </button>
         </div>
 
       </div>
