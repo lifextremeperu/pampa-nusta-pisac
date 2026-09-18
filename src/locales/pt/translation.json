@@ -1,7 +1,7 @@
 {
     "faq": {
-        "subtitle": "Guia do Viajante e Guardião",
-        "title": "PERGUNTAS FREQUENTES"
+        "subtitle": "Guía para Viajeros y Custodios",
+        "title": "PREGUNTAS FRECUENTES"
     },
     "joinus": {
         "residencia_price": "Taxa de Entrada + Mensal",
@@ -57,26 +57,26 @@
         }
     },
     "identity": {
-        "mission_desc": "Preservar e expandir a sabedoria ancestral andina através da permacultura, bioconstrução e medicina tradicional. Cultivamos um espaço de transformação humana onde cada indivíduo se torna um guardião ativo da Mãe Terra.",
-        "subtitle": "O bater do coração da montanha",
-        "vision": "Visão",
-        "title": "NOSSA IDENTIDADE",
-        "who_desc": "Pampa Ñusta é mais do que um santuário; é um ecossistema vivo no Vale Sagrado (Pisac). Guardamos uma floresta de plantas mestras (Wachuma) e terraços de permacultura milenares. Somos um coletivo de sábios andinos e modernos buscando o retorno à consciência unificada da Terra.",
-        "who": "Quem Somos",
-        "vision_desc": "Ser o farol ecológico e espiritual dos Andes. Uma ecovila autossustentável onde a humanidade recupera seu papel de protetora da biosfera, alcançando a fusão perfeita entre tecnologia limpa e tecnologia ancestral.",
-        "mission": "Missão"
+        "title": "Identidad Pampa Ñusta",
+        "subtitle": "El Corazón del Santuario",
+        "who": "¿Quiénes Somos?",
+        "who_desc": "Somos un colectivo de guardianes de la tierra ubicados en la comunidad de Maska, Pisac. Conformamos una ecoaldea viva dedicada a preservar la memoria ancestral andina, la bioconstrucción y el legado espiritual de los Andes para las futuras generaciones.",
+        "mission": "Nuestra Misión",
+        "mission_desc": "Proteger y cultivar el banco genético del cactus sagrado Wachuma y de semillas nativas, brindando un espacio de educación alternativa para niños y un refugio de sanación integral a través de ceremonias y tecnologías regenerativas.",
+        "vision": "Nuestra Visión",
+        "vision_desc": "Convertirnos en un epicentro global de sabiduría ancestral y permacultura, donde la humanidad recuerde cómo convivir en armonía con la Pachamama, expandiendo la conciencia colectiva desde el Valle Sagrado de los Incas hacia el mundo entero."
     },
     "nav": {
-        "close": "Fechar",
-        "menu": "Menu",
         "pampa": "Pampa Ñusta",
+        "menu": "MENÚ",
+        "close": "Fermer",
         "sections": {
             "faq": "FAQ",
-            "ayni": "Ayni: Princípio de Vida",
-            "identity": "Identidade e Legado",
-            "location": "Coordenadas Sagradas",
-            "community": "Nossa Comunidade",
-            "modules": "Módulos de Imersão"
+            "ayni": "Ayni : Principe de Vie",
+            "identity": "Identité et Héritage",
+            "location": "Coordonnées Sacrées",
+            "community": "Notre Communauté",
+            "modules": "Modules d'Immersion"
         }
     },
     "hero": {
@@ -87,12 +87,16 @@
         "title_line2": "ORIGEM"
     },
     "location": {
-        "subtitle": "Coordenadas Sagradas",
-        "whatsapp": "Enviar via WhatsApp",
-        "view_place": "Ver Localização",
-        "desc": "A poucos minutos da cidade de Pisac, aninhado na pureza das montanhas do Vale Sagrado. Nosso santuário ecológico ainda não tem nome nos mapas comerciais, mas essas coordenadas o guiarão direto à porta.",
-        "maps": "Abrir no Maps",
-        "title": "COMO CHEGAR"
+        "title": "Territorio Sagrado",
+        "subtitle": "COORDENADAS DEL SANTUARIO",
+        "location": "Maska, Pisac, Cusco - Perú",
+        "altitude": "3,000 msnm",
+        "environment": "Valle Sagrado de los Incas",
+        "climate": "Templado Andino",
+        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
+        "whatsapp": "Envoyer via WhatsApp",
+        "view_place": "Voir l'Emplacement",
+        "maps": "Ouvrir dans Maps"
     },
     "donation_banner": {
         "subtitle": "O Ciclo da Reciprocidade",

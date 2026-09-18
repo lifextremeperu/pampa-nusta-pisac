@@ -1,7 +1,7 @@
 {
     "faq": {
-        "subtitle": "Guide du Voyageur et du Gardien",
-        "title": "QUESTIONS FRÉQUEMMENT POSÉES"
+        "subtitle": "Guía para Viajeros y Custodios",
+        "title": "PREGUNTAS FRECUENTES"
     },
     "joinus": {
         "residencia_price": "Frais d'Entrée + Mensuel",
@@ -57,19 +57,19 @@
         }
     },
     "identity": {
-        "mission_desc": "Préserver et développer la sagesse ancestrale andine par la permaculture, la bioconstruction et la médecine traditionnelle. Nous cultivons un espace de transformation humaine où chaque individu devient un gardien actif de la Terre Mère.",
-        "subtitle": "Le battement de cœur de la montagne",
-        "vision": "Vision",
-        "title": "NOTRE IDENTITÉ",
-        "who_desc": "Pampa Ñusta est plus qu'un sanctuaire ; c'est un écosystème vivant dans la Vallée Sacrée (Pisac). Nous gardons une forêt de plantes maîtresses (Wachuma) et des terrasses de permaculture millénaires. Nous sommes un collectif de sages andins et modernes cherchant le retour à la conscience unifiée de la Terre.",
-        "who": "Qui Sommes-Nous",
-        "vision_desc": "Être le phare écologique et spirituel des Andes. Une écovillage autosuffisante où l'humanité retrouve son rôle de protecteur de la biosphère, réalisant la fusion parfaite entre technologie propre et technologie ancestrale.",
-        "mission": "Mission"
+        "title": "Identidad Pampa Ñusta",
+        "subtitle": "El Corazón del Santuario",
+        "who": "¿Quiénes Somos?",
+        "who_desc": "Somos un colectivo de guardianes de la tierra ubicados en la comunidad de Maska, Pisac. Conformamos una ecoaldea viva dedicada a preservar la memoria ancestral andina, la bioconstrucción y el legado espiritual de los Andes para las futuras generaciones.",
+        "mission": "Nuestra Misión",
+        "mission_desc": "Proteger y cultivar el banco genético del cactus sagrado Wachuma y de semillas nativas, brindando un espacio de educación alternativa para niños y un refugio de sanación integral a través de ceremonias y tecnologías regenerativas.",
+        "vision": "Nuestra Visión",
+        "vision_desc": "Convertirnos en un epicentro global de sabiduría ancestral y permacultura, donde la humanidad recuerde cómo convivir en armonía con la Pachamama, expandiendo la conciencia colectiva desde el Valle Sagrado de los Incas hacia el mundo entero."
     },
     "nav": {
-        "close": "Fermer",
-        "menu": "Menu",
         "pampa": "Pampa Ñusta",
+        "menu": "MENÚ",
+        "close": "Fermer",
         "sections": {
             "faq": "FAQ",
             "ayni": "Ayni : Principe de Vie",
@@ -87,12 +87,16 @@
         "title_line2": "L'ORIGINE"
     },
     "location": {
-        "subtitle": "Coordonnées Sacrées",
+        "title": "Territorio Sagrado",
+        "subtitle": "COORDENADAS DEL SANTUARIO",
+        "location": "Maska, Pisac, Cusco - Perú",
+        "altitude": "3,000 msnm",
+        "environment": "Valle Sagrado de los Incas",
+        "climate": "Templado Andino",
+        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
         "whatsapp": "Envoyer via WhatsApp",
         "view_place": "Voir l'Emplacement",
-        "desc": "À quelques minutes de la ville de Pisac, niché dans la pureté des montagnes de la Vallée Sacrée. Notre sanctuaire écologique n'a pas encore de nom sur les cartes commerciales, mais ces coordonnées vous guideront directement à la porte.",
-        "maps": "Ouvrir dans Maps",
-        "title": "COMMENT S'Y RENDRE"
+        "maps": "Ouvrir dans Maps"
     },
     "donation_banner": {
         "subtitle": "Le Cycle de la Réciprocité",
