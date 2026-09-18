@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles, MapPin, Award, HeartHandshake, Leaf, Compass, Trees, MessageCircle, ShieldCheck, Lock, RotateCcw, Activity, CheckCircle2, ChevronRight, CreditCard, Building2, Mountain, Instagram, Facebook, Youtube, Mail, Send, CheckCircle } from 'lucide-react';
-import { ECOALDEA_MODULES } from '../data/ecoaldeaModules';
+
 import { useTranslation } from 'react-i18next';
 
 interface FooterProps {

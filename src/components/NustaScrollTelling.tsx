@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,7 @@ const NUSTA_SLIDES = [
 export const NustaScrollTelling: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!containerRef.current || !sliderRef.current) return;
@@ -157,15 +159,15 @@ export const NustaScrollTelling: React.FC = () => {
                 
                 <h4 className="text-sadhana-primary font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-3 flex items-center gap-2">
                   <span className="w-4 h-px bg-sadhana-primary inline-block"></span>
-                  {story.subtitle}
+                  {t(`nusta.story.${story.id}.subtitle`)}
                 </h4>
                 
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight drop-shadow-lg font-cinzel">
-                  {story.title}
+                <h3 className="text-3xl md:text-6xl lg:text-7xl font-black text-white mb-4 md:mb-8 leading-tight drop-shadow-lg">
+                  {t(`nusta.story.${story.id}.title`)}
                 </h3>
                 
-                <p className="text-sadhana-sand/90 text-sm md:text-xl max-w-2xl leading-relaxed font-medium md:pl-6 md:border-l-2 border-sadhana-primary/50 drop-shadow-md">
-                  {story.description}
+                <p className="text-base md:text-2xl text-sadhana-sand/90 font-light leading-relaxed max-w-3xl drop-shadow-md">
+                  {t(`nusta.story.${story.id}.description`)}
                 </p>
               </div>
 

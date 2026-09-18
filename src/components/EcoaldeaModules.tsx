@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, Compass, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ECOALDEA_MODULES } from '../data/ecoaldeaModules';
+import { useEcoaldeaModules } from '../data/ecoaldeaModules';
 import { EcoaldeaModule } from '../types';
 
 interface EcoaldeaModulesProps {
@@ -13,6 +13,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
   onSelectModuleForExperience,
   onOpenTrailer,
 }) => {
+  const ECOALDEA_MODULES = useEcoaldeaModules();
   const MAIN_MODULES = ECOALDEA_MODULES.filter(m => !m.id.match(/^wachuma-\d+$/));
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);

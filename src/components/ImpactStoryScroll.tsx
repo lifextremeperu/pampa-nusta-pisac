@@ -1,61 +1,64 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 gsap.registerPlugin(ScrollTrigger);
 
-const IMPACT_STORIES = [
-  {
-    id: 'antropologico',
-    title: 'Legado Antropológico',
-    subtitle: 'Preservación de la Cultura Viva',
-    description: 'Rescatamos y documentamos tradiciones milenarias, protegiendo la identidad andina frente a la globalización. Un puente vivo entre los sabios ancestrales y las nuevas generaciones.',
-    imageUrl: '/assets/impacto/impacto_antropologico.jpg',
-    accentColor: 'from-amber-900/80 to-sadhana-dark'
-  },
-  {
-    id: 'social',
-    title: 'Impacto Comunitario',
-    subtitle: 'Empoderamiento Local',
-    description: 'Generamos fuentes de trabajo dignas y sostenibles para las familias de Pisac, integrando a la comunidad local en todas las fases de bioconstrucción, agricultura y hospitalidad.',
-    imageUrl: '/assets/impacto/impacto_social.jpg',
-    accentColor: 'from-orange-800/80 to-sadhana-dark'
-  },
-  {
-    id: 'economico',
-    title: 'Economía Circular',
-    subtitle: 'Prosperidad Sostenible',
-    description: 'Fomentamos un ecosistema económico donde los recursos se reutilizan. Apoyamos el comercio justo, el consumo de productos orgánicos locales y la independencia financiera comunitaria.',
-    imageUrl: '/assets/impacto/impacto_economico.jpg',
-    accentColor: 'from-yellow-700/80 to-sadhana-dark'
-  },
-  {
-    id: 'tecnologico',
-    title: 'Innovación Ecológica',
-    subtitle: 'Bioconstrucción y Energía Limpia',
-    description: 'Fusionamos ingeniería ancestral con tecnología de vanguardia. Utilizamos barro, madera local y energía limpia para crear infraestructuras que respetan y se funden con el paisaje.',
-    imageUrl: '/assets/impacto/impacto_tecnologico.jpg',
-    accentColor: 'from-emerald-900/80 to-sadhana-dark'
-  },
-  {
-    id: 'educacion',
-    title: 'Conocimiento Compartido',
-    subtitle: 'La Escuela Viva',
-    description: 'Nuestras terrazas de permacultura son aulas abiertas. Educamos a niños y adultos sobre biodiversidad, botánica sagrada y técnicas milenarias de conservación de semillas nativas.',
-    imageUrl: '/assets/impacto/impacto_educacion.jpg',
-    accentColor: 'from-green-800/80 to-sadhana-dark'
-  },
-  {
-    id: 'espiritual',
-    title: 'El Principio del Ayni',
-    subtitle: 'Reciprocidad Absoluta',
-    description: 'Todo lo que tomamos de la Pachamama se lo devolvemos con gratitud profunda. A través de despachos, ceremonias y trabajo sagrado, mantenemos el equilibrio espiritual del Valle.',
-    imageUrl: '/assets/impacto/impacto_espiritual.jpg',
-    accentColor: 'from-purple-900/80 to-sadhana-dark'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const ImpactStoryScroll: React.FC = () => {
+  const { t } = useTranslation();
+  
+  const IMPACT_STORIES = [
+    {
+      id: 'ecologico',
+      title: t('impact.stories.ecologico.title'),
+      subtitle: t('impact.stories.ecologico.subtitle'),
+      description: t('impact.stories.ecologico.description'),
+      imageUrl: '/assets/impacto/impacto_antropologico.jpg', // Keeping the original image path just in case
+      accentColor: 'from-amber-900/80 to-sadhana-dark'
+    },
+    {
+      id: 'social',
+      title: t('impact.stories.social.title'),
+      subtitle: t('impact.stories.social.subtitle'),
+      description: t('impact.stories.social.description'),
+      imageUrl: '/assets/impacto/impacto_social.jpg',
+      accentColor: 'from-orange-800/80 to-sadhana-dark'
+    },
+    {
+      id: 'economico',
+      title: t('impact.stories.economico.title'),
+      subtitle: t('impact.stories.economico.subtitle'),
+      description: t('impact.stories.economico.description'),
+      imageUrl: '/assets/impacto/impacto_economico.jpg',
+      accentColor: 'from-emerald-900/80 to-sadhana-dark'
+    },
+    {
+      id: 'educacion',
+      title: t('impact.stories.educacion.title'),
+      subtitle: t('impact.stories.educacion.subtitle'),
+      description: t('impact.stories.educacion.description'),
+      imageUrl: '/assets/impacto/impacto_educacion.jpg',
+      accentColor: 'from-blue-900/80 to-sadhana-dark'
+    },
+    {
+      id: 'tecnologico',
+      title: t('impact.stories.tecnologico.title'),
+      subtitle: t('impact.stories.tecnologico.subtitle'),
+      description: t('impact.stories.tecnologico.description'),
+      imageUrl: '/assets/impacto/impacto_tecnologico.jpg',
+      accentColor: 'from-purple-900/80 to-sadhana-dark'
+    },
+    {
+      id: 'espiritual',
+      title: t('impact.stories.espiritual.title'),
+      subtitle: t('impact.stories.espiritual.subtitle'),
+      description: t('impact.stories.espiritual.description'),
+      imageUrl: '/assets/impacto/impacto_espiritual.jpg',
+      accentColor: 'from-indigo-900/80 to-sadhana-dark'
+    }
+  ];
+
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
