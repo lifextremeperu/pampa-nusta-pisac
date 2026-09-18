@@ -613,17 +613,44 @@
         }
     },
     "mediahub": {
-        "categories": {
-            "all": "Todas las Visiones",
-            "bioconstruccion": "Bioconstrucción",
-            "permacultura": "Permacultura",
-            "ceremonias": "Ceremonias Sagradas"
-        },
-        "title": "Documentación Multimedia",
-        "subtitle": "EXPLORA EL SANTUARIO",
-        "description": "Sumérgete en la memoria visual de nuestra ecoaldea. Cada imagen captura un fragmento de nuestro viaje hacia la armonía con la Tierra."
+        "subtitle": "GLOBAL CONNECTION",
+        "title": "MULTIMEDIA CENTER",
+        "tab_live": "TikTok Live",
+        "tab_interviews": "Interviews",
+        "tab_gallery": "Photo & Video Gallery",
+        "live_tag": "Scheduled Broadcast",
+        "live_title": "Distance Healing: Sound Ceremony",
+        "live_desc": "Join our next live broadcast from the Ceremonial Maloka in the Sacred Valley. Share with the global community, ask questions in real-time, and receive the vibration of ancestral chants.",
+        "live_time": "Friday, 20:00 EST",
+        "live_duration": "Duration: 2 Hours",
+        "live_btn": "Schedule on TikTok",
+        "interview_btn": "Watch Episode",
+        "gallery_title": "Visual Gallery",
+        "gallery_desc": "Very soon we will enable the historical archive of photos and videos of the ecovillage. You will be able to explore every corner, ceremony, and bioconstruction progress of the Pampa Ñusta Sanctuary.",
+        "gallery_btn": "Notify me when ready"
     },
     "chatbot": {
         "schedule": "Schedule Video Call"
+    },
+    "tour360": {
+        "subtitle": "02 — IMMERSIVE TOUR",
+        "title1": "TOUR",
+        "title2": "360°",
+        "desc": "Get to know the ecological facilities, botanical domes, and community services of the sanctuary through our referential video and virtual tour.",
+        "tab_video": "Cinematic Explorer",
+        "tab_360": "360° Explorer",
+        "tab_map": "Sanctuary Map",
+        "immersion_desc": "Immerse yourself in the immensity of the Sacred Valley through this ultra-high-definition visual expedition. This cinematic tour transports you through the bioconstruction and living heritage of each of our ecological zones.",
+        "reference_badge": "Referential visual illustrating the vision and atmosphere of Pampa Ñusta"
+    },
+    "modules": {
+        "subtitle": "01 — SPATIAL DISTRIBUTION",
+        "title": "FACILITIES",
+        "explore_btn": "EXPLORE FACILITY"
+    },
+    "social": {
+        "subtitle": "03 — Community Voices",
+        "title1": "REVIEWS &",
+        "title2": "TESTIMONIALS"
     }
 }

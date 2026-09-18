@@ -510,15 +510,21 @@
         }
     },
     "mediahub": {
-        "categories": {
-            "all": "Todas las Visiones",
-            "bioconstruccion": "Bioconstrucción",
-            "permacultura": "Permacultura",
-            "ceremonias": "Ceremonias Sagradas"
-        },
-        "title": "Documentación Multimedia",
-        "subtitle": "EXPLORA EL SANTUARIO",
-        "description": "Sumérgete en la memoria visual de nuestra ecoaldea. Cada imagen captura un fragmento de nuestro viaje hacia la armonía con la Tierra."
+        "subtitle": "CONEXIÓN GLOBAL",
+        "title": "CENTRO MULTIMEDIA",
+        "tab_live": "TikTok Live",
+        "tab_interviews": "Entrevistas",
+        "tab_gallery": "Galería de Fotos y Videos",
+        "live_tag": "Transmisión Programada",
+        "live_title": "Sanación a Distancia: Ceremonia del Sonido",
+        "live_desc": "Únete a nuestra próxima transmisión en vivo desde la Maloka Ceremonial en el Valle Sagrado. Comparte con la comunidad global, haz preguntas en tiempo real y recibe la vibración de los cantos ancestrales.",
+        "live_time": "Viernes, 20:00 EST",
+        "live_duration": "Duración: 2 Horas",
+        "live_btn": "Agendar en TikTok",
+        "interview_btn": "Ver Episodio",
+        "gallery_title": "Galería Visual",
+        "gallery_desc": "Muy pronto habilitaremos el archivo histórico de fotos y videos de la ecoaldea. Podrás explorar cada rincón, ceremonia y avance de bioconstrucción del Santuario Pampa Ñusta.",
+        "gallery_btn": "Notificarme cuando esté listo"
     },
     "nav": {
         "pampa": "Pampa Ñusta",
@@ -584,5 +590,26 @@
     },
     "chatbot": {
         "schedule": "Agendar Videollamada"
+    },
+    "tour360": {
+        "subtitle": "02 — RECORRIDO INMERSIVO",
+        "title1": "TOUR",
+        "title2": "360°",
+        "desc": "Conoce a través de nuestro video referencial y recorrido virtual las instalaciones ecológicas, domos botánicos y servicios comunitarios del santuario.",
+        "tab_video": "Explorador Cinemático",
+        "tab_360": "Explorador 360°",
+        "tab_map": "Mapa del Santuario",
+        "immersion_desc": "Sumérgete en la inmensidad del Valle Sagrado a través de esta expedición visual en ultra alta definición. Este recorrido cinemático te transporta por la bioconstrucción y la herencia viva de cada una de nuestras zonas ecológicas.",
+        "reference_badge": "Referencia visual que ilustra la visión y atmósfera de Pampa Ñusta"
+    },
+    "modules": {
+        "subtitle": "01 — DISTRIBUCIÓN ESPACIAL",
+        "title": "INSTALACIONES",
+        "explore_btn": "EXPLORAR INSTALACIÓN"
+    },
+    "social": {
+        "subtitle": "03 — Voces de la Comunidad",
+        "title1": "RESEÑAS &",
+        "title2": "TESTIMONIOS"
     }
 }
