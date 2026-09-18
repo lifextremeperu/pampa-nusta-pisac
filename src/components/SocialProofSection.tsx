@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Award, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { TRIPADVISOR_REVIEWS } from '../data/mockData';
 
 export const SocialProofSection: React.FC = () => {
+  const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -23,11 +25,11 @@ export const SocialProofSection: React.FC = () => {
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div>
           <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-sadhana-primary font-bold mb-8">
-            03 — Voces de la Comunidad
+            {t('social.subtitle')}
           </div>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-sadhana-dark mb-8">
-            RESEÑAS & <br />
-            <span className="text-sadhana-sand">TESTIMONIOS</span>
+            {t('social.title1')} & <br />
+            <span className="text-sadhana-sand">{t('social.title2')}</span>
           </h2>
           
           <a 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Sparkles, Compass, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useEcoaldeaModules } from '../data/ecoaldeaModules';
@@ -13,6 +14,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
   onSelectModuleForExperience,
   onOpenTrailer,
 }) => {
+  const { t } = useTranslation();
   const ECOALDEA_MODULES = useEcoaldeaModules();
   const MAIN_MODULES = ECOALDEA_MODULES.filter(m => !m.id.match(/^wachuma-\d+$/));
   const [activeIndex, setActiveIndex] = useState(0);
@@ -71,10 +73,10 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
       <div className="absolute top-6 md:top-8 left-0 w-full z-30 px-6 md:px-12 flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
         <div>
           <h2 className="text-2xl md:text-4xl font-black tracking-tighter uppercase text-white drop-shadow-lg">
-            Cinco Capítulos Vivos
+            {t('modules.subtitle')}
           </h2>
           <span className="px-3 py-1 rounded-full bg-sadhana-primary/30 border border-sadhana-primary/50 text-[10px] md:text-xs font-mono tracking-widest text-white uppercase mt-2 inline-block backdrop-blur-md font-bold shadow-lg">
-            Reserva Natural & Conservación
+            {t('modules.title')}
           </span>
         </div>
         
@@ -83,7 +85,7 @@ export const EcoaldeaModules: React.FC<EcoaldeaModulesProps> = ({
           className="px-4 py-2.5 md:px-6 md:py-3 rounded-xl bg-sadhana-dark/80 backdrop-blur-xl hover:bg-white border border-sadhana-sand/30 text-white hover:text-sadhana-dark font-sans text-[10px] md:text-xs tracking-widest font-bold uppercase flex items-center gap-2 md:gap-3 transition-all hover:scale-[1.02] shadow-2xl"
         >
           <Compass className="w-4 h-4 md:w-5 md:h-5" />
-          <span>Explorar Santuario</span>
+          <span>{t('modules.explore_btn')}</span>
         </button>
       </div>
 

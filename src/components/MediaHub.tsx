@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { Play, Radio, Calendar, Video, Clock, Camera } from 'lucide-react';
 
@@ -27,6 +28,7 @@ const INTERVIEWS = [
 ];
 
 export const MediaHub: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'live' | 'interviews' | 'gallery'>('live');
 
   return (
@@ -47,7 +49,7 @@ export const MediaHub: React.FC = () => {
               <span>Conexión Global</span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-sadhana-dark uppercase">
-              Centro Multimedia
+              {t('mediahub.title')}
             </h2>
           </div>
 
@@ -59,7 +61,7 @@ export const MediaHub: React.FC = () => {
               }`}
             >
               <span className={`w-2 h-2 rounded-full ${activeTab === 'live' ? 'bg-white animate-pulse' : 'bg-sadhana-dark/20'}`} />
-              TikTok Live
+              {t('mediahub.tab_live')}
             </button>
             <button
               onClick={() => setActiveTab('interviews')}
@@ -68,7 +70,7 @@ export const MediaHub: React.FC = () => {
               }`}
             >
               <Video className="w-4 h-4" />
-              Entrevistas
+              {t('mediahub.tab_interviews')}
             </button>
             <button
               onClick={() => setActiveTab('gallery')}
@@ -89,7 +91,7 @@ export const MediaHub: React.FC = () => {
             }`}
           >
             <Camera className="w-4 h-4" />
-            Galería de Fotos y Videos
+            {t('mediahub.tab_gallery')}
           </button>
         </div>
 
@@ -102,27 +104,27 @@ export const MediaHub: React.FC = () => {
           >
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold uppercase tracking-widest animate-pulse shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-red-500" /> Transmisión Programada
+                <span className="w-2 h-2 rounded-full bg-red-500" /> {t('mediahub.live_tag')}
               </div>
-              <h3 className="text-3xl font-bold font-sans text-sadhana-dark">Sanación a Distancia: Ceremonia del Sonido</h3>
+              <h3 className="text-3xl font-bold font-sans text-sadhana-dark">{t('mediahub.live_title')}</h3>
               <p className="text-sadhana-brown/80 leading-relaxed font-medium">
-                Únete a nuestra próxima transmisión en vivo desde la Maloka Ceremonial en el Valle Sagrado. Comparte con la comunidad global, haz preguntas en tiempo real y recibe la vibración de los cantos ancestrales.
+                {t('mediahub.live_desc')}
               </p>
               
               <div className="flex items-center gap-6 pt-4">
                 <div className="flex items-center gap-2 text-sadhana-dark">
                   <Calendar className="w-5 h-5 text-sadhana-orange" />
-                  <span className="font-mono text-sm font-bold">Viernes, 20:00 EST</span>
+                  <span className="font-mono text-sm font-bold">{t('mediahub.live_time')}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sadhana-dark">
                   <Clock className="w-5 h-5 text-sadhana-orange" />
-                  <span className="font-mono text-sm font-bold">Duración: 2 Horas</span>
+                  <span className="font-mono text-sm font-bold">{t('mediahub.live_duration')}</span>
                 </div>
               </div>
 
               <div className="pt-6">
                 <button className="px-8 py-4 rounded-full bg-sadhana-primary text-white font-sans font-bold text-sm uppercase tracking-widest shadow-lg hover:bg-sadhana-dark transition-colors">
-                  Agendar en TikTok
+                  {t('mediahub.live_btn')}
                 </button>
               </div>
             </div>
@@ -187,7 +189,7 @@ export const MediaHub: React.FC = () => {
                     {interview.title}
                   </h3>
                   <button className="text-xs font-bold uppercase tracking-widest text-sadhana-brown/50 group-hover:text-sadhana-primary transition-colors mt-4 flex items-center gap-1">
-                    Ver Episodio <Play className="w-3 h-3" />
+                    {t('mediahub.interview_btn')} <Play className="w-3 h-3" />
                   </button>
                 </div>
               </div>
@@ -205,13 +207,13 @@ export const MediaHub: React.FC = () => {
               <Camera className="w-10 h-10 text-sadhana-primary" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold font-sans text-sadhana-dark mb-4 drop-shadow-sm">
-              Galería Visual
+              {t('mediahub.gallery_title')}
             </h3>
             <p className="text-sadhana-brown/80 leading-relaxed font-medium max-w-lg mb-8 text-sm md:text-base">
-              Muy pronto habilitaremos el archivo histórico de fotos y videos de la ecoaldea. Podrás explorar cada rincón, ceremonia y avance de bioconstrucción del Santuario Pampa Ñusta.
+              {t('mediahub.gallery_desc')}
             </p>
             <button className="px-8 py-3.5 rounded-full border border-sadhana-primary bg-sadhana-primary/5 text-sadhana-primary hover:bg-sadhana-primary hover:text-white font-sans font-bold text-xs md:text-sm uppercase tracking-widest shadow-sm transition-all hover:scale-105">
-              Notificarme cuando esté listo
+              {t('mediahub.gallery_btn')}
             </button>
           </motion.div>
         )}

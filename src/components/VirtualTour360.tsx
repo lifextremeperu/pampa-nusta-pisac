@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Compass,
   Maximize2,
@@ -47,6 +48,7 @@ interface VirtualTour360Props {
 }
 
 export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject }) => {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -354,10 +356,10 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
           </div>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-sadhana-dark mb-6">
             TOUR <br />
-            <span className="text-sadhana-sand">360°</span>
+            <span className="text-sadhana-sand">{t('tour360.title2')}</span>
           </h2>
           <p className="text-lg md:text-xl text-sadhana-brown/70 font-medium max-w-2xl leading-relaxed">
-            Conoce a través de nuestro video referencial y recorrido virtual las instalaciones ecológicas, domos botánicos y servicios comunitarios del santuario.
+            {t('tour360.desc')}
           </p>
         </div>
 
@@ -372,7 +374,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
             }`}
           >
             <Video className="w-4 h-4" />
-            <span>Explorador Cinemático</span>
+            <span>{t('tour360.tab_video')}</span>
           </button>
 
           <button
@@ -384,7 +386,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
             }`}
           >
             <CompassIcon className="w-4 h-4" />
-            <span>Explorador 360°</span>
+            <span>{t('tour360.tab_360')}</span>
           </button>
 
           <button
@@ -396,7 +398,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
             }`}
           >
             <MapPin className="w-4 h-4" />
-            <span>Mapa del Santuario</span>
+            <span>{t('tour360.tab_map')}</span>
           </button>
         </div>
 
