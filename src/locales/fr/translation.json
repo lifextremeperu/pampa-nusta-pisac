@@ -1,720 +1,761 @@
 {
-    "faq": {
-        "title": "FREQUENTLY ASKED QUESTIONS",
-        "subtitle": "Guide for Travelers and Custodians",
-        "desc": "Everything you need to know before embarking on your journey to the heart of the Sacred Valley.",
-        "items": [
-            {
-                "question": "Is prior experience with medicinal plants necessary?",
-                "answer": "No. Our spiritual guardians evaluate each visitor and design a personalized process according to their sensitivity level and experience."
-            },
-            {
-                "question": "How do I get to the sanctuary from Cusco?",
-                "answer": "Pampa Ñusta is 45 minutes from Cusco. We offer private transport from the airport, or you can take a colectivo to Pisac and we will pick you up in town."
-            },
-            {
-                "question": "What does the volunteering program include?",
-                "answer": "It includes accommodation in high mountain tents or shared domes, 3 vegetarian meals a day, bioconstruction workshops, and free access to the sanctuary."
-            },
-            {
-                "question": "Do you have internet connection (Wi-Fi)?",
-                "answer": "Yes. We have satellite connection in designated areas, but we encourage digital disconnection to fully immerse in nature."
-            },
-            {
-                "question": "Can I bring children?",
-                "answer": "Of course! The Living School is designed specifically to integrate children into nature with alternative learning methodologies."
-            }
-        ]
+  "faq": {
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "subtitle": "Guide for Travelers and Custodians",
+    "desc": "Everything you need to know before embarking on your journey to the heart of the Sacred Valley.",
+    "items": [
+      {
+        "question": "Is prior experience with medicinal plants necessary?",
+        "answer": "No. Our spiritual guardians evaluate each visitor and design a personalized process according to their sensitivity level and experience."
+      },
+      {
+        "question": "How do I get to the sanctuary from Cusco?",
+        "answer": "Pampa Ñusta is 45 minutes from Cusco. We offer private transport from the airport, or you can take a colectivo to Pisac and we will pick you up in town."
+      },
+      {
+        "question": "What does the volunteering program include?",
+        "answer": "It includes accommodation in high mountain tents or shared domes, 3 vegetarian meals a day, bioconstruction workshops, and free access to the sanctuary."
+      },
+      {
+        "question": "Do you have internet connection (Wi-Fi)?",
+        "answer": "Yes. We have satellite connection in designated areas, but we encourage digital disconnection to fully immerse in nature."
+      },
+      {
+        "question": "Can I bring children?",
+        "answer": "Of course! The Living School is designed specifically to integrate children into nature with alternative learning methodologies."
+      }
+    ]
+  },
+  "joinus": {
+    "residencia_price": "Frais d'Entrée + Mensuel",
+    "residencia_desc": "For those who have heard the deep call to become permanent guardians of the sanctuary.",
+    "retiro_title": "Healing Retreats",
+    "subtitle": "INTEGRATION PATHS",
+    "voluntariado_desc": "Immerse yourself in permaculture and bioconstruction. Ideal for travelers who want to learn while serving the earth.",
+    "retiro_price": "À partir de 35 € par cérémonie",
+    "residencia_title": "Permanent Residency",
+    "apply": "Apply for",
+    "retiro_desc": "Deep isolation, traditional diets, and internal work guided by our Andean-Amazonian masters.",
+    "voluntariado_title": "Seed Volunteering",
+    "title": "JOIN THE TRIBE",
+    "voluntariado_price": "10 € par jour (Nourriture)",
+    "intro_desc": "The call of the mountain is for those who feel the deep desire to reconnect with Pachamama. There are different paths to integrate into our community, from short learning visits to becoming a permanent guardian of the sanctuary.",
+    "requirements": "REQUIREMENTS",
+    "voluntariado_req": [
+      "Love for nature",
+      "Physical readiness",
+      "Minimum stay of 2 weeks"
+    ],
+    "retiro_req": [
+      "Prior interview",
+      "Diet preparation",
+      "Absolute respect for the lineage"
+    ],
+    "residencia_req": [
+      "Council approval",
+      "Ability to contribute",
+      "Lifelong commitment"
+    ]
+  },
+  "ayni": {
+    "form": {
+      "yape": "Yape / Plin (Pérou Uniquement)",
+      "name": "Nom du Gardien",
+      "payment": "Méthode Ayni",
+      "processing": "Intégration de votre énergie dans le sanctuaire...",
+      "submit": "Confirmer la Contribution",
+      "email": "E-mail (Pour le Certificat)",
+      "card": "Carte de Crédit / Débit"
     },
-    "joinus": {
-        "residencia_price": "Frais d'Entrée + Mensuel",
-        "residencia_desc": "For those who have heard the deep call to become permanent guardians of the sanctuary.",
-        "retiro_title": "Healing Retreats",
-        "subtitle": "INTEGRATION PATHS",
-        "voluntariado_desc": "Immerse yourself in permaculture and bioconstruction. Ideal for travelers who want to learn while serving the earth.",
-        "retiro_price": "À partir de 35 € par cérémonie",
-        "residencia_title": "Permanent Residency",
-        "apply": "Apply for",
-        "retiro_desc": "Deep isolation, traditional diets, and internal work guided by our Andean-Amazonian masters.",
-        "voluntariado_title": "Seed Volunteering",
-        "title": "JOIN THE TRIBE",
-        "voluntariado_price": "10 € par jour (Nourriture)",
-        "intro_desc": "The call of the mountain is for those who feel the deep desire to reconnect with Pachamama. There are different paths to integrate into our community, from short learning visits to becoming a permanent guardian of the sanctuary.",
-        "requirements": "REQUIREMENTS",
-        "voluntariado_req": [
-            "Love for nature",
-            "Physical readiness",
-            "Minimum stay of 2 weeks"
-        ],
-        "retiro_req": [
-            "Prior interview",
-            "Diet preparation",
-            "Absolute respect for the lineage"
-        ],
-        "residencia_req": [
-            "Council approval",
-            "Ability to contribute",
-            "Lifelong commitment"
-        ]
-    },
-    "ayni": {
-        "form": {
-            "yape": "Yape / Plin (Pérou Uniquement)",
-            "name": "Nom du Gardien",
-            "payment": "Méthode Ayni",
-            "processing": "Intégration de votre énergie dans le sanctuaire...",
-            "submit": "Confirmer la Contribution",
-            "email": "E-mail (Pour le Certificat)",
-            "card": "Carte de Crédit / Débit"
-        },
-        "subtitle": "Soutien de l'Écosystème",
-        "title": "RENDRE L'AYNI EFFECTIF",
-        "amount": "Votre Contribution Volontaire :",
-        "desc": "La réciprocité (Ayni) permet au sanctuaire de respirer et de croître. Votre contribution finance des semences autochtones, des heures d'irrigation, des salles de classe écologiques et l'entretien génétique de nos cactus sacrés.",
-        "calculator": "Transformation Physique",
-        "calculator_desc": "Faites glisser pour visualiser comment votre contribution se traduit en actions concrètes au sein du parc archéologique.",
-        "metrics": {
-            "meters": "M² de terrasses restaurées",
-            "water": "Jours de système d'irrigation",
-            "seeds": "Kilos de semences biologiques"
-        }
-    },
-    "identity": {
-        "title": "Pampa Ñusta Identity",
-        "subtitle": "The Heart of the Sanctuary",
-        "who": "Who Are We?",
-        "who_desc": "We are a collective of earth guardians located in the community of Maska, Pisac. We form a living ecovillage dedicated to preserving ancestral Andean memory, bioconstruction, and the spiritual legacy of the Andes for future generations.",
-        "mission": "Our Mission",
-        "mission_desc": "To protect and cultivate the genetic bank of the sacred Wachuma cactus and native seeds, providing an alternative education space for children and a comprehensive healing refuge through ceremonies and regenerative technologies.",
-        "vision": "Our Vision",
-        "vision_desc": "To become a global epicenter of ancestral wisdom and permaculture, where humanity remembers how to live in harmony with Pachamama, expanding collective consciousness from the Sacred Valley of the Incas to the entire world."
-    },
-    "nav": {
-        "pampa": "Pampa Ñusta",
-        "menu": "MENU",
-        "close": "Fermer",
-        "sections": {
-            "faq": "FAQ",
-            "ayni": "Ayni : Principe de Vie",
-            "identity": "Identité et Héritage",
-            "location": "Coordonnées Sacrées",
-            "community": "Notre Communauté",
-            "modules": "Modules d'Immersion"
-        },
-        "inicio": "Home",
-        "leyenda": "Legend",
-        "botanica": "Botanical Reserve",
-        "identidad": "Identity",
-        "lideres": "Leaders",
-        "media": "Media Hub",
-        "unirse": "Join Us",
-        "recorrido": "360 Tour",
-        "adopcion": "Adopt a Seed"
-    },
-    "hero": {
-        "title_line1": "RETOUR À",
-        "subtitle": "Sanctuaire Écologique • Certifié Biologique • Permaculture Vivante",
-        "start": "Commencer le Voyage",
-        "trailer": "Voir la Bande-Annonce",
-        "title_line2": "L'ORIGINE"
-    },
-    "location": {
-        "title": "SACRED TERRITORY",
-        "subtitle": "SANCTUARY COORDINATES",
-        "location": "Maska, Pisac, Cusco - Perú",
-        "altitude": "3,000 msnm",
-        "environment": "Valle Sagrado de los Incas",
-        "climate": "Templado Andino",
-        "desc": "Strategically located at the foot of the imposing archaeological complex of Pisac. Our sanctuary is nourished by the glacial waters of the major Apus, creating a perfect microclimate for the conservation of medicine and seeds.",
-        "whatsapp": "CONTACT VIA WHATSAPP",
-        "view_place": "VIEW IN GOOGLE MAPS",
-        "maps": "OPEN IN MAPS"
-    },
-    "donation_banner": {
-        "subtitle": "Le Cycle de la Réciprocité",
-        "title_line1": "L'AYNI COMME",
-        "title_line2": "PRINCIPE DE VIE",
-        "desc": "La préservation des terrasses, des semences autochtones et de l'héritage de Pampa Ñusta est soutenue par l'Ayni, l'ancienne pratique andine de donner et recevoir. Si vous ressentez l'appel à faire partie de cette garde, nous vous invitons à découvrir notre programme d'adoption.",
-        "action": "Voir le Programme d'Adoption"
-    },
-    "leaders": {
-        "subtitle": "Les Gardiens",
-        "title": "Leaders Spirituels d'Amérique",
-        "desc": "Rencontrez les âmes sages qui gardent la vision et la médecine de Pampa Ñusta. Représentants de diverses traditions s'unissant sous la prophétie de l'Aigle et du Condor.",
-        "lider1": {
-            "name": "Taita Inti",
-            "role": "Prêtre Andin (Paqo)",
-            "region": "Les Andes",
-            "desc": "Gardien de la médecine ancestrale et protecteur des apus de la Vallée Sacrée. Sa lignée préserve les chants de guérison et le profond respect pour Pachamama."
-        },
-        "lider2": {
-            "name": "Abuela Yaku",
-            "role": "Sage Guérisseuse",
-            "region": "L'Amazonie",
-            "desc": "Gardienne des plantes maîtresses et de la sagesse de l'eau, reliant le monde spirituel au terrestre à travers l'héritage millénaire de la jungle profonde."
-        },
-        "lider3": {
-            "name": "Chef Aigle Blanc",
-            "role": "Porteur de la Pipe Sacrée",
-            "region": "Amérique du Nord",
-            "desc": "Représente l'ancienne prophétie de l'union de l'Aigle et du Condor, apportant les enseignements d'unité et de paix des tribus du nord."
-        },
-        "lider4": {
-            "name": "Maître Killa",
-            "role": "Spécialiste de la Wachuma",
-            "region": "Curanderismo du Sud",
-            "desc": "Guide les âmes à travers l'expansion de la conscience dans les montagnes. Sa médecine ouvre le cœur et restaure l'équilibre spirituel de ceux qui le visitent."
-        }
-    },
-    "footer": {
-        "brand": {
-            "desc": "Protéger la mémoire ancestrale de la Vallée Sacrée. Un sanctuaire archéologique, une réserve botanique de Wachuma et un écovillage durable vibrant en Ayni."
-        },
-        "explore": {
-            "title": "Explorer"
-        },
-        "contact": {
-            "title": "Contact de l'Écovillage"
-        },
-        "newsletter": {
-            "title": "Journal Archéologique",
-            "desc": "Recevez des chroniques mensuelles sur les découvertes, les événements astronomiques et les progrès de la restauration.",
-            "placeholder": "Votre adresse e-mail",
-            "success": "Abonnement confirmé"
-        },
-        "legal": {
-            "payments": "Paiements Sécurisés (Cartes · PayPal)",
-            "guarantee": "Garantie 100% Sans Pénalité",
-            "privacy": "Politique de Confidentialité",
-            "transparency": "Transparence Financière",
-            "cookies": "Cookies"
-        }
-    },
-    "ecoaldea": {
-        "modules": {
-            "wachuma": {
-                "title": "Trichocereus Pachanoi · 7 Costillas",
-                "tagline": "Genética Ancestral del Valle Sagrado",
-                "cinemaLogline": "Resguardamos esquejes madre que datan de las antiguas terrazas de cultivo inca.",
-                "badge": "CONSERVACIÓN EN PELIGRO · 90% FINANCIADO",
-                "metrics": {
-                    "origen": "Esquejes Madre Silvestres",
-                    "edad": "20 a 50 Años de Antigüedad",
-                    "altura": "Hasta 5 Metros",
-                    "estado": "Enraizamiento Protegido"
-                },
-                "keyHighlights": [
-                    "Rescate de especies endémicas de los andes amenazadas por la expansión urbana.",
-                    "Curación natural con Ceniza Sagrada para evitar infecciones fúngicas.",
-                    "Reforestación de 1,000 ejemplares en los próximos 3 años."
-                ],
-                "quote": "«Un cactus lleva en su agua la memoria de mil lluvias y la sabiduría de las estrellas.»",
-                "ctaText": "Adoptar Planta Maestra",
-                "projectVision": "Nuestro objetivo no es solo plantar cactus, sino preservar una biblioteca de ADN vivo. El San Pedro (Wachuma) es el eje espiritual de los Andes. Rescatamos ejemplares gigantes que estaban a punto de ser destruidos por la urbanización.",
-                "objectives": [
-                    "Establecer la mayor reserva genética de Trichocereus en el Valle Sagrado.",
-                    "Desarrollar un protocolo de propagación orgánica sin químicos sintéticos.",
-                    "Ofrecer certificados de adopción a guardianes globales."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Identificación",
-                        "title": "Mapeo Genético",
-                        "description": "Viajes a zonas remotas para ubicar abuelos cactáceos centenarios."
-                    },
-                    {
-                        "phase": "Fase II: Custodia",
-                        "title": "Extracción de Esquejes",
-                        "description": "Cortes rituales y cicatrización al sol con ceniza sagrada."
-                    },
-                    {
-                        "phase": "Fase III: Propagación",
-                        "title": "Enraizamiento en Domo",
-                        "description": "Siembra en arena de río estéril para garantizar un enraizamiento del 100%."
-                    }
-                ],
-                "neuromarketingHook": "No estás financiando un jardín; estás salvando el código genético de la medicina ancestral más antigua de América. Si nosotros no la protegemos hoy, mañana será un mito."
-            },
-            "reina": {
-                "title": "El Despertar de la Reina",
-                "tagline": "Polinización Bajo la Luna Llena",
-                "cinemaLogline": "Una flor espectacular que abre sus pétalos gigantes solo por una noche al año.",
-                "badge": "EVENTO NOCTURNO · UNA VEZ AL AÑO",
-                "metrics": {
-                    "floracion": "Medianoche (00:00)",
-                    "aroma": "Jazmín Intenso",
-                    "polinizador": "Murciélago Andino",
-                    "duracion": "Solo 8 Horas"
-                },
-                "keyHighlights": [
-                    "Observación nocturna de la floración de la Reina de la Noche (Epiphyllum).",
-                    "Recolección de polen para fertilización cruzada manual.",
-                    "Extracción del fruto dulce sagrado (Pitaya Andina)."
-                ],
-                "quote": "«La belleza más sublime se revela solo en la oscuridad absoluta de la noche.»",
-                "ctaText": "Unirse a la Vigilia",
-                "projectVision": "La floración de la Reina de la Noche es un evento celestial. Organizamos vigilias nocturnas para polinizar manualmente estas flores, ya que sus polinizadores naturales están en peligro. Es un acto de pura devoción a la naturaleza.",
-                "objectives": [
-                    "Asegurar la reproducción de las cactáceas nocturnas.",
-                    "Documentar el ciclo lunar y su efecto en el flujo de savia.",
-                    "Cosechar el fruto medicinal para dietas comunitarias."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Vigilia",
-                        "title": "Monitoreo de Botones",
-                        "description": "Registro fotográfico diario de la hinchazón del botón floral."
-                    },
-                    {
-                        "phase": "Fase II: El Clímax",
-                        "title": "Vigilia Nocturna",
-                        "description": "Turnos de guardia durante la luna llena para captar la apertura total."
-                    },
-                    {
-                        "phase": "Fase III: Cosecha",
-                        "title": "Recolección del Fruto",
-                        "description": "Extracción cuidadosa del fruto dulce meses después para extraer sus semillas negras."
-                    }
-                ],
-                "neuromarketingHook": "Solo abre una noche al año. Ser testigo de este momento requiere paciencia, respeto y sincronía con el cosmos. ¿Estás listo para entender los tiempos de la naturaleza?"
-            },
-            "semillas": {
-                "title": "Conservación de Semillas Nativas",
-                "tagline": "Bóveda Viva del Germoplasma Andino",
-                "cinemaLogline": "El arca milenaria de maíces gigantes, papas silvestres y granos de oro que alimentan el futuro.",
-                "badge": "SOBERANÍA ALIMENTARIA · 34 VARIEDADES",
-                "metrics": {
-                    "maiz": "Maíz Gigante de Urubamba",
-                    "papa": "Papa Silvestre Medicinal",
-                    "quinoa": "Quinoa Negra y Roja",
-                    "amaranto": "Kiwicha (Amaranto Andino)"
-                },
-                "keyHighlights": [
-                    "Banco de semillas bioclimático subterráneo para conservar humedad y temperatura.",
-                    "Intercambio ancestral (Ayni) con comunidades de altura.",
-                    "Cultivo sin agroquímicos ni modificaciones genéticas."
-                ],
-                "quote": "«Aquel que guarda una semilla, tiene la promesa del mañana en sus manos.»",
-                "ctaText": "Patrocinar la Bóveda",
-                "projectVision": "Estamos perdiendo la biodiversidad que a los Incas les tomó miles de años desarrollar. Esta bóveda es un arca viva. No solo guardamos semillas; las sembramos, las adaptamos y las devolvemos a las comunidades.",
-                "objectives": [
-                    "Resguardar al menos 50 variedades de semillas nativas.",
-                    "Capacitar a agricultores locales en conservación biológica.",
-                    "Crear una red de distribución de semillas gratuita."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Arquitectura",
-                        "title": "Construcción Bioclimática",
-                        "description": "Levantamiento de la bóveda subterránea (Qollqa) para mantener temperatura constante."
-                    },
-                    {
-                        "phase": "Fase II: Recolección",
-                        "title": "Chhalay (Intercambio)",
-                        "description": "Recorrido por comunidades altas intercambiando semillas endémicas y raras."
-                    },
-                    {
-                        "phase": "Fase III: Renovación",
-                        "title": "Siembra Anual",
-                        "description": "Siembra obligatoria cada 3 años para que la semilla mantenga su viabilidad y vigor vital."
-                    }
-                ],
-                "neuromarketingHook": "Una semilla extinta jamás regresa. Tu apoyo permite mantener vivo el banco genético alimentario más poderoso de la civilización Inca."
-            },
-            "ninos": {
-                "title": "Centro de Recreación para Niños",
-                "tagline": "Escuela Libre de la Naturaleza y Juego Andino",
-                "cinemaLogline": "Donde la infancia aprende con las manos en el barro, cuentos bajo el queñual y cantos al río.",
-                "badge": "IMPACTO SOCIAL · 50+ NIÑOS",
-                "metrics": {
-                    "enfoque": "Waldorf & Sabiduría Andina",
-                    "edades": "De 4 a 12 Años",
-                    "actividad": "Arte, Botánica, Bioconstrucción",
-                    "idioma": "Quechua y Español"
-                },
-                "keyHighlights": [
-                    "Espacios construidos por los propios niños usando adobe y maderas recicladas.",
-                    "Currícula basada en el calendario agrícola y ciclos lunares.",
-                    "Integración de niños indígenas locales con niños extranjeros."
-                ],
-                "quote": "«Si queremos sanar la tierra, primero debemos dejar que los niños la toquen.»",
-                "ctaText": "Apoyar la Escuela Viva",
-                "projectVision": "El sistema educativo actual desconecta al humano de su entorno. Aquí, el río es la pizarra y el bosque es el aula. Educamos líderes libres y conscientes, capaces de regenerar el planeta.",
-                "objectives": [
-                    "Brindar un espacio seguro y natural para los niños de la comunidad de Pisac.",
-                    "Enseñar permacultura práctica desde temprana edad.",
-                    "Revalorizar el idioma Quechua mediante música y juego."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Espacios",
-                        "title": "Zonas de Juego Natural",
-                        "description": "Creación del laberinto de piedras, tirolina sobre el río y casitas de adobe."
-                    },
-                    {
-                        "phase": "Fase II: Pedagogía",
-                        "title": "Huertos Infantiles",
-                        "description": "Asignación de parcelas de tierra para que cada niño sea responsable de su cosecha."
-                    },
-                    {
-                        "phase": "Fase III: Expansión",
-                        "title": "Campamentos de Verano",
-                        "description": "Lanzamiento de retiros infantiles de inmersión de 7 días sin pantallas ni tecnología."
-                    }
-                ],
-                "neuromarketingHook": "No inviertes en una escuela tradicional; estás patrocinando la reconexión de una generación entera con la inteligencia de la Tierra. El futuro depende de la sensibilidad que cultivemos hoy en sus corazones."
-            },
-            "ceremonias": {
-                "title": "Ceremonias de Plantas Maestras",
-                "tagline": "El Fuego Sagrado de la Sanación y la Visión",
-                "cinemaLogline": "Círculos sagrados de introspección guiados por taitas y curanderos linajudos del Valle Sagrado.",
-                "badge": "SANACIÓN ANCESTRAL · LUNAS & SOLSTICIOS",
-                "metrics": {
-                    "medicina": "Wachuma Tradicional",
-                    "ritual": "Temazcal / Chaski-Tambo",
-                    "musica": "Ícaros & Quenas Sagradas",
-                    "acompanamiento": "Médicos Tradicionales"
-                },
-                "keyHighlights": [
-                    "Preparación física y espiritual con dieta andina previa de 7 días.",
-                    "Apertura del espacio sagrado con ofrenda a la Pachamama (Haywarikuy).",
-                    "Ceremonia nocturna de fuego frente a los nevados sagrados del Apu Linli.",
-                    "Círculo de integración psicológica y emocional al amanecer con baño de flores."
-                ],
-                "quote": "«Sanar no es borrar el dolor, sino devolver el alma a su eje cósmico original.»",
-                "ctaText": "Reservar Ceremonia Sagrada",
-                "projectVision": "Nuestra Maloka Ceremonial no es un espacio turístico; es un hospital del espíritu. Creemos en el uso guiado, ético y respetuoso de las plantas maestras para lograr la desintoxicación mental y emocional de una sociedad deprimida y ansiosa.",
-                "objectives": [
-                    "Ofrecer un marco absoluto de seguridad física y psicológica para la medicina sagrada.",
-                    "Respetar estrictamente los linajes y cantos de los Taitas andinos.",
-                    "Facilitar la integración terapéutica post-ceremonia para garantizar cambios de vida reales."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Arquitectura",
-                        "title": "Maloka Circular",
-                        "description": "Levantamiento de la estructura en forma octogonal con maderas nobles y techo de paja brava, alineada acústicamente."
-                    },
-                    {
-                        "phase": "Fase II: El Fuego",
-                        "title": "Altar Central",
-                        "description": "Diseño del fogón sin humo y consagración del espacio por los curanderos de la nación Q'eros."
-                    },
-                    {
-                        "phase": "Fase III: Servicios",
-                        "title": "Temazcal (Cabaña de Sudar)",
-                        "description": "Construcción del domo de piedras calientes para la purificación previa al trabajo con medicina."
-                    }
-                ],
-                "neuromarketingHook": "Cerrar los ojos alrededor del fuego aquí no es una experiencia más, es el punto de quiebre donde tu vida pasada termina y tu verdadera esencia se revela. Solo hay 10 cupos por luna llena."
-            },
-            "talleres": {
-                "title": "Talleres Inmersivos de 4 a + Días",
-                "tagline": "Aprender a Vivir de la Tierra en Comunidad",
-                "cinemaLogline": "Inmersión residencial en permacultura andina, bioconstrucción y vida regenerativa en ecoaldea.",
-                "badge": "INMERSIÓN RESIDENCIAL · 4 A 14 DÍAS",
-                "metrics": {
-                    "teoria": "Diseño y Planificación",
-                    "practica": "Manos en el Barro",
-                    "convivencia": "Experiencia Tribal",
-                    "certificado": "Validación Global PDC"
-                },
-                "keyHighlights": [
-                    "Aprender a construir con adobe, quincha y bambú sostenible.",
-                    "Diseño de bosques de alimentos y gestión de aguas grises.",
-                    "Alimentación vegetariana de la granja a la mesa cosechada por ti mismo."
-                ],
-                "quote": "«La mejor rebelión es cultivar tu propio alimento y construir tu propio refugio.»",
-                "ctaText": "Ver Fechas Disponibles",
-                "projectVision": "Queremos empoderar a las personas para que dejen de depender de un sistema extractivista. En estos talleres, enseñamos técnicas antiguas combinadas con ciencia moderna para que puedas diseñar tu propio oasis ecológico en cualquier parte del mundo.",
-                "objectives": [
-                    "Transferir técnicas ancestrales de arquitectura sin cemento.",
-                    "Enseñar a cosechar y almacenar agua de lluvia.",
-                    "Formar una red global de permacultores activos."
-                ],
-                "roadmap": [
-                    {
-                        "phase": "Fase I: Alojamiento",
-                        "title": "Eco-Domos Estudiantiles",
-                        "description": "Construcción de los dormitorios ecológicos con baño seco y duchas solares para alojar a los aprendices."
-                    },
-                    {
-                        "phase": "Fase II: Taller Práctico",
-                        "title": "Equipamiento de Herramientas",
-                        "description": "Adquisición de mezcladoras de barro, herramientas de carpintería y laboratorio de suelos."
-                    },
-                    {
-                        "phase": "Fase III: Certificación",
-                        "title": "Alianzas Universitarias",
-                        "description": "Lograr el aval internacional para certificar el Diseño de Permacultura PDC (Permaculture Design Course)."
-                    }
-                ],
-                "neuromarketingHook": "No es un curso, es un \"reset\" profundo a tus habilidades de supervivencia. Aprender a levantar un muro con tus propias manos cambia la forma en que ves el universo para siempre. Quedan escasos cupos para la próxima temporada."
-            }
-        }
-    },
-    "nusta": {
-        "story": {
-            "intro": {
-                "title": "Leyenda de la Ñusta Encantada",
-                "subtitle": "DOCUMENTAL ORIGINAL: MEMORIA ANCESTRAL",
-                "description": "Inquill Chumpi y el príncipe Asto Rímac: amor, pacto con los Apus y la transmutación en guardianes pétreos de la siembra en Pisac."
-            },
-            "piedras": {
-                "title": "Energía Femenina & Masculina",
-                "subtitle": "MONOLITOS TUTELARES DE PISAC",
-                "description": "La Ñusta y el Príncipe transmutados en roca viva, enseñando la siembra sagrada (Tarpuy) a los niños y al pueblo andino."
-            },
-            "acto1": {
-                "title": "El Desafío Imposible",
-                "subtitle": "ACTO 01 · 0% ROCA",
-                "description": "Huayllapumap Sasa Munaynin. El cacique exigió construir en una sola noche un puente de piedra o los andenes para probar el valor del príncipe. La princesa Inquill Chumpi rogó a los Apus por su amado."
-            },
-            "acto2": {
-                "title": "El Juramento de Asto Rímac",
-                "subtitle": "ACTO 02 · 25% ROCA",
-                "description": "Asto Rimacpa Tuta Ruwaynin. «Camina sin vacilar hacia la cima sagrada; si tus ojos buscan mi fatiga, la montaña reclamará nuestras almas.» Enamorado, el guerrero convoca a las fuerzas ocultas y a los Apus para levantar los pilares en la tiniebla."
-            },
-            "acto3": {
-                "title": "La Mirada Prohibida",
-                "subtitle": "ACTO 03 · 65% ROCA",
-                "description": "Hark'asqa Qaway. Casi al amanecer, con la obra a punto de culminar, Inquill Chumpi no pudo resistir y volteó a ver si su amado sobrevivía al esfuerzo titánico. El pacto con la montaña se rompió."
-            },
-            "acto4": {
-                "title": "La Petrificación Eterna",
-                "subtitle": "ACTO 04 · 100% ROCA",
-                "description": "Wiñay Rumi Tukupuy. Ambos fueron convertidos en granito. Hoy, la Piedra Femenina custodia la fertilidad del agua, y la Piedra Masculina guía el calor del sol en los andenes, bendiciendo el Tarpuy Raymi."
-            }
-        }
-    },
-    "impact": {
-        "stories": {
-            "ecologico": {
-                "title": "IMPACTO ECOLÓGICO",
-                "subtitle": "REGENERACIÓN DE LA BIOSFERA",
-                "description": "Transformamos un terreno erosionado en un bosque vivo. Hoy resguardamos más de 3,000 especies endémicas, purificando el aire y restaurando el ciclo hídrico ancestral del Valle Sagrado.",
-                "metrics": [
-                    "+3K Árboles",
-                    "0% Agroquímicos"
-                ]
-            },
-            "social": {
-                "title": "IMPACTO SOCIAL",
-                "subtitle": "EMPODERANDO A LA COMUNIDAD",
-                "description": "No contratamos empleados, forjamos guardianes. Las familias locales de Pisac son nuestros socios, integrando su sabiduría milenaria con una economía justa que rompe el ciclo de pobreza.",
-                "metrics": [
-                    "15 Familias",
-                    "Comercio Justo"
-                ]
-            },
-            "educacion": {
-                "title": "IMPACTO EDUCATIVO",
-                "subtitle": "LA ESCUELA VIVA",
-                "description": "Le devolvemos la infancia a la tierra. A través de nuestra escuela libre, niños locales y visitantes aprenden botánica, bioconstrucción y quechua lejos de las pantallas.",
-                "metrics": [
-                    "50+ Niños",
-                    "Saberes Ancestrales"
-                ]
-            },
-            "tecnologico": {
-                "title": "IMPACTO TECNOLÓGICO",
-                "subtitle": "INGENIERÍA ANCESTRAL",
-                "description": "Fusionamos la precisión de la ingeniería hidráulica Inca con energías renovables modernas. 100% energía solar, baños secos ecológicos y tratamiento de aguas grises mediante fitodepuración.",
-                "metrics": [
-                    "100% Solar",
-                    "Cero Residuos"
-                ]
-            },
-            "economico": {
-                "title": "IMPACTO ECONÓMICO",
-                "subtitle": "ECONOMÍA CIRCULAR (AYNI)",
-                "description": "El santuario es un organismo autosustentable. Cada donación, retiro y programa de voluntariado alimenta un circuito cerrado donde la riqueza vuelve a la tierra y a sus cuidadores.",
-                "metrics": [
-                    "Sistema Ayni",
-                    "Autosustentable"
-                ]
-            },
-            "espiritual": {
-                "title": "IMPACTO ESPIRITUAL",
-                "subtitle": "DESPERTAR GLOBAL",
-                "description": "Somos un epicentro de sanación emocional profunda. A través del uso ético y tradicional de plantas maestras, cientos de almas han encontrado su propósito cósmico bajo nuestras montañas.",
-                "metrics": [
-                    "Linaje Ancestral",
-                    "Sanación Global"
-                ]
-            }
-        }
-    },
-    "testimonials": {
-        "t1": {
-            "quote": "Pampa Ñusta no es un retiro, es un portal. La ceremonia de Wachuma bajo las estrellas reconfiguró por completo mi perspectiva de la vida. Llegué buscando respuestas y me fui con el corazón expandido.",
-            "name": "Sarah Jenkins",
-            "role": "Arquitecta & Voluntaria, UK"
-        },
-        "t2": {
-            "quote": "Ver a mis hijos jugar en el barro, aprender quechua y respetar la tierra en la Escuela Viva es el mayor regalo. Esta ecoaldea demuestra que otro mundo es posible.",
-            "name": "Mateo Carrasco",
-            "role": "Nómada Digital, Chile"
-        },
-        "t3": {
-            "quote": "El rigor y respeto con el que tratan la medicina ancestral no tiene igual. Los Taitas guían con un amor antiguo. El proceso de integración es lo que verdaderamente cambió mi realidad.",
-            "name": "Dra. Elena Rostova",
-            "role": "Psiquiatra, Rusia"
-        }
-    },
-    "facilities": {
-        "f1": {
-            "title": "Domo Wachuma",
-            "description": "Invernadero de esquejes sagrados."
-        },
-        "f2": {
-            "title": "Escuela Viva",
-            "description": "Centro de aprendizaje ecológico."
-        },
-        "f3": {
-            "title": "Maloka Ceremonial",
-            "description": "Espacio octagonal para el fuego sagrado."
-        },
-        "f4": {
-            "title": "Arca de Semillas",
-            "description": "Bóveda bioclimática de germoplasma."
-        },
-        "f5": {
-            "title": "Terrazas Agroforestales",
-            "description": "Andenes incas de cultivo."
-        },
-        "f6": {
-            "title": "Chaski Tambo",
-            "description": "Cabañas de descanso para guardianes."
-        },
-        "f7": {
-            "title": "Cocina Solar",
-            "description": "Gastronomía de la huerta a la mesa."
-        },
-        "f8": {
-            "title": "Compost y Baños Secos",
-            "description": "Cero residuos y abono orgánico."
-        },
-        "f9": {
-            "title": "Bosque de Medicinas",
-            "description": "Santuario de plantas maestras."
-        },
-        "f10": {
-            "title": "Apus Centrales",
-            "description": "Montañas sagradas de observación."
-        },
-        "f11": {
-            "title": "La Pampa",
-            "description": "Corazón principal de la comunidad."
-        },
-        "f12": {
-            "title": "Río Sagrado",
-            "description": "Cauce ancestral de agua."
-        }
-    },
-    "mediahub": {
-        "subtitle": "GLOBAL CONNECTION",
-        "title": "MULTIMEDIA CENTER",
-        "tab_live": "TikTok Live",
-        "tab_interviews": "Interviews",
-        "tab_gallery": "Photo & Video Gallery",
-        "live_tag": "Scheduled Broadcast",
-        "live_title": "Distance Healing: Sound Ceremony",
-        "live_desc": "Join our next live broadcast from the Ceremonial Maloka in the Sacred Valley. Share with the global community, ask questions in real-time, and receive the vibration of ancestral chants.",
-        "live_time": "Friday, 20:00 EST",
-        "live_duration": "Duration: 2 Hours",
-        "live_btn": "Schedule on TikTok",
-        "interview_btn": "Watch Episode",
-        "gallery_title": "Visual Gallery",
-        "gallery_desc": "Very soon we will enable the historical archive of photos and videos of the ecovillage. You will be able to explore every corner, ceremony, and bioconstruction progress of the Pampa Ñusta Sanctuary.",
-        "gallery_btn": "Notify me when ready"
-    },
-    "chatbot": {
-        "schedule": "Schedule Video Call"
-    },
-    "tour360": {
-        "subtitle": "02 — IMMERSIVE TOUR",
-        "title1": "TOUR",
-        "title2": "360°",
-        "desc": "Get to know the ecological facilities, botanical domes, and community services of the sanctuary through our referential video and virtual tour.",
-        "tab_video": "Cinematic Explorer",
-        "tab_360": "360° Explorer",
-        "tab_map": "Sanctuary Map",
-        "immersion_desc": "Immerse yourself in the immensity of the Sacred Valley through this ultra-high-definition visual expedition. This cinematic tour transports you through the bioconstruction and living heritage of each of our ecological zones.",
-        "reference_badge": "Referential visual illustrating the vision and atmosphere of Pampa Ñusta"
-    },
-    "modules": {
-        "subtitle": "01 — SPATIAL DISTRIBUTION",
-        "title": "FACILITIES",
-        "explore_btn": "EXPLORE FACILITY"
-    },
-    "social": {
-        "subtitle": "03 — Community Voices",
-        "title1": "REVIEWS &",
-        "title2": "TESTIMONIALS"
-    },
-    "cinematic_transitions": {
-        "tierra": {
-            "title": "TERRE",
-            "subtitle": "Banque Génétique de Wachuma"
-        },
-        "agua": {
-            "title": "EAU",
-            "subtitle": "Conservation des Semences Natives"
-        },
-        "viento": {
-            "title": "VENT",
-            "subtitle": "Centre de Loisirs pour Enfants"
-        },
-        "fuego": {
-            "title": "FEU",
-            "subtitle": "Cérémonies des Plantes Maîtresses"
-        },
-        "eter": {
-            "title": "ÉTHER",
-            "subtitle": "Ateliers Immersifs de 4 Jours et +"
-        },
-        "memoria": "Mémoire Vivante du Sanctuaire"
-    },
-    "pampa_facilities": {
-        "wachuma_wasi": {
-            "name": "Dôme Géodésique & Banque Génétique de Wachuma",
-            "shortDesc": "Serre géodésique bioclimatique avec plus de 40 lignées mères acclimatées de Trichocereus pachanoi et peruvianus.",
-            "neuromarketingHook": "Plus que la préservation d'un cactus sacré, nous décodons le génome de la conscience andine et le protégeons de l'extinction climatique.",
-            "scope": "La portée couvre 12 hectares de conservation directe et la création de la première banque génomique de Trichocereus en Amérique du Sud.",
-            "fullDesc": "Le cœur botanique de Pampa Ñusta. Un dôme géodésique bioclimatique passif abritant la plus grande collection vivante de cactus sacré Wachuma du bassin de Vilcanota. Conçu pour émuler le microclimat de la gorge andine avec des substrats minéraux volcaniques, une ventilation zénithale et une capture thermique diurne pour protéger les lignées mères des gelées nocturnes."
-        },
-        "arca_semillas": {
-            "name": "Arche de Semences Andines & Laboratoire Vivant",
-            "shortDesc": "Sanctuaire de matériel génétique avec plus de 200 variétés natives de maïs sacré, pommes de terre andines, quinoa et kiwicha.",
-            "neuromarketingHook": "Dans un monde menacé par le changement climatique, la véritable richesse n'est pas l'or, mais le matériel génétique qui garantira la nourriture de l'humanité.",
-            "scope": "Impact direct sur la souveraineté alimentaire de 18 communautés alto-andines de la Vallée Sacrée, assurant un matériel génétique biologiquement pur pour les 3 prochaines générations.",
-            "fullDesc": "Construit comme une voûte bioclimatique d'adobe et d'argile séchée, l'Arche des Semences garde l'héritage génétique des Andes. Elle préserve les variétés ancestrales de maïs polychromes, de tubercules natifs d'altitude et de grains sacrés, stockés dans des récipients en argile scellés à la cire d'abeille naturelle qui préviennent les parasites sans un seul gramme d'agrochimie."
-        },
-        "escuela_viva": {
-            "name": "École Vivante & Bio-Parc pour Enfants",
-            "shortDesc": "Village pédagogique en plein air avec amphithéâtre en boue, bio-jeux et sauvetage de la faune andine.",
-            "neuromarketingHook": "Nous n'héritons pas de la terre de nos ancêtres, nous l'empruntons à nos enfants. Ici, nous formons les leaders écologiques de demain.",
-            "scope": "Formation écologique bilingue et soutien émotionnel gratuits pour 150 garçons et filles par an issus d'écoles rurales vulnérables.",
-            "fullDesc": "Un projet pilote éducatif qui fusionne la méthodologie de l'école en forêt avec la vision du monde andine. Conçu pour que la petite enfance des communautés rurales revalorise sa culture d'origine à travers l'éco-construction, l'agriculture et l'art en quechua."
-        },
-        "maloka_ceremonial": {
-            "name": "Maloka Cérémoniale & Espace Sonore",
-            "shortDesc": "Temple circulaire de bioconstruction et d'acoustique 432 Hz pour la recherche sur les plantes maîtresses.",
-            "neuromarketingHook": "Là où la psychiatrie moderne trouve ses limites, la médecine andine ancienne ouvre les portes à une guérison profonde des traumatismes.",
-            "scope": "Création d'un standard clinique-traditionnel reproductible au niveau international pour le traitement des traumatismes par le biais de protocoles andins rigoureux.",
-            "fullDesc": "La Maloka est un centre d'avant-garde où convergent la science moderne et la médecine traditionnelle. Nous étudions les avantages neuroplastiques des états modifiés de conscience facilités par les enthéogènes andins, dans un cadre éthique, sûr et guidé par des lignées ancestrales."
-        },
-        "terrazas_permacultura": {
-            "name": "Terrasses Régénératives & Hydrologie Solaire",
-            "shortDesc": "Restauration des terrasses incas avec la technologie d'irrigation photovoltaïque et l'agriculture syntropique.",
-            "neuromarketingHook": "Nous ravivons le génie de l'ingénierie inca et l'équipons de la technologie solaire du 21e siècle pour nourrir l'avenir des Andes.",
-            "scope": "Restauration complète de 5 niveaux de terrasses incas et création du modèle hydro-solaire à l'empreinte carbone négative à la plus haute altitude du Pérou.",
-            "fullDesc": "Un projet d'innovation agricole qui défie la sécheresse andine. Nous avons récupéré des terrasses préhispaniques abandonnées en intégrant le pompage solaire contemporain et la technologie de micro-aspersion. L'objectif est de créer un modèle reproductible de sécurité alimentaire pour les hautes montagnes péruviennes."
-        }
-    },
-    "virtual_tour_extra": {
-        "drag_instructions": "Faites glisser avec la souris ou le doigt pour faire pivoter à 360° · Cliquez sur les icônes oranges pour explorer les installations",
-        "instalaciones_title": "INSTALLATIONS"
+    "subtitle": "Soutien de l'Écosystème",
+    "title": "RENDRE L'AYNI EFFECTIF",
+    "amount": "Votre Contribution Volontaire :",
+    "desc": "La réciprocité (Ayni) permet au sanctuaire de respirer et de croître. Votre contribution finance des semences autochtones, des heures d'irrigation, des salles de classe écologiques et l'entretien génétique de nos cactus sacrés.",
+    "calculator": "Transformation Physique",
+    "calculator_desc": "Faites glisser pour visualiser comment votre contribution se traduit en actions concrètes au sein du parc archéologique.",
+    "metrics": {
+      "meters": "M² de terrasses restaurées",
+      "water": "Jours de système d'irrigation",
+      "seeds": "Kilos de semences biologiques"
     }
+  },
+  "identity": {
+    "title": "Pampa Ñusta Identity",
+    "subtitle": "The Heart of the Sanctuary",
+    "who": "Who Are We?",
+    "who_desc": "We are a collective of earth guardians located in the community of Maska, Pisac. We form a living ecovillage dedicated to preserving ancestral Andean memory, bioconstruction, and the spiritual legacy of the Andes for future generations.",
+    "mission": "Our Mission",
+    "mission_desc": "To protect and cultivate the genetic bank of the sacred Wachuma cactus and native seeds, providing an alternative education space for children and a comprehensive healing refuge through ceremonies and regenerative technologies.",
+    "vision": "Our Vision",
+    "vision_desc": "To become a global epicenter of ancestral wisdom and permaculture, where humanity remembers how to live in harmony with Pachamama, expanding collective consciousness from the Sacred Valley of the Incas to the entire world."
+  },
+  "nav": {
+    "pampa": "Pampa Ñusta",
+    "menu": "MENU",
+    "close": "Fermer",
+    "sections": {
+      "faq": "FAQ",
+      "ayni": "Ayni : Principe de Vie",
+      "identity": "Identité et Héritage",
+      "location": "Coordonnées Sacrées",
+      "community": "Notre Communauté",
+      "modules": "Modules d'Immersion"
+    },
+    "inicio": "Home",
+    "leyenda": "Legend",
+    "botanica": "Botanical Reserve",
+    "identidad": "Identity",
+    "lideres": "Leaders",
+    "media": "Media Hub",
+    "unirse": "Join Us",
+    "recorrido": "360 Tour",
+    "adopcion": "Adopt a Seed"
+  },
+  "hero": {
+    "title_line1": "RETOUR À",
+    "subtitle": "Sanctuaire Écologique • Certifié Biologique • Permaculture Vivante",
+    "start": "Commencer le Voyage",
+    "trailer": "Voir la Bande-Annonce",
+    "title_line2": "L'ORIGINE"
+  },
+  "location": {
+    "title": "SACRED TERRITORY",
+    "subtitle": "SANCTUARY COORDINATES",
+    "location": "Maska, Pisac, Cusco - Perú",
+    "altitude": "3,000 msnm",
+    "environment": "Valle Sagrado de los Incas",
+    "climate": "Templado Andino",
+    "desc": "Strategically located at the foot of the imposing archaeological complex of Pisac. Our sanctuary is nourished by the glacial waters of the major Apus, creating a perfect microclimate for the conservation of medicine and seeds.",
+    "whatsapp": "CONTACT VIA WHATSAPP",
+    "view_place": "VIEW IN GOOGLE MAPS",
+    "maps": "OPEN IN MAPS"
+  },
+  "donation_banner": {
+    "subtitle": "Le Cycle de la Réciprocité",
+    "title_line1": "L'AYNI COMME",
+    "title_line2": "PRINCIPE DE VIE",
+    "desc": "La préservation des terrasses, des semences autochtones et de l'héritage de Pampa Ñusta est soutenue par l'Ayni, l'ancienne pratique andine de donner et recevoir. Si vous ressentez l'appel à faire partie de cette garde, nous vous invitons à découvrir notre programme d'adoption.",
+    "action": "Voir le Programme d'Adoption"
+  },
+  "leaders": {
+    "subtitle": "Les Gardiens",
+    "title": "Leaders Spirituels d'Amérique",
+    "desc": "Rencontrez les âmes sages qui gardent la vision et la médecine de Pampa Ñusta. Représentants de diverses traditions s'unissant sous la prophétie de l'Aigle et du Condor.",
+    "lider1": {
+      "name": "Taita Inti",
+      "role": "Prêtre Andin (Paqo)",
+      "region": "Les Andes",
+      "desc": "Gardien de la médecine ancestrale et protecteur des apus de la Vallée Sacrée. Sa lignée préserve les chants de guérison et le profond respect pour Pachamama."
+    },
+    "lider2": {
+      "name": "Abuela Yaku",
+      "role": "Sage Guérisseuse",
+      "region": "L'Amazonie",
+      "desc": "Gardienne des plantes maîtresses et de la sagesse de l'eau, reliant le monde spirituel au terrestre à travers l'héritage millénaire de la jungle profonde."
+    },
+    "lider3": {
+      "name": "Chef Aigle Blanc",
+      "role": "Porteur de la Pipe Sacrée",
+      "region": "Amérique du Nord",
+      "desc": "Représente l'ancienne prophétie de l'union de l'Aigle et du Condor, apportant les enseignements d'unité et de paix des tribus du nord."
+    },
+    "lider4": {
+      "name": "Maître Killa",
+      "role": "Spécialiste de la Wachuma",
+      "region": "Curanderismo du Sud",
+      "desc": "Guide les âmes à travers l'expansion de la conscience dans les montagnes. Sa médecine ouvre le cœur et restaure l'équilibre spirituel de ceux qui le visitent."
+    }
+  },
+  "footer": {
+    "brand": {
+      "desc": "Protéger la mémoire ancestrale de la Vallée Sacrée. Un sanctuaire archéologique, une réserve botanique de Wachuma et un écovillage durable vibrant en Ayni."
+    },
+    "explore": {
+      "title": "Explorer"
+    },
+    "contact": {
+      "title": "Contact de l'Écovillage"
+    },
+    "newsletter": {
+      "title": "Journal Archéologique",
+      "desc": "Recevez des chroniques mensuelles sur les découvertes, les événements astronomiques et les progrès de la restauration.",
+      "placeholder": "Votre adresse e-mail",
+      "success": "Abonnement confirmé"
+    },
+    "legal": {
+      "payments": "Paiements Sécurisés (Cartes · PayPal)",
+      "guarantee": "Garantie 100% Sans Pénalité",
+      "privacy": "Politique de Confidentialité",
+      "transparency": "Transparence Financière",
+      "cookies": "Cookies"
+    }
+  },
+  "ecoaldea": {
+    "modules": {
+      "wachuma": {
+        "title": "Trichocereus Pachanoi · 7 Costillas",
+        "tagline": "Genética Ancestral del Valle Sagrado",
+        "cinemaLogline": "Resguardamos esquejes madre que datan de las antiguas terrazas de cultivo inca.",
+        "badge": "CONSERVACIÓN EN PELIGRO · 90% FINANCIADO",
+        "metrics": {
+          "origen": "Esquejes Madre Silvestres",
+          "edad": "20 a 50 Años de Antigüedad",
+          "altura": "Hasta 5 Metros",
+          "estado": "Enraizamiento Protegido"
+        },
+        "keyHighlights": [
+          "Rescate de especies endémicas de los andes amenazadas por la expansión urbana.",
+          "Curación natural con Ceniza Sagrada para evitar infecciones fúngicas.",
+          "Reforestación de 1,000 ejemplares en los próximos 3 años."
+        ],
+        "quote": "«Un cactus lleva en su agua la memoria de mil lluvias y la sabiduría de las estrellas.»",
+        "ctaText": "Adoptar Planta Maestra",
+        "projectVision": "Nuestro objetivo no es solo plantar cactus, sino preservar una biblioteca de ADN vivo. El San Pedro (Wachuma) es el eje espiritual de los Andes. Rescatamos ejemplares gigantes que estaban a punto de ser destruidos por la urbanización.",
+        "objectives": [
+          "Establecer la mayor reserva genética de Trichocereus en el Valle Sagrado.",
+          "Desarrollar un protocolo de propagación orgánica sin químicos sintéticos.",
+          "Ofrecer certificados de adopción a guardianes globales."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Identificación",
+            "title": "Mapeo Genético",
+            "description": "Viajes a zonas remotas para ubicar abuelos cactáceos centenarios."
+          },
+          {
+            "phase": "Fase II: Custodia",
+            "title": "Extracción de Esquejes",
+            "description": "Cortes rituales y cicatrización al sol con ceniza sagrada."
+          },
+          {
+            "phase": "Fase III: Propagación",
+            "title": "Enraizamiento en Domo",
+            "description": "Siembra en arena de río estéril para garantizar un enraizamiento del 100%."
+          }
+        ],
+        "neuromarketingHook": "No estás financiando un jardín; estás salvando el código genético de la medicina ancestral más antigua de América. Si nosotros no la protegemos hoy, mañana será un mito."
+      },
+      "reina": {
+        "title": "El Despertar de la Reina",
+        "tagline": "Polinización Bajo la Luna Llena",
+        "cinemaLogline": "Una flor espectacular que abre sus pétalos gigantes solo por una noche al año.",
+        "badge": "EVENTO NOCTURNO · UNA VEZ AL AÑO",
+        "metrics": {
+          "floracion": "Medianoche (00:00)",
+          "aroma": "Jazmín Intenso",
+          "polinizador": "Murciélago Andino",
+          "duracion": "Solo 8 Horas"
+        },
+        "keyHighlights": [
+          "Observación nocturna de la floración de la Reina de la Noche (Epiphyllum).",
+          "Recolección de polen para fertilización cruzada manual.",
+          "Extracción del fruto dulce sagrado (Pitaya Andina)."
+        ],
+        "quote": "«La belleza más sublime se revela solo en la oscuridad absoluta de la noche.»",
+        "ctaText": "Unirse a la Vigilia",
+        "projectVision": "La floración de la Reina de la Noche es un evento celestial. Organizamos vigilias nocturnas para polinizar manualmente estas flores, ya que sus polinizadores naturales están en peligro. Es un acto de pura devoción a la naturaleza.",
+        "objectives": [
+          "Asegurar la reproducción de las cactáceas nocturnas.",
+          "Documentar el ciclo lunar y su efecto en el flujo de savia.",
+          "Cosechar el fruto medicinal para dietas comunitarias."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Vigilia",
+            "title": "Monitoreo de Botones",
+            "description": "Registro fotográfico diario de la hinchazón del botón floral."
+          },
+          {
+            "phase": "Fase II: El Clímax",
+            "title": "Vigilia Nocturna",
+            "description": "Turnos de guardia durante la luna llena para captar la apertura total."
+          },
+          {
+            "phase": "Fase III: Cosecha",
+            "title": "Recolección del Fruto",
+            "description": "Extracción cuidadosa del fruto dulce meses después para extraer sus semillas negras."
+          }
+        ],
+        "neuromarketingHook": "Solo abre una noche al año. Ser testigo de este momento requiere paciencia, respeto y sincronía con el cosmos. ¿Estás listo para entender los tiempos de la naturaleza?"
+      },
+      "semillas": {
+        "title": "Conservación de Semillas Nativas",
+        "tagline": "Bóveda Viva del Germoplasma Andino",
+        "cinemaLogline": "El arca milenaria de maíces gigantes, papas silvestres y granos de oro que alimentan el futuro.",
+        "badge": "SOBERANÍA ALIMENTARIA · 34 VARIEDADES",
+        "metrics": {
+          "maiz": "Maíz Gigante de Urubamba",
+          "papa": "Papa Silvestre Medicinal",
+          "quinoa": "Quinoa Negra y Roja",
+          "amaranto": "Kiwicha (Amaranto Andino)"
+        },
+        "keyHighlights": [
+          "Banco de semillas bioclimático subterráneo para conservar humedad y temperatura.",
+          "Intercambio ancestral (Ayni) con comunidades de altura.",
+          "Cultivo sin agroquímicos ni modificaciones genéticas."
+        ],
+        "quote": "«Aquel que guarda una semilla, tiene la promesa del mañana en sus manos.»",
+        "ctaText": "Patrocinar la Bóveda",
+        "projectVision": "Estamos perdiendo la biodiversidad que a los Incas les tomó miles de años desarrollar. Esta bóveda es un arca viva. No solo guardamos semillas; las sembramos, las adaptamos y las devolvemos a las comunidades.",
+        "objectives": [
+          "Resguardar al menos 50 variedades de semillas nativas.",
+          "Capacitar a agricultores locales en conservación biológica.",
+          "Crear una red de distribución de semillas gratuita."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Arquitectura",
+            "title": "Construcción Bioclimática",
+            "description": "Levantamiento de la bóveda subterránea (Qollqa) para mantener temperatura constante."
+          },
+          {
+            "phase": "Fase II: Recolección",
+            "title": "Chhalay (Intercambio)",
+            "description": "Recorrido por comunidades altas intercambiando semillas endémicas y raras."
+          },
+          {
+            "phase": "Fase III: Renovación",
+            "title": "Siembra Anual",
+            "description": "Siembra obligatoria cada 3 años para que la semilla mantenga su viabilidad y vigor vital."
+          }
+        ],
+        "neuromarketingHook": "Una semilla extinta jamás regresa. Tu apoyo permite mantener vivo el banco genético alimentario más poderoso de la civilización Inca."
+      },
+      "ninos": {
+        "title": "Centro de Recreación para Niños",
+        "tagline": "Escuela Libre de la Naturaleza y Juego Andino",
+        "cinemaLogline": "Donde la infancia aprende con las manos en el barro, cuentos bajo el queñual y cantos al río.",
+        "badge": "IMPACTO SOCIAL · 50+ NIÑOS",
+        "metrics": {
+          "enfoque": "Waldorf & Sabiduría Andina",
+          "edades": "De 4 a 12 Años",
+          "actividad": "Arte, Botánica, Bioconstrucción",
+          "idioma": "Quechua y Español"
+        },
+        "keyHighlights": [
+          "Espacios construidos por los propios niños usando adobe y maderas recicladas.",
+          "Currícula basada en el calendario agrícola y ciclos lunares.",
+          "Integración de niños indígenas locales con niños extranjeros."
+        ],
+        "quote": "«Si queremos sanar la tierra, primero debemos dejar que los niños la toquen.»",
+        "ctaText": "Apoyar la Escuela Viva",
+        "projectVision": "El sistema educativo actual desconecta al humano de su entorno. Aquí, el río es la pizarra y el bosque es el aula. Educamos líderes libres y conscientes, capaces de regenerar el planeta.",
+        "objectives": [
+          "Brindar un espacio seguro y natural para los niños de la comunidad de Pisac.",
+          "Enseñar permacultura práctica desde temprana edad.",
+          "Revalorizar el idioma Quechua mediante música y juego."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Espacios",
+            "title": "Zonas de Juego Natural",
+            "description": "Creación del laberinto de piedras, tirolina sobre el río y casitas de adobe."
+          },
+          {
+            "phase": "Fase II: Pedagogía",
+            "title": "Huertos Infantiles",
+            "description": "Asignación de parcelas de tierra para que cada niño sea responsable de su cosecha."
+          },
+          {
+            "phase": "Fase III: Expansión",
+            "title": "Campamentos de Verano",
+            "description": "Lanzamiento de retiros infantiles de inmersión de 7 días sin pantallas ni tecnología."
+          }
+        ],
+        "neuromarketingHook": "No inviertes en una escuela tradicional; estás patrocinando la reconexión de una generación entera con la inteligencia de la Tierra. El futuro depende de la sensibilidad que cultivemos hoy en sus corazones."
+      },
+      "ceremonias": {
+        "title": "Ceremonias de Plantas Maestras",
+        "tagline": "El Fuego Sagrado de la Sanación y la Visión",
+        "cinemaLogline": "Círculos sagrados de introspección guiados por taitas y curanderos linajudos del Valle Sagrado.",
+        "badge": "SANACIÓN ANCESTRAL · LUNAS & SOLSTICIOS",
+        "metrics": {
+          "medicina": "Wachuma Tradicional",
+          "ritual": "Temazcal / Chaski-Tambo",
+          "musica": "Ícaros & Quenas Sagradas",
+          "acompanamiento": "Médicos Tradicionales"
+        },
+        "keyHighlights": [
+          "Preparación física y espiritual con dieta andina previa de 7 días.",
+          "Apertura del espacio sagrado con ofrenda a la Pachamama (Haywarikuy).",
+          "Ceremonia nocturna de fuego frente a los nevados sagrados del Apu Linli.",
+          "Círculo de integración psicológica y emocional al amanecer con baño de flores."
+        ],
+        "quote": "«Sanar no es borrar el dolor, sino devolver el alma a su eje cósmico original.»",
+        "ctaText": "Reservar Ceremonia Sagrada",
+        "projectVision": "Nuestra Maloka Ceremonial no es un espacio turístico; es un hospital del espíritu. Creemos en el uso guiado, ético y respetuoso de las plantas maestras para lograr la desintoxicación mental y emocional de una sociedad deprimida y ansiosa.",
+        "objectives": [
+          "Ofrecer un marco absoluto de seguridad física y psicológica para la medicina sagrada.",
+          "Respetar estrictamente los linajes y cantos de los Taitas andinos.",
+          "Facilitar la integración terapéutica post-ceremonia para garantizar cambios de vida reales."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Arquitectura",
+            "title": "Maloka Circular",
+            "description": "Levantamiento de la estructura en forma octogonal con maderas nobles y techo de paja brava, alineada acústicamente."
+          },
+          {
+            "phase": "Fase II: El Fuego",
+            "title": "Altar Central",
+            "description": "Diseño del fogón sin humo y consagración del espacio por los curanderos de la nación Q'eros."
+          },
+          {
+            "phase": "Fase III: Servicios",
+            "title": "Temazcal (Cabaña de Sudar)",
+            "description": "Construcción del domo de piedras calientes para la purificación previa al trabajo con medicina."
+          }
+        ],
+        "neuromarketingHook": "Cerrar los ojos alrededor del fuego aquí no es una experiencia más, es el punto de quiebre donde tu vida pasada termina y tu verdadera esencia se revela. Solo hay 10 cupos por luna llena."
+      },
+      "talleres": {
+        "title": "Talleres Inmersivos de 4 a + Días",
+        "tagline": "Aprender a Vivir de la Tierra en Comunidad",
+        "cinemaLogline": "Inmersión residencial en permacultura andina, bioconstrucción y vida regenerativa en ecoaldea.",
+        "badge": "INMERSIÓN RESIDENCIAL · 4 A 14 DÍAS",
+        "metrics": {
+          "teoria": "Diseño y Planificación",
+          "practica": "Manos en el Barro",
+          "convivencia": "Experiencia Tribal",
+          "certificado": "Validación Global PDC"
+        },
+        "keyHighlights": [
+          "Aprender a construir con adobe, quincha y bambú sostenible.",
+          "Diseño de bosques de alimentos y gestión de aguas grises.",
+          "Alimentación vegetariana de la granja a la mesa cosechada por ti mismo."
+        ],
+        "quote": "«La mejor rebelión es cultivar tu propio alimento y construir tu propio refugio.»",
+        "ctaText": "Ver Fechas Disponibles",
+        "projectVision": "Queremos empoderar a las personas para que dejen de depender de un sistema extractivista. En estos talleres, enseñamos técnicas antiguas combinadas con ciencia moderna para que puedas diseñar tu propio oasis ecológico en cualquier parte del mundo.",
+        "objectives": [
+          "Transferir técnicas ancestrales de arquitectura sin cemento.",
+          "Enseñar a cosechar y almacenar agua de lluvia.",
+          "Formar una red global de permacultores activos."
+        ],
+        "roadmap": [
+          {
+            "phase": "Fase I: Alojamiento",
+            "title": "Eco-Domos Estudiantiles",
+            "description": "Construcción de los dormitorios ecológicos con baño seco y duchas solares para alojar a los aprendices."
+          },
+          {
+            "phase": "Fase II: Taller Práctico",
+            "title": "Equipamiento de Herramientas",
+            "description": "Adquisición de mezcladoras de barro, herramientas de carpintería y laboratorio de suelos."
+          },
+          {
+            "phase": "Fase III: Certificación",
+            "title": "Alianzas Universitarias",
+            "description": "Lograr el aval internacional para certificar el Diseño de Permacultura PDC (Permaculture Design Course)."
+          }
+        ],
+        "neuromarketingHook": "No es un curso, es un \"reset\" profundo a tus habilidades de supervivencia. Aprender a levantar un muro con tus propias manos cambia la forma en que ves el universo para siempre. Quedan escasos cupos para la próxima temporada."
+      }
+    }
+  },
+  "nusta": {
+    "story": {
+      "intro": {
+        "title": "Leyenda de la Ñusta Encantada",
+        "subtitle": "DOCUMENTAL ORIGINAL: MEMORIA ANCESTRAL",
+        "description": "Inquill Chumpi y el príncipe Asto Rímac: amor, pacto con los Apus y la transmutación en guardianes pétreos de la siembra en Pisac."
+      },
+      "piedras": {
+        "title": "Energía Femenina & Masculina",
+        "subtitle": "MONOLITOS TUTELARES DE PISAC",
+        "description": "La Ñusta y el Príncipe transmutados en roca viva, enseñando la siembra sagrada (Tarpuy) a los niños y al pueblo andino."
+      },
+      "acto1": {
+        "title": "El Desafío Imposible",
+        "subtitle": "ACTO 01 · 0% ROCA",
+        "description": "Huayllapumap Sasa Munaynin. El cacique exigió construir en una sola noche un puente de piedra o los andenes para probar el valor del príncipe. La princesa Inquill Chumpi rogó a los Apus por su amado."
+      },
+      "acto2": {
+        "title": "El Juramento de Asto Rímac",
+        "subtitle": "ACTO 02 · 25% ROCA",
+        "description": "Asto Rimacpa Tuta Ruwaynin. «Camina sin vacilar hacia la cima sagrada; si tus ojos buscan mi fatiga, la montaña reclamará nuestras almas.» Enamorado, el guerrero convoca a las fuerzas ocultas y a los Apus para levantar los pilares en la tiniebla."
+      },
+      "acto3": {
+        "title": "La Mirada Prohibida",
+        "subtitle": "ACTO 03 · 65% ROCA",
+        "description": "Hark'asqa Qaway. Casi al amanecer, con la obra a punto de culminar, Inquill Chumpi no pudo resistir y volteó a ver si su amado sobrevivía al esfuerzo titánico. El pacto con la montaña se rompió."
+      },
+      "acto4": {
+        "title": "La Petrificación Eterna",
+        "subtitle": "ACTO 04 · 100% ROCA",
+        "description": "Wiñay Rumi Tukupuy. Ambos fueron convertidos en granito. Hoy, la Piedra Femenina custodia la fertilidad del agua, y la Piedra Masculina guía el calor del sol en los andenes, bendiciendo el Tarpuy Raymi."
+      }
+    }
+  },
+  "impact": {
+    "stories": {
+      "ecologico": {
+        "title": "IMPACTO ECOLÓGICO",
+        "subtitle": "REGENERACIÓN DE LA BIOSFERA",
+        "description": "Transformamos un terreno erosionado en un bosque vivo. Hoy resguardamos más de 3,000 especies endémicas, purificando el aire y restaurando el ciclo hídrico ancestral del Valle Sagrado.",
+        "metrics": [
+          "+3K Árboles",
+          "0% Agroquímicos"
+        ]
+      },
+      "social": {
+        "title": "IMPACTO SOCIAL",
+        "subtitle": "EMPODERANDO A LA COMUNIDAD",
+        "description": "No contratamos empleados, forjamos guardianes. Las familias locales de Pisac son nuestros socios, integrando su sabiduría milenaria con una economía justa que rompe el ciclo de pobreza.",
+        "metrics": [
+          "15 Familias",
+          "Comercio Justo"
+        ]
+      },
+      "educacion": {
+        "title": "IMPACTO EDUCATIVO",
+        "subtitle": "LA ESCUELA VIVA",
+        "description": "Le devolvemos la infancia a la tierra. A través de nuestra escuela libre, niños locales y visitantes aprenden botánica, bioconstrucción y quechua lejos de las pantallas.",
+        "metrics": [
+          "50+ Niños",
+          "Saberes Ancestrales"
+        ]
+      },
+      "tecnologico": {
+        "title": "IMPACTO TECNOLÓGICO",
+        "subtitle": "INGENIERÍA ANCESTRAL",
+        "description": "Fusionamos la precisión de la ingeniería hidráulica Inca con energías renovables modernas. 100% energía solar, baños secos ecológicos y tratamiento de aguas grises mediante fitodepuración.",
+        "metrics": [
+          "100% Solar",
+          "Cero Residuos"
+        ]
+      },
+      "economico": {
+        "title": "IMPACTO ECONÓMICO",
+        "subtitle": "ECONOMÍA CIRCULAR (AYNI)",
+        "description": "El santuario es un organismo autosustentable. Cada donación, retiro y programa de voluntariado alimenta un circuito cerrado donde la riqueza vuelve a la tierra y a sus cuidadores.",
+        "metrics": [
+          "Sistema Ayni",
+          "Autosustentable"
+        ]
+      },
+      "espiritual": {
+        "title": "IMPACTO ESPIRITUAL",
+        "subtitle": "DESPERTAR GLOBAL",
+        "description": "Somos un epicentro de sanación emocional profunda. A través del uso ético y tradicional de plantas maestras, cientos de almas han encontrado su propósito cósmico bajo nuestras montañas.",
+        "metrics": [
+          "Linaje Ancestral",
+          "Sanación Global"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "t1": {
+      "quote": "Pampa Ñusta no es un retiro, es un portal. La ceremonia de Wachuma bajo las estrellas reconfiguró por completo mi perspectiva de la vida. Llegué buscando respuestas y me fui con el corazón expandido.",
+      "name": "Sarah Jenkins",
+      "role": "Arquitecta & Voluntaria, UK"
+    },
+    "t2": {
+      "quote": "Ver a mis hijos jugar en el barro, aprender quechua y respetar la tierra en la Escuela Viva es el mayor regalo. Esta ecoaldea demuestra que otro mundo es posible.",
+      "name": "Mateo Carrasco",
+      "role": "Nómada Digital, Chile"
+    },
+    "t3": {
+      "quote": "El rigor y respeto con el que tratan la medicina ancestral no tiene igual. Los Taitas guían con un amor antiguo. El proceso de integración es lo que verdaderamente cambió mi realidad.",
+      "name": "Dra. Elena Rostova",
+      "role": "Psiquiatra, Rusia"
+    }
+  },
+  "facilities": {
+    "f1": {
+      "title": "Domo Wachuma",
+      "description": "Invernadero de esquejes sagrados."
+    },
+    "f2": {
+      "title": "Escuela Viva",
+      "description": "Centro de aprendizaje ecológico."
+    },
+    "f3": {
+      "title": "Maloka Ceremonial",
+      "description": "Espacio octagonal para el fuego sagrado."
+    },
+    "f4": {
+      "title": "Arca de Semillas",
+      "description": "Bóveda bioclimática de germoplasma."
+    },
+    "f5": {
+      "title": "Terrazas Agroforestales",
+      "description": "Andenes incas de cultivo."
+    },
+    "f6": {
+      "title": "Chaski Tambo",
+      "description": "Cabañas de descanso para guardianes."
+    },
+    "f7": {
+      "title": "Cocina Solar",
+      "description": "Gastronomía de la huerta a la mesa."
+    },
+    "f8": {
+      "title": "Compost y Baños Secos",
+      "description": "Cero residuos y abono orgánico."
+    },
+    "f9": {
+      "title": "Bosque de Medicinas",
+      "description": "Santuario de plantas maestras."
+    },
+    "f10": {
+      "title": "Apus Centrales",
+      "description": "Montañas sagradas de observación."
+    },
+    "f11": {
+      "title": "La Pampa",
+      "description": "Corazón principal de la comunidad."
+    },
+    "f12": {
+      "title": "Río Sagrado",
+      "description": "Cauce ancestral de agua."
+    }
+  },
+  "mediahub": {
+    "subtitle": "GLOBAL CONNECTION",
+    "title": "MULTIMEDIA CENTER",
+    "tab_live": "TikTok Live",
+    "tab_interviews": "Interviews",
+    "tab_gallery": "Photo & Video Gallery",
+    "live_tag": "Scheduled Broadcast",
+    "live_title": "Distance Healing: Sound Ceremony",
+    "live_desc": "Join our next live broadcast from the Ceremonial Maloka in the Sacred Valley. Share with the global community, ask questions in real-time, and receive the vibration of ancestral chants.",
+    "live_time": "Friday, 20:00 EST",
+    "live_duration": "Duration: 2 Hours",
+    "live_btn": "Schedule on TikTok",
+    "interview_btn": "Watch Episode",
+    "gallery_title": "Visual Gallery",
+    "gallery_desc": "Very soon we will enable the historical archive of photos and videos of the ecovillage. You will be able to explore every corner, ceremony, and bioconstruction progress of the Pampa Ñusta Sanctuary.",
+    "gallery_btn": "Notify me when ready"
+  },
+  "chatbot": {
+    "schedule": "Schedule Video Call",
+    "welcome_msg": "Bienvenue à Pampa Ñusta. Vous êtes à un pas de vous connecter avec les gardiens du sanctuaire. Sélectionnez le but de votre session privée (30 min):",
+    "platform_msg": "Parfait. Votre session sera avec {{name}} ({{role}}). Quelle plateforme préférez-vous?",
+    "datetime_msg": "Excellent. Veuillez sélectionner votre jour et heure préférés (Heure du Pérou GMT-5):",
+    "contact_msg": "Presque terminé. Laissez-nous vos coordonnées pour vous envoyer le lien d'accès:",
+    "data_sent": "Données envoyées:",
+    "confirmation_msg": "Réservation confirmée avec succès! Votre code est {{code}}. Vous pouvez l'ajouter à votre calendrier ou nous en informer via WhatsApp.",
+    "reset_msg": "Session redémarrée. Sur quel sujet aimeriez-vous planifier votre appel vidéo?",
+    "official_reservations": "Réservations Officielles",
+    "maximize_panel": "Agrandir le panneau",
+    "pampa_nusta_pisac": "Pampa Ñusta · Pisac",
+    "date": "Date",
+    "time_peru": "Horaire (Pérou)",
+    "continue": "Continuer",
+    "full_name": "Nom Complet",
+    "email": "Adresse Email",
+    "whatsapp": "WhatsApp (avec indicatif)",
+    "notes": "Sujet clé ou question (optionnel)...",
+    "confirm_reservation": "Confirmer la Réservation",
+    "reservation_code": "CODE DE RÉSERVATION",
+    "topic": "Sujet:",
+    "with": "Avec:",
+    "confirm_whatsapp": "Confirmer via WhatsApp",
+    "add_calendar": "Ajouter à Google Calendar",
+    "schedule_new": "Planifier une Nouvelle Session",
+    "topics": {
+      "wachuma_title": "Banque de Gènes de Wachuma & Botanique Sacrée",
+      "wachuma_role": "Biologiste & Conservatrice Botanique",
+      "wachuma_desc": "Discutez avec notre biologiste de plus de 40 variétés de cactus sacrés.",
+      "semillas_title": "Graines Indigènes & Agroécologie",
+      "semillas_role": "Gardien des Graines Ancestrales",
+      "semillas_desc": "Découvrez la garde des maïs anciens et des tubercules sacrés d'altitude.",
+      "ceremonias_title": "Plantes Maîtresses, Retraites & Harmonisation",
+      "ceremonias_role": "Facilitateur Cérémoniel",
+      "ceremonias_desc": "Résolvez vos doutes sur la préparation diététique et les cérémonies.",
+      "talleres_title": "Bioconstruction, Bénévolat & Ateliers",
+      "talleres_role": "Architecte de Terre & Coordinateur",
+      "talleres_desc": "Vérifiez les dates et les programmes d'immersion en permaculture.",
+      "general_title": "Visites Guidées, Logistique & Hospitalité",
+      "general_role": "Coordinatrice d'Accueil à Pisac",
+      "general_desc": "Informations pratiques pour votre voyage à Pisac."
+    }
+  },
+  "tour360": {
+    "subtitle": "02 — IMMERSIVE TOUR",
+    "title1": "TOUR",
+    "title2": "360°",
+    "desc": "Get to know the ecological facilities, botanical domes, and community services of the sanctuary through our referential video and virtual tour.",
+    "tab_video": "Cinematic Explorer",
+    "tab_360": "360° Explorer",
+    "tab_map": "Sanctuary Map",
+    "immersion_desc": "Immerse yourself in the immensity of the Sacred Valley through this ultra-high-definition visual expedition. This cinematic tour transports you through the bioconstruction and living heritage of each of our ecological zones.",
+    "reference_badge": "Referential visual illustrating the vision and atmosphere of Pampa Ñusta"
+  },
+  "modules": {
+    "subtitle": "01 — SPATIAL DISTRIBUTION",
+    "title": "FACILITIES",
+    "explore_btn": "EXPLORE FACILITY"
+  },
+  "social": {
+    "subtitle": "03 — Community Voices",
+    "title1": "REVIEWS &",
+    "title2": "TESTIMONIALS"
+  },
+  "cinematic_transitions": {
+    "tierra": {
+      "title": "TERRE",
+      "subtitle": "Banque Génétique de Wachuma"
+    },
+    "agua": {
+      "title": "EAU",
+      "subtitle": "Conservation des Semences Natives"
+    },
+    "viento": {
+      "title": "VENT",
+      "subtitle": "Centre de Loisirs pour Enfants"
+    },
+    "fuego": {
+      "title": "FEU",
+      "subtitle": "Cérémonies des Plantes Maîtresses"
+    },
+    "eter": {
+      "title": "ÉTHER",
+      "subtitle": "Ateliers Immersifs de 4 Jours et +"
+    },
+    "memoria": "Mémoire Vivante du Sanctuaire"
+  },
+  "pampa_facilities": {
+    "wachuma_wasi": {
+      "name": "Dôme Géodésique & Banque Génétique de Wachuma",
+      "shortDesc": "Serre géodésique bioclimatique avec plus de 40 lignées mères acclimatées de Trichocereus pachanoi et peruvianus.",
+      "neuromarketingHook": "Plus que la préservation d'un cactus sacré, nous décodons le génome de la conscience andine et le protégeons de l'extinction climatique.",
+      "scope": "La portée couvre 12 hectares de conservation directe et la création de la première banque génomique de Trichocereus en Amérique du Sud.",
+      "fullDesc": "Le cœur botanique de Pampa Ñusta. Un dôme géodésique bioclimatique passif abritant la plus grande collection vivante de cactus sacré Wachuma du bassin de Vilcanota. Conçu pour émuler le microclimat de la gorge andine avec des substrats minéraux volcaniques, une ventilation zénithale et une capture thermique diurne pour protéger les lignées mères des gelées nocturnes."
+    },
+    "arca_semillas": {
+      "name": "Arche de Semences Andines & Laboratoire Vivant",
+      "shortDesc": "Sanctuaire de matériel génétique avec plus de 200 variétés natives de maïs sacré, pommes de terre andines, quinoa et kiwicha.",
+      "neuromarketingHook": "Dans un monde menacé par le changement climatique, la véritable richesse n'est pas l'or, mais le matériel génétique qui garantira la nourriture de l'humanité.",
+      "scope": "Impact direct sur la souveraineté alimentaire de 18 communautés alto-andines de la Vallée Sacrée, assurant un matériel génétique biologiquement pur pour les 3 prochaines générations.",
+      "fullDesc": "Construit comme une voûte bioclimatique d'adobe et d'argile séchée, l'Arche des Semences garde l'héritage génétique des Andes. Elle préserve les variétés ancestrales de maïs polychromes, de tubercules natifs d'altitude et de grains sacrés, stockés dans des récipients en argile scellés à la cire d'abeille naturelle qui préviennent les parasites sans un seul gramme d'agrochimie."
+    },
+    "escuela_viva": {
+      "name": "École Vivante & Bio-Parc pour Enfants",
+      "shortDesc": "Village pédagogique en plein air avec amphithéâtre en boue, bio-jeux et sauvetage de la faune andine.",
+      "neuromarketingHook": "Nous n'héritons pas de la terre de nos ancêtres, nous l'empruntons à nos enfants. Ici, nous formons les leaders écologiques de demain.",
+      "scope": "Formation écologique bilingue et soutien émotionnel gratuits pour 150 garçons et filles par an issus d'écoles rurales vulnérables.",
+      "fullDesc": "Un projet pilote éducatif qui fusionne la méthodologie de l'école en forêt avec la vision du monde andine. Conçu pour que la petite enfance des communautés rurales revalorise sa culture d'origine à travers l'éco-construction, l'agriculture et l'art en quechua."
+    },
+    "maloka_ceremonial": {
+      "name": "Maloka Cérémoniale & Espace Sonore",
+      "shortDesc": "Temple circulaire de bioconstruction et d'acoustique 432 Hz pour la recherche sur les plantes maîtresses.",
+      "neuromarketingHook": "Là où la psychiatrie moderne trouve ses limites, la médecine andine ancienne ouvre les portes à une guérison profonde des traumatismes.",
+      "scope": "Création d'un standard clinique-traditionnel reproductible au niveau international pour le traitement des traumatismes par le biais de protocoles andins rigoureux.",
+      "fullDesc": "La Maloka est un centre d'avant-garde où convergent la science moderne et la médecine traditionnelle. Nous étudions les avantages neuroplastiques des états modifiés de conscience facilités par les enthéogènes andins, dans un cadre éthique, sûr et guidé par des lignées ancestrales."
+    },
+    "terrazas_permacultura": {
+      "name": "Terrasses Régénératives & Hydrologie Solaire",
+      "shortDesc": "Restauration des terrasses incas avec la technologie d'irrigation photovoltaïque et l'agriculture syntropique.",
+      "neuromarketingHook": "Nous ravivons le génie de l'ingénierie inca et l'équipons de la technologie solaire du 21e siècle pour nourrir l'avenir des Andes.",
+      "scope": "Restauration complète de 5 niveaux de terrasses incas et création du modèle hydro-solaire à l'empreinte carbone négative à la plus haute altitude du Pérou.",
+      "fullDesc": "Un projet d'innovation agricole qui défie la sécheresse andine. Nous avons récupéré des terrasses préhispaniques abandonnées en intégrant le pompage solaire contemporain et la technologie de micro-aspersion. L'objectif est de créer un modèle reproductible de sécurité alimentaire pour les hautes montagnes péruviennes."
+    }
+  },
+  "virtual_tour_extra": {
+    "drag_instructions": "Faites glisser avec la souris ou le doigt pour faire pivoter à 360° · Cliquez sur les icônes oranges pour explorer les installations",
+    "instalaciones_title": "INSTALLATIONS"
+  }
 }

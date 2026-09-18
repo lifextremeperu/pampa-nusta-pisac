@@ -26,7 +26,7 @@ import {
   Radio
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { VIDEO_CALL_TOPICS, AVAILABLE_TIME_SLOTS } from '../data/videoCallTopics';
+import { useVideoCallTopics, AVAILABLE_TIME_SLOTS } from '../data/videoCallTopics';
 import { VideoCallBooking, VideoCallTopic } from '../types';
 import { andeanAudio } from '../utils/audioSynthesizer';
 
@@ -48,7 +48,8 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
   isOpenExternal,
   onCloseExternal,
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const VIDEO_CALL_TOPICS = useVideoCallTopics();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [isLauncherMinimized, setIsLauncherMinimized] = useState<boolean>(false);
@@ -104,18 +105,26 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     }
   }, [availableDates, selectedDate]);
 
-  // Initialize chat messages - always start fresh
+  // Initialize chat messages - always start fresh or when language changes
   useEffect(() => {
     // Default starting message
     const initialMessage: Message = {
-      id: 'msg-1',
+      id: `msg-${Date.now()}`,
       sender: 'bot',
-      text: 'Bienvenido a Pampa Ñusta. Estás a un paso de conectar con los guardianes del santuario. Selecciona el propósito de tu sesión privada (30 min):',
+      text: t('chatbot.welcome_msg'),
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       optionsType: 'topic',
     };
     setMessages([initialMessage]);
-  }, []);
+    
+    // Also reset form data just in case
+    setSelectedTopic(null);
+    setCompletedBooking(null);
+    setUserName('');
+    setUserEmail('');
+    setUserPhone('');
+    setUserNotes('');
+  }, [t, i18n.language]);
 
   // Auto-scroll to bottom of chat
   useEffect(() => {
@@ -161,7 +170,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     addUserMessage(topic.title);
 
     addBotMessage(
-      `Perfecto. Tu sesión será con ${topic.collaboratorName} (${topic.collaboratorRole}). ¿Qué plataforma prefieres usar?`,
+      t('chatbot.platform_msg', { name: topic.collaboratorName, role: topic.collaboratorRole }),
       'platform'
     );
   };
@@ -177,7 +186,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     addUserMessage(platformNames[platform]);
 
     addBotMessage(
-      `Excelente. Por favor selecciona el día y la hora de tu preferencia (Hora Perú GMT-5):`,
+      t('chatbot.datetime_msg'),
       'date_time'
     );
   };
@@ -189,7 +198,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     addUserMessage(`${selectedDate} · ${slotObj?.label || selectedSlot}`);
 
     addBotMessage(
-      `Ya casi terminamos. Déjanos tus datos de contacto para enviarte el enlace de acceso:`,
+      t('chatbot.contact_msg'),
       'contact_form'
     );
   };
@@ -199,7 +208,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     e.preventDefault();
     if (!userName.trim() || !userEmail.trim() || !userPhone.trim()) return;
 
-    addUserMessage(`Datos enviados: ${userName}`);
+    addUserMessage(`${t('chatbot.data_sent')} ${userName}`);
 
     const bookingCode = `PN-CALL-${Math.floor(1000 + Math.random() * 9000)}`;
     const slotObj = AVAILABLE_TIME_SLOTS.find((s) => s.id === selectedSlot);
@@ -233,7 +242,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
     }
 
     addBotMessage(
-      `¡Reserva confirmada con éxito! Tu código es ${bookingCode}. Puedes agregarla a tu calendario o notificarnos por WhatsApp.`,
+      t('chatbot.confirmation_msg', { code: bookingCode }),
       'confirmation',
       newBooking
     );
@@ -250,7 +259,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
       {
         id: `msg-${Date.now()}`,
         sender: 'bot',
-        text: 'Sesión reiniciada. ¿Sobre qué tema deseas agendar tu videollamada?',
+        text: t('chatbot.reset_msg'),
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         optionsType: 'topic',
       },
@@ -350,10 +359,10 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                 </div>
                 <div>
                   <h2 className="text-sm font-bold text-white tracking-widest uppercase font-sans">
-                    Reservas Oficiales
+                    {t('chatbot.official_reservations')}
                   </h2>
                   <p className="text-[10px] text-emerald-200 font-mono tracking-widest uppercase">
-                    {isMinimized ? 'Maximizar panel' : 'Pampa Ñusta · Pisac'}
+                    {isMinimized ? t('chatbot.maximize_panel') : t('chatbot.pampa_nusta_pisac')}
                   </p>
                 </div>
               </div>
@@ -461,7 +470,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
 
                           {/* Date chips */}
                           <div>
-                            <p className="text-[9px] uppercase tracking-widest font-bold text-gray-400 mb-2" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Fecha</p>
+                            <p className="text-[9px] uppercase tracking-widest font-bold text-gray-400 mb-2" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{t('chatbot.date')}</p>
                             <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
                               {availableDates.map((dateObj) => (
                                 <button
@@ -482,7 +491,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
 
                           {/* Time slot chips */}
                           <div>
-                            <p className="text-[9px] uppercase tracking-widest font-bold text-gray-400 mb-2" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>Horario (Perú)</p>
+                            <p className="text-[9px] uppercase tracking-widest font-bold text-gray-400 mb-2" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>{t('chatbot.time_peru')}</p>
                             <div className="grid grid-cols-2 gap-1.5">
                               {AVAILABLE_TIME_SLOTS.map((slot) => (
                                 <button
@@ -508,7 +517,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                             className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
                             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
                           >
-                            Continuar
+                            {t('chatbot.continue')}
                             <ChevronRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -530,7 +539,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                                 required
                                 value={userName}
                                 onChange={(e) => setUserName(e.target.value)}
-                                placeholder="Nombre Completo"
+                                placeholder={t('chatbot.full_name')}
                                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
@@ -544,7 +553,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                                 required
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                placeholder="Correo Electrónico"
+                                placeholder={t('chatbot.email')}
                                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
@@ -558,7 +567,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                                 required
                                 value={userPhone}
                                 onChange={(e) => setUserPhone(e.target.value)}
-                                placeholder="WhatsApp (con código país)"
+                                placeholder={t('chatbot.whatsapp')}
                                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors"
                               />
                             </div>
@@ -569,7 +578,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                               rows={2}
                               value={userNotes}
                               onChange={(e) => setUserNotes(e.target.value)}
-                              placeholder="Tema o consulta clave (opcional)..."
+                              placeholder={t('chatbot.notes')}
                               className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white resize-none transition-colors"
                             />
                           </div>
@@ -579,7 +588,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                             className="w-full py-4 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-sans font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md mt-4"
                           >
                             <CheckCircle2 className="w-5 h-5" />
-                            <span>Confirmar Reserva</span>
+                            <span>{t('chatbot.confirm_reservation')}</span>
                           </button>
                         </form>
                       )}
@@ -596,7 +605,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                             </div>
                             <div>
                               <span className="font-sans text-[9px] text-emerald-600 font-bold uppercase tracking-widest block">
-                                CÓDIGO DE RESERVA
+                                {t('chatbot.reservation_code')}
                               </span>
                               <span className="font-mono text-sm font-bold text-gray-900">
                                 {msg.bookingData.bookingCode}
@@ -606,15 +615,15 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
 
                           <div className="py-4 border-t border-b border-gray-100 space-y-3 text-sm font-sans">
                             <div className="flex justify-between text-gray-800">
-                              <span className="text-gray-500">Tema:</span>
+                              <span className="text-gray-500">{t('chatbot.topic')}</span>
                               <span className="font-medium text-right max-w-[200px] truncate">{msg.bookingData.topicTitle}</span>
                             </div>
                             <div className="flex justify-between text-gray-800">
-                              <span className="text-gray-500">Con:</span>
+                              <span className="text-gray-500">{t('chatbot.with')}</span>
                               <span className="font-bold text-emerald-700">{msg.bookingData.collaboratorName}</span>
                             </div>
                             <div className="flex justify-between text-gray-800">
-                              <span className="text-gray-500">Fecha:</span>
+                              <span className="text-gray-500">{t('chatbot.date')}</span>
                               <span className="font-medium">{msg.bookingData.date} · {msg.bookingData.timeSlot}</span>
                             </div>
                           </div>
@@ -627,7 +636,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                               className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-sans text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2 shadow-md text-center"
                             >
                               <MessageCircle className="w-4 h-4 fill-white" />
-                              <span>Confirmar vía WhatsApp</span>
+                              <span>{t('chatbot.confirm_whatsapp')}</span>
                             </a>
 
                             <a
@@ -637,7 +646,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                               className="w-full py-3 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 font-sans text-[10px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 text-center"
                             >
                               <Calendar className="w-4 h-4 text-emerald-600" />
-                              <span>Añadir a Google Calendar</span>
+                              <span>{t('chatbot.add_calendar')}</span>
                             </a>
 
                             {/* Nueomarketing Hook: Nueva Reserva */}
@@ -646,7 +655,7 @@ export const ConectaPampaNustaChatbot: React.FC<ConectaPampaNustaChatbotProps> =
                               className="w-full py-3 px-4 mt-2 rounded-xl bg-transparent hover:bg-gray-50 text-emerald-600 font-sans font-bold text-[10px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 border-t border-dashed border-gray-200 cursor-pointer"
                             >
                               <RotateCcw className="w-3.5 h-3.5" />
-                              <span>Agendar Nueva Sesión</span>
+                              <span>{t('chatbot.schedule_new')}</span>
                             </button>
                           </div>
 
