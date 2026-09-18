@@ -73,23 +73,23 @@ export const SocialProofSection: React.FC = () => {
         {TRIPADVISOR_REVIEWS.map((review, idx) => (
           <div 
             key={idx}
-            className="snap-start shrink-0 w-[85vw] sm:w-[45vw] lg:w-[22vw] flex flex-col justify-between"
+            className="snap-start shrink-0 w-[90vw] sm:w-[60vw] lg:w-[35vw] xl:w-[28vw] flex flex-col justify-between bg-white/70 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-sadhana-dark/5 shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500"
           >
             <div>
-              <div className="flex gap-1 mb-4 text-sadhana-orange">
+              <div className="flex gap-1 mb-6 text-sadhana-orange">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-sadhana-orange" />
+                  <Star key={i} className="w-5 h-5 fill-sadhana-orange" />
                 ))}
               </div>
-              <h3 className="font-serif italic text-xl md:text-2xl lg:text-3xl text-sadhana-dark leading-tight mb-4">
+              <h3 className="font-serif italic text-2xl md:text-3xl text-sadhana-dark leading-tight mb-6">
                 «{review.title}»
               </h3>
-              <p className="text-sm md:text-base text-sadhana-brown/80 font-medium leading-relaxed mb-8 max-w-2xl">
+              <p className="text-base md:text-lg text-sadhana-brown/80 font-medium leading-relaxed mb-8">
                 {review.comment}
               </p>
             </div>
 
-            <div className="flex items-center gap-4 pt-6 border-t border-sadhana-dark/10">
+            <div className="flex items-center gap-4 pt-6 border-t border-sadhana-dark/10 mt-auto">
               <img
                 src={review.avatarUrl}
                 alt={review.author}
