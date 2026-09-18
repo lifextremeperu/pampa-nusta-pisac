@@ -8,6 +8,7 @@ export const SolfeggioAudio: React.FC = () => {
   const gainNodeRef = useRef<GainNode | null>(null);
   const oscillatorRefs = useRef<OscillatorNode[]>([]);
   const lfoRef = useRef<OscillatorNode | null>(null);
+  const natureAudioRef = useRef<HTMLAudioElement | null>(null);
 
   const initAudio = () => {
     if (audioCtxRef.current) return;
@@ -16,6 +17,14 @@ export const SolfeggioAudio: React.FC = () => {
     const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
     const ctx = new AudioContext();
     audioCtxRef.current = ctx;
+
+    // Background Nature Audio
+    if (!natureAudioRef.current) {
+      const audio = new Audio('https://upload.wikimedia.org/wikipedia/commons/2/20/River_stream_in_forest.ogg');
+      audio.loop = true;
+      audio.volume = 0.5; // Half volume so it mixes well with the synth
+      natureAudioRef.current = audio;
+    }
 
     // Master Gain (Volume)
     const masterGain = ctx.createGain();
@@ -71,6 +80,7 @@ export const SolfeggioAudio: React.FC = () => {
     
     // Fade in
     masterGain.gain.setTargetAtTime(0.4, ctx.currentTime, 2.0);
+    natureAudioRef.current.play().catch(e => console.log('Audio autoplay prevented'));
   };
 
   const toggleMute = () => {
@@ -81,14 +91,17 @@ export const SolfeggioAudio: React.FC = () => {
 
     const ctx = audioCtxRef.current;
     const gain = gainNodeRef.current;
+    const natureAudio = natureAudioRef.current;
     
     if (isMuted) {
       ctx.resume();
       gain?.gain.setTargetAtTime(0.4, ctx.currentTime, 1.0);
+      natureAudio?.play().catch(e => console.log('Audio autoplay prevented'));
       setIsMuted(false);
     } else {
       gain?.gain.setTargetAtTime(0, ctx.currentTime, 0.5);
       setTimeout(() => ctx.suspend(), 500);
+      natureAudio?.pause();
       setIsMuted(true);
     }
   };
