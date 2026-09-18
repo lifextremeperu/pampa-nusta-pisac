@@ -74,18 +74,18 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between w-full h-full max-h-[70vh] items-start md:items-center mt-20 md:mt-0">
+      <div className="flex flex-col md:flex-row justify-between w-full h-full pt-24 pb-12 overflow-y-auto items-start md:items-center">
         
         {/* Main Links */}
-        <ul ref={linksRef} className="space-y-4 md:space-y-8 flex-1">
+        <ul ref={linksRef} className="space-y-2 md:space-y-4 flex-1 pb-10 md:pb-0">
           {MENU_ITEMS.map((item, index) => (
             <li key={item.id} className="overflow-hidden">
               <button 
                 onClick={() => handleLinkClick(item.id)}
-                className="group relative text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-sadhana-dark hover:text-sadhana-primary transition-colors text-left"
+                className="group relative text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter text-sadhana-dark hover:text-sadhana-primary transition-colors text-left leading-none"
               >
                 {/* 1820 Style Number indicator */}
-                <span className="absolute -left-8 top-2 md:top-6 text-[10px] md:text-sm font-normal tracking-widest opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-300">
+                <span className="absolute -left-6 md:-left-8 top-1 md:top-2 text-[10px] md:text-sm font-normal tracking-widest opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 md:group-hover:-translate-x-4 transition-all duration-300">
                   0{index + 1}
                 </span>
                 {item.label}
