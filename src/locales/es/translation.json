@@ -49,34 +49,15 @@
             "title": "Bitácora Arqueológica",
             "desc": "Recibe crónicas mensuales sobre hallazgos, eventos astronómicos y avances en la restauración.",
             "placeholder": "Tu correo electrónico",
-            "success": "Suscripción confirmada"
+            "btn": "Suscribirse"
         },
-        "legal": {
-            "payments": "Pagos Seguros (Yape · Plin · Tarjetas)",
-            "guarantee": "Garantía 100% Sin Penalidad",
-            "privacy": "Privacidad",
-            "transparency": "Transparencia Financiera",
-            "cookies": "Cookies"
+        "trust": {
+            "ssl": "SSL 256-Bit TLS 1.3",
+            "payments": "Pagos Seguros (Tarjetas · PayPal)",
+            "guarantee": "100% Garantía Sin Penalidades"
         }
     },
     "joinus": {
-        "intro_desc": "El llamado de la montaña es para quienes sienten el profundo deseo de reconectar con la Pachamama. Existen diferentes caminos para integrarte a nuestra comunidad, desde visitas cortas de aprendizaje hasta convertirte en un guardián permanente del santuario.",
-        "requirements": "Requisitos",
-        "voluntariado_req": [
-            "Amor por la naturaleza",
-            "Disposición física",
-            "Estadía mínima de 2 semanas"
-        ],
-        "retiro_req": [
-            "Entrevista previa",
-            "Preparación de dieta",
-            "Respeto absoluto al linaje"
-        ],
-        "residencia_req": [
-            "Aprobación del Consejo",
-            "Habilidad de aporte",
-            "Compromiso vitalicio"
-        ],
         "subtitle": "CAMINOS DE INTEGRACIÓN",
         "title": "ÚNETE A LA TRIBU",
         "voluntariado_title": "Voluntariado Semilla",
@@ -85,7 +66,24 @@
         "retiro_desc": "Aislamiento profundo, dietas tradicionales y trabajo interno guiado por nuestros maestros andino-amazónicos.",
         "residencia_title": "Residencia Permanente",
         "residencia_desc": "Para aquellos que han escuchado el llamado profundo de convertirse en guardianes permanentes del santuario.",
-        "apply": "Aplicar para"
+        "apply": "Aplicar para",
+        "intro_desc": "El llamado de la montaña es para quienes sienten el profundo deseo de reconectar con la Pachamama. Existen diferentes caminos para integrarte a nuestra comunidad, desde visitas cortas de aprendizaje hasta convertirte en un guardián permanente del santuario.",
+        "requirements": "Requisitos",
+        "voluntariado_req": [
+            "Amor por la naturaleza",
+            "Disposición física",
+            "Estadía mínima 2 semanas"
+        ],
+        "retiro_req": [
+            "Entrevista previa",
+            "Preparación de dieta",
+            "Respeto absoluto al linaje"
+        ],
+        "residencia_req": [
+            "Aprobación del consejo",
+            "Habilidad de aporte",
+            "Compromiso vitalicio"
+        ]
     },
     "ecoaldea": {
         "modules": {
@@ -527,8 +525,6 @@
         "gallery_btn": "Notificarme cuando esté listo"
     },
     "nav": {
-        "pampa": "Pampa Ñusta",
-        "menu": "MENÚ",
         "inicio": "Inicio",
         "leyenda": "Leyenda",
         "botanica": "Reserva Botánica",
@@ -537,7 +533,9 @@
         "media": "Media Hub",
         "unirse": "Únete a Nosotros",
         "recorrido": "Recorrido 360",
-        "adopcion": "Adopta una Semilla"
+        "adopcion": "Adopta una Semilla",
+        "pampa": "Pampa Ñusta",
+        "menu": "MENÚ"
     },
     "identity": {
         "title": "Identidad Pampa Ñusta",
@@ -577,13 +575,9 @@
         ]
     },
     "location": {
-        "title": "Territorio Sagrado",
+        "title": "TERRITORIO SAGRADO",
         "subtitle": "COORDENADAS DEL SANTUARIO",
-        "location": "Maska, Pisac, Cusco - Perú",
-        "altitude": "3,000 msnm",
-        "environment": "Valle Sagrado de los Incas",
-        "climate": "Templado Andino",
-        "desc": "Ubicados estratégicamente a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
+        "desc": "Estratégicamente ubicados a los pies del imponente complejo arqueológico de Pisac. Nuestro santuario se nutre de las aguas glaciares de los Apus mayores, creando un microclima perfecto para la conservación de la medicina y las semillas.",
         "view_place": "VER EN GOOGLE MAPS",
         "maps": "ABRIR EN MAPAS",
         "whatsapp": "CONTACTAR POR WHATSAPP"
