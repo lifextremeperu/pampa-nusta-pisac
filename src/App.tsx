@@ -113,7 +113,10 @@ export default function App() {
         <GlobalAudioPlayer />
         
         <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center text-white mix-blend-difference">
-          <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
+          <button onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setCurrentPage('home');
+          }} className="flex items-center gap-2 cursor-pointer group">
             <span className="text-xl font-bold tracking-[0.2em]">{t('nav.pampa')}</span>
             <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
           </button>
@@ -154,7 +157,9 @@ export default function App() {
       <Preloader />
       <CustomCursor />      {/* 2. FIXED NAVIGATION HEADER (Minimalist) */}
       <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference text-white">
-        <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2 cursor-pointer group">
+        <button onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} className="flex items-center gap-2 cursor-pointer group">
           <span className="text-xl font-bold tracking-[0.2em] uppercase">{t('nav.pampa')}</span>
           <WachumaIcon className="w-5 h-5 opacity-90 group-hover:text-sadhana-primary transition-colors" />
         </button>
