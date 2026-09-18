@@ -29,7 +29,7 @@ import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { SecurityComplianceModal } from './components/SecurityComplianceModal';
 import { ModuleExperienceModal } from './components/ModuleExperienceModal';
 import { MobileCinematicDock } from './components/MobileCinematicDock';
-import { ECOALDEA_MODULES } from './data/ecoaldeaModules';
+import { useEcoaldeaModules } from './data/ecoaldeaModules';
 import { EcoaldeaModule } from './types';
 import { SanctuaryFacility } from './data/sanctuaryFacilities';
 import { ProjectLandingPage } from './components/ProjectLandingPage';
@@ -62,6 +62,7 @@ const WachumaIcon = ({ className }: { className?: string }) => (
 
 export default function App() {
   const { t } = useTranslation();
+  const ECOALDEA_MODULES = useEcoaldeaModules();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
