@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowRight, Leaf, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 
+import { useTranslation } from 'react-i18next';
+
 interface CinematicTransition {
   id: string;
   title: string;
@@ -10,45 +12,47 @@ interface CinematicTransition {
   altitude: string;
 }
 
-const TRANSITIONS: CinematicTransition[] = [
-  {
-    id: '01',
-    title: 'TIERRA',
-    subtitle: 'Banco Genético de la Wachuma',
-    altitude: '3,347 msnm',
-    image: '/assets/ecoaldea/elemento_tierra.jpg',
-  },
-  {
-    id: '02',
-    title: 'AGUA',
-    subtitle: 'Conservación de Semillas Nativas',
-    altitude: '3,200 msnm',
-    image: '/assets/ecoaldea/elemento_agua.jpg',
-  },
-  {
-    id: '03',
-    title: 'VIENTO',
-    subtitle: 'Centro de Recreación para Niños',
-    altitude: '3,150 msnm',
-    image: '/assets/ecoaldea/elemento_viento.jpg',
-  },
-  {
-    id: '04',
-    title: 'FUEGO',
-    subtitle: 'Ceremonias de Plantas Maestras',
-    altitude: '3,300 msnm',
-    image: '/assets/ecoaldea/elemento_fuego.jpg',
-  },
-  {
-    id: '05',
-    title: 'ÉTER',
-    subtitle: 'Talleres Inmersivos de 4 a + Días',
-    altitude: '3,250 msnm',
-    image: '/assets/ecoaldea/elemento_eter.jpg',
-  }
-];
-
 export const CinematicTransitions: React.FC = () => {
+  const { t } = useTranslation();
+
+  const TRANSITIONS: CinematicTransition[] = [
+    {
+      id: '01',
+      title: t('cinematic_transitions.tierra.title'),
+      subtitle: t('cinematic_transitions.tierra.subtitle'),
+      altitude: '3,347 msnm',
+      image: '/assets/ecoaldea/elemento_tierra.jpg',
+    },
+    {
+      id: '02',
+      title: t('cinematic_transitions.agua.title'),
+      subtitle: t('cinematic_transitions.agua.subtitle'),
+      altitude: '3,200 msnm',
+      image: '/assets/ecoaldea/elemento_agua.jpg',
+    },
+    {
+      id: '03',
+      title: t('cinematic_transitions.viento.title'),
+      subtitle: t('cinematic_transitions.viento.subtitle'),
+      altitude: '3,150 msnm',
+      image: '/assets/ecoaldea/elemento_viento.jpg',
+    },
+    {
+      id: '04',
+      title: t('cinematic_transitions.fuego.title'),
+      subtitle: t('cinematic_transitions.fuego.subtitle'),
+      altitude: '3,300 msnm',
+      image: '/assets/ecoaldea/elemento_fuego.jpg',
+    },
+    {
+      id: '05',
+      title: t('cinematic_transitions.eter.title'),
+      subtitle: t('cinematic_transitions.eter.subtitle'),
+      altitude: '3,250 msnm',
+      image: '/assets/ecoaldea/elemento_eter.jpg',
+    }
+  ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const titlesRef = useRef<(HTMLHeadingElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
@@ -217,7 +221,7 @@ export const CinematicTransitions: React.FC = () => {
         <div className="absolute top-32 md:top-32 left-0 w-full flex justify-center z-40">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sadhana-primary/40 bg-sadhana-dark/40 text-sadhana-sand text-[10px] md:text-xs uppercase tracking-[0.3em] font-mono font-bold shadow-sm backdrop-blur-md">
             <Leaf className="w-3.5 h-3.5 text-sadhana-primary" />
-            <span>Memoria Viva del Santuario</span>
+            <span>{t('cinematic_transitions.memoria')}</span>
           </div>
         </div>
 

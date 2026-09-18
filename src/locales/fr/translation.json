@@ -652,5 +652,69 @@
         "subtitle": "03 — Community Voices",
         "title1": "REVIEWS &",
         "title2": "TESTIMONIALS"
+    },
+    "cinematic_transitions": {
+        "tierra": {
+            "title": "TERRE",
+            "subtitle": "Banque Génétique de Wachuma"
+        },
+        "agua": {
+            "title": "EAU",
+            "subtitle": "Conservation des Semences Natives"
+        },
+        "viento": {
+            "title": "VENT",
+            "subtitle": "Centre de Loisirs pour Enfants"
+        },
+        "fuego": {
+            "title": "FEU",
+            "subtitle": "Cérémonies des Plantes Maîtresses"
+        },
+        "eter": {
+            "title": "ÉTHER",
+            "subtitle": "Ateliers Immersifs de 4 Jours et +"
+        },
+        "memoria": "Mémoire Vivante du Sanctuaire"
+    },
+    "pampa_facilities": {
+        "wachuma_wasi": {
+            "name": "Dôme Géodésique & Banque Génétique de Wachuma",
+            "shortDesc": "Serre géodésique bioclimatique avec plus de 40 lignées mères acclimatées de Trichocereus pachanoi et peruvianus.",
+            "neuromarketingHook": "Plus que la préservation d'un cactus sacré, nous décodons le génome de la conscience andine et le protégeons de l'extinction climatique.",
+            "scope": "La portée couvre 12 hectares de conservation directe et la création de la première banque génomique de Trichocereus en Amérique du Sud.",
+            "fullDesc": "Le cœur botanique de Pampa Ñusta. Un dôme géodésique bioclimatique passif abritant la plus grande collection vivante de cactus sacré Wachuma du bassin de Vilcanota. Conçu pour émuler le microclimat de la gorge andine avec des substrats minéraux volcaniques, une ventilation zénithale et une capture thermique diurne pour protéger les lignées mères des gelées nocturnes."
+        },
+        "arca_semillas": {
+            "name": "Arche de Semences Andines & Laboratoire Vivant",
+            "shortDesc": "Sanctuaire de matériel génétique avec plus de 200 variétés natives de maïs sacré, pommes de terre andines, quinoa et kiwicha.",
+            "neuromarketingHook": "Dans un monde menacé par le changement climatique, la véritable richesse n'est pas l'or, mais le matériel génétique qui garantira la nourriture de l'humanité.",
+            "scope": "Impact direct sur la souveraineté alimentaire de 18 communautés alto-andines de la Vallée Sacrée, assurant un matériel génétique biologiquement pur pour les 3 prochaines générations.",
+            "fullDesc": "Construit comme une voûte bioclimatique d'adobe et d'argile séchée, l'Arche des Semences garde l'héritage génétique des Andes. Elle préserve les variétés ancestrales de maïs polychromes, de tubercules natifs d'altitude et de grains sacrés, stockés dans des récipients en argile scellés à la cire d'abeille naturelle qui préviennent les parasites sans un seul gramme d'agrochimie."
+        },
+        "escuela_viva": {
+            "name": "École Vivante & Bio-Parc pour Enfants",
+            "shortDesc": "Village pédagogique en plein air avec amphithéâtre en boue, bio-jeux et sauvetage de la faune andine.",
+            "neuromarketingHook": "Nous n'héritons pas de la terre de nos ancêtres, nous l'empruntons à nos enfants. Ici, nous formons les leaders écologiques de demain.",
+            "scope": "Formation écologique bilingue et soutien émotionnel gratuits pour 150 garçons et filles par an issus d'écoles rurales vulnérables.",
+            "fullDesc": "Un projet pilote éducatif qui fusionne la méthodologie de l'école en forêt avec la vision du monde andine. Conçu pour que la petite enfance des communautés rurales revalorise sa culture d'origine à travers l'éco-construction, l'agriculture et l'art en quechua."
+        },
+        "maloka_ceremonial": {
+            "name": "Maloka Cérémoniale & Espace Sonore",
+            "shortDesc": "Temple circulaire de bioconstruction et d'acoustique 432 Hz pour la recherche sur les plantes maîtresses.",
+            "neuromarketingHook": "Là où la psychiatrie moderne trouve ses limites, la médecine andine ancienne ouvre les portes à une guérison profonde des traumatismes.",
+            "scope": "Création d'un standard clinique-traditionnel reproductible au niveau international pour le traitement des traumatismes par le biais de protocoles andins rigoureux.",
+            "fullDesc": "La Maloka est un centre d'avant-garde où convergent la science moderne et la médecine traditionnelle. Nous étudions les avantages neuroplastiques des états modifiés de conscience facilités par les enthéogènes andins, dans un cadre éthique, sûr et guidé par des lignées ancestrales."
+        },
+        "terrazas_permacultura": {
+            "name": "Terrasses Régénératives & Hydrologie Solaire",
+            "shortDesc": "Restauration des terrasses incas avec la technologie d'irrigation photovoltaïque et l'agriculture syntropique.",
+            "neuromarketingHook": "Nous ravivons le génie de l'ingénierie inca et l'équipons de la technologie solaire du 21e siècle pour nourrir l'avenir des Andes.",
+            "scope": "Restauration complète de 5 niveaux de terrasses incas et création du modèle hydro-solaire à l'empreinte carbone négative à la plus haute altitude du Pérou.",
+            "fullDesc": "Un projet d'innovation agricole qui défie la sécheresse andine. Nous avons récupéré des terrasses préhispaniques abandonnées en intégrant le pompage solaire contemporain et la technologie de micro-aspersion. L'objectif est de créer un modèle reproductible de sécurité alimentaire pour les hautes montagnes péruviennes."
+        }
+    },
+    "virtual_tour_extra": {
+        "drag_instructions": "Faites glisser avec la souris ou le doigt pour faire pivoter à 360° · Cliquez sur les icônes oranges pour explorer les installations",
+        "instalaciones_title": "INSTALLATIONS"
     }
 }

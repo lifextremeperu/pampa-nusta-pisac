@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { Leaf } from 'lucide-react';
-import { PAMPA_NUSTA_FACILITIES } from '../data/sanctuaryFacilities';
+import { useSanctuaryFacilities } from '../data/sanctuaryFacilities';
 
 // Fix Leaflet marker icons issue in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -17,6 +17,8 @@ L.Icon.Default.mergeOptions({
 const MAP_CENTER: [number, number] = [-13.4225, -71.8488];
 
 export const InteractiveSanctuaryMap: React.FC = () => {
+  const PAMPA_NUSTA_FACILITIES = useSanctuaryFacilities();
+
   return (
     <div className="w-full h-full min-h-[460px] sm:min-h-[580px] rounded-3xl overflow-hidden shadow-2xl relative">
       <MapContainer

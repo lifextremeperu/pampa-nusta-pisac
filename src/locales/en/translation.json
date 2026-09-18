@@ -648,5 +648,69 @@
         "subtitle": "03 — Community Voices",
         "title1": "REVIEWS &",
         "title2": "TESTIMONIALS"
+    },
+    "cinematic_transitions": {
+        "tierra": {
+            "title": "EARTH",
+            "subtitle": "Wachuma Genetic Bank"
+        },
+        "agua": {
+            "title": "WATER",
+            "subtitle": "Native Seed Conservation"
+        },
+        "viento": {
+            "title": "WIND",
+            "subtitle": "Children's Recreation Center"
+        },
+        "fuego": {
+            "title": "FIRE",
+            "subtitle": "Master Plant Ceremonies"
+        },
+        "eter": {
+            "title": "ETHER",
+            "subtitle": "Immersive 4+ Day Workshops"
+        },
+        "memoria": "Living Memory of the Sanctuary"
+    },
+    "pampa_facilities": {
+        "wachuma_wasi": {
+            "name": "Geodesic Dome & Wachuma Genetic Bank",
+            "shortDesc": "Bioclimatic geodesic greenhouse with over 40 acclimated mother lineages of Trichocereus pachanoi and peruvianus.",
+            "neuromarketingHook": "More than preserving a sacred cactus, we are decoding the genome of Andean consciousness and protecting it from climate extinction.",
+            "scope": "The scope covers 12 hectares of direct conservation and the creation of the first Trichocereus genomic bank in South America.",
+            "fullDesc": "The botanical heart of Pampa Ñusta. A passive bioclimatic geodesic dome housing the largest living collection of the sacred Wachuma cactus in the Vilcanota basin. Designed to emulate the Andean ravine microclimate with volcanic mineral substrates, zenithal ventilation, and daytime thermal capture to protect mother lineages from night frosts."
+        },
+        "arca_semillas": {
+            "name": "Andean Seed Ark & Living Laboratory",
+            "shortDesc": "Germplasm sanctuary with over 200 native varieties of sacred corn, Andean potatoes, quinoa, and kiwicha.",
+            "neuromarketingHook": "In a world threatened by climate change, true wealth is not gold, but the germplasm that will guarantee food for humanity.",
+            "scope": "Direct impact on the food sovereignty of 18 high Andean communities in the Sacred Valley, ensuring biologically pure germplasm for the next 3 generations.",
+            "fullDesc": "Built as a bioclimatic vault of adobe and cured clay, the Seed Ark guards the genetic heritage of the Andes. It preserves ancestral varieties of polychrome corn, native high-altitude tubers, and sacred grains, stored in clay vessels sealed with natural beeswax that prevent pests without a single gram of agrochemicals."
+        },
+        "escuela_viva": {
+            "name": "Living School & Children's Bio-Park",
+            "shortDesc": "Outdoor educational village with a mud amphitheater, bio-games, and Andean fauna rescue.",
+            "neuromarketingHook": "We do not inherit the earth from our ancestors, we borrow it from our children. Here we train the ecological leaders of tomorrow.",
+            "scope": "Free bilingual ecological training and emotional support for 150 boys and girls annually from vulnerable rural schools.",
+            "fullDesc": "An educational pilot project that merges the forest school methodology with the Andean worldview. Designed for early childhood in rural communities to revalue their original culture through bioconstruction, agriculture, and art in Quechua."
+        },
+        "maloka_ceremonial": {
+            "name": "Ceremonial Maloka & Sound Space",
+            "shortDesc": "Circular temple of bioconstruction and 432 Hz acoustics for research of master plants.",
+            "neuromarketingHook": "Where modern psychiatry meets its limits, ancient Andean medicine opens the doors to deep healing of trauma.",
+            "scope": "Creation of an internationally replicable clinical-traditional standard for the treatment of trauma through rigorous Andean protocols.",
+            "fullDesc": "The Maloka is an avant-garde center where modern science and traditional medicine converge. We investigate the neuroplastic benefits of expanded states of consciousness facilitated by Andean entheogens, under an ethical, safe framework guided by ancestral lineages."
+        },
+        "terrazas_permacultura": {
+            "name": "Regenerative Terraces & Solar Hydrology",
+            "shortDesc": "Restoration of Inca terraces with photovoltaic irrigation technology and syntropic agriculture.",
+            "neuromarketingHook": "We revive the genius of Inca engineering and empower it with 21st century solar technology to feed the future of the Andes.",
+            "scope": "Complete restoration of 5 levels of Inca terracing and creation of the highest altitude negative carbon footprint hydro-solar model in Peru.",
+            "fullDesc": "An agricultural innovation project that challenges the Andean drought. We have recovered abandoned pre-Hispanic terraces by integrating contemporary solar pumping and micro-sprinkler technology. The goal is to create a replicable model of food security for the high Peruvian mountains."
+        }
+    },
+    "virtual_tour_extra": {
+        "drag_instructions": "Drag with your mouse or finger to rotate 360° · Click on the orange icons to explore the facilities",
+        "instalaciones_title": "FACILITIES"
     }
 }

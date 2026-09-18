@@ -652,5 +652,69 @@
         "subtitle": "03 — Community Voices",
         "title1": "REVIEWS &",
         "title2": "TESTIMONIALS"
+    },
+    "cinematic_transitions": {
+        "tierra": {
+            "title": "TERRA",
+            "subtitle": "Banco Genético de Wachuma"
+        },
+        "agua": {
+            "title": "ÁGUA",
+            "subtitle": "Conservação de Sementes Nativas"
+        },
+        "viento": {
+            "title": "VENTO",
+            "subtitle": "Centro de Recreação Infantil"
+        },
+        "fuego": {
+            "title": "FOGO",
+            "subtitle": "Cerimônias de Plantas Mestras"
+        },
+        "eter": {
+            "title": "ÉTER",
+            "subtitle": "Workshops Imersivos de 4+ Dias"
+        },
+        "memoria": "Memória Viva do Santuário"
+    },
+    "pampa_facilities": {
+        "wachuma_wasi": {
+            "name": "Domo Geodésico & Banco Genético da Wachuma",
+            "shortDesc": "Estufa geodésica bioclimática com mais de 40 linhagens mães aclimatadas de Trichocereus pachanoi e peruvianus.",
+            "neuromarketingHook": "Mais do que preservar um cacto sagrado, estamos decodificando o genoma da consciência andina e protegendo-o da extinção climática.",
+            "scope": "O escopo abrange 12 hectares de conservação direta e a criação do primeiro banco genômico de Trichocereus na América do Sul.",
+            "fullDesc": "O coração botânico de Pampa Ñusta. Um domo geodésico bioclimático passivo que abriga a maior coleção viva do cacto sagrado Wachuma da bacia de Vilcanota. Projetado para emular o microclima da ravina andina com substratos minerais vulcânicos, ventilação zenital e captura térmica diurna para proteger as linhagens maternas das geadas noturnas."
+        },
+        "arca_semillas": {
+            "name": "Arca de Sementes Andinas & Laboratório Vivo",
+            "shortDesc": "Santuário de germoplasma com mais de 200 variedades nativas de milho sagrado, batatas andinas, quinoa e kiwicha.",
+            "neuromarketingHook": "Num mundo ameaçado pelas mudanças climáticas, a verdadeira riqueza não é o ouro, mas o germoplasma que garantirá a alimentação da humanidade.",
+            "scope": "Impacto direto na soberania alimentar de 18 comunidades alto-andinas do Vale Sagrado, garantindo germoplasma biologicamente puro para as próximas 3 gerações.",
+            "fullDesc": "Construída como uma abóbada bioclimática de adobe e argila curada, a Arca das Sementes guarda a herança genética dos Andes. Preserva variedades ancestrais de milho policromo, tubérculos nativos de altitude e grãos sagrados, armazenados em potes de barro selados com cera de abelha natural que evitam pragas sem um único grama de agroquímico."
+        },
+        "escuela_viva": {
+            "name": "Escola Viva & Bio-Parque Infantil",
+            "shortDesc": "Vila pedagógica ao ar livre com anfiteatro de barro, bio-jogos e resgate da fauna andina.",
+            "neuromarketingHook": "Não herdamos a terra de nossos ancestros, nós a pegamos emprestada de nossos filhos. Aqui formamos os líderes ecológicos de amanhã.",
+            "scope": "Formação ecológica bilíngue e apoio emocional gratuito para 150 meninos e meninas anualmente, provenientes de escolas rurais vulneráveis.",
+            "fullDesc": "Um projeto piloto educacional que mescla a metodologia das escolas da floresta com a cosmovisão andina. Projetado para que a primeira infância de comunidades rurais revalorize sua cultura de origem através da bioconstrução, agricultura e arte em quíchua."
+        },
+        "maloka_ceremonial": {
+            "name": "Maloka Cerimonial & Espaço Sonoro",
+            "shortDesc": "Templo circular de bioconstrução e acústica 432 Hz para pesquisa de plantas mestras.",
+            "neuromarketingHook": "Onde a psiquiatria moderna encontra seus limites, a antiga medicina andina abre as portas para uma cura profunda de traumas.",
+            "scope": "Criação de um padrão clínico-tradicional replicável internacionalmente para o tratamento de traumas através de rigorosos protocolos andinos.",
+            "fullDesc": "A Maloka é um centro vanguardista onde a ciência moderna e a medicina tradicional convergem. Pesquisamos os benefícios neuroplásticos de estados expandidos de consciência facilitados por enteógenos andinos, sob uma estrutura ética, segura e guiada por linhagens ancestrais."
+        },
+        "terrazas_permacultura": {
+            "name": "Terraços Regenerativos & Hidrologia Solar",
+            "shortDesc": "Restauração de terraços incas com tecnologia de irrigação fotovoltaica e agricultura sintrópica.",
+            "neuromarketingHook": "Revivemos a genialidade da engenharia inca e a potencializamos com a tecnologia solar do século 21 para alimentar o futuro dos Andes.",
+            "scope": "Restauração completa de 5 níveis de terraços incas e criação do modelo hidro-solar de pegada de carbono negativa na maior altitude do Peru.",
+            "fullDesc": "Um projeto de inovação agrícola que desafia a seca andina. Recuperamos terraços pré-hispânicos abandonados integrando o bombeamento solar contemporâneo e a tecnologia de microaspersão. O objetivo é criar um modelo replicável de segurança alimentar para as altas montanhas peruanas."
+        }
+    },
+    "virtual_tour_extra": {
+        "drag_instructions": "Arraste com o mouse ou dedo para girar 360° · Clique nos ícones laranjas para explorar as instalações",
+        "instalaciones_title": "INSTALAÇÕES"
     }
 }

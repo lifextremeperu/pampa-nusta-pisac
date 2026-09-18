@@ -33,7 +33,7 @@ import {
   Quote
 } from 'lucide-react';
 import {
-  PAMPA_NUSTA_FACILITIES,
+  useSanctuaryFacilities,
   SANCTUARY_PANORAMA_SCENES,
   SANCTUARY_REFERENCE_VIDEOS,
   SanctuaryFacility,
@@ -49,6 +49,8 @@ interface VirtualTour360Props {
 
 export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject }) => {
   const { t } = useTranslation();
+  const PAMPA_NUSTA_FACILITIES = useSanctuaryFacilities();
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -68,7 +70,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
   // Video Player State
   const [activeVideo, setActiveVideo] = useState<SanctuaryReferenceVideo>(SANCTUARY_REFERENCE_VIDEOS[0]);
   const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
-  const [selectedVideoFacility, setSelectedVideoFacility] = useState<SanctuaryFacility>(PAMPA_NUSTA_FACILITIES[0]);
+  const [selectedVideoFacility, setSelectedVideoFacility] = useState<SanctuaryFacility | null>(null);
   const [customVideoInput, setCustomVideoInput] = useState<string>('');
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);
   const [activeEmbedUrl, setActiveEmbedUrl] = useState<string>(
@@ -527,7 +529,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
                       className="absolute z-20 group/marker"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSelectedFacility(facility);
+                        onOpenProject?.(facility);
                       }}
                     >
                       <button
@@ -601,7 +603,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
 
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-sadhana-dark/10 text-xs text-sadhana-dark font-sans flex items-center gap-2 pointer-events-none shadow-lg font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-sadhana-primary animate-pulse" />
-                <span>Arrastra con el ratón o el dedo para rotar 360° · Pulsa en los iconos naranjas para explorar las instalaciones</span>
+                <span>{t('virtual_tour_extra.drag_instructions')}</span>
               </div>
             </div>
           </div>
@@ -624,7 +626,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
         <div className="mt-32 md:mt-48">
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-sadhana-dark">
-              INSTALACIONES
+              {t('virtual_tour_extra.instalaciones_title')}
             </h3>
             
             <div className="flex gap-3">
@@ -650,7 +652,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
               <div
                 key={facility.id}
                 className="relative group cursor-pointer flex-shrink-0 w-[85vw] md:w-[450px] aspect-[4/5] snap-center overflow-hidden bg-sadhana-dark"
-                onClick={() => setSelectedFacility(facility)}
+                onClick={() => onOpenProject?.(facility)}
               >
                 {/* Background Image */}
                 <img 
@@ -687,7 +689,7 @@ export const VirtualTour360: React.FC<VirtualTour360Props> = ({ onOpenProject })
                     {/* Fake Button Line */}
                     <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-bold text-white group-hover:text-sadhana-primary transition-colors">
                       <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12"></span>
-                      <span>Explorar Instalación</span>
+                      <span>{t('modules.explore_btn')}</span>
                     </div>
                   </div>
                 </div>
